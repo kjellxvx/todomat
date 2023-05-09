@@ -1,0 +1,184 @@
+{
+    "slides": {
+      "A1": {
+        "question": "Was wünscht du dir soll mit deinem Körper gleich nach deinem Tod gemacht werden?",
+        "options": [
+          {
+            "A1.1": {
+              "content": "für wenige Tage nach Hause bringen und aufbahren"
+            },
+            "A1.2": {
+              "content": "umgehend zum Transformationspartner bringen und Transformationsprozess starten"
+            },
+            "A1.3": {
+              "content": "umgehend zum Transformationspartner bringen und dort aufbahren"
+            },
+            "A1.4": {
+              "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
+            },
+            "A1.5": {
+              "content": "ich lasse andere entscheiden / mir egal"
+            }
+          }
+        ]
+      },
+      "A2": {
+        "question": "Wie möchtest du, dass dein Körper transformiert/umgewandelt wird?",
+        "options": [
+          {
+            "A2.1": {
+              "content": "komplett vergraben und verwesen (verfügbar bis 2040)",
+              "info": "info I: über Schad- und Gifstoffe"
+            },
+            "A2.2": {
+              "content": "verbrennen und Asche … (verfügbar bis 2040)",
+              "info": "info I: über den Energieaufwand"
+            },
+            "A2.3": {
+              "content": "verbrennen und Energie rückgewinnen (verfügbar ab 2040)"
+            },
+            "A2.4": {
+              "content": "Gefriertrocknung (verfügbar ab 2025)",
+              "info": "info I: über Stand der Dinge da"
+            },
+            "A2.5": {
+              "content": "Kompostierung (info I: über Stand der Dinge da)"
+            },
+            "A2.6": {
+              "content": "weiß ich noch nicht, die Variante die zum Zeitpunkt meines Todes die beste Energiebilanz hat",
+              "todo": "TODO 1"
+            },
+            "A2.7": {
+              "content": "weiß ich noch nicht, die Variante die zum Zeitpunkt meines Todes am günstigsten ist",
+              "todo": "TODO 2"
+            },
+            "A2.8": {
+              "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
+            },
+            "A2.9": {
+              "content": "ich lasse andere entscheiden / mir egal"
+            }
+          }
+        ]
+      },
+      "A2_1": {
+        "question": "komplett vergraben und verwesen",
+        "options": [
+          {
+            "A2.1.1": {
+              "content": "angezogen im Sarg",
+              "todo": "Outfit aussuchen"
+            },
+            "A2.1.2": {
+              "content": "nackt im Sarg (verfügbar ab 2030)"
+            },
+            "A2.1.3": {
+              "content": "nackt (oder mit Tuch, öko…) in der Erde (verfügbar ab 2040)"
+            }
+          }
+        ]
+      },
+      "A2_2": {
+        "question": "verbrennen und Asche …",
+        "options": [
+          {
+            "A2.2.1": {
+              "content": "auf dem Friedhof beisetzen"
+            },
+            "A2.2.2": {
+              "content": "verstreuen (verfügbar ab 2030)"
+            },
+            "A2.2.3": {
+              "content": "den Angehörigen übergeben (verfügbar ab 2030)"
+            },
+            "A2.2.4": {
+              "content": "seebestatten"
+            },
+            "A2.2.5": {
+              "content": "ins All schießen"
+            },
+            "A2.2.6": {
+              "content": "zu Diamanten pressen"
+            },
+            "A2.2.7": {
+              "content": "andere Option",
+              "TextInput": "Mustertext"
+            }
+          }
+        ]
+      },
+      "B1": {
+        "question": "Möchtest du festlegen, wer und wie über deinen Tod benachrichtigt werden soll?",
+        "options": [
+          {
+            "B1.1": {
+              "content": "ja, ich habe besondere Vorgaben, diese habe ich bei folgenden Personen hinterlegt:",
+              "TextInput": "Vorname, Nachname"
+            },
+            "B1.2": {
+              "content": "nein (es dürfen ohne Einschränkung alle erfahren/wissen)"
+            }
+          }
+        ]
+      },
+      "B2": {
+        "question": "Möchtest du, dass Deine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird?",
+        "options": [
+          {
+            "B2.1": {
+              "content": "ja"
+            },
+            "B2.2": {
+              "content": "nein"
+            }
+          }
+        ]
+      },
+      "B2_1": {
+        "question": "Ich möchte, dass Meine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird:",
+        "options": [
+          {
+            "B2.1.1": {
+              "content": "ich habe sehr konkrete Vorgaben (z.B. Kleidung, Gästeliste, Location, Essen), bei folgender Person hinterlegt:",
+              "TextInput": "Vorname, Nachname"
+            },
+            "B2.1.2": {
+              "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
+            },
+            "B2.1.3": {
+              "content": "ich möchte das im Todomat konfigurieren"
+            }
+          }
+        ]
+      },
+      "B2_1_3_1": {
+        "question": "Möchtest du festlegen, was bei deinem Übergabezeremonie gesagt werden sollte? (z.B. worauf bist du am meisten stolz; die wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar und wofür hast du gelebt).",
+        "options": [
+          {
+            "B2.1.3.1.1": {
+              "content": "ja",
+              "todo": "TODO"
+            },
+            "B2.1.3.1.2": {
+              "content": "nein"
+            }
+          }
+        ]
+      },
+      "B2_1_3_2": {
+        "question": "Möchtest du ausführen und verlesen lassen oder aufzeichnen was Du definitiv noch vorhast und was Du bereust, solltest Du es bis zu Deinem Tod nicht gemacht haben?",
+        "options": [
+          {
+            "B2.1.3.1.1": {
+              "content": "ja",
+              "todo": "TODO"
+            },
+            "B2.1.3.1.2": {
+              "content": "nein"
+            }
+          }
+        ]
+      }
+    }
+  }
+  
