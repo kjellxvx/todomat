@@ -6,7 +6,7 @@
       <!-- Loop through each option in the id options array -->
       <label
         class="form-control"
-        v-for="(option, key) in slides[this.id].options[0]"
+        v-for="(option, key) in slides[id].options[0]"
         :key="key"
       >
         <div class="radio-label-left">
@@ -41,13 +41,20 @@
         </div>
       </label>
     </div>
-    <!-- <h1>{{ id }}</h1>
-    <p>{{ name }}</p>
-    <p>{{ selection }}</p> -->
+  </div>
+  <div class="keyboard-container" :style="{ display: activateKeyboard() }">
+    <div class="keyboard">
+      <SimpleKeyboard
+        @onChange="onChange"
+        @onKeyPress="onKeyPress"
+        :input="inputs[inputName]"
+        :inputName="inputName"
+      />
+    </div>
   </div>
 </template>
 
-<script>
+<!-- <script>
 import questionaire from "../questionaire.json";
 
 export default {
@@ -63,7 +70,8 @@ export default {
     };
   },
   setup() {
-    const { id } = useRoute().params;
+    // const { id } = useRoute().params;
+
     return {
       id,
     };
@@ -71,7 +79,7 @@ export default {
   computed: {
     selection() {
       return {
-        [this.id]: {
+        [id]: {
           option: "",
         },
       };
@@ -87,6 +95,95 @@ export default {
     },
   },
 };
+</script> -->
+
+<script setup>
+import questionaire from "../questionaire.json";
+import SimpleKeyboard from "../components/SimpleKeyboard";
+import InputComp from "../components/InputComp";
+
+const route = useRoute();
+const id = route.params.id;
+
+const complete = useComplete();
+const todos = useTodos();
+const data = useData();
+const keyboard = useKeyboard();
+
+const slides = questionaire.slides;
+const name = "Slide" + id;
+const question = slides[id].question;
+const options = slides[id].options[0];
+
+const inputs = reactive({});
+const textInputsDisabled = reactive({});
+const selectedOption = ref("");
+const inputName = ref("");
+
+const selection = computed(() => {
+  return { [id]: { options: "" } };
+});
+
+function updateSelection() {
+  const selected = slides[id].options[0][selectedOption.value];
+  if (selected.input) {
+    complete.value = false;
+  } else {
+    complete.value = true;
+  }
+  if (selected.todo) {
+    todos.value[id] = selected.todo;
+  } else {
+    delete todos.value[id];
+  }
+  console.log(selection.value);
+  selection.value[id].options = selectedOption.value;
+  data.value = { ...data.value, ...selection.value };
+  keyboard.value = false;
+}
+
+// function to update checkboxes that also have a textfield
+function updateTextSelection() {
+  for (const inputName in inputs) {
+    inputs.value[inputName] = "";
+    complete.value = false;
+  }
+  selection.value[id].options = selectedOption.value;
+  data.value = { ...data.value, ...selection.value };
+  keyboard.value = true;
+}
+// this method is called a textfield is active
+function activateKeyboard() {
+  if (keyboard.value === true) {
+    return "flex";
+  } else {
+    return "none";
+  }
+}
+
+function onInputFocus(input) {
+  console.log("Focused input:", input.target.id);
+  keyboard.value = true;
+  inputName.value = input.target.id;
+}
+
+// this method is called when the text input is changed using the real keyboard
+function onInputChange(input) {
+  console.log("Input changed directly:", input.target.id, input.target.value);
+
+  if (input.target.value !== "") {
+    complete.value = true;
+  } else {
+    complete.value = false;
+  }
+  inputs[input.target.id] = input.target.value;
+  selection.value[id].input = inputs;
+  data.value = { ...data.value, ...selection.value };
+}
+
+onMounted(() => {
+  console.log(`the component is now mounted.`);
+});
 </script>
 
 <style scoped></style>
