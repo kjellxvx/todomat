@@ -22,6 +22,6 @@
 
 <script setup>
 function Start() {
-  navigateTo(`/${"A1"}`);
+  navigateTo(`/${"menu"}`);
 }
 </script>

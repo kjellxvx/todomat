@@ -21,13 +21,24 @@
     </button>
   </div>
   <div>
+    <p>complete?</p>
     <p>{{ complete }}</p>
   </div>
   <div>
+    <p>todos</p>
     <p>{{ todos }}</p>
   </div>
   <div>
+    <p>entered data</p>
     <p>{{ data }}</p>
+  </div>
+  <div>
+    <p>page index</p>
+    <p>{{ index }}</p>
+  </div>
+  <div>
+    <p>order</p>
+    <p>{{ order }}</p>
   </div>
 </template>
 
@@ -50,13 +61,29 @@
 const complete = useComplete();
 const todos = useTodos();
 const data = useData();
-
 const route = useRoute();
-const currentPageIndex = ref(0);
+const index = useIndex();
+const order = useOrder();
 
 // Logic for rendering the page order
 const slides = computed(() => {
-  const slides = ["hello", "menu", "A1", "A2", "menu", "B1", "B2", "menu"];
+  const slides = [
+    "menu",
+    "A1",
+    "A2",
+    "menu",
+    "B1",
+    "B2",
+    "menu",
+    "C1",
+    "menu",
+    "D2",
+    "menu",
+    "F1",
+    "menu",
+    "F1",
+    "menu",
+  ];
   if (data.value["A2"] && data.value["A2"].options === "A2.1") {
     const pos = slides.indexOf("A2");
     slides.splice(pos + 1, 0, "A2_1", "A2_2");
@@ -69,6 +96,7 @@ const slides = computed(() => {
     const pos = slides.indexOf("B2_1");
     slides.splice(pos + 1, 0, "B2_1_3_1", "B2_1_3_2");
   }
+  order.value = slides;
   return slides;
 });
 
@@ -85,13 +113,12 @@ const isButtonEnabled = computed(() => {
   return complete.value;
 });
 
-const previousPage = computed(() => slides.value[currentPageIndex.value - 1]);
-const nextPage = computed(() => slides.value[currentPageIndex.value + 1]);
+const previousPage = computed(() => slides.value[index.value - 1]);
+const nextPage = computed(() => slides.value[index.value + 1]);
 
 function goToPage(page) {
-  if (page) {
-    currentPageIndex.value = slides.value.indexOf(page);
-    console.log(currentPageIndex.value);
+  if (index.value >= 0) {
+    index.value = slides.value.indexOf(page);
     navigateTo(`/${page}`);
   }
 }
