@@ -1,9 +1,18 @@
 <template>
-  <div>
-    <p>START</p>
+  <div class="slide-container">
+    <div class="slide">
+      <div class="textbox">
+        <h1>TODMOMAT</h1>
+        <p>vorbereitet sterben</p>
+      </div>
+    </div>
+    <button @click="start" type="button">START</button>
   </div>
 </template>
 
-<script></script>
+<script setup>
 
-<style scoped></style>
+const start = () => {
+  navigateTo(`/${"hello"}`);
+};
+</script>

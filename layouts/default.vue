@@ -3,8 +3,20 @@
     <slot />
   </div>
   <div>
-    <button @click="goToPage(previousPage)">Previous</button>
-    <button @click="goToPage(nextPage)">Next</button>
+    <button
+      @click="goToPage(previousPage)"
+      class="arrow left"
+      v-bind:style="{ display: displayNavigation }"
+    >
+      Previous
+    </button>
+    <button
+      @click="goToPage(nextPage)"
+      class="arrow right"
+      v-bind:style="{ display: displayNavigation }"
+    >
+      Next
+    </button>
   </div>
   <div>
     <p>{{ complete }}</p>
@@ -18,8 +30,6 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-
 // SLIDE ORDER:
 // Start
 // Menu
@@ -39,6 +49,8 @@ const complete = useComplete();
 const todos = useTodos();
 const data = useData();
 
+const route = useRoute();
+
 // Logic for rendering the page order
 const slides = computed(() => {
   const slides = ["hello", "menu", "A1", "A2", "menu", "B1", "B2", "menu"];
@@ -54,21 +66,29 @@ const slides = computed(() => {
     const pos = slides.indexOf("B2_1");
     slides.splice(pos + 1, 0, "B2_1_3_1", "B2_1_3_2");
   }
-  console.log(slides);
   return slides;
 });
 
-const currentPageIndex = ref(-1);
+//
+const displayNavigation = computed(() => {
+  if (route.name !== "id") {
+    return "none";
+  } else {
+    return "block";
+  }
+});
+
+const currentPageIndex = ref(0);
 const previousPage = computed(() => slides.value[currentPageIndex.value - 1]);
 const nextPage = computed(() => slides.value[currentPageIndex.value + 1]);
 
 function goToPage(page) {
   if (page) {
     currentPageIndex.value = slides.value.indexOf(page);
-
     console.log(currentPageIndex.value);
-
     navigateTo(`/${page}`);
   }
 }
+
+onMounted(() => {});
 </script>

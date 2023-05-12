@@ -17,3 +17,9 @@ export const useData = () => {
         return {}
     });
 }
+
+export const useCurrentPageIndex = () => {
+    return useCurrentPageIndex("currentPageIndex", () => {
+        return {}
+    });
+}
