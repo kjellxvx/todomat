@@ -6,47 +6,69 @@
     <button @click="goToPage(previousPage)">Previous</button>
     <button @click="goToPage(nextPage)">Next</button>
   </div>
-  <div><p>{{ complete }}</p></div>
-  <div><p>{{ todos }}</p></div>
-  <div><p>{{ data }}</p></div>
+  <div>
+    <p>{{ complete }}</p>
+  </div>
+  <div>
+    <p>{{ todos }}</p>
+  </div>
+  <div>
+    <p>{{ data }}</p>
+  </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      pageOrder: ["A1", "A2", "A2_2", "B1", "B2"], // Define the order of pages in the array
-      currentPageIndex: 0,
-    };
-  },
-  setup() {
-    const complete = useComplete();
-    const todos = useTodos();
-    const data = useData();
-    return { complete, todos, data };
-  },
-  computed: {
-    currentPage() {
-      return this.pageOrder[this.currentPageIndex];
-    },
-    previousPage() {
-      return this.pageOrder[this.currentPageIndex - 1];
-    },
-    nextPage() {
-      return this.pageOrder[this.currentPageIndex + 1];
-    },
-  },
-  methods: {
-    goToPage(page) {
-      if (page) {
-        navigateTo(`/${page}`)
-       // this.$router.push(`/${page}`); // Use Nuxt's router to navigate to the selected page
-        if (page === this.currentPage) return; // Do not update current page index if already on selected page
-        this.currentPageIndex = this.pageOrder.indexOf(page);
-      }
-    },
-  },
-};
-</script>
+<script setup>
+import { ref, computed } from "vue";
 
-<style scoped></style>
+// SLIDE ORDER:
+// Start
+// Menu
+// A1,
+// A2,
+//   A2_1
+//   A2_2
+// Menu
+//   B1,
+//   B2,
+//   B2_1
+//     B2_1_3_1
+//     B2_1_3_1
+// Menu
+
+const complete = useComplete();
+const todos = useTodos();
+const data = useData();
+
+// Logic for rendering the page order
+const slides = computed(() => {
+  const slides = ["hello", "menu", "A1", "A2", "menu", "B1", "B2", "menu"];
+  if (data.value["A2"] && data.value["A2"].options === "A2.1") {
+    const pos = slides.indexOf("A2");
+    slides.splice(pos + 1, 0, "A2_1", "A2_2");
+  }
+  if (data.value["B2"] && data.value["B2"].options === "B2.1") {
+    const pos = slides.indexOf("B2");
+    slides.splice(pos + 1, 0, "B2_1");
+  }
+  if (data.value["B2_1"] && data.value["B2_1"].options === "B2.1.3") {
+    const pos = slides.indexOf("B2_1");
+    slides.splice(pos + 1, 0, "B2_1_3_1", "B2_1_3_2");
+  }
+  console.log(slides);
+  return slides;
+});
+
+const currentPageIndex = ref(-1);
+const previousPage = computed(() => slides.value[currentPageIndex.value - 1]);
+const nextPage = computed(() => slides.value[currentPageIndex.value + 1]);
+
+function goToPage(page) {
+  if (page) {
+    currentPageIndex.value = slides.value.indexOf(page);
+
+    console.log(currentPageIndex.value);
+
+    navigateTo(`/${page}`);
+  }
+}
+</script>

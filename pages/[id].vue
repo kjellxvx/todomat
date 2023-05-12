@@ -54,49 +54,6 @@
   </div>
 </template>
 
-<!-- <script>
-import questionaire from "../questionaire.json";
-
-export default {
-  components: {},
-  props: ["componentName"],
-  data() {
-    return {
-      slides: questionaire.slides,
-      inputs: {},
-      textInputsDisabled: {},
-      selectedOption: "",
-      inputName: "",
-    };
-  },
-  setup() {
-    // const { id } = useRoute().params;
-
-    return {
-      id,
-    };
-  },
-  computed: {
-    selection() {
-      return {
-        [id]: {
-          option: "",
-        },
-      };
-    },
-    name() {
-      return "Slide" + this.id;
-    },
-    question() {
-      return this.slides[this.id].question;
-    },
-    options() {
-      return this.slides[this.id].options[0];
-    },
-  },
-};
-</script> -->
-
 <script setup>
 import questionaire from "../questionaire.json";
 import SimpleKeyboard from "../components/SimpleKeyboard";

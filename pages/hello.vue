@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <div><p>HELLO</p></div>
 </template>
 
 <script>
@@ -14,4 +10,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

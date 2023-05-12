@@ -1,7 +1,3 @@
-export const useFoo = () => {
-  return useState("foo", () => "bar");
-};
-
 export const useComplete = () => {
     return useState("complete", () => false);
 }

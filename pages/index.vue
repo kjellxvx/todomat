@@ -1,13 +1,9 @@
 <template>
-  <div></div>
+  <div>
+    <p>START</p>
+  </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
-</script>
+<script></script>
 
 <style scoped></style>
