@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      pageOrder: ["A1", "A2", "A2_2"], // Define the order of pages in the array
+      pageOrder: ["A1", "A2", "A2_2", "B1", "B2"], // Define the order of pages in the array
       currentPageIndex: 0,
     };
   },

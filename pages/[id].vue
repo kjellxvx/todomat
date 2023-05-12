@@ -124,6 +124,24 @@ const selection = computed(() => {
   return { [id]: { options: "" } };
 });
 
+const storedOption = computed(() => {
+  if (data.value[id]) {
+    return data.value[id].options;
+  } else {
+    return "";
+  }
+});
+
+const storedInputs = computed(() => {
+  return (key) => {
+    if (data.value[id]) {
+      return data.value[id].input[key];
+    } else {
+      return {};
+    }
+  };
+});
+
 function updateSelection() {
   const selected = slides[id].options[0][selectedOption.value];
   if (selected.input) {
@@ -181,8 +199,37 @@ function onInputChange(input) {
   data.value = { ...data.value, ...selection.value };
 }
 
+function onKeyPress(button) {
+  console.log("button", button);
+  selection.value[id].input = inputs;
+  data.value = { ...data.value, ...selection.value };
+}
+
+function onChange(input) {
+  inputs[inputName.value] = input;
+  if (inputs[inputName.value] !== "") {
+    complete.value = true;
+  } else {
+    complete.value = false;
+  }
+}
+
 onMounted(() => {
   console.log(`the component is now mounted.`);
+  keyboard.value = false;
+
+  if (data.value[id]) {
+    complete.value = true;
+    selectedOption.value = storedOption.value;
+    if (data.value[id].input) {
+      console.log("input there");
+      const inputKey = storedOption.value;
+      console.log(storedInputs.value(inputKey));
+      inputs[inputKey] = storedInputs.value(inputKey);
+    }
+  } else {
+    complete.value = false;
+  }
 });
 </script>
 
