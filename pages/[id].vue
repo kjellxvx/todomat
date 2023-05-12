@@ -68,9 +68,7 @@ const data = useData();
 const keyboard = useKeyboard();
 
 const slides = questionaire.slides;
-const name = "Slide" + id;
 const question = slides[id].question;
-const options = slides[id].options[0];
 
 const inputs = reactive({});
 const textInputsDisabled = reactive({});
