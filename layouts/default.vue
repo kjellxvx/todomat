@@ -5,6 +5,7 @@
   <div>
     <button
       @click="goToPage(previousPage)"
+      :disabled="!isButtonEnabled"
       class="arrow left"
       v-bind:style="{ display: displayNavigation }"
     >
@@ -12,6 +13,7 @@
     </button>
     <button
       @click="goToPage(nextPage)"
+      :disabled="!isButtonEnabled"
       class="arrow right"
       v-bind:style="{ display: displayNavigation }"
     >
@@ -50,6 +52,7 @@ const todos = useTodos();
 const data = useData();
 
 const route = useRoute();
+const currentPageIndex = ref(0);
 
 // Logic for rendering the page order
 const slides = computed(() => {
@@ -69,7 +72,6 @@ const slides = computed(() => {
   return slides;
 });
 
-//
 const displayNavigation = computed(() => {
   if (route.name !== "id") {
     return "none";
@@ -78,7 +80,11 @@ const displayNavigation = computed(() => {
   }
 });
 
-const currentPageIndex = ref(0);
+// check if selection is complete
+const isButtonEnabled = computed(() => {
+  return complete.value;
+});
+
 const previousPage = computed(() => slides.value[currentPageIndex.value - 1]);
 const nextPage = computed(() => slides.value[currentPageIndex.value + 1]);
 
