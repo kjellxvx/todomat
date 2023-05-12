@@ -33,7 +33,7 @@ export const useOrder = () => {
     "menu",
     "D2",
     "menu",
-    "F1",
+    "E1",
     "menu",
     "F1",
     "menu",

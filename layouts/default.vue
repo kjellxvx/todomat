@@ -3,21 +3,21 @@
     <slot />
   </div>
   <div>
-    <button
+    <!-- <button
       @click="goToPage(previousPage)"
       :disabled="!isButtonEnabled"
       class="arrow left"
       v-bind:style="{ display: displayNavigation }"
     >
       Previous
-    </button>
+    </button> -->
     <button
       @click="goToPage(nextPage)"
       :disabled="!isButtonEnabled"
       class="arrow right"
       v-bind:style="{ display: displayNavigation }"
     >
-      Next
+      Weiter
     </button>
   </div>
   <div>
@@ -79,7 +79,7 @@ const slides = computed(() => {
     "menu",
     "D2",
     "menu",
-    "F1",
+    "E1",
     "menu",
     "F1",
     "menu",
