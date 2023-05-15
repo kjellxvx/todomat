@@ -1,0 +1,36 @@
+<template>
+  <div class="slide-container">
+    <div class="slide">
+      <div class="textbox">
+        <h1>Beenden</h1>
+        <p>Daten speichern und Bon drucken.</p>
+      </div>
+    </div>
+
+    <button @click="Submit" type="button">Beenden</button>
+  </div>
+</template>
+<script setup>
+const todos = useTodos();
+const data = useData();
+
+function Submit() {
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////                                                              //////////////////
+  //////////////////                       DATA BASE CODE HERE                    //////////////////
+  //////////////////                                                              //////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  // Generate User Token
+  // const userToken =
+  // Push "data.value" and "todos.value" to the database
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////                                                              //////////////////
+  //////////////////                       DATA BASE CODE HERE                    //////////////////
+  //////////////////                                                              //////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+
+  navigateTo("/menu"); // Replace with your navigation logic
+}
+</script>
