@@ -69,6 +69,6 @@ function Start() {
   //////////////////                                                              //////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-  navigateTo("/menu"); // Replace with your navigation logic
+  navigateTo(`/${"menu"}`);
 }
 </script>

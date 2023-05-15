@@ -20,7 +20,7 @@ function Submit() {
   //////////////////                       DATA BASE CODE HERE                    //////////////////
   //////////////////                                                              //////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  
+
   // Generate User Token
   // const userToken =
   // Push "data.value" and "todos.value" to the database
@@ -31,6 +31,6 @@ function Submit() {
   //////////////////                                                              //////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-  navigateTo("/menu"); // Replace with your navigation logic
+  navigateTo(`/${"menu"}`);
 }
 </script>
