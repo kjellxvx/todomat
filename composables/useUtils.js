@@ -26,8 +26,10 @@ export const useOrder = () => {
   return useState("order", () => [
     "menu",
     "A1",
+    "A2",
     "menu",
     "B1",
+    "B2",
     "menu",
     "C1",
     "menu",
