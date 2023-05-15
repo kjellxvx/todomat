@@ -23,9 +23,9 @@
 
 <script setup>
 function Restart() {
-  navigateTo(`/${"menu"}`);
+  navigateTo("/menu");
 }
 function Return() {
-  navigateTo(`/${"return"}`);
+  navigateTo("/return");
 }
 </script>

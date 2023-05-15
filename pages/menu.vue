@@ -33,6 +33,9 @@
 <script setup>
 const index = useIndex();
 const order = useOrder();
+const todos = useTodos();
+const data = useData();
+
 function A1() {
   index.value = order.value.indexOf("A1");
   navigateTo(`/${"A1"}`);
@@ -58,6 +61,12 @@ function F1() {
   navigateTo(`/${"F1"}`);
 }
 function Submit() {
-  navigateTo(`/${"submit"}`);
+  navigateTo("/submit");
+}
+function Restart() {
+  index.value = 0;
+  data.value = {};
+  todos.value = {};
+  navigateTo("/");
 }
 </script>

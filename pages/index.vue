@@ -13,6 +13,6 @@
 <script setup>
 
 const start = () => {
-  navigateTo(`/${"hello"}`);
+  navigateTo("/hello");
 };
 </script>
