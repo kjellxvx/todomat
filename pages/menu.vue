@@ -20,6 +20,12 @@
       <div class="buttonContainer">
         <button @click="F1" type="button">Deine Geheimnisse</button>
       </div>
+      <div class="buttonContainer">
+        <button @click="Submit" type="button">Beenden</button>
+      </div>
+      <div class="buttonContainer">
+        <button @click="Restart" type="button">Neu Starten</button>
+      </div>
     </div>
   </div>
 </template>
@@ -50,5 +56,8 @@ function E1() {
 function F1() {
   index.value = order.value.indexOf("F1");
   navigateTo(`/${"F1"}`);
+}
+function Submit() {
+  navigateTo(`/${"submit"}`);
 }
 </script>

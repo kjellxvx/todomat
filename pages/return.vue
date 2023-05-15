@@ -30,6 +30,9 @@ import SimpleKeyboard from "../components/SimpleKeyboard";
 const keyboard = useKeyboard();
 const inputText = ref("");
 
+const todos = useTodos();
+const data = useData();
+
 // This method is called when a text field is active
 const activateKeyboard = computed(() => (keyboard.value ? "flex" : "none"));
 
@@ -50,8 +53,21 @@ function onInputFocus() {
 }
 
 function Start() {
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////                                                              //////////////////
+  //////////////////                       DATA BASE CODE HERE                    //////////////////
+  //////////////////                                                              //////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////
   // Check if the code is present in the database
-  console.log(inputText.value);
+  const userData = { data: {}, todos: {} };
+  // If present then ->
+  data.value = userData.data;
+  todos.value = userData.todos;
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  //////////////////                                                              //////////////////
+  //////////////////                       DATA BASE CODE HERE                    //////////////////
+  //////////////////                                                              //////////////////
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 
   navigateTo("/menu"); // Replace with your navigation logic
 }
