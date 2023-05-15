@@ -16,12 +16,16 @@
         </p>
       </div>
     </div>
-    <button @click="Start" type="button">START</button>
+    <button @click="Restart" type="button">Neu Starten</button>
+    <button @click="Return" type="button">Code Eingeben</button>
   </div>
 </template>
 
 <script setup>
-function Start() {
+function Restart() {
   navigateTo(`/${"menu"}`);
+}
+function Return() {
+  navigateTo(`/${"return"}`);
 }
 </script>
