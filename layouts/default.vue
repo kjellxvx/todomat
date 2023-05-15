@@ -45,6 +45,15 @@
     <p>local</p>
     <p>{{ local }}</p>
   </div>
+
+  <!-- Conditionally render the full-screen popup -->
+  <div v-if="popup.isOpen" class="popup-container">
+    <!-- Use the composable to render dynamic content -->
+    <div class="popup">
+      <div v-html="popup.content"></div>
+      <button @click="popup.isOpen = false" class="close">Close</button>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -70,6 +79,7 @@ const route = useRoute();
 const index = useIndex();
 const order = useOrder();
 const local = useLocal();
+const popup = usePopup();
 
 // Logic for rendering the page order
 const slides = computed(() => {
@@ -83,7 +93,7 @@ const slides = computed(() => {
     "menu",
     "C1",
     "menu",
-    "D2",
+    "D1",
     "menu",
     "E1",
     "menu",
@@ -132,4 +142,26 @@ function goToPage(page) {
 onMounted(() => {});
 </script>
 
+<style>
+.popup-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
 
+.popup {
+  position: fixed;
+  align-items: center;
+  width: 80vw;
+  height: 80vh;
+  background-color: #FF8A00;
+  z-index: 1000;
+}
+</style>

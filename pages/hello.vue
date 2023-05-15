@@ -18,14 +18,22 @@
     </div>
     <button @click="Restart" type="button">Neu Starten</button>
     <button @click="Return" type="button">Code Eingeben</button>
+    <button @click="Info" type="button">Info</button>
   </div>
 </template>
 
 <script setup>
+
+const popup = usePopup();
+
 function Restart() {
   navigateTo("/menu");
 }
 function Return() {
   navigateTo("/return");
+}
+function Info() {
+  popup.value.isOpen = true;
+  popup.value.content = "<h1> Headline </h1> <p> Text </p>"
 }
 </script>

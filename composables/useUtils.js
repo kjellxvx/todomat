@@ -26,6 +26,15 @@ export const useLocal = () => {
   return useState("local", () => false);
 };
 
+export const usePopup = () => {
+  return useState("popup", () => {
+    return {
+      isOpen: false,
+      content: "default"
+    };
+  });
+};
+
 export const useOrder = () => {
   return useState("order", () => [
     "menu",
@@ -37,7 +46,7 @@ export const useOrder = () => {
     "menu",
     "C1",
     "menu",
-    "D2",
+    "D1",
     "menu",
     "E1",
     "menu",
