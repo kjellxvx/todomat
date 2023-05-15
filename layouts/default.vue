@@ -40,6 +40,11 @@
     <p>order</p>
     <p>{{ order }}</p>
   </div>
+
+  <div>
+    <p>local</p>
+    <p>{{ local }}</p>
+  </div>
 </template>
 
 <script setup>
@@ -64,6 +69,7 @@ const data = useData();
 const route = useRoute();
 const index = useIndex();
 const order = useOrder();
+const local = useLocal();
 
 // Logic for rendering the page order
 const slides = computed(() => {

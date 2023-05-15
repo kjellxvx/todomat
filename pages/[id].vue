@@ -66,6 +66,7 @@ const complete = useComplete();
 const todos = useTodos();
 const data = useData();
 const keyboard = useKeyboard();
+const local = useLocal();
 
 const slides = questionaire.slides;
 const question = slides[id].question;
@@ -127,8 +128,12 @@ function updateTextSelection() {
 }
 // this method is called a textfield is active
 function activateKeyboard() {
-  if (keyboard.value === true) {
-    return "flex";
+  if (local.value == true) {
+    if (keyboard.value === true) {
+      return "flex";
+    } else {
+      return "none";
+    }
   } else {
     return "none";
   }

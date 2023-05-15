@@ -11,8 +11,18 @@
 </template>
 
 <script setup>
+const route = useRoute();
+const local = useLocal();
 
 const start = () => {
   navigateTo("/hello");
 };
+
+onMounted(() => {
+  if (route.query.local == "true") {
+    local.value = true;
+  } else {
+    local.value = false;
+  }
+});
 </script>

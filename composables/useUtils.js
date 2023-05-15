@@ -22,6 +22,10 @@ export const useIndex = () => {
   return useState("index", () => 0);
 };
 
+export const useLocal = () => {
+  return useState("local", () => false);
+};
+
 export const useOrder = () => {
   return useState("order", () => [
     "menu",
