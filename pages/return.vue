@@ -18,7 +18,7 @@
     />
     <button @click="Start" type="button">Starten</button>
   </div>
-  <div class="keyboard-container" :style="{ display: activateKeyboard }">
+  <div class="keyboard-container" :style="{ display: activateKeyboard() }">
     <div class="keyboard">
       <SimpleKeyboard @onChange="onChange" />
     </div>
@@ -32,6 +32,7 @@ const inputText = ref("");
 
 const todos = useTodos();
 const data = useData();
+const local = useLocal();
 
 // this method is called a textfield is active
 function activateKeyboard() {
