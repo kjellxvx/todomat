@@ -33,8 +33,18 @@ const inputText = ref("");
 const todos = useTodos();
 const data = useData();
 
-// This method is called when a text field is active
-const activateKeyboard = computed(() => (keyboard.value ? "flex" : "none"));
+// this method is called a textfield is active
+function activateKeyboard() {
+  if (local.value == true) {
+    if (keyboard.value === true) {
+      return "flex";
+    } else {
+      return "none";
+    }
+  } else {
+    return "none";
+  }
+}
 
 // This method is called when the text input is changed using the real keyboard
 function onInputChange(event) {
