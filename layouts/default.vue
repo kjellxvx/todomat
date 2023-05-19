@@ -46,7 +46,6 @@
     <p>{{ local }}</p>
   </div>
 
-
   <div>
     <p>user token</p>
     <p>{{ userToken }}</p>
