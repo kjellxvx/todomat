@@ -46,6 +46,17 @@
     <p>{{ local }}</p>
   </div>
 
+
+  <div>
+    <p>user token</p>
+    <p>{{ userToken }}</p>
+  </div>
+
+  <div>
+    <p>stored data</p>
+    <p>{{ storedData }}</p>
+  </div>
+
   <!-- Conditionally render the full-screen popup -->
   <div v-if="popup.isOpen" class="popup-container">
     <!-- Use the composable to render dynamic content -->
@@ -80,6 +91,8 @@ const index = useIndex();
 const order = useOrder();
 const local = useLocal();
 const popup = usePopup();
+const storedData = useStoredData();
+const userToken = useUserToken();
 
 // Logic for rendering the page order
 const slides = computed(() => {

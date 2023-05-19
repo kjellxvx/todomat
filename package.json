@@ -13,6 +13,7 @@
     "nuxt": "^3.4.3"
   },
   "dependencies": {
+    "pocketbase": "^0.14.4",
     "vue-simple-keyboard": "^2.0.2"
   }
 }

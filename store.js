@@ -8,6 +8,8 @@ export default createStore({
     complete: false,
     keyboard: false,
     todos: {},
+    storedData: {},
+    userToken: false,
   },
   mutations: {
     setSelection(state, data) {
@@ -24,7 +26,7 @@ export default createStore({
     },
     deleteTodo(state, key) {
       delete state.todos[key];
-    }
+    },
   },
   actions: {
     updateSelection({ commit, state }, data) {

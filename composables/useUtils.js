@@ -35,6 +35,16 @@ export const usePopup = () => {
   });
 };
 
+export const useStoredData = () => {
+  return useState("storedData", () => {
+    return {};
+  });
+};
+
+export const useUserToken = () => {
+  return useState("userToken", () => false);
+};
+
 export const useOrder = () => {
   return useState("order", () => [
     "menu",
