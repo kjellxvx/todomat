@@ -110,16 +110,15 @@ async function Start(qrCode) {
   if(record != null){ 
     userData.data = record.data;
     userData.todos = record.todos;
-
-    console.log(userData);
     storedData.value = userData;
+    data.value = storedData.value.data
+
   }
   else{
     // Error Wrong Code
   }
 
   pb.authStore.clear();
-
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
   //////////////////                                                              //////////////////
