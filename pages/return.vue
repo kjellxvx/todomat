@@ -90,7 +90,7 @@ async function Start(qrCode) {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   
 
-  const code = inputText.value;
+  //const code = inputText.value;
   const userData = { data: {}, todos: {} };
   const storedData = useStoredData();
   const userToken = useUserToken();
