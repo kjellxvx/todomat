@@ -6,12 +6,17 @@
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
-</script>
+<script></script>
 
-<style scoped></style>
+<style>
+html {
+  width: 1024px;
+  height: 768px;
+}
+
+body{
+  margin: 0px;
+}
+
+
+</style>
