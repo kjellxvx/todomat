@@ -1,8 +1,6 @@
 <template>
-  <div>
+  <div class="slide-container">
     <slot />
-  </div>
-  <div>
     <!-- <button
       @click="goToPage(previousPage)"
       :disabled="!isButtonEnabled"
@@ -20,45 +18,46 @@
       Weiter
     </button>
   </div>
-  <div>
-    <p>complete?</p>
-    <p>{{ complete }}</p>
-  </div>
-  <div>
-    <p>todos</p>
-    <p>{{ todos }}</p>
-  </div>
-  <div>
-    <p>entered data</p>
-    <p>{{ data }}</p>
-  </div>
-  <div>
-    <p>page index</p>
-    <p>{{ index }}</p>
-  </div>
-  <div>
-    <p>order</p>
-    <p>{{ order }}</p>
+
+  <div class="data-container">
+    <div>
+      <p>complete?</p>
+      <p>{{ complete }}</p>
+    </div>
+    <div>
+      <p>todos</p>
+      <p>{{ todos }}</p>
+    </div>
+    <div>
+      <p>entered data</p>
+      <p>{{ data }}</p>
+    </div>
+    <div>
+      <p>page index</p>
+      <p>{{ index }}</p>
+    </div>
+    <div>
+      <p>order</p>
+      <p>{{ order }}</p>
+    </div>
+
+    <div>
+      <p>local</p>
+      <p>{{ local }}</p>
+    </div>
+
+    <div>
+      <p>user token</p>
+      <p>{{ userToken }}</p>
+    </div>
+
+    <div>
+      <p>stored data</p>
+      <p>{{ storedData }}</p>
+    </div>
   </div>
 
-  <div>
-    <p>local</p>
-    <p>{{ local }}</p>
-  </div>
-
-  <div>
-    <p>user token</p>
-    <p>{{ userToken }}</p>
-  </div>
-
-  <div>
-    <p>stored data</p>
-    <p>{{ storedData }}</p>
-  </div>
-
-  <!-- Conditionally render the full-screen popup -->
   <div v-if="popup.isOpen" class="popup-container">
-    <!-- Use the composable to render dynamic content -->
     <div class="popup">
       <div v-html="popup.content"></div>
       <button @click="popup.isOpen = false" class="close">Close</button>
@@ -173,7 +172,22 @@ onMounted(() => {});
   align-items: center;
   width: 80vw;
   height: 80vh;
-  background-color: #FF8A00;
+  background-color: #ff8a00;
   z-index: 1000;
 }
+
+.data-container {
+  height: 0px;
+}
+
+.slide-container {
+  height: 768px;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 </style>

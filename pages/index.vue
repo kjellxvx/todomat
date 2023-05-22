@@ -1,13 +1,11 @@
 <template>
-  <div class="slide-container">
-    <div class="slide">
-      <div class="textbox">
-        <h1>TODMOMAT</h1>
-        <p>vorbereitet sterben</p>
-      </div>
+  <div class="slide">
+    <div class="textbox">
+      <p class="h2-index">Vorbereitet sterben.</p>
+      <p class="h1-index">WILLKOMMEN <br> BEIM TODOMAT</p>
     </div>
-    <button @click="start" type="button">START</button>
   </div>
+  <button @click="start" type="button">Mehr erfahren</button>
 </template>
 
 <script setup>
@@ -26,3 +24,20 @@ onMounted(() => {
   }
 });
 </script>
+
+<style scoped>
+.h1-index {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 100px;
+  text-align: center;
+  margin: 0px;
+  margin: 20px 0 40px 0;
+}
+
+.h2-index {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 48.19px;
+  text-align: center;
+  margin: 0px;
+}
+</style>
