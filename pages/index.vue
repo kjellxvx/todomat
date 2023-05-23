@@ -2,10 +2,14 @@
   <div class="slide">
     <div class="textbox">
       <p class="h2-index">Vorbereitet sterben.</p>
-      <p class="h1-index">WILLKOMMEN <br> BEIM TODOMAT</p>
+      <p class="h1-index">
+        WILLKOMMEN <br />
+        BEIM TODOMAT
+      </p>
     </div>
+    <button @click="start" class="button">Mehr erfahren</button>
   </div>
-  <button @click="start" type="button">Mehr erfahren</button>
+
 </template>
 
 <script setup>
@@ -39,5 +43,13 @@ onMounted(() => {
   font-size: 48.19px;
   text-align: center;
   margin: 0px;
+}
+
+.slide {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

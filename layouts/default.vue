@@ -1,5 +1,5 @@
 <template>
-  <div class="slide-container">
+  <div class="page-container">
     <slot />
     <!-- <button
       @click="goToPage(previousPage)"
@@ -180,14 +180,71 @@ onMounted(() => {});
   height: 0px;
 }
 
-.slide-container {
+.page-container {
   height: 768px;
-  /* height: 100vh; */
+}
+
+h1 {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 65px;
+  text-align: left;
+  margin: 0px;
+  padding-bottom: 40px;
+}
+
+p {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 26px;
+  text-align: left;
+  margin: 0px;
+}
+
+.p-bold {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 26px;
+  text-align: left;
+  margin: 0px;
+}
+
+.slide{
+  margin: 28px 37px 28px 37px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 23px;
   align-items: center;
 }
 
+.brand {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 0px;
+}
+
+.slogan {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 0px;
+}
+.progress-counter {
+  height: 4px;
+  background-color: black;
+  width: 100%;
+  margin-right: 7px;
+  border-radius: 30px;
+  opacity: 15%;
+}
+
+.progress-counter:last-child {
+  margin-right: 0;
+}
 
 </style>

@@ -1,31 +1,85 @@
 <template>
   <div class="slide">
+    <div class="header-row">
+      <p class="brand">Todomat.</p>
+      <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
+    </div>
+    <div class="header-row">
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+    </div>
+
     <h1>Womit möchtest Du starten?</h1>
     <div class="menuContainer">
-      <div class="buttonContainer">
-        <button @click="A1" type="button">Dein Körper</button>
+      <div class="menuItem">
+        <p class="menu-h1">Dein Körper</p>
+        <p class="menu-p">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt.
+        </p>
+        <button @click="A1" class="menu-button">
+          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
+        </button>
       </div>
-      <div class="buttonContainer">
-        <button @click="B1" type="button">Deine Übergabe</button>
+      <div class="menuItem">
+        <p class="menu-h1">Deine Übergabe</p>
+        <p class="menu-p">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt.
+        </p>
+        <button @click="B1" class="menu-button">
+          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
+        </button>
       </div>
-      <div class="buttonContainer">
-        <button @click="C1" type="button">Deine Daten</button>
+      <div class="menuItem">
+        <p class="menu-h1">Deine Daten</p>
+        <p class="menu-p">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt.
+        </p>
+        <button @click="C1" class="menu-button">
+          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
+        </button>
       </div>
-      <div class="buttonContainer">
-        <button @click="D1" type="button">Deine Dinge</button>
+      <div class="menuItem">
+        <p class="menu-h1">Deine Dinge</p>
+        <p class="menu-p">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt.
+        </p>
+        <button @click="D1" class="menu-button">
+          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
+        </button>
       </div>
-      <div class="buttonContainer">
-        <button @click="E1" type="button">Deine Spuren</button>
+      <div class="menuItem">
+        <p class="menu-h1">Deine Spuren</p>
+        <p class="menu-p">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt.
+        </p>
+        <button @click="E1" class="menu-button">
+          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
+        </button>
       </div>
-      <div class="buttonContainer">
-        <button @click="F1" type="button">Deine Geheimnisse</button>
+      <div class="menuItem">
+        <p class="menu-h1">Deine Geheimnisse</p>
+        <p class="menu-p">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt.
+        </p>
+        <button @click="F1" class="menu-button">
+          Deine Geheimnisse <i class="fa fa-long-arrow-right"></i>
+        </button>
       </div>
-      <div class="buttonContainer">
-        <button @click="Submit" type="button">Beenden</button>
-      </div>
-      <div class="buttonContainer">
-        <button @click="Restart" type="button">Neu Starten</button>
-      </div>
+    </div>
+
+    <div class="button-container">
+      <button @click="Submit" class="button">Bearbeitung abschließen</button>
+      <button @click="Restart" class="button-white">Zurück</button>
     </div>
   </div>
 </template>
@@ -70,3 +124,53 @@ function Restart() {
   navigateTo("/");
 }
 </script>
+
+<style scoped>
+.menuContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 33px;
+}
+
+.menuItem {
+  border-style: solid;
+  padding: 30px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+.menu-h1 {
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+.menu-p {
+  font-size: 15px;
+  padding-bottom: 30px;
+}
+
+.menu-button {
+  height: 28px;
+  background-color: white;
+  border-style: solid;
+  color: black;
+  border-width: 1px;
+  border-radius: 21.1px;
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 13px;
+  padding: 0 15px 0 38px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-button i {
+  margin: 2px 0px 0 30px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  margin-bottom: 28px;
+}
+</style>
