@@ -1,22 +1,25 @@
 <template>
   <div class="page-container">
-    <slot />
-    <!-- <button
-      @click="goToPage(previousPage)"
-      :disabled="!isButtonEnabled"
-      class="arrow left"
-      v-bind:style="{ display: displayNavigation }"
-    >
-      Previous
-    </button> -->
-    <button
-      @click="goToPage(nextPage)"
-      :disabled="!isButtonEnabled"
-      class="arrow right"
-      v-bind:style="{ display: displayNavigation }"
-    >
-      Weiter
-    </button>
+<slot />
+    <div class="gui">
+      <div class="button-container">
+        <button
+          @click="goToPage(nextPage)"
+          :disabled="!isButtonEnabled"
+          class="button"
+          v-bind:style="{ display: displayNavigation }"
+        >
+          Weiter
+        </button>
+        <button
+          @click="goToPage(previousPage)"
+          class="button-white"
+          v-bind:style="{ display: displayNavigation }"
+        >
+          Zurück
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="data-container">
@@ -182,6 +185,12 @@ onMounted(() => {});
 
 .page-container {
   height: 768px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gui{
+  margin-top: auto;
 }
 
 h1 {
@@ -206,13 +215,12 @@ p {
   margin: 0px;
 }
 
-.slide{
+.slide {
   margin: 28px 37px 28px 37px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-
 
 .header-row {
   display: flex;
@@ -247,4 +255,13 @@ p {
   margin-right: 0;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 37px 28px 37px;
+}
+
+.button-container button {
+  margin-right: 20px;
+}
 </style>

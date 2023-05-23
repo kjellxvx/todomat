@@ -64,5 +64,12 @@ function Info() {
 .textbox p {
   padding-bottom: 50px;
 }
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
 </style>
 -

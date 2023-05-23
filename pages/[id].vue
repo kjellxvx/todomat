@@ -1,7 +1,18 @@
 <template>
   <div class="slide">
+    <div class="header-row">
+      <p class="brand">Todomat.</p>
+      <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
+    </div>
+    <div class="header-row">
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+      <div class="progress-counter"></div>
+    </div>
     <h1>{{ question }}</h1>
-
     <div class="checkform">
       <!-- Loop through each option in the id options array -->
       <label

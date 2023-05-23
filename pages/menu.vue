@@ -21,7 +21,11 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button @click="A1" class="menu-button">
+        <button
+          :style="{ backgroundColor: buttonColor('A1') }"
+          @click="A1"
+          class="menu-button"
+        >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
@@ -31,7 +35,11 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button @click="B1" class="menu-button">
+        <button
+          :style="{ backgroundColor: buttonColor('B1') }"
+          @click="B1"
+          class="menu-button"
+        >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
@@ -41,7 +49,11 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button @click="C1" class="menu-button">
+        <button
+          :style="{ backgroundColor: buttonColor('C1') }"
+          @click="C1"
+          class="menu-button"
+        >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
@@ -51,7 +63,11 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button @click="D1" class="menu-button">
+        <button
+          :style="{ backgroundColor: buttonColor('D1') }"
+          @click="D1"
+          class="menu-button"
+        >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
@@ -61,7 +77,11 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button @click="E1" class="menu-button">
+        <button
+          :style="{ backgroundColor: buttonColor('E1') }"
+          @click="E1"
+          class="menu-button"
+        >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
@@ -71,7 +91,11 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button @click="F1" class="menu-button">
+        <button
+          :style="{ backgroundColor: buttonColor('F1') }"
+          @click="F1"
+          class="menu-button"
+        >
           Deine Geheimnisse <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
@@ -79,7 +103,7 @@
 
     <div class="button-container">
       <button @click="Submit" class="button">Bearbeitung abschließen</button>
-      <button @click="Restart" class="button-white">Zurück</button>
+      <button @click="Restart" class="button-white">Neu Beginnen</button>
     </div>
   </div>
 </template>
@@ -123,6 +147,16 @@ function Restart() {
   todos.value = {};
   navigateTo("/");
 }
+
+const buttonColor = computed(() => {
+  return (buttonId) => {
+    if (data.value[buttonId]) {
+      return "#FF8A00";
+    } else {
+      return "white";
+    }
+  };
+});
 </script>
 
 <style scoped>
@@ -170,7 +204,10 @@ function Restart() {
 .button-container {
   display: flex;
   flex-direction: row;
-  margin-top: auto;
-  margin-bottom: 28px;
+  margin: 28px 0 28px 0;
+}
+
+.slide {
+  height: 100%;
 }
 </style>
