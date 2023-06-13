@@ -1,63 +1,58 @@
 {
     "slides": {
       "A1": {
-        "question": "Was wünscht du dir soll mit deinem Körper gleich nach deinem Tod gemacht werden?",
+        "question": "Wie soll mit deinem Körper vor seiner Transformation umgegangen werden?",
         "options": [
           {
             "A1.1": {
-              "content": "für wenige Tage nach Hause bringen und aufbahren",
-              "todo": "test"
+              "content": "Er soll an einem Ort meiner Wahl aufgebahrt werden",
+              "TextInput": "Ort",
+              "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
             },
             "A1.2": {
-              "content": "umgehend zum Transformationspartner bringen und Transformationsprozess starten"
+              "content": "Er soll für eine Weile im aktuellen Zuhause aufgebahrt werden",
+              "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
             },
             "A1.3": {
-              "content": "umgehend zum Transformationspartner bringen und dort aufbahren"
+              "content": "Der Transformationsprozess soll unmittelbar gestartet werden",
+              "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
             },
             "A1.4": {
-              "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
+              "content": "Ich spende meine Organe mit Gehirn (verfügbar ab 2044)",
+              "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
             },
             "A1.5": {
-              "content": "ich lasse andere entscheiden / mir egal"
+              "content": "Ich lasse andere entscheiden / mir egal"
             }
           }
         ]
       },
       "A2": {
-        "question": "Wie möchtest du, dass dein Körper transformiert/umgewandelt wird?",
+        "question": "Wie soll dein Körper transformiert werden?",
         "options": [
           {
             "A2.1": {
-              "content": "komplett vergraben und verwesen (verfügbar bis 2040)",
-              "info": "info I: über Schad- und Gifstoffe"
+              "content": "Vergraben",
+              "todo":"Bei den Anbietern der Transformationsart Vergraben können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges. Erstelle eine Liste mit deinen Wünschen. Informiere dich bei deinem bevorzugten Vergrabungsort (z.B. Friedhof) nach der Bodenbeschaffenheit und wie viele Jahre die Verwesung dort durchschnittlich dauert."
             },
             "A2.2": {
-              "content": "verbrennen und Asche … (verfügbar bis 2040)",
-              "info": "info I: über den Energieaufwand"
+              "content": "Beschleunigt kompostieren",
+              "todo":"Informiere dich für eine beschleunigte Kompostierung über sogenannte „Reerdigungsverfahren“ in deiner Nähe. Vielleicht kannst du auch schon buchen. "
             },
             "A2.3": {
-              "content": "verbrennen und Energie rückgewinnen (verfügbar ab 2040)"
+              "content": "Verbrennen (verfügbar bis 2040)",
+              "todo":"Bei den Anbietern der Transformationsart Verbrennen können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges und der Urne. Erstelle eine Liste mit deinen Wünschen. Suche dir einen Sarg und Kleidung für deine Verbrennung aus, die möglichst wenige Schadstoffe enthalten. So kannst du vermeiden, dass deine Verbrennung die Umwelt belastet."
             },
             "A2.4": {
-              "content": "Gefriertrocknung (verfügbar ab 2025)",
-              "info": "info I: über Stand der Dinge da"
+              "content": "Gefriertrocknen (verfügbar ab 2028)",
+              "todo":"Führe ein gesundes Leben, damit dein organisches Granulat nach dem Gefriertrocknen möglichst schadstoffarm ist. So kann es am besten in die natürlichen Kreisläufe eingehen."
             },
             "A2.5": {
-              "content": "Kompostierung (info I: über Stand der Dinge da)"
+              "content": "Die Variante, die zum Zeitpunkt meines Todes die beste ökologische Bilanz hat",
+              "todo":"Da du momentan keine bestimmte Transformationsart bevorzugst, informiere dich regelmäßig über neu zugelassene Verfahren der Transformation, wie z.B. die alkalische Hydrolyse oder die Luftbestattung."
             },
             "A2.6": {
-              "content": "weiß ich noch nicht, die Variante die zum Zeitpunkt meines Todes die beste Energiebilanz hat",
-              "todo": "TODO 1"
-            },
-            "A2.7": {
-              "content": "weiß ich noch nicht, die Variante die zum Zeitpunkt meines Todes am günstigsten ist",
-              "todo": "TODO 2"
-            },
-            "A2.8": {
-              "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
-            },
-            "A2.9": {
-              "content": "ich lasse andere entscheiden / mir egal"
+              "content": "Ich lasse andere entscheiden / mir egal"
             }
           }
         ]

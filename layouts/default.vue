@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-<slot />
+    <slot />
     <div class="gui">
       <div class="button-container">
         <button
@@ -189,7 +189,7 @@ onMounted(() => {});
   flex-direction: column;
 }
 
-.gui{
+.gui {
   margin-top: auto;
 }
 
@@ -198,7 +198,7 @@ h1 {
   font-size: 65px;
   text-align: left;
   margin: 0px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 p {
@@ -215,6 +215,10 @@ p {
   margin: 0px;
 }
 
+.textbox p {
+  padding-bottom: 30px;
+}
+
 .slide {
   margin: 28px 37px 28px 37px;
   height: 100%;
@@ -224,7 +228,6 @@ p {
 
 .header-row {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 23px;
   align-items: center;
 }
@@ -238,9 +241,8 @@ p {
 
 .slogan {
   font-family: "IBMPlexSans-Regular", sans-serif;
-  text-transform: uppercase;
   font-size: 15px;
-  margin: 0px;
+  margin: 0 0 0 15px;
 }
 .progress-counter {
   height: 4px;
@@ -263,5 +265,12 @@ p {
 
 .button-container button {
   margin-right: 20px;
+}
+
+.popup-link {
+  cursor: pointer;
+  color: black;
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  text-decoration: underline;
 }
 </style>

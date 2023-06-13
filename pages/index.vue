@@ -7,9 +7,8 @@
         BEIM TODOMAT
       </p>
     </div>
-    <button @click="start" class="button">Mehr erfahren</button>
+    <button @click="start" class="button">Start</button>
   </div>
-
 </template>
 
 <script setup>
@@ -17,7 +16,7 @@ const route = useRoute();
 const local = useLocal();
 
 const start = () => {
-  navigateTo("/hello");
+  navigateTo("/start");
 };
 
 onMounted(() => {
@@ -44,7 +43,6 @@ onMounted(() => {
   text-align: center;
   margin: 0px;
 }
-
 .slide {
   height: 100%;
   display: flex;

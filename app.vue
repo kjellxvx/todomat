@@ -29,10 +29,10 @@
 }
 
 :root {
-  --primary-color: #2c85d7;
-  --secondary-color: #ff8a00;
+  --primary-color: #5F81A4;
+  /* --secondary-color: #5F81A4; */
   --disabled-color: #959495;
-  --form-control-color: var(--secondary-color);
+  --form-control-color: var(--primary-color:);
 }
 
 html {
@@ -51,13 +51,13 @@ body {
 
 .button {
   height: 39.39px;
-  background-color: #ff8a00;
+  background-color: var(--primary-color);
   border: 0;
   color: white;
   border-radius: 21.1px;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;
-  padding: 5px 30px 5px 30px;
+  padding: 5px 50px 5px 50px;
   margin-right: 10px;
   cursor: pointer;
 }

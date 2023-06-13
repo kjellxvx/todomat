@@ -12,7 +12,8 @@
       <div class="progress-counter"></div>
       <div class="progress-counter"></div>
     </div>
-    <h1>{{ question }}</h1>
+    <h1>Dein Körper</h1>
+    <h2>{{ question }}</h2>
     <div class="checkform">
       <!-- Loop through each option in the id options array -->
       <label
@@ -204,4 +205,66 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+form {
+  display: grid;
+  place-content: center;
+}
+
+.form-control {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin: 0px;
+  display: flex;
+  grid-template-columns: 1em auto;
+  align-items: center;
+  gap: 0;
+}
+
+.radio-label-left {
+  display: flex;
+}
+
+.radio-label-left > label {
+  padding-left: 10px;
+  max-width: 800px;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+.form-control--disabled {
+  color: #959495;
+  cursor: not-allowed;
+}
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+</style>
