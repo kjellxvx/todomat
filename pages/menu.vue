@@ -15,84 +15,84 @@
 
     <h1>Womit möchtest Du starten?</h1>
     <div class="menuContainer">
-      <div class="menuItem">
+      <div class="menuItem" :style="{ backgroundColor: buttonColor('A1') }">
         <p class="menu-h1">Dein Körper</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
         <button
-          :style="{ backgroundColor: buttonColor('A1') }"
+          
           @click="A1"
           class="menu-button"
         >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem">
+      <div class="menuItem" :style="{ backgroundColor: buttonColor('B1') }">
         <p class="menu-h1">Deine Übergabe</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
         <button
-          :style="{ backgroundColor: buttonColor('B1') }"
+          
           @click="B1"
           class="menu-button"
         >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem">
+      <div class="menuItem"  :style="{ backgroundColor: buttonColor('C1') }">
         <p class="menu-h1">Deine Daten</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
         <button
-          :style="{ backgroundColor: buttonColor('C1') }"
+         
           @click="C1"
           class="menu-button"
         >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem">
+      <div class="menuItem"   :style="{ backgroundColor: buttonColor('D1') }">
         <p class="menu-h1">Deine Dinge</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
         <button
-          :style="{ backgroundColor: buttonColor('D1') }"
+        
           @click="D1"
           class="menu-button"
         >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem">
+      <div class="menuItem"   :style="{ backgroundColor: buttonColor('E1') }">
         <p class="menu-h1">Deine Spuren</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
         <button
-          :style="{ backgroundColor: buttonColor('E1') }"
+        
           @click="E1"
           class="menu-button"
         >
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem">
+      <div class="menuItem"   :style="{ backgroundColor: buttonColor('F1') }">
         <p class="menu-h1">Deine Geheimnisse</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
         <button
-          :style="{ backgroundColor: buttonColor('F1') }"
+        
           @click="F1"
           class="menu-button"
         >
@@ -151,7 +151,7 @@ function Restart() {
 const buttonColor = computed(() => {
   return (buttonId) => {
     if (data.value[buttonId]) {
-      return "#FF8A00";
+      return "#5F81A4";
     } else {
       return "white";
     }

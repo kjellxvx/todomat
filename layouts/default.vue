@@ -62,8 +62,47 @@
 
   <div v-if="popup.isOpen" class="popup-container">
     <div class="popup">
+      <div class="popup-close-button" @click="popup.isOpen = false">
+        <svg
+          width="31"
+          height="31"
+          viewBox="0 0 31 31"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            width="30.0886"
+            height="30.0886"
+            rx="15.0443"
+            transform="matrix(1 0 0 -1 0.911438 30.8496)"
+            fill="#EAEAEA"
+          />
+          <mask
+            id="mask0_231_126"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="3"
+            y="3"
+            width="25"
+            height="25"
+          >
+            <rect
+              x="3.96295"
+              y="3.37695"
+              width="24"
+              height="24"
+              fill="#D9D9D9"
+            />
+          </mask>
+          <g mask="url(#mask0_231_126)">
+            <path
+              d="M9.63065 23.4653L15.963 17.133L22.2953 23.4653L23.513 22.2476L17.1807 15.9153L23.513 9.58298L22.2953 8.36523L15.963 14.6975L9.63065 8.36523L8.4129 9.58298L14.7452 15.9153L8.4129 22.2476L9.63065 23.4653Z"
+              fill="black"
+            />
+          </g>
+        </svg>
+      </div>
       <div v-html="popup.content"></div>
-      <button @click="popup.isOpen = false" class="close">Close</button>
     </div>
   </div>
 </template>
@@ -157,28 +196,6 @@ onMounted(() => {});
 </script>
 
 <style>
-.popup-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  backdrop-filter: blur(5px);
-}
-
-.popup {
-  position: fixed;
-  align-items: center;
-  width: 80vw;
-  height: 80vh;
-  background-color: #ff8a00;
-  z-index: 1000;
-}
-
 .data-container {
   height: 0px;
 }
@@ -190,12 +207,21 @@ onMounted(() => {});
 }
 
 .gui {
-  margin-top: auto;
+  /* margin-top: auto; */
 }
 
 h1 {
   font-family: "IBMPlexSans-Bold", sans-serif;
   font-size: 65px;
+  text-align: left;
+  margin: 0px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-family: "IBMPlexSans-Medium", sans-serif;
+  width: 770px;
+  font-size: 26px;
   text-align: left;
   margin: 0px;
   padding-bottom: 20px;
@@ -221,7 +247,7 @@ p {
 
 .slide {
   margin: 28px 37px 28px 37px;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
 }
@@ -267,10 +293,71 @@ p {
   margin-right: 20px;
 }
 
-.popup-link {
+.link {
   cursor: pointer;
-  color: black;
+  color: var(--secondary-color);
   font-family: "IBMPlexSans-Bold", sans-serif;
   text-decoration: underline;
+}
+
+.popup-link {
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.popup-container {
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
+
+.popup {
+  width: 300px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 1000;
+  margin: 38px;
+  padding: 19px;
+}
+
+.popup-headline {
+  font-family: "IBMPlexSans", sans-serif;
+  font-size: 22px;
+  text-align: left;
+  margin: 0px;
+  padding: 10px 0 20px 0;
+  border: solid;
+  border-width: 0 0 1px 0;
+  border-color: black;
+}
+
+.popup-text {
+  font-family: "IBMPlexSans", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  margin: 0px;
+  padding: 20px 0 15px 0;
+}
+
+.popup-close-button {
+  position: fixed;
+  right: 50px;
+  background-color: white;
+  border-style: none;
+  font-size: 35px;
+  height: 39.39px;
+  cursor: pointer;
 }
 </style>

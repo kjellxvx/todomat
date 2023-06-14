@@ -1,220 +1,220 @@
 {
-    "slides": {
-      "A1": {
-        "question": "Wie soll mit deinem Körper vor seiner Transformation umgegangen werden?",
-        "options": [
-          {
-            "A1.1": {
-              "content": "Er soll an einem Ort meiner Wahl aufgebahrt werden",
-              "TextInput": "Ort",
-              "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
-            },
-            "A1.2": {
-              "content": "Er soll für eine Weile im aktuellen Zuhause aufgebahrt werden",
-              "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
-            },
-            "A1.3": {
-              "content": "Der Transformationsprozess soll unmittelbar gestartet werden",
-              "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
-            },
-            "A1.4": {
-              "content": "Ich spende meine Organe mit Gehirn (verfügbar ab 2044)",
-              "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
-            },
-            "A1.5": {
-              "content": "Ich lasse andere entscheiden / mir egal"
-            }
+  "slides": {
+    "A1": {
+      "question": "Wie soll mit deinem Körper vor seiner Transformation umgegangen werden?",
+      "options": [
+        {
+          "A1.1": {
+            "content": "Er soll an einem Ort meiner Wahl aufgebahrt werden",
+            "TextInput": "Bitte hier eingeben",
+            "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
+          },
+          "A1.2": {
+            "content": "Er soll für eine Weile im aktuellen Zuhause aufgebahrt werden",
+            "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
+          },
+          "A1.3": {
+            "content": "Der Transformationsprozess soll unmittelbar gestartet werden",
+            "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
+          },
+          "A1.4": {
+            "content": "Ich spende meine Organe mit Gehirn (verfügbar ab 2044)",
+            "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
+          },
+          "A1.5": {
+            "content": "Ich lasse andere entscheiden / mir egal"
           }
-        ]
-      },
-      "A2": {
-        "question": "Wie soll dein Körper transformiert werden?",
-        "options": [
-          {
-            "A2.1": {
-              "content": "Vergraben",
-              "todo":"Bei den Anbietern der Transformationsart Vergraben können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges. Erstelle eine Liste mit deinen Wünschen. Informiere dich bei deinem bevorzugten Vergrabungsort (z.B. Friedhof) nach der Bodenbeschaffenheit und wie viele Jahre die Verwesung dort durchschnittlich dauert."
-            },
-            "A2.2": {
-              "content": "Beschleunigt kompostieren",
-              "todo":"Informiere dich für eine beschleunigte Kompostierung über sogenannte „Reerdigungsverfahren“ in deiner Nähe. Vielleicht kannst du auch schon buchen. "
-            },
-            "A2.3": {
-              "content": "Verbrennen (verfügbar bis 2040)",
-              "todo":"Bei den Anbietern der Transformationsart Verbrennen können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges und der Urne. Erstelle eine Liste mit deinen Wünschen. Suche dir einen Sarg und Kleidung für deine Verbrennung aus, die möglichst wenige Schadstoffe enthalten. So kannst du vermeiden, dass deine Verbrennung die Umwelt belastet."
-            },
-            "A2.4": {
-              "content": "Gefriertrocknen (verfügbar ab 2028)",
-              "todo":"Führe ein gesundes Leben, damit dein organisches Granulat nach dem Gefriertrocknen möglichst schadstoffarm ist. So kann es am besten in die natürlichen Kreisläufe eingehen."
-            },
-            "A2.5": {
-              "content": "Die Variante, die zum Zeitpunkt meines Todes die beste ökologische Bilanz hat",
-              "todo":"Da du momentan keine bestimmte Transformationsart bevorzugst, informiere dich regelmäßig über neu zugelassene Verfahren der Transformation, wie z.B. die alkalische Hydrolyse oder die Luftbestattung."
-            },
-            "A2.6": {
-              "content": "Ich lasse andere entscheiden / mir egal"
-            }
+        }
+      ]
+    },
+    "A2": {
+      "question": "Wie soll dein Körper transformiert werden?",
+      "options": [
+        {
+          "A2.1": {
+            "content": "Vergraben",
+            "info": "<p class=\"popup-headline\">Vergraben</p><p class=\"popup-text\">Wie lange deine Verwesung nach dem Vergraben dauert, hängt von der Beschaffenheit der Erde, deinem Sarg, deiner Kleidung und deinem Lebensstil ab. Deine Ernährung und dein Medikamentenkonsum können starke Auswirkungen auf den Zersetzungsprozess haben. Bei der bisherigen Erdbestattung gelangen gesundheitsgefährdende Stoffe (z.B. Quecksilber, Arsen Formaldehyd) ins Grundwasser. Wenn dein Leichnam vermehrt radioaktive Stoffe enthält (z.B. durch eine Strahlentherapie), belastet der Zerfall die Umwelt zusätzlich.</p>",
+            "todo": "Bei den Anbietern der Transformationsart Vergraben können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges. Erstelle eine Liste mit deinen Wünschen. Informiere dich bei deinem bevorzugten Vergrabungsort (z.B. Friedhof) nach der Bodenbeschaffenheit und wie viele Jahre die Verwesung dort durchschnittlich dauert."
+          },
+          "A2.2": {
+            "content": "Beschleunigt kompostieren",
+            "todo": "Informiere dich für eine beschleunigte Kompostierung über sogenannte „Reerdigungsverfahren“ in deiner Nähe. Vielleicht kannst du auch schon buchen. "
+          },
+          "A2.3": {
+            "content": "Verbrennen (verfügbar bis 2040)",
+            "todo": "Bei den Anbietern der Transformationsart Verbrennen können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges und der Urne. Erstelle eine Liste mit deinen Wünschen. Suche dir einen Sarg und Kleidung für deine Verbrennung aus, die möglichst wenige Schadstoffe enthalten. So kannst du vermeiden, dass deine Verbrennung die Umwelt belastet."
+          },
+          "A2.4": {
+            "content": "Gefriertrocknen (verfügbar ab 2028)",
+            "todo": "Führe ein gesundes Leben, damit dein organisches Granulat nach dem Gefriertrocknen möglichst schadstoffarm ist. So kann es am besten in die natürlichen Kreisläufe eingehen."
+          },
+          "A2.5": {
+            "content": "Die Variante, die zum Zeitpunkt meines Todes die beste ökologische Bilanz hat",
+            "todo": "Da du momentan keine bestimmte Transformationsart bevorzugst, informiere dich regelmäßig über neu zugelassene Verfahren der Transformation, wie z.B. die alkalische Hydrolyse oder die Luftbestattung."
+          },
+          "A2.6": {
+            "content": "Ich lasse andere entscheiden / mir egal"
           }
-        ]
-      },
-      "A2_1": {
-        "question": "komplett vergraben und verwesen",
-        "options": [
-          {
-            "A2.1.1": {
-              "content": "angezogen im Sarg",
-              "todo": "Outfit aussuchen"
-            },
-            "A2.1.2": {
-              "content": "nackt im Sarg (verfügbar ab 2030)"
-            },
-            "A2.1.3": {
-              "content": "nackt (oder mit Tuch, öko…) in der Erde (verfügbar ab 2040)"
-            }
+        }
+      ]
+    },
+    "A2_1": {
+      "question": "komplett vergraben und verwesen",
+      "options": [
+        {
+          "A2.1.1": {
+            "content": "angezogen im Sarg",
+            "todo": "Outfit aussuchen"
+          },
+          "A2.1.2": {
+            "content": "nackt im Sarg (verfügbar ab 2030)"
+          },
+          "A2.1.3": {
+            "content": "nackt (oder mit Tuch, öko…) in der Erde (verfügbar ab 2040)"
           }
-        ]
-      },
-      "A2_2": {
-        "question": "verbrennen und Asche …",
-        "options": [
-          {
-            "A2.2.1": {
-              "content": "auf dem Friedhof beisetzen"
-            },
-            "A2.2.2": {
-              "content": "verstreuen (verfügbar ab 2030)"
-            },
-            "A2.2.3": {
-              "content": "den Angehörigen übergeben (verfügbar ab 2030)"
-            },
-            "A2.2.4": {
-              "content": "seebestatten"
-            },
-            "A2.2.5": {
-              "content": "ins All schießen"
-            },
-            "A2.2.6": {
-              "content": "zu Diamanten pressen"
-            },
-            "A2.2.7": {
-              "content": "andere Option",
-              "TextInput": "Mustertext"
-            }
+        }
+      ]
+    },
+    "A2_2": {
+      "question": "verbrennen und Asche …",
+      "options": [
+        {
+          "A2.2.1": {
+            "content": "auf dem Friedhof beisetzen"
+          },
+          "A2.2.2": {
+            "content": "verstreuen (verfügbar ab 2030)"
+          },
+          "A2.2.3": {
+            "content": "den Angehörigen übergeben (verfügbar ab 2030)"
+          },
+          "A2.2.4": {
+            "content": "seebestatten"
+          },
+          "A2.2.5": {
+            "content": "ins All schießen"
+          },
+          "A2.2.6": {
+            "content": "zu Diamanten pressen"
+          },
+          "A2.2.7": {
+            "content": "andere Option",
+            "TextInput": "Mustertext"
           }
-        ]
-      },
-      "B1": {
-        "question": "Möchtest du festlegen, wer und wie über deinen Tod benachrichtigt werden soll?",
-        "options": [
-          {
-            "B1.1": {
-              "content": "ja, ich habe besondere Vorgaben, diese habe ich bei folgenden Personen hinterlegt:",
-              "TextInput": "Vorname, Nachname"
-            },
-            "B1.2": {
-              "content": "nein (es dürfen ohne Einschränkung alle erfahren/wissen)"
-            }
+        }
+      ]
+    },
+    "B1": {
+      "question": "Möchtest du festlegen, wer und wie über deinen Tod benachrichtigt werden soll?",
+      "options": [
+        {
+          "B1.1": {
+            "content": "ja, ich habe besondere Vorgaben, diese habe ich bei folgenden Personen hinterlegt:",
+            "TextInput": "Vorname, Nachname"
+          },
+          "B1.2": {
+            "content": "nein (es dürfen ohne Einschränkung alle erfahren/wissen)"
           }
-        ]
-      },
-      "B2": {
-        "question": "Möchtest du, dass Deine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird?",
-        "options": [
-          {
-            "B2.1": {
-              "content": "ja"
-            },
-            "B2.2": {
-              "content": "nein"
-            }
+        }
+      ]
+    },
+    "B2": {
+      "question": "Möchtest du, dass Deine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird?",
+      "options": [
+        {
+          "B2.1": {
+            "content": "ja"
+          },
+          "B2.2": {
+            "content": "nein"
           }
-        ]
-      },
-      "B2_1": {
-        "question": "Ich möchte, dass Meine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird:",
-        "options": [
-          {
-            "B2.1.1": {
-              "content": "ich habe sehr konkrete Vorgaben (z.B. Kleidung, Gästeliste, Location, Essen), bei folgender Person hinterlegt:",
-              "TextInput": "Vorname, Nachname"
-            },
-            "B2.1.2": {
-              "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
-            },
-            "B2.1.3": {
-              "content": "ich möchte das im Todomat konfigurieren"
-            }
+        }
+      ]
+    },
+    "B2_1": {
+      "question": "Ich möchte, dass Meine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird:",
+      "options": [
+        {
+          "B2.1.1": {
+            "content": "ich habe sehr konkrete Vorgaben (z.B. Kleidung, Gästeliste, Location, Essen), bei folgender Person hinterlegt:",
+            "TextInput": "Vorname, Nachname"
+          },
+          "B2.1.2": {
+            "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
+          },
+          "B2.1.3": {
+            "content": "ich möchte das im Todomat konfigurieren"
           }
-        ]
-      },
-      "B2_1_3_1": {
-        "question": "Möchtest du festlegen, was bei deinem Übergabezeremonie gesagt werden sollte? (z.B. worauf bist du am meisten stolz; die wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar und wofür hast du gelebt).",
-        "options": [
-          {
-            "B2.1.3.1.1": {
-              "content": "ja",
-              "todo": "TODO"
-            },
-            "B2.1.3.1.2": {
-              "content": "nein"
-            }
+        }
+      ]
+    },
+    "B2_1_3_1": {
+      "question": "Möchtest du festlegen, was bei deinem Übergabezeremonie gesagt werden sollte? (z.B. worauf bist du am meisten stolz; die wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar und wofür hast du gelebt).",
+      "options": [
+        {
+          "B2.1.3.1.1": {
+            "content": "ja",
+            "todo": "TODO"
+          },
+          "B2.1.3.1.2": {
+            "content": "nein"
           }
-        ]
-      },
-      "B2_1_3_2": {
-        "question": "Möchtest du ausführen und verlesen lassen oder aufzeichnen was Du definitiv noch vorhast und was Du bereust, solltest Du es bis zu Deinem Tod nicht gemacht haben?",
-        "options": [
-          {
-            "B2.1.3.1.1": {
-              "content": "ja",
-              "todo": "TODO"
-            },
-            "B2.1.3.1.2": {
-              "content": "nein"
-            }
+        }
+      ]
+    },
+    "B2_1_3_2": {
+      "question": "Möchtest du ausführen und verlesen lassen oder aufzeichnen was Du definitiv noch vorhast und was Du bereust, solltest Du es bis zu Deinem Tod nicht gemacht haben?",
+      "options": [
+        {
+          "B2.1.3.1.1": {
+            "content": "ja",
+            "todo": "TODO"
+          },
+          "B2.1.3.1.2": {
+            "content": "nein"
           }
-        ]
-      }, 
-      "C1": {
-        "question": "C1 ???",
-        "options": [
-          {
-            "C1.1": {
-              "content": "antwort"
-            }
+        }
+      ]
+    },
+    "C1": {
+      "question": "C1 ???",
+      "options": [
+        {
+          "C1.1": {
+            "content": "antwort"
           }
-        ]
-      },
-      "D1": {
-        "question": "D1 ???",
-        "options": [
-          {
-            "C1.1": {
-              "content": "antwort"
-            }
+        }
+      ]
+    },
+    "D1": {
+      "question": "D1 ???",
+      "options": [
+        {
+          "C1.1": {
+            "content": "antwort"
           }
-        ]
-      },
-      "E1": {
-        "question": "E1 ???",
-        "options": [
-          {
-            "E1.1": {
-              "content": "antwort"
-            }
+        }
+      ]
+    },
+    "E1": {
+      "question": "E1 ???",
+      "options": [
+        {
+          "E1.1": {
+            "content": "antwort"
           }
-        ]
-      },
-      "F1": {
-        "question": "F1 ???",
-        "options": [
-          {
-            "F1.1": {
-              "content": "antwort"
-            }
+        }
+      ]
+    },
+    "F1": {
+      "question": "F1 ???",
+      "options": [
+        {
+          "F1.1": {
+            "content": "antwort"
           }
-        ]
-      }
+        }
+      ]
     }
   }
-  
+}

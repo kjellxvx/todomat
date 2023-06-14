@@ -67,8 +67,8 @@
     </div>
     <div class="button-container">
       <input
+        class="codeInput"
         type="text"
-        id="codeInput"
         v-model="inputText"
         placeholder="Code"
         @input="onInputChange"

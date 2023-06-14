@@ -18,6 +18,12 @@ export const useData = () => {
   });
 };
 
+export const useHeadline = () => {
+  return useState("headline", () => {
+    return {};
+  });
+};
+
 export const useIndex = () => {
   return useState("index", () => 0);
 };

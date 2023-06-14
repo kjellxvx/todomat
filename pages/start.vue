@@ -37,7 +37,7 @@
         <br />
         Er wurde entwickelt, um deinen Abschied selbstbestimmter und <br />
         nachhaltiger zu gestalten.
-        <a @click="About" class="popup-link">Mehr Info’s zum Todomat.</a>
+        <a @click="About" class="link">Mehr Info’s zum Todomat.</a>
       </p>
     </div>
     <div class="button-container">

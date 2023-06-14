@@ -5,7 +5,7 @@
   />
   <div>
     <NuxtLayout>
-      <NuxtPage popup />
+      <NuxtPage/>
     </NuxtLayout>
   </div>
 </template>
@@ -28,10 +28,15 @@
   src: url("@/assets/fonts/IBMPlexSans-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "IBMPlexSans-MediumItalic";
+  src: url("@/assets/fonts/IBMPlexSans-MediumItalic.ttf") format("truetype");
+}
+
 :root {
   --primary-color: #5F81A4;
-  /* --secondary-color: #5F81A4; */
-  --disabled-color: #959495;
+  --secondary-color: #2B2B2B;
+  --disabled-color: #B5B5B5;
   --form-control-color: var(--primary-color:);
 }
 
@@ -84,11 +89,12 @@ body {
 }
 
 input[type="text"] {
-  font-family: "IBMPlexSans-Regular", sans-serif;
-  font-size: 21.1px;
-  border-width: 1px;
-  border-radius: 10px;
-  padding-left: 10px;
+  font-family: "IBMPlexSans-MediumItalic", sans-serif;
+  color: black;
+  font-size: 20px;
+  border-width: 0 0 1px 0;
+  border-color: black;
+  margin-left: 20px;
 }
 
 input[type="text"]::placeholder {
@@ -97,6 +103,27 @@ input[type="text"]::placeholder {
 }
 
 input[type="text"]:disabled {
+  color: var(--disabled-color);
+  border-width: 0 0 1px 0;
+  border-color: black;
+  background: white;
+  cursor: not-allowed;
+}
+
+.codeInput {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 21.1px;
+  border-width: 1px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+
+.codeInput::placeholder {
+  color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+.codeInput:disabled {
   color: var(--disabled-color);
   border-color: var(--disabled-color);
   background: white;

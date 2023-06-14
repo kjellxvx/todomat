@@ -12,7 +12,7 @@
       <div class="progress-counter"></div>
       <div class="progress-counter"></div>
     </div>
-    <h1>Dein Körper</h1>
+    <h1>{{ headline }}</h1>
     <h2>{{ question }}</h2>
     <div class="checkform">
       <!-- Loop through each option in the id options array -->
@@ -50,6 +50,9 @@
               ref="inputComp"
             />
           </template>
+          <template v-if="option.info">
+            <div @click="Info(key)" class="popup-link">Mehr Info</div>
+          </template>
         </div>
       </label>
     </div>
@@ -79,6 +82,10 @@ const todos = useTodos();
 const data = useData();
 const keyboard = useKeyboard();
 const local = useLocal();
+const headline = useHeadline();
+const index = useIndex();
+const order = useOrder();
+const popup = usePopup();
 
 const slides = questionaire.slides;
 const question = slides[id].question;
@@ -109,6 +116,13 @@ const storedInputs = computed(() => {
     }
   };
 });
+
+function Info(key) {
+  popup.value.isOpen = true;
+  // console.log(slides[id].options[0][key].info)
+  // console.log(key)
+  popup.value.content = slides[id].options[0][key].info;
+}
 
 function updateSelection() {
   const selected = slides[id].options[0][selectedOption.value];
@@ -187,7 +201,20 @@ function onChange(input) {
 }
 
 onMounted(() => {
-  console.log(`the component is now mounted.`);
+  headline.value = order.value[index.value].includes("A")
+    ? "Dein Körper."
+    : order.value[index.value].includes("B")
+    ? "Deine Verabschiedung."
+    : order.value[index.value].includes("C")
+    ? "Deine Daten."
+    : order.value[index.value].includes("D")
+    ? "Deine Dinge."
+    : order.value[index.value].includes("E")
+    ? "Deine Gedenken."
+    : order.value[index.value].includes("F")
+    ? "Deine Geheimnisse."
+    : "";
+
   keyboard.value = false;
 
   if (data.value[id]) {
@@ -227,7 +254,7 @@ form {
 }
 
 .radio-label-left > label {
-  padding-left: 10px;
+  padding-left: 20px;
   max-width: 800px;
 }
 
@@ -247,7 +274,7 @@ input[type="radio"] {
   color: currentColor;
   width: 1.15em;
   height: 1.15em;
-  border: 0.15em solid currentColor;
+  border: 0.08em solid currentColor;
   border-radius: 50%;
   transform: translateY(-0.075em);
   display: grid;
