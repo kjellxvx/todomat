@@ -158,6 +158,8 @@ const slides = computed(() => {
     "E4",
     "menu",
     "F1",
+    "F2",
+    "F3",
     "menu",
   ];
   if (data.value["A2"] && data.value["A2"].options === "A2.1") {

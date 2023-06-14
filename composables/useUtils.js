@@ -74,6 +74,8 @@ export const useOrder = () => {
     "E4",
     "menu",
     "F1",
+    "F2",
+    "F3",
     "menu",
   ]);
 };
