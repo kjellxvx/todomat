@@ -1,12 +1,14 @@
 {
   "slides": {
     "A1": {
+      "single":"",
       "question": "Wie soll mit deinem Körper vor seiner Transformation umgegangen werden?",
       "options": [
         {
           "A1.1": {
             "content": "Er soll an einem Ort meiner Wahl aufgebahrt werden",
             "TextInput": "Bitte hier eingeben",
+            "multi": "",
             "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
           },
           "A1.2": {
@@ -38,14 +40,17 @@
           },
           "A2.2": {
             "content": "Beschleunigt kompostieren",
+            "info": "<p class=\"popup-headline\">Beschleunigt kompostieren</p><p class=\"popup-text\">Wenn du stirbst, arbeiten die Bakterien in deinem Darm weiter und verdauen den Körper selbst. Andere Bakterien und Mikroorganismen werden hinzugefügt und helfen bei der Verwesung. Anders als bei der Erdbestattung wird bei der „Reerdigung“ dein Leichnam in einen luftdurchlässigen Kokon gebettet und für etwa 40 Tage zusammen mit Stroh und Holzspähnen verschlossen. Mikroorganismen und Pilze verwandeln ihn dann CO2-neutral zu Erde. <br> Dieses Verfahren hat einen weiteren möglichen Vorteil: Die Mikroorganismen erzeugen in den Holzspänen Temperaturen von bis zu 70°C, was als Energiequelle für andere Zwecke dienen kann.</p>",
             "todo": "Informiere dich für eine beschleunigte Kompostierung über sogenannte „Reerdigungsverfahren“ in deiner Nähe. Vielleicht kannst du auch schon buchen. "
           },
           "A2.3": {
             "content": "Verbrennen (verfügbar bis 2040)",
+            "info": "<p class=\"popup-headline\">Verbrennen</p><p class=\"popup-text\">Die Verbrennung deines Körpers erfolgt in Öfen, die auf rund 1.000 Grad erhitzt werden – oft mithilfe fossiler Energien. Dabei werden große Mengen Kohlendioxid freigesetzt. Die Einäscherung trägt damit zur Klimakrise bei. Dazu kommen weitere Emissionen (u.a. Stickstoffoxide, Kohlenmonoxid, Schwefeldioxid, Feinstaub, Quecksilber, andere Schwermetalle und organische Schadstoffe), die Mensch und Umwelt schädigen können. Der Anteil der Schadstoffe hängt davon ab, wie du verbrannt wirst (Art des Ofens, Sarg, Bekleidung etc.).</p>",
             "todo": "Bei den Anbietern der Transformationsart Verbrennen können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges und der Urne. Erstelle eine Liste mit deinen Wünschen. Suche dir einen Sarg und Kleidung für deine Verbrennung aus, die möglichst wenige Schadstoffe enthalten. So kannst du vermeiden, dass deine Verbrennung die Umwelt belastet."
           },
           "A2.4": {
             "content": "Gefriertrocknen (verfügbar ab 2028)",
+            "info": "<p class=\"popup-headline\">Gefriertrocknen</p><p class=\"popup-text\">Zum Gefriertrocknen wird dein Körper zuerst auf -18°C heruntergekühlt und danach in flüssigem Stickstoff bis -196°C tiefgefroren. Das Gewebe deines Körpers wird durch die zellulären Veränderungen derart spröde, dass es danach bei kleinster Berührung zerfällt. Von deinem einstmals stark wasserhaltigen Organismus bleiben nach dem Gefriertrocknen nur ca. 30 % Restbestand zurück. Nachdem Kronen, Zahnfüllungen, Implantate und Prothesen entfernt wurden, kann das organische Pulver weiter bearbeitet werden. Diese Transformationsmethode ist im Vergleich zum Verbrennen und Vergraben ökologisch verträglicher.</p>",
             "todo": "Führe ein gesundes Leben, damit dein organisches Granulat nach dem Gefriertrocknen möglichst schadstoffarm ist. So kann es am besten in die natürlichen Kreisläufe eingehen."
           },
           "A2.5": {
@@ -58,160 +63,487 @@
         }
       ]
     },
-    "A2_1": {
-      "question": "komplett vergraben und verwesen",
+    "A2_1_1": {
+      "question": "Wie möchtest du vergraben werden?",
       "options": [
         {
-          "A2.1.1": {
-            "content": "angezogen im Sarg",
-            "todo": "Outfit aussuchen"
+          "A2.1.1.1": {
+            "content": "Angezogen im Sarg",
+            "todo": "Lege die Kleidung fest, in der du vergraben werden möchtest. Wenn du die Umwelt nicht belasten möchtest, wähle schadstoffarme Kleidung aus. Denke darüber nach, ob du dieses Outfit auch an bestimmten Tagen zu Lebzeiten tragen möchtest."
           },
-          "A2.1.2": {
-            "content": "nackt im Sarg (verfügbar ab 2030)"
+          "A2.1.1.2": {
+            "content": "Nackt im Sarg (verfügbar ab 2030)",
+            "todo": "Derzeit ist es hier noch nicht möglich, ohne Kleidung oder Sarg vergraben zu werden. Für den Fall, dass du stirbst, bevor andere Varianten zur Verfügung stehen, lege die Kleidung fest, in der du im Sarg vergraben werden möchtest. Wenn du die Umwelt nicht belasten möchtest, wähle schadstoffarme Kleidung aus. Denke darüber nach, ob du dieses Outfit auch an bestimmten Tagen zu Lebzeiten tragen möchtest."
           },
-          "A2.1.3": {
-            "content": "nackt (oder mit Tuch, öko…) in der Erde (verfügbar ab 2040)"
+          "A2.1.1.3": {
+            "content": "Nackt in der Erde (verfügbar ab 2040)",
+            "todo": "Derzeit ist es hier noch nicht möglich, ohne Kleidung oder Sarg vergraben zu werden. Für den Fall, dass du stirbst, bevor andere Varianten zur Verfügung stehen, lege die Kleidung fest, in der du im Sarg vergraben werden möchtest. Wenn du die Umwelt nicht belasten möchtest, wähle schadstoffarme Kleidung aus. Denke darüber nach, ob du dieses Outfit auch an bestimmten Tagen zu Lebzeiten tragen möchtest."
+          },
+          "A2.1.1.4": {
+            "content": "Eingehüllt in ein ökologisches Leichentuch (verfügbar ab 2040)",
+            "todo": "Derzeit ist es hier noch nicht möglich, ohne Kleidung oder Sarg vergraben zu werden. Für den Fall, dass du stirbst, bevor andere Varianten zur Verfügung stehen, lege die Kleidung fest, in der du im Sarg vergraben werden möchtest. Wenn du die Umwelt nicht belasten möchtest, wähle schadstoffarme Kleidung aus. Denke darüber nach, ob du dieses Outfit auch an bestimmten Tagen zu Lebzeiten tragen möchtest."
+          }
+        }
+      ]
+    },
+    "A2_1_2": {
+      "question": "In welcher Richtung möchtest du vergraben werden?",
+      "options": [
+        {
+          "A2.1.2.1": {
+            "content": "Horizontal (liegend)",
+            "todo": "Informiere Dich über die Geschichte und Vorteile vertikaler (aufrechter) Bestattungsformen, falls das zukünftig angeboten wird."
+          },
+          "A2.1.2.2": {
+            "content": "Vertikal (aufrecht)"
           }
         }
       ]
     },
     "A2_2": {
-      "question": "verbrennen und Asche …",
+      "question": "Was soll nach der beschleunigten Kompostierung mit der Erde aus deinen Überresten passieren?",
       "options": [
         {
           "A2.2.1": {
-            "content": "auf dem Friedhof beisetzen"
+            "content": "An einem konkreten Ort nutzen, und zwar hier:",
+            "TextInput": "Bitte hier eingeben"
           },
           "A2.2.2": {
-            "content": "verstreuen (verfügbar ab 2030)"
+            "content": "In ein Grab tun, und zwar hier:",
+            "TextInput": "Bitte hier eingeben"
           },
           "A2.2.3": {
-            "content": "den Angehörigen übergeben (verfügbar ab 2030)"
+            "content": "Irgendwo nutzen, wo sie gebraucht wird (der Allgemeinheit zur Verfügung stellen)"
+          }
+        }
+      ]
+    },
+    "A2_3": {
+      "question": "Was soll nach dem Verbrennen mit deiner Asche geschehen?",
+      "options": [
+        {
+          "A2.3.1": {
+            "content": "Verstreut werden, und zwar hier:",
+            "TextInput": "Bitte hier eingeben"
           },
-          "A2.2.4": {
-            "content": "seebestatten"
+          "A2.3.2": {
+            "content": "In ein Grab tun, und zwar hier:",
+            "TextInput": "Bitte hier eingeben"
           },
-          "A2.2.5": {
-            "content": "ins All schießen"
+          "A2.3.3": {
+            "content": "Den Angehörigen übergeben"
           },
-          "A2.2.6": {
-            "content": "zu Diamanten pressen"
+          "A2.3.4": {
+            "content": "Seebestatten"
           },
-          "A2.2.7": {
-            "content": "andere Option",
-            "TextInput": "Mustertext"
+          "A2.3.5": {
+            "content": "Ins All schießen"
+          },
+          "A2.3.6": {
+            "content": "Zu einem Diamant pressen"
+          }
+        }
+      ]
+    },
+    "A2_4": {
+      "question": "Was soll nach der Gefriertrocknung mit deinen Überresten passieren?",
+      "options": [
+        {
+          "A2.4.1": {
+            "content": "An einem konkreten Ort verstreuen, und zwar hier:",
+            "TextInput": "Bitte hier eingeben"
+          },
+          "A2.4.2": {
+            "content": "In ein Grab tun, und zwar hier:",
+            "TextInput": "Bitte hier eingeben"
+          },
+          "A2.4.3": {
+            "content": "Irgendwo nutzen, wo sie gebraucht werden (der Allgemeinheit zur Verfügung stellen)"
+          },
+          "A2.4.4": {
+            "content": "Zu Tierfutter verarbeiten (verfügbar ab 2050)"
           }
         }
       ]
     },
     "B1": {
-      "question": "Möchtest du festlegen, wer und wie über deinen Tod benachrichtigt werden soll?",
+      "question": "Möchtest du, dass deine Verabschiedung mit einer bestimmten Feierlichkeit oder einem bestimmten Ritual gestaltet wird?",
       "options": [
         {
           "B1.1": {
-            "content": "ja, ich habe besondere Vorgaben, diese habe ich bei folgenden Personen hinterlegt:",
-            "TextInput": "Vorname, Nachname"
+            "content": "Ja, aber ich habe noch nichts geplant"
           },
           "B1.2": {
-            "content": "nein (es dürfen ohne Einschränkung alle erfahren/wissen)"
+            "content": "Ja, ich habe das bereits geplant und hinterlegt"
+          },
+          "B1.3": {
+            "content": "Ich folge den Regeln meiner Religion oder Kultur",
+            "todo": "Informiere dich, in welchen Aspekten deine Religion oder Kultur die Feierlichkeit oder das Ritual zu deiner Verabschiedung genau festlegt. Hinterlege, inwiefern daran festgehalten oder abgewichen werden soll."
+          },
+          "B1.4": {
+            "content": "Nein"
+          },
+          "B1.5": {
+            "content": "Ich lasse andere entscheiden / mir egal"
+          },
+          "B1.6": {
+            "content": "Ich muss mich nicht verabschieden, weil ich mich dazu entschieden habe, dass mein Avatar unsterblich ist (verfügbar ab 2035).",
+            "info": "<p class=\"popup-headline\">Avatar</p><p class=\"popup-text\">Dein Avatar ist dein digitaler Zwilling in einem virtuellen Raum.</p>"
           }
         }
       ]
     },
-    "B2": {
-      "question": "Möchtest du, dass Deine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird?",
+    "B1_1": {
+      "multi":"",
+      "question": "Welche Aspekte zu deiner Verabschiedung würdest du gerne hinterlegen? (Mehrere Antworten möglich)",
       "options": [
         {
-          "B2.1": {
-            "content": "ja"
+          "B1.1": {
+            "content": "Was bei der Feierlichkeit/dem Ritual über mich gesagt werden soll",
+            "todo": "Hinterlege, was bei deiner Verabschiedung über dich gesagt werden soll: z.B. worauf bist du am meisten stolz; deine wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar; wofür hast du gelebt. "
           },
-          "B2.2": {
-            "content": "nein"
+          "B1.2": {
+            "content": "Der Ort für die Feierlichkeit/das Ritual",
+            "todo": "Hinterlege den Ort, wo deine Verabschiedung stattfinden soll. "
+          },
+          "B1.3": {
+            "content": "Die Gästeliste",
+            "todo": "Erstelle die Gästeliste für deine Verabschiedung. "
+          },
+          "B1.4": {
+            "content": "Was in der Einladung stehen soll",
+            "todo": "Hinterlege, was in der Einladung zu deiner Verabschiedung stehen soll. Möchtest du für manche Personen eine personalisierte Einladung formulieren? Was sollen die eingeladenen Personen tragen, mitbringen oder tun? "
+          },
+          "B1.5": {
+            "content": "Eine Playlist",
+            "todo": "Erstelle eine Playlist für deine Verabschiedung."
           }
         }
       ]
     },
-    "B2_1": {
-      "question": "Ich möchte, dass Meine Übergabe mit einer Art Feierlichkeit und/oder Ritual begleitet wird:",
+    "B1_2": {
+      "question": "Gibt es Aspekte zu deiner Verabschiedung, die du noch nicht festgelegt hast, aber gerne noch hinterlegen würdest? (Mehrere Antworten möglich)",
       "options": [
         {
-          "B2.1.1": {
-            "content": "ich habe sehr konkrete Vorgaben (z.B. Kleidung, Gästeliste, Location, Essen), bei folgender Person hinterlegt:",
-            "TextInput": "Vorname, Nachname"
+          "B1.1": {
+            "content": "Was bei der Feierlichkeit/dem Ritual über mich gesagt werden soll",
+            "todo": "Hinterlege, was bei deiner Verabschiedung über dich gesagt werden soll: z.B. worauf bist du am meisten stolz; deine wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar; wofür hast du gelebt. "
           },
-          "B2.1.2": {
-            "content": "ich folge den Regeln der durch meine Religionszugehörigkeit definierten Traditionen"
+          "B1.2": {
+            "content": "Der Ort für die Feierlichkeit/das Ritual",
+            "todo": "Hinterlege den Ort, wo deine Verabschiedung stattfinden soll. "
           },
-          "B2.1.3": {
-            "content": "ich möchte das im Todomat konfigurieren"
-          }
-        }
-      ]
-    },
-    "B2_1_3_1": {
-      "question": "Möchtest du festlegen, was bei deinem Übergabezeremonie gesagt werden sollte? (z.B. worauf bist du am meisten stolz; die wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar und wofür hast du gelebt).",
-      "options": [
-        {
-          "B2.1.3.1.1": {
-            "content": "ja",
-            "todo": "TODO"
+          "B1.3": {
+            "content": "Die Gästeliste",
+            "todo": "Erstelle die Gästeliste für deine Verabschiedung. "
           },
-          "B2.1.3.1.2": {
-            "content": "nein"
-          }
-        }
-      ]
-    },
-    "B2_1_3_2": {
-      "question": "Möchtest du ausführen und verlesen lassen oder aufzeichnen was Du definitiv noch vorhast und was Du bereust, solltest Du es bis zu Deinem Tod nicht gemacht haben?",
-      "options": [
-        {
-          "B2.1.3.1.1": {
-            "content": "ja",
-            "todo": "TODO"
+          "B1.4": {
+            "content": "Was in der Einladung stehen soll",
+            "todo": "Hinterlege, was in der Einladung zu deiner Verabschiedung stehen soll. Möchtest du für manche Personen eine personalisierte Einladung formulieren? Was sollen die eingeladenen Personen tragen, mitbringen oder tun? "
           },
-          "B2.1.3.1.2": {
-            "content": "nein"
+          "B1.5": {
+            "content": "Eine Playlist",
+            "todo": "Erstelle eine Playlist für deine Verabschiedung."
           }
         }
       ]
     },
     "C1": {
-      "question": "C1 ???",
+      "question": "Welche deiner digitalen Daten sollen nach deinem Tod gelöscht werden? (Mehrere Antworten möglich)",
       "options": [
         {
           "C1.1": {
-            "content": "antwort"
+            "content": "Persönliche Fotos und Videos",
+            "todo": "Hinterlege unbedingt die Passwörter, die für die Löschung deiner Dateien nötig sind. Ohne Zugang werden sie zu digitalem Datenmüll und damit zur Klimabelastung. Denke regelmäßig daran, Dateien zu löschen, die du nicht mehr brauchst."
+          },
+          "C1.2": {
+            "content": "Profile in den sozialen Medien",
+            "todo": "Hinterlege unbedingt die Passwörter, die für die Löschung deiner Dateien nötig sind. Ohne Zugang werden sie zu digitalem Datenmüll und damit zur Klimabelastung. Denke regelmäßig daran, Dateien zu löschen, die du nicht mehr brauchst."
+          },
+          "C1.3": {
+            "content": "Persönliche Playlists",
+            "todo": "Hinterlege unbedingt die Passwörter, die für die Löschung deiner Dateien nötig sind. Ohne Zugang werden sie zu digitalem Datenmüll und damit zur Klimabelastung. Denke regelmäßig daran, Dateien zu löschen, die du nicht mehr brauchst."
+          },
+          "C1.4": {
+            "content": "Persönliche Dokumente",
+            "todo": "Hinterlege unbedingt die Passwörter, die für die Löschung deiner Dateien nötig sind. Ohne Zugang werden sie zu digitalem Datenmüll und damit zur Klimabelastung. Denke regelmäßig daran, Dateien zu löschen, die du nicht mehr brauchst."
+          },
+          "C1.5": {
+            "content": "Unpersönliche Dateien (Musik, Filme etc.)"
+          },
+          "C1.6": {
+            "content": "Mir egal / nicht relevant"
+          }
+        }
+      ]
+    },
+    "C2": {
+      "question": "Wer soll sich nach deinem Tod um deine digitalen Daten kümmern? (Mehrere Antworten möglich)",
+      "options": [
+        {
+          "C2.1": {
+            "content": "Partner:in",
+            "todo": "Frage die von dir gewählten Personen, ob sie damit einverstanden sind, sich nach deinem Tod um deine digitalen Daten zu kümmern. Falls ja, stelle alle benötigen Informationen zur Verfügung."
+          },
+          "C2.2": {
+            "content": "Nahe Verwandte (Kinder, Vater, Mutter)",
+            "todo": "Frage die von dir gewählten Personen, ob sie damit einverstanden sind, sich nach deinem Tod um deine digitalen Daten zu kümmern. Falls ja, stelle alle benötigen Informationen zur Verfügung."
+          },
+          "C2.3": {
+            "content": "Andere verwandte oder befreundete Person",
+            "todo": "Frage die von dir gewählten Personen, ob sie damit einverstanden sind, sich nach deinem Tod um deine digitalen Daten zu kümmern. Falls ja, stelle alle benötigen Informationen zur Verfügung."
+          },
+          "C2.4": {
+            "content": "Nachlassverwalter:in",
+            "todo": "Stelle alle benötigten Informationen zusammen, die ein:e Nachlassverwalter:in benötigt, um sich um deine digitalen Daten zu kümmern. Vielleicht kannst du diese Person auch schon beauftragen. "
+          },
+          "C2.5": {
+            "content": "Ich möchte meine Daten einem Unternehmen verkaufen und bleibe damit digital als Person und Datensatz erhalten (verfügbar ab 2033)",
+            "info": "<p class=\"popup-headline\">Daten in den Händen von Unternehmen</p><p class=\"popup-text\">Unternehmen können mit deinen personenbezogenen Daten viel Geld verdienen, z.B. durch Werbung, Datenverkauf oder Datenanalysen. Wenn du die Daten, die Unternehmen über dich besitzen, nicht rechtzeitig löschst, werden sie über deinen Tod hinaus genutzt. </p>"
+          },
+          "C2.6": {
+            "content": "Mir egal / nicht relevant"
+          }
+        }
+      ]
+    },
+    "C3": {
+      "question": "Hast du bereits eine Liste mit Passwörtern für deine elektronischen Geräte und all deine Profile im Internet erstellt?",
+      "options": [
+        {
+          "C3.1": {
+            "content": "Ja",
+            "todo": "Stelle sicher, dass deine Liste mit Passwörtern für deine elektronischen Geräte und all deine Profile im Internet für relevante Personen zugänglich ist. Es gibt dafür auch Anwendungen (Apps), die dir dabei helfen können."
+          },
+          "C3.2": {
+            "content": "Nein",
+            "todo": "Erstelle eine Liste mit Passwörtern für deine elektronischen Geräte und all deine Profile im Internet. Es gibt dafür auch Anwendungen (Apps), die dir dabei helfen können."
+          },
+          "C3.3": {
+            "content": "Nicht relevant"
           }
         }
       ]
     },
     "D1": {
-      "question": "D1 ???",
+      "question": "Hast du bereits ein Testament gemacht?",
       "options": [
         {
-          "C1.1": {
-            "content": "antwort"
+          "D1.1": {
+            "content": "Ja"
+          },
+          "D1.2": {
+            "content": "Nein, aber es wäre sinnvoll, das zu tun",
+            "todo": "Schreibe deine wichtigsten Besitztümer auf, die du vererben möchtest. Notiere auch, an wen diese Besitztümer gehen sollen."
+          },
+          "D1.3": {
+            "content": "Nein, ich lasse andere entscheiden",
+            "todo": "Schreibe den oder die Namen der Personen auf, die über das Verteilen deiner Besitztümer entscheiden sollen."
+          },
+          "D1.4": {
+            "content": "Nein, es gibt nichts, das ich vererben kann"
+          },
+          "D1.5": {
+            "content": "Nein, ich lehne vererben ab und möchte vorher alles verschenken",
+            "todo": "Verschenke, spende oder verkaufe am besten alle Besitztümer, auf die du verzichten kannst, jetzt schon. Frage dich immer wieder, was du für ein gutes Leben wirklich brauchst."
+          },
+          "D1.6": {
+            "content": "Nein, meine Güter werden automatisch an die Allgemeinheit übergehen (verfügbar ab 2045)"
+          }
+        }
+      ]
+    },
+    "D2": {
+      "question": "Dürfen sich andere nach deinem Tod Dinge in deinen Räumlichkeiten aussuchen?",
+      "options": [
+        {
+          "D2.1": {
+            "content": "Ja, ich habe dazu bereits eine Liste angefertigt"
+          },
+          "D2.2": {
+            "content": "Ja, ich möchte hinterlegen, wer sich etwas aussuchen darf",
+            "todo": "Erstelle eine Liste mit den Namen der Personen, die sich nach deinem Tod in deinen Räumlichkeiten etwas aussuchen dürfen."
+          },
+          "D2.3": {
+            "content": "Nein, ich möchte lieber selbst festlegen, wer was bekommt",
+            "todo": "Auf der Website todomat.org gibt es im Downloadbereich kleine Aufkleber mit der Aufschrift „Dieser Gegenstand geht an……“, welche du unter deine Gegenstände kleben und beschriften kannst. Drucke diese aus und leg los!"
+          },
+          "D2.4": {
+            "content": "Nein, nach meinem Tod sollen alle meine Dinge an die Allgemeinheit gehen",
+            "todo": "Auf der Website todomat.org gibt es im Downloadbereich einen Aufkleber „Alles, was ich besitze, geht nach meinem Tod an die Allgemeinheit“. Platziere diesen Zettel an einer prominenten Stelle im Eingangsbereich deines Zuhauses."
+          },
+          "D2.5": {
+            "content": "Ich lasse andere entscheiden / mir egal"
+          }
+
+        }
+      ]
+    },
+    "D3": {
+      "question": "Welches sind deine drei Lieblingsgegenstände?",
+      "options": [
+        {
+          "D3.1": {
+            "content": "Meine Lieblingsgegenstände:",
+            "TextInput": "Bitte hier eingeben",
+            "todo": "Erzähle einer dir nahestehenden Person, was deine drei liebsten Gegenstände sind und was damit nach deinem Tod passieren soll."
+          },
+          "D3.2": {
+            "content": "Ich habe keine Lieblingsgegenstände"
+          }
+        }
+      ]
+    },
+    "D4": {
+      "question": "Was soll mit all deinen Sachen geschehen, die nach deinem Tod niemand haben möchte oder übernehmen kann?",
+      "options": [
+        {
+          "D4.1": {
+            "content": "Entsorgen",
+            "todo": "Die meisten Menschen hierzulande besitzen mehrere tausend Dinge. Dies verursacht viel Arbeit und teils auch schwierige Entscheidungen für die Hinterbliebenen – egal, ob sie die Dinge entsorgen oder verteilen müssen. Frage dich daher immer wieder, was du für ein gutes Leben wirklich brauchst: von den Dingen, die du bereits besitzt, aber insbesondere wenn du dir etwas Neues kaufen möchtest."
+          },
+          "D4.2": {
+            "content": "Wieder nutzbar machen und der Allgemeinheit zur Verfügung stellen (Reparieren, Upcyclen etc.)",
+            "todo": "Die meisten Menschen hierzulande besitzen mehrere tausend Dinge. Dies verursacht viel Arbeit und teils auch schwierige Entscheidungen für die Hinterbliebenen – egal, ob sie die Dinge entsorgen oder verteilen müssen. Frage dich daher immer wieder, was du für ein gutes Leben wirklich brauchst: von den Dingen, die du bereits besitzt, aber insbesondere wenn du dir etwas Neues kaufen möchtest."
+          },
+          "D4.3": {
+            "content": "Alle, die wollen, dürfen sich Dinge aussuchen (offene Tür)",
+            "todo": "Auf der Website todomat.org gibt es im Downloadbereich einen Aufkleber „Offenes Haus nach Todesfall“. Drucke ihn aus und sorge dafür, dass dieser nach deinem Tod auf deiner Tür angebracht wird. So wissen alle, dass sie willkommen sind etwas mitzunehmen, und es können viele Dinge im Kreislauf gehalten werden."
+          },
+          "D4.4": {
+            "content": "An Organisationen spenden",
+            "todo": "Die meisten Menschen hierzulande besitzen mehrere tausend Dinge. Dies verursacht viel Arbeit und teils auch schwierige Entscheidungen für die Hinterbliebenen – egal, ob sie die Dinge entsorgen oder verteilen müssen. Frage dich daher immer wieder, was du für ein gutes Leben wirklich brauchst: von den Dingen, die du bereits besitzt, aber insbesondere wenn du dir etwas Neues kaufen möchtest."
+          },
+          "D4.5": {
+            "content": "So viel wie möglich zuhause belassen und meine Wohnung möbliert weitervermieten (verfügbar ab 2040)"
+          },
+          "D4.6": {
+            "content": "Ich lasse andere entscheiden / mir egal"
           }
         }
       ]
     },
     "E1": {
-      "question": "E1 ???",
+      "question": "Wo soll man sich an dich erinnern können? (Mehrere Antworten möglich)",
       "options": [
         {
           "E1.1": {
-            "content": "antwort"
+            "content": "An folgendem Ort (z.B. deine Kneipe, dein Verein etc.):",
+            "TextInput": "Bitte hier eingeben"
+          },
+          "E1.2": {
+            "content": "An einer Grabstätte (gilt für Leichnam, Asche, Erde und Granulat)"
+          },
+          "E1.3": {
+            "content": "An einem für mich gepflanzten Baum"
+          },
+          "E1.4": {
+            "content": "An allen auf der digitalen Karte „remember me map“ hinterlegten Orten (verfügbar ab 2032)",
+            "info": "<p class=\"popup-headline\">remember me map</p><p class=\"popup-text\">Im Jahr 2032 wird ein digitales Produkt auf den Markt gebracht, um mobil lebenden Menschen einen ortsunabhängigen Platz des Gedenkens zu ermöglichen. Hier können die Orte, die im Leben einer Person eine besondere Rolle gespielt haben, angelegt und in Anwendungen (Apps) verlinkt werden. </p>"
+          },
+          "E1.5": {
+            "content": "An keinem bestimmten Ort"
+          }
+        }
+      ]
+    },
+    "E2": {
+      "question": "Wie soll man sich an dich erinnern? (Mehrere Antworten möglich)",
+      "options": [
+        {
+          "E2.1": {
+            "content": "Man soll folgendes Konkretes tun:",
+            "TextInput": "Bitte hier eingeben"
+          },
+          "E2.2": {
+            "content": "Mit Freund:innen und Bekannten bei folgender Gelegenheit zusammen kommen:",
+            "TextInput": "Bitte hier eingeben"
+          },
+          "E2.3": {
+            "content": "Das überlasse ich denen, die sich an mich erinnern wollen"
+          },
+          "E2.4": {
+            "content": "Mit meiner Botschaft auf der kommunalen Erinnerungstafel für Verstorbene (verfügbar ab 2040)",
+            "info": "<p class=\"popup-headline\">Kommunale Erinnerungstafel</p><p class=\"popup-text\">Die zunehmende Verbreitung des Todomaten führt dazu, dass ab 2040 mehr und mehr Städte und Gemeinden digitale Erinnerungstafeln einführen. Diese zeigen Namen und Botschaften von Verstorbenen am Todestag und bestimmten Jahrestagen an. So wird jede:r Verstorbene sichtbar. Gedanken und letzte Wünsche können weiterleben.</p>",
+            "todo": "Formuliere für die kommunale Erinnerungstafel, mit welchem Namen und welcher Botschaft du erinnert werden möchtest. Du kannst die Gesellschaft damit an etwas erinnern, das dir wichtig ist. Alternativ kannst du auch ein Bild oder ein kurzes Video hinterlegen."
+          }
+        }
+      ]
+    },
+    "E3": {
+      "question": "Gibt es etwas, das du einer bestimmten Person mitteilen möchtest, bevor du tot bist (z.B. jemandem danken oder um Verzeihung bitten)?",
+      "options": [
+        {
+          "E3.1": {
+            "content": "Ja",
+            "todo": "Schreibe dir gleich auf, wem du vor deinem Tod unbedingt noch etwas mitteilen möchtest, und was. Überlege dir einen guten Zeitpunkt und setze es möglichst bald um."
+          },
+          "E3.2": {
+            "content": "Nein"
+          }
+        }
+      ]
+    },
+    "E4": {
+      "question": "Gibt es etwas, das du eine bestimmte Person wissen lassen möchtest, nachdem du gestorben bist (z.B. jemandem danken, um Verzeihung bitten)?",
+      "options": [
+        {
+          "E4.1": {
+            "content": "Ja",
+            "todo": "Schreibe das, was du eine bestimmte Person nach deinem Tod wissen lassen möchtest, auf. Danach legst du das Schriftstück in einen geschlossenen Umschlag und schreibst den Namen der betreffenden Person darauf. Bewahre den Brief an einem geeigneten Ort auf."
+          },
+          "E4.2": {
+            "content": "Nein"
           }
         }
       ]
     },
     "F1": {
-      "question": "F1 ???",
+      "question": "Hast du ein Geheimnis, das du einmal ausgesprochen haben möchtest, bevor du stirbst?",
       "options": [
         {
           "F1.1": {
-            "content": "antwort"
+            "content": "Ja, ich möchte es hier hinterlegen:",
+            "TextInput": "Bitte hier eingeben"
+          },
+          "F1.2": {
+            "content": "Ja, ich möchte es anonym entsorgen",
+            "todo": "Schreibe dein Geheimnis auf und vernichte es danach auf sichere Art und Weise. Du kannst auch ein Ritual gestalten, um dich von deinem Geheimnis zu verabschieden."
+          },
+          "F1.3": {
+            "content": "Ja, ich möchte es mit einer bestimmten Person oder einem anderen Lebewesen teilen",
+            "todo": "Schreibe dein Geheimnis auf und überlege dann, mit wem und wann du es teilen möchtest. Schiebe es nicht hinaus, damit mehr Zeit bleibt, darüber zu sprechen oder es anders zu verarbeiten."
+          },
+          "F1.4": {
+            "content": "Nein"
+          }
+        }
+      ]
+    },
+    "F2": {
+      "question": "Gibt es Dinge von dir (z.B. Gegenstände in deinen Räumlichkeiten oder an anderen Orten), die nach deinem Tod ungesehen verschwinden sollen?",
+      "options": [
+        {
+          "F2.1": {
+            "content": "Ja",
+            "todo": "Beauftrage eine konkrete Person oder Nachlassverwalter:in mit der Entsorgung der Dinge, die ungesehen verschwinden sollen. Du kannst sie dafür im Vorfeld fotografieren oder mit dem Aufkleber „Geheimer Gegenstand“ (im Downloadbereich auf todomat.org) kennzeichnen."
+          },
+          "F2.2": {
+            "content": "Nein"
+          }
+        }
+      ]
+    },
+    "F3": {
+      "question": "Gibt es Daten von dir, die nach deinem Tod ungesehen verschwinden sollen?",
+      "options": [
+        {
+          "F3.1": {
+            "content": "Ja",
+            "todo": "Beauftrage eine konkrete Person oder Nachlassverwalter:in mit der Löschung deiner geheimen Daten und kennzeichne diese entsprechend."
+          },
+          "F3.2": {
+            "content": "Nein"
           }
         }
       ]

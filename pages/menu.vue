@@ -30,7 +30,7 @@
         </button>
       </div>
       <div class="menuItem" :style="{ backgroundColor: buttonColor('B1') }">
-        <p class="menu-h1">Deine Übergabe</p>
+        <p class="menu-h1">Deine Verabschiedung</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
@@ -72,7 +72,7 @@
         </button>
       </div>
       <div class="menuItem"   :style="{ backgroundColor: buttonColor('E1') }">
-        <p class="menu-h1">Deine Spuren</p>
+        <p class="menu-h1">Deine Gedenken</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.

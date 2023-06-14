@@ -142,24 +142,47 @@ const slides = computed(() => {
     "A2",
     "menu",
     "B1",
-    "B2",
     "menu",
     "C1",
+    "C2",
+    "C3",
     "menu",
     "D1",
+    "D2",
+    "D3",
+    "D4",
     "menu",
     "E1",
+    "E2",
+    "E3",
+    "E4",
     "menu",
     "F1",
     "menu",
   ];
   if (data.value["A2"] && data.value["A2"].options === "A2.1") {
     const pos = slides.indexOf("A2");
-    slides.splice(pos + 1, 0, "A2_1", "A2_2");
+    slides.splice(pos + 1, 0, "A2_1_1", "A2_1_2");
   }
-  if (data.value["B2"] && data.value["B2"].options === "B2.1") {
-    const pos = slides.indexOf("B2");
-    slides.splice(pos + 1, 0, "B2_1");
+  if (data.value["A2"] && data.value["A2"].options === "A2.2") {
+    const pos = slides.indexOf("A2");
+    slides.splice(pos + 1, 0, "A2_2");
+  }
+  if (data.value["A2"] && data.value["A2"].options === "A2.3") {
+    const pos = slides.indexOf("A2");
+    slides.splice(pos + 1, 0, "A2_3");
+  }
+  if (data.value["A2"] && data.value["A2"].options === "A2.4") {
+    const pos = slides.indexOf("A2");
+    slides.splice(pos + 1, 0, "A2_4");
+  }
+  if (data.value["B1"] && data.value["B1"].options === "B1.1") {
+    const pos = slides.indexOf("B1");
+    slides.splice(pos + 1, 0, "B1_1");
+  }
+  if (data.value["B1"] && data.value["B1"].options === "B1.2") {
+    const pos = slides.indexOf("B1");
+    slides.splice(pos + 1, 0, "B1_2");
   }
   if (data.value["B2_1"] && data.value["B2_1"].options === "B2.1.3") {
     const pos = slides.indexOf("B2_1");
@@ -224,7 +247,7 @@ h2 {
   font-size: 26px;
   text-align: left;
   margin: 0px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 p {
