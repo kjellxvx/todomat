@@ -387,6 +387,6 @@ p {
 }
 
 .data-container{
-  display: none;
+  display: block;
 }
 </style>

@@ -138,13 +138,19 @@ function updateSelection() {
     selectedOptions.value.splice(0, selectedOptions.value.length - 1);
     selection.value[id].options = selectedOptions;
     data.value = { ...data.value, ...selection.value };
-    const selected = slides[id].options[0][selectedOptions.value];
-    if (selected.todo) {
-      todos.value[id] = selected.todo;
-    } else {
-      delete todos.value[id];
+
+    const localTodos = [];
+    for (const key in selectedOptions.value) {
+      if (selectedOptions.value.hasOwnProperty(key)) {
+        const selectedOption = selectedOptions.value[key];
+        const selected = slides[id].options[0][selectedOption];
+        if (selected && selected.todo) {
+          localTodos.push(selected.todo);
+        }
+      }
     }
-    complete.value = true;
+    todos.value[id] = localTodos;
+
   }
   // code for multi selection
   else {
@@ -155,7 +161,7 @@ function updateSelection() {
       if (selectedOptions.value.hasOwnProperty(key)) {
         const selectedOption = selectedOptions.value[key];
         const selected = slides[id].options[0][selectedOption];
-        if (selected.todo) {
+        if (selected && selected.todo) {
           localTodos.push(selected.todo);
         }
       }
@@ -164,9 +170,7 @@ function updateSelection() {
   }
 
   keyboard.value = false;
-
-  console.log(hasEmptyTextField())
-  complete.value = !hasEmptyTextField();
+  complete.value = !isNotComplete();
 }
 
 // function to update checkboxes that also have a textfield
@@ -185,19 +189,44 @@ function updateTextSelection() {
     selectedOptions.value.splice(0, selectedOptions.value.length - 1);
     selection.value[id].options = selectedOptions;
     data.value = { ...data.value, ...selection.value };
-    keyboard.value = true;
+    const localTodos = [];
+    for (const key in selectedOptions.value) {
+      if (selectedOptions.value.hasOwnProperty(key)) {
+        const selectedOption = selectedOptions.value[key];
+        const selected = slides[id].options[0][selectedOption];
+        if (selected && selected.todo) {
+          localTodos.push(selected.todo);
+        }
+      }
+    }
+    todos.value[id] = localTodos;
   }
 
   // code for multi selection
   else {
     selection.value[id].options = selectedOptions;
     data.value = { ...data.value, ...selection.value };
-    keyboard.value = true;
-    complete.value = false;
+    const localTodos = [];
+    for (const key in selectedOptions.value) {
+      if (selectedOptions.value.hasOwnProperty(key)) {
+        const selectedOption = selectedOptions.value[key];
+        const selected = slides[id].options[0][selectedOption];
+        if (selected && selected.todo) {
+          localTodos.push(selected.todo);
+        }
+      }
+    }
+    todos.value[id] = localTodos;
   }
+  keyboard.value = true;
+  complete.value = !isNotComplete();
 }
 
-function hasEmptyTextField() {
+function isNotComplete() {
+  if (selectedOptions.value.length === 0) {
+    return true;
+  }
+
   return Object.entries(slides[id].options[0])
     .filter(([key, option]) => option.TextInput)
     .some(([key, option]) => {
