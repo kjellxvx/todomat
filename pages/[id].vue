@@ -24,10 +24,10 @@
         <div class="radio-label-left">
           <!-- Create a radio button with the ID set to the current option key -->
           <input
-            type="radio"
+            type="checkbox"
             :id="key"
             :value="key"
-            v-model="selectedOption"
+            v-model="selectedOptions"
             @change="
               option.TextInput ? updateTextSelection() : updateSelection()
             "
@@ -45,7 +45,7 @@
               :placeholder="option.TextInput"
               @onInputFocus="onInputFocus"
               @onInputChange="onInputChange"
-              :disabled="textInputsDisabled && selectedOption !== key"
+              :disabled="!selectedOptions.includes(key)"
               ref="inputComp"
             />
           </template>
@@ -90,19 +90,19 @@ const slides = questionaire.slides;
 const question = slides[id].question;
 
 const inputs = reactive({});
-const textInputsDisabled = reactive({});
-const selectedOption = ref("");
+const selectedOptions = ref([]);
 const inputName = ref("");
+const multiSelection = slides[id].multi;
 
 const selection = computed(() => {
-  return { [id]: { options: "" } };
+  return { [id]: { options: [] } };
 });
 
 const storedOption = computed(() => {
   if (data.value[id]) {
     return data.value[id].options;
   } else {
-    return "";
+    return [];
   }
 });
 
@@ -124,33 +124,87 @@ function Info(key) {
 }
 
 function updateSelection() {
-  const selected = slides[id].options[0][selectedOption.value];
-  if (selected.input) {
-    complete.value = false;
-  } else {
+  // clear textfields
+  const selectedOptionsArray = [...selectedOptions.value];
+  Object.keys(inputs).forEach((key) => {
+    if (!selectedOptionsArray.includes(key)) {
+      console.log("clear textfield of " + key);
+      delete inputs[key];
+    }
+  });
+
+  // code for single selection
+  if (multiSelection === false) {
+    selectedOptions.value.splice(0, selectedOptions.value.length - 1);
+    selection.value[id].options = selectedOptions;
+    data.value = { ...data.value, ...selection.value };
+    const selected = slides[id].options[0][selectedOptions.value];
+    if (selected.todo) {
+      todos.value[id] = selected.todo;
+    } else {
+      delete todos.value[id];
+    }
     complete.value = true;
   }
-  if (selected.todo) {
-    todos.value[id] = selected.todo;
-  } else {
-    delete todos.value[id];
+  // code for multi selection
+  else {
+    selection.value[id].options = selectedOptions;
+    data.value = { ...data.value, ...selection.value };
+    const localTodos = [];
+    for (const key in selectedOptions.value) {
+      if (selectedOptions.value.hasOwnProperty(key)) {
+        const selectedOption = selectedOptions.value[key];
+        const selected = slides[id].options[0][selectedOption];
+        if (selected.todo) {
+          localTodos.push(selected.todo);
+        }
+      }
+    }
+    todos.value[id] = localTodos;
   }
-  console.log(selection.value);
-  selection.value[id].options = selectedOption.value;
-  data.value = { ...data.value, ...selection.value };
+
   keyboard.value = false;
+
+  console.log(hasEmptyTextField())
+  complete.value = !hasEmptyTextField();
 }
 
 // function to update checkboxes that also have a textfield
 function updateTextSelection() {
-  for (const inputName in inputs) {
-    inputs.value[inputName] = "";
+  // clear textfields
+  const selectedOptionsArray = [...selectedOptions.value];
+  Object.keys(inputs).forEach((key) => {
+    if (!selectedOptionsArray.includes(key)) {
+      console.log("clear textfield of " + key);
+      delete inputs[key];
+    }
+  });
+
+  // code for single selection
+  if (multiSelection === false) {
+    selectedOptions.value.splice(0, selectedOptions.value.length - 1);
+    selection.value[id].options = selectedOptions;
+    data.value = { ...data.value, ...selection.value };
+    keyboard.value = true;
+  }
+
+  // code for multi selection
+  else {
+    selection.value[id].options = selectedOptions;
+    data.value = { ...data.value, ...selection.value };
+    keyboard.value = true;
     complete.value = false;
   }
-  selection.value[id].options = selectedOption.value;
-  data.value = { ...data.value, ...selection.value };
-  keyboard.value = true;
 }
+
+function hasEmptyTextField() {
+  return Object.entries(slides[id].options[0])
+    .filter(([key, option]) => option.TextInput)
+    .some(([key, option]) => {
+      return selectedOptions.value.includes(key) && !inputs[key];
+    });
+}
+
 // this method is called a textfield is active
 function activateKeyboard() {
   if (local.value == true) {
@@ -218,12 +272,20 @@ onMounted(() => {
 
   if (data.value[id]) {
     complete.value = true;
-    selectedOption.value = storedOption.value;
+    selectedOptions.value = storedOption.value;
     if (data.value[id].input) {
       console.log("input there");
-      const inputKey = storedOption.value;
-      console.log(storedInputs.value(inputKey));
-      inputs[inputKey] = storedInputs.value(inputKey);
+      console.log(storedOption.value);
+
+      for (const key in storedOption.value) {
+        if (storedOption.value.hasOwnProperty(key)) {
+          const inputKey = storedOption.value[key];
+          if (storedInputs.value(inputKey)) {
+            console.log(storedInputs.value(inputKey));
+            inputs[inputKey] = storedInputs.value(inputKey);
+          }
+        }
+      }
     }
   } else {
     complete.value = false;

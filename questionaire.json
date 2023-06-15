@@ -1,8 +1,8 @@
 {
   "slides": {
     "A1": {
-      "single":"",
       "question": "Wie soll mit deinem Körper vor seiner Transformation umgegangen werden?",
+      "multi": false,
       "options": [
         {
           "A1.1": {
@@ -31,6 +31,7 @@
     },
     "A2": {
       "question": "Wie soll dein Körper transformiert werden?",
+      "multi": false,
       "options": [
         {
           "A2.1": {
@@ -65,6 +66,7 @@
     },
     "A2_1_1": {
       "question": "Wie möchtest du vergraben werden?",
+      "multi": false,
       "options": [
         {
           "A2.1.1.1": {
@@ -88,6 +90,7 @@
     },
     "A2_1_2": {
       "question": "In welcher Richtung möchtest du vergraben werden?",
+      "multi": false,
       "options": [
         {
           "A2.1.2.1": {
@@ -102,6 +105,7 @@
     },
     "A2_2": {
       "question": "Was soll nach der beschleunigten Kompostierung mit der Erde aus deinen Überresten passieren?",
+      "multi": false,
       "options": [
         {
           "A2.2.1": {
@@ -120,6 +124,7 @@
     },
     "A2_3": {
       "question": "Was soll nach dem Verbrennen mit deiner Asche geschehen?",
+      "multi": false,
       "options": [
         {
           "A2.3.1": {
@@ -147,6 +152,7 @@
     },
     "A2_4": {
       "question": "Was soll nach der Gefriertrocknung mit deinen Überresten passieren?",
+      "multi": false,
       "options": [
         {
           "A2.4.1": {
@@ -168,6 +174,7 @@
     },
     "B1": {
       "question": "Möchtest du, dass deine Verabschiedung mit einer bestimmten Feierlichkeit oder einem bestimmten Ritual gestaltet wird?",
+      "multi": false,
       "options": [
         {
           "B1.1": {
@@ -194,8 +201,8 @@
       ]
     },
     "B1_1": {
-      "multi":"",
       "question": "Welche Aspekte zu deiner Verabschiedung würdest du gerne hinterlegen? (Mehrere Antworten möglich)",
+      "multi": true,
       "options": [
         {
           "B1.1": {
@@ -223,6 +230,7 @@
     },
     "B1_2": {
       "question": "Gibt es Aspekte zu deiner Verabschiedung, die du noch nicht festgelegt hast, aber gerne noch hinterlegen würdest? (Mehrere Antworten möglich)",
+      "multi": true,
       "options": [
         {
           "B1.1": {
@@ -250,6 +258,7 @@
     },
     "C1": {
       "question": "Welche deiner digitalen Daten sollen nach deinem Tod gelöscht werden? (Mehrere Antworten möglich)",
+      "multi": true,
       "options": [
         {
           "C1.1": {
@@ -279,6 +288,7 @@
     },
     "C2": {
       "question": "Wer soll sich nach deinem Tod um deine digitalen Daten kümmern? (Mehrere Antworten möglich)",
+      "multi": true,
       "options": [
         {
           "C2.1": {
@@ -309,6 +319,7 @@
     },
     "C3": {
       "question": "Hast du bereits eine Liste mit Passwörtern für deine elektronischen Geräte und all deine Profile im Internet erstellt?",
+      "multi": false,
       "options": [
         {
           "C3.1": {
@@ -327,6 +338,7 @@
     },
     "D1": {
       "question": "Hast du bereits ein Testament gemacht?",
+      "multi": false,
       "options": [
         {
           "D1.1": {
@@ -355,6 +367,7 @@
     },
     "D2": {
       "question": "Dürfen sich andere nach deinem Tod Dinge in deinen Räumlichkeiten aussuchen?",
+      "multi": false,
       "options": [
         {
           "D2.1": {
@@ -381,6 +394,7 @@
     },
     "D3": {
       "question": "Welches sind deine drei Lieblingsgegenstände?",
+      "multi": false,
       "options": [
         {
           "D3.1": {
@@ -396,6 +410,7 @@
     },
     "D4": {
       "question": "Was soll mit all deinen Sachen geschehen, die nach deinem Tod niemand haben möchte oder übernehmen kann?",
+      "multi": false,
       "options": [
         {
           "D4.1": {
@@ -425,6 +440,7 @@
     },
     "E1": {
       "question": "Wo soll man sich an dich erinnern können? (Mehrere Antworten möglich)",
+      "multi": true,
       "options": [
         {
           "E1.1": {
@@ -449,6 +465,7 @@
     },
     "E2": {
       "question": "Wie soll man sich an dich erinnern? (Mehrere Antworten möglich)",
+      "multi": true,
       "options": [
         {
           "E2.1": {
@@ -472,6 +489,7 @@
     },
     "E3": {
       "question": "Gibt es etwas, das du einer bestimmten Person mitteilen möchtest, bevor du tot bist (z.B. jemandem danken oder um Verzeihung bitten)?",
+      "multi": false,
       "options": [
         {
           "E3.1": {
@@ -486,6 +504,7 @@
     },
     "E4": {
       "question": "Gibt es etwas, das du eine bestimmte Person wissen lassen möchtest, nachdem du gestorben bist (z.B. jemandem danken, um Verzeihung bitten)?",
+      "multi": false,
       "options": [
         {
           "E4.1": {
@@ -500,6 +519,7 @@
     },
     "F1": {
       "question": "Hast du ein Geheimnis, das du einmal ausgesprochen haben möchtest, bevor du stirbst?",
+      "multi": false,
       "options": [
         {
           "F1.1": {
@@ -522,6 +542,7 @@
     },
     "F2": {
       "question": "Gibt es Dinge von dir (z.B. Gegenstände in deinen Räumlichkeiten oder an anderen Orten), die nach deinem Tod ungesehen verschwinden sollen?",
+      "multi": false,
       "options": [
         {
           "F2.1": {
@@ -536,6 +557,7 @@
     },
     "F3": {
       "question": "Gibt es Daten von dir, die nach deinem Tod ungesehen verschwinden sollen?",
+      "multi": false,
       "options": [
         {
           "F3.1": {
