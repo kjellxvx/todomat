@@ -124,8 +124,9 @@ function Info(key) {
 }
 
 function updateSelection() {
-  // clear textfields
   const selectedOptionsArray = [...selectedOptions.value];
+
+  // Clear textfields and remove unused inputs
   Object.keys(inputs).forEach((key) => {
     if (!selectedOptionsArray.includes(key)) {
       console.log("clear textfield of " + key);
@@ -133,50 +134,33 @@ function updateSelection() {
     }
   });
 
-  // code for single selection
-  if (multiSelection === false) {
+    // Code for single selection
+    if (multiSelection === false) {
     selectedOptions.value.splice(0, selectedOptions.value.length - 1);
-    selection.value[id].options = selectedOptions;
-    data.value = { ...data.value, ...selection.value };
-
-    const localTodos = [];
-    for (const key in selectedOptions.value) {
-      if (selectedOptions.value.hasOwnProperty(key)) {
-        const selectedOption = selectedOptions.value[key];
-        const selected = slides[id].options[0][selectedOption];
-        if (selected && selected.todo) {
-          localTodos.push(selected.todo);
-        }
-      }
-    }
-    todos.value[id] = localTodos;
-
   }
-  // code for multi selection
-  else {
-    selection.value[id].options = selectedOptions;
-    data.value = { ...data.value, ...selection.value };
-    const localTodos = [];
-    for (const key in selectedOptions.value) {
-      if (selectedOptions.value.hasOwnProperty(key)) {
-        const selectedOption = selectedOptions.value[key];
-        const selected = slides[id].options[0][selectedOption];
-        if (selected && selected.todo) {
-          localTodos.push(selected.todo);
-        }
-      }
+
+  // Process selected options
+  const localTodos = [];
+  for (const selectedOption of selectedOptions.value) {
+    const selected = slides[id].options[0][selectedOption];
+    if (selected && selected.todo) {
+      localTodos.push(selected.todo);
     }
-    todos.value[id] = localTodos;
   }
+
+  // Update data and todos
+  selection.value[id].options = selectedOptions;
+  data.value = { ...data.value, ...selection.value };
+  todos.value[id] = localTodos;
 
   keyboard.value = false;
   complete.value = !isNotComplete();
 }
 
-// function to update checkboxes that also have a textfield
 function updateTextSelection() {
-  // clear textfields
   const selectedOptionsArray = [...selectedOptions.value];
+
+  // Clear textfields and remove unused inputs
   Object.keys(inputs).forEach((key) => {
     if (!selectedOptionsArray.includes(key)) {
       console.log("clear textfield of " + key);
@@ -184,40 +168,26 @@ function updateTextSelection() {
     }
   });
 
-  // code for single selection
-  if (multiSelection === false) {
+    // Code for single selection
+    if (multiSelection === false) {
     selectedOptions.value.splice(0, selectedOptions.value.length - 1);
-    selection.value[id].options = selectedOptions;
-    data.value = { ...data.value, ...selection.value };
-    const localTodos = [];
-    for (const key in selectedOptions.value) {
-      if (selectedOptions.value.hasOwnProperty(key)) {
-        const selectedOption = selectedOptions.value[key];
-        const selected = slides[id].options[0][selectedOption];
-        if (selected && selected.todo) {
-          localTodos.push(selected.todo);
-        }
-      }
-    }
-    todos.value[id] = localTodos;
   }
 
-  // code for multi selection
-  else {
-    selection.value[id].options = selectedOptions;
-    data.value = { ...data.value, ...selection.value };
-    const localTodos = [];
-    for (const key in selectedOptions.value) {
-      if (selectedOptions.value.hasOwnProperty(key)) {
-        const selectedOption = selectedOptions.value[key];
-        const selected = slides[id].options[0][selectedOption];
-        if (selected && selected.todo) {
-          localTodos.push(selected.todo);
-        }
-      }
+  // Process selected options
+  const localTodos = [];
+  for (const selectedOption of selectedOptions.value) {
+    const selected = slides[id].options[0][selectedOption];
+    if (selected && selected.todo) {
+      localTodos.push(selected.todo);
     }
-    todos.value[id] = localTodos;
   }
+
+  // Update data and todos
+  selection.value[id].options = selectedOptions;
+  data.value = { ...data.value, ...selection.value };
+  todos.value[id] = localTodos;
+
+  // Update keyboard and completion status
   keyboard.value = true;
   complete.value = !isNotComplete();
 }
