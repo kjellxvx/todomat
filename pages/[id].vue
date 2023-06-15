@@ -28,7 +28,6 @@
             :id="key"
             :value="key"
             v-model="selectedOption"
-            :name="'option_' + slides.A1.question"
             @change="
               option.TextInput ? updateTextSelection() : updateSelection()
             "
