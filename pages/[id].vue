@@ -327,7 +327,7 @@ form {
   color: #959495;
   cursor: not-allowed;
 }
-input[type="radio"] {
+input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
   background-color: var(--form-background);
@@ -342,7 +342,7 @@ input[type="radio"] {
   place-content: center;
 }
 
-input[type="radio"]::before {
+input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
   height: 0.65em;
@@ -352,7 +352,7 @@ input[type="radio"]::before {
   box-shadow: inset 1em 1em var(--primary-color);
 }
 
-input[type="radio"]:checked::before {
+input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 </style>

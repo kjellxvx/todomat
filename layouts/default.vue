@@ -385,4 +385,8 @@ p {
   height: 39.39px;
   cursor: pointer;
 }
+
+.data-container{
+  display: none;
+}
 </style>
