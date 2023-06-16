@@ -80,6 +80,10 @@ function viewTodos(route) {
   navigateTo(`todos/${route}`);
 }
 
+async function Print() {
+  navigateTo("/print");
+}
+
 onMounted(() => {
   const result = Object.values(todos.value).flat();
   console.log(result);
