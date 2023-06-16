@@ -58,8 +58,7 @@
       <div class="p2-container">
         <p class="p2">
           Suche dir ein To-Do aus, mit dem du (am besten noch heute) beginnen
-          möchtest. Für den Start hast du dich entschieden für die Kategorie:
-          Körper.
+          möchtest.
         </p>
       </div>
       <div class="todos-container">
@@ -145,8 +144,6 @@ async function Print() {
 onMounted(() => {
   Print();
   printTodos.value = Object.values(todos.value).flat();
-  console.log(printTodos);
-  console.log(printTodos.value.length);
   if (printTodos.value.length == 0) {
     noTodos.value = true;
   } else {
@@ -293,17 +290,19 @@ onMounted(() => {
 .todos-container {
   margin: 40px 0 0 15px;
 }
-
-.todo {
-  display: flex;
-}
 .checkbox {
   width: 50px;
   height: 50px;
   border-style: solid;
-  margin: 25px 20px 0 0;
+  margin: 22px 20px 0 0;
 }
 .todo-text {
-  width: 100%;
+  width: 1100px;
 }
+
+.todo {
+  display: flex;
+  margin: 0 0 30px 0;
+}
+
 </style>

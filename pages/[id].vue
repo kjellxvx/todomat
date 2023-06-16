@@ -33,10 +33,11 @@
             "
           />
           <!-- Create a label for the radio button with the content of the current option -->
-          <label :for="key">{{ option.content }}</label>
+         
         </div>
         <!-- Check if the current option requires a text input -->
         <div class="radio-label-right">
+          <label :for="key">{{ option.content }}</label>
           <template v-if="option.TextInput">
             <InputComp
               v-if="option.TextInput"
@@ -309,19 +310,33 @@ form {
   grid-template-columns: 1em auto;
   align-items: center;
   gap: 0;
+  display: flex;
+}
+
+.checkform{
+  max-width: 800px;
 }
 
 .radio-label-left {
   display: flex;
+
 }
 
 .radio-label-left > label {
   padding-left: 20px;
-  max-width: 800px;
+  width: 100%;
 }
 
 .form-control + .form-control {
   margin-top: 1em;
+  display: flex;
+  width: 100%;
+}
+
+.radio-label-right{
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .form-control--disabled {
@@ -338,9 +353,9 @@ input[type="checkbox"] {
   height: 1.15em;
   border: 0.08em solid currentColor;
   border-radius: 50%;
-  transform: translateY(-0.075em);
   display: grid;
   place-content: center;
+  align-self: center;
 }
 
 input[type="checkbox"]::before {

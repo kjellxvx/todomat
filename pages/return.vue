@@ -110,7 +110,6 @@ const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 onMounted(() => {
   if (route.query.code != undefined) {
     Start(true);
-    console.log(route.query.code);
   }
 });
 

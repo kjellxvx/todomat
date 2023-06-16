@@ -86,7 +86,6 @@ async function Print() {
 
 onMounted(() => {
   const result = Object.values(todos.value).flat();
-  console.log(result);
   const todoKeys = Object.keys(todos.value).filter(
     (key) => todos.value[key].length > 0 || typeof todos.value[key] === "string"
   );
@@ -94,7 +93,6 @@ onMounted(() => {
   todoTopics.value = [
     ...new Set(todoKeys.join("").toUpperCase().split("")),
   ].filter((letter) => letters.includes(letter));
-  console.log(todoTopics.value);
 });
 </script>
 

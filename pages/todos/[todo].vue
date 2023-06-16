@@ -65,20 +65,26 @@ onMounted(() => {
 
 <style scoped>
 .todos-container {
+  width: 100%;
   margin: 40px 0 0 15px;
 }
 
 .todo {
   display: flex;
+  margin: 0 0 30px 0;
 }
 .checkbox {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-style: solid;
-  margin: 25px 50px 0 0;
+  margin: 5px 25px 0 0;
 }
 .todo-text {
-  width: 100%;
+  width: 800px;
+}
+
+.todo-text p {
+  font-size: 20px;
 }
 
 .slide {

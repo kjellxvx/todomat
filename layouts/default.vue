@@ -209,7 +209,6 @@ function checkProgress() {
   for (let i = 0; i < keys.length; i++) {
     progress.value[i] = data.value[keys[i]] ? 1 : 0;
   }
-  console.log(progress.value);
 }
 
 onMounted(() => {});
@@ -336,6 +335,7 @@ p {
   font-size: 20px;
   text-decoration: underline;
   margin-left: 10px;
+  white-space: nowrap;
 }
 
 .popup-container {
