@@ -5,12 +5,12 @@
       <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
     </div>
     <div class="header-row">
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
+      <div
+        class="progress-counter"
+        v-for="(value, index) in progress"
+        :key="index"
+        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
+      ></div>
     </div>
 
     <h1>Womit möchtest Du starten?</h1>
@@ -21,11 +21,7 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button
-          
-          @click="A1"
-          class="menu-button"
-        >
+        <button @click="A1" class="menu-button">
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
@@ -35,68 +31,48 @@
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button
-          
-          @click="B1"
-          class="menu-button"
-        >
+        <button @click="B1" class="menu-button">
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem"  :style="{ backgroundColor: buttonColor('C1') }">
+      <div class="menuItem" :style="{ backgroundColor: buttonColor('C1') }">
         <p class="menu-h1">Deine Daten</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button
-         
-          @click="C1"
-          class="menu-button"
-        >
+        <button @click="C1" class="menu-button">
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem"   :style="{ backgroundColor: buttonColor('D1') }">
+      <div class="menuItem" :style="{ backgroundColor: buttonColor('D1') }">
         <p class="menu-h1">Deine Dinge</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button
-        
-          @click="D1"
-          class="menu-button"
-        >
+        <button @click="D1" class="menu-button">
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem"   :style="{ backgroundColor: buttonColor('E1') }">
+      <div class="menuItem" :style="{ backgroundColor: buttonColor('E1') }">
         <p class="menu-h1">Deine Gedenken</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button
-        
-          @click="E1"
-          class="menu-button"
-        >
+        <button @click="E1" class="menu-button">
           Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
-      <div class="menuItem"   :style="{ backgroundColor: buttonColor('F1') }">
+      <div class="menuItem" :style="{ backgroundColor: buttonColor('F1') }">
         <p class="menu-h1">Deine Geheimnisse</p>
         <p class="menu-p">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt.
         </p>
-        <button
-        
-          @click="F1"
-          class="menu-button"
-        >
-          Deine Geheimnisse <i class="fa fa-long-arrow-right"></i>
+        <button @click="F1" class="menu-button">
+          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
     </div>
@@ -113,6 +89,8 @@ const index = useIndex();
 const order = useOrder();
 const todos = useTodos();
 const data = useData();
+const progress = useProgress();
+const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 
 function A1() {
   index.value = order.value.indexOf("A1");

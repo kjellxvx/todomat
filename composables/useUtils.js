@@ -24,6 +24,12 @@ export const useHeadline = () => {
   });
 };
 
+export const useProgress = () => {
+  return useState("progress", () => {
+    return [0,0,0,0,0,0];
+  });
+};
+
 export const useIndex = () => {
   return useState("index", () => 0);
 };

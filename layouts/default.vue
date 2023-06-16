@@ -108,21 +108,6 @@
 </template>
 
 <script setup>
-// SLIDE ORDER:
-// Start
-// Menu
-// A1,
-// A2,
-//   A2_1
-//   A2_2
-// Menu
-//   B1,
-//   B2,
-//   B2_1
-//     B2_1_3_1
-//     B2_1_3_1
-// Menu
-
 const complete = useComplete();
 const todos = useTodos();
 const data = useData();
@@ -133,6 +118,7 @@ const local = useLocal();
 const popup = usePopup();
 const storedData = useStoredData();
 const userToken = useUserToken();
+const progress = useProgress();
 
 // Logic for rendering the page order
 const slides = computed(() => {
@@ -213,8 +199,17 @@ const nextPage = computed(() => slides.value[index.value + 1]);
 function goToPage(page) {
   if (index.value >= 0) {
     index.value = slides.value.indexOf(page);
+    checkProgress();
     navigateTo(`/${page}`);
   }
+}
+
+function checkProgress() {
+  const keys = ["A2", "B1", "C3", "D4", "E4", "F3"];
+  for (let i = 0; i < keys.length; i++) {
+    progress.value[i] = data.value[keys[i]] ? 1 : 0;
+  }
+  console.log(progress.value);
 }
 
 onMounted(() => {});
@@ -301,6 +296,15 @@ p {
   width: 100%;
   margin-right: 7px;
   border-radius: 30px;
+}
+
+.black {
+  background-color: #3c3737;
+  opacity: 50%;
+}
+
+.grey {
+  background-color: #717171;
   opacity: 15%;
 }
 
@@ -386,7 +390,7 @@ p {
   cursor: pointer;
 }
 
-.data-container{
+.data-container {
   display: block;
 }
 </style>

@@ -1,68 +1,144 @@
 <template>
   <div class="slide-container">
     <div class="slide">
+      <div class="header-row">
+        <p class="brand">Todomat.</p>
+        <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
+      </div>
+      <div class="header-row">
+      <div
+        class="progress-counter"
+        v-for="(value, index) in progress"
+        :key="index"
+        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
+      ></div>
+    </div>
       <div class="textbox">
-        <h1>Beenden</h1>
-        <p>Daten speichern und Bon drucken.</p>
+        <h1>Gratulation!</h1>
+        <p>
+          Du hast deinen Abschied sehr gut vorbereitet. Nun kannst Du die
+          offenen To-do‘s anschauen und erledigen, wenn Du Raum und Gelegenheit
+          hast. Mit welcher Kategorie möchtest Du beginnen?
+        </p>
+        <p>
+          Alle anderen offenen To-Do‘s und deine beantworteten Fragen kannst Du
+          jederzeit auf todomat.org einsehen und ggf. ergänzen oder
+          überarbeiten.
+        </p>
+      </div>
+      <div class="menu-container">
+        <div
+          v-for="menuItem in menuItems"
+          :key="menuItem.letter"
+          class="menuItem"
+        >
+          <p class="menu-h1">{{ menuItem.title }}</p>
+          <button
+            :disabled="isTodoTopicDisabled(menuItem.letter)"
+            @click="viewTodos(menuItem.letter)"
+            class="menu-button"
+          >
+            {{ getButtonLabel(menuItem.letter) }}
+            <i class="fa fa-long-arrow-right"></i>
+          </button>
+        </div>
       </div>
     </div>
-
-    <button @click="Submit" type="button">Beenden</button>
+    <div class="button-container">
+      <button @click="Print" class="button">Auschecken und Ausdrucken</button>
+    </div>
   </div>
 </template>
 <script setup>
-import PocketBase from 'pocketbase';
-
-/*const pb = new PocketBase('http://127.0.0.1:8090');
-const authData = await pb.admins.authWithPassword('maxmustermann@mail.de', 'password123');*/
-
-const pb = new PocketBase('https://delightful-artist.pockethost.io');
-const authData = await pb.admins.authWithPassword('yinebo1036@andorem.com', 'password123');
 
 const todos = useTodos();
-const data = useData();
-const userToken = useUserToken();
+const todoTopics = ref([]);
+const progress = useProgress();
+const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 
-async function Submit() {
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  //////////////////                                                              //////////////////
-  //////////////////                       DATA BASE CODE HERE                    //////////////////
-  //////////////////                                                              //////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////
+const menuItems = [
+  { letter: "A", title: "Dein Körper" },
+  { letter: "B", title: "Deine Verabschiedung" },
+  { letter: "C", title: "Dein Daten" },
+  { letter: "D", title: "Deine Dinge" },
+  { letter: "E", title: "Deine Gedenken" },
+  { letter: "F", title: "Deine Geheimnisse" },
+];
 
-  console.log(data.value);
-  console.log(todos.value);
+const isTodoTopicDisabled = (letter) => {
+  return !todoTopics.value.includes(letter);
+};
 
-  // Push "data.value" and "todos.value" to the database
-  const user_data = {
-    "data": data.value,
-    "todos": todos.value
-  };
-
-  if(userToken.value == false){
-    // Create new record
-    const record = await pb.collection('user_data').create(user_data);
-
-    // Generate User Token
-    userToken.value = record.id;
-    console.log('Created new record: ' + userToken.value);
+const getButtonLabel = (letter) => {
+  if (isTodoTopicDisabled(letter)) {
+    return "keine To-Do’s vorhanden";
   }
-  else{
-    // If user Token already exists then ->
-    // Update record
-    const record = await pb.collection('user_data').update(userToken.value, user_data);
-    console.log('Updated record: ' + userToken.value);
-  }
+  return "To-Do’s anschauen";
+};
 
-  pb.authStore.clear();
-
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  //////////////////                                                              //////////////////
-  //////////////////                       DATA BASE CODE HERE                    //////////////////
-  //////////////////                                                              //////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
-  navigateTo("/goodbye");
+function viewTodos(route) {
+  navigateTo(`todos/${route}`);
 }
+
+onMounted(() => {
+  const result = Object.values(todos.value).flat();
+  console.log(result);
+  const todoKeys = Object.keys(todos.value).filter(
+    (key) => todos.value[key].length > 0 || typeof todos.value[key] === "string"
+  );
+  const letters = ["A", "B", "C", "D", "E", "F"];
+  todoTopics.value = [
+    ...new Set(todoKeys.join("").toUpperCase().split("")),
+  ].filter((letter) => letters.includes(letter));
+  console.log(todoTopics.value);
+});
 </script>
+
+<style scoped>
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.menuItem {
+  border-style: solid;
+  margin-right: 20px;
+  padding: 30px 20px 20px 20px;
+  border-radius: 10px;
+}
+
+.menu-h1 {
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+
+.menu-p {
+  font-size: 15px;
+  padding-bottom: 30px;
+}
+
+.menu-button {
+  height: 28px;
+  background-color: white;
+  border-style: solid;
+  color: black;
+  border-width: 1px;
+  border-radius: 21.1px;
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 13px;
+  padding: 0 15px 0 38px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-button i {
+  margin: 2px 0px 0 30px;
+}
+
+
+.menu-button[disabled] {
+  cursor: default;
+}
+</style>

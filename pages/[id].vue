@@ -5,12 +5,12 @@
       <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
     </div>
     <div class="header-row">
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
-      <div class="progress-counter"></div>
+      <div
+        class="progress-counter"
+        v-for="(value, index) in progress"
+        :key="index"
+        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
+      ></div>
     </div>
     <h1>{{ headline }}</h1>
     <h2>{{ question }}</h2>
@@ -85,6 +85,8 @@ const headline = useHeadline();
 const index = useIndex();
 const order = useOrder();
 const popup = usePopup();
+const progress = useProgress();
+const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 
 const slides = questionaire.slides;
 const question = slides[id].question;
@@ -134,8 +136,8 @@ function updateSelection() {
     }
   });
 
-    // Code for single selection
-    if (multiSelection === false) {
+  // Code for single selection
+  if (multiSelection === false) {
     selectedOptions.value.splice(0, selectedOptions.value.length - 1);
   }
 
@@ -168,8 +170,8 @@ function updateTextSelection() {
     }
   });
 
-    // Code for single selection
-    if (multiSelection === false) {
+  // Code for single selection
+  if (multiSelection === false) {
     selectedOptions.value.splice(0, selectedOptions.value.length - 1);
   }
 

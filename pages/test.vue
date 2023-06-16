@@ -5,13 +5,13 @@
         <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
       </div>
       <div class="header-row">
-        <div class="progress-counter"></div>
-        <div class="progress-counter"></div>
-        <div class="progress-counter"></div>
-        <div class="progress-counter"></div>
-        <div class="progress-counter"></div>
-        <div class="progress-counter"></div>
-      </div>
+      <div
+        class="progress-counter"
+        v-for="(value, index) in progress"
+        :key="index"
+        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
+      ></div>
+    </div>
       <h1>{{ headline }}</h1>
       <h2>{{ question }}</h2>
       <div class="checkform">
