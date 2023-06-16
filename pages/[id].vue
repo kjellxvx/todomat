@@ -1,17 +1,7 @@
 <template>
   <div class="slide">
-    <div class="header-row">
-      <p class="brand">Todomat.</p>
-      <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
-    </div>
-    <div class="header-row">
-      <div
-        class="progress-counter"
-        v-for="(value, index) in progress"
-        :key="index"
-        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
-      ></div>
-    </div>
+    <HeaderComp
+      />
     <h1>{{ headline }}</h1>
     <h2>{{ question }}</h2>
     <div class="checkform">
@@ -86,8 +76,7 @@ const headline = useHeadline();
 const index = useIndex();
 const order = useOrder();
 const popup = usePopup();
-const progress = useProgress();
-const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
+
 
 const slides = questionaire.slides;
 const question = slides[id].question;

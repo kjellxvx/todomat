@@ -1,17 +1,7 @@
 <template>
   <div class="slide">
-    <div class="header-row">
-      <p class="brand">Todomat.</p>
-      <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
-    </div>
-    <div class="header-row">
-      <div
-        class="progress-counter"
-        v-for="(value, index) in progress"
-        :key="index"
-        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
-      ></div>
-    </div>
+    <HeaderComp
+      />
 
     <h1>Womit möchtest Du starten?</h1>
     <div class="menuContainer">
@@ -89,8 +79,7 @@ const index = useIndex();
 const order = useOrder();
 const todos = useTodos();
 const data = useData();
-const progress = useProgress();
-const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
+
 
 function A1() {
   index.value = order.value.indexOf("A1");

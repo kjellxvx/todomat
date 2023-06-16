@@ -97,7 +97,6 @@ const todos = useTodos();
 const printTodos = ref([]);
 const noTodos = ref(true);
 const data = useData();
-const progress = useProgress();
 
 async function Print() {
   //////////////////////////////////////////////////////////////////////////////////////////////////

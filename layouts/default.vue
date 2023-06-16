@@ -271,11 +271,6 @@ p {
   flex-direction: column;
 }
 
-.header-row {
-  display: flex;
-  margin-bottom: 23px;
-  align-items: center;
-}
 
 .brand {
   font-family: "IBMPlexSans-Bold", sans-serif;

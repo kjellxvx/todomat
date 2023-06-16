@@ -1,17 +1,7 @@
 <template>
   <div class="slide">
-    <div class="header-row">
-      <p class="brand">Todomat.</p>
-      <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
-    </div>
-    <div class="header-row">
-      <div
-        class="progress-counter"
-        v-for="(value, index) in progress"
-        :key="index"
-        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
-      ></div>
-    </div>
+    <HeaderComp
+      />
     <h1>{{ headline }} - ToDo’s</h1>
     <p>Hier findest du deine aufgelisteten ToDo’s</p>
     <div class="todos-container">
@@ -33,8 +23,6 @@ const route = useRoute();
 const todos = useTodos();
 const printTodos = ref([]);
 const headline = ref("");
-const progress = useProgress();
-const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 
 printTodos.value = Object.entries(todos.value)
   .filter(([key, _]) => key.includes(route.params.todo))

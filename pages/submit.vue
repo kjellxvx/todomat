@@ -1,18 +1,7 @@
 <template>
   <div class="slide-container">
     <div class="slide">
-      <div class="header-row">
-        <p class="brand">Todomat.</p>
-        <p class="slogan">Dein Digitaler Hinterlassenschaftskonfigurator</p>
-      </div>
-      <div class="header-row">
-      <div
-        class="progress-counter"
-        v-for="(value, index) in progress"
-        :key="index"
-        :class="{ black: index < totalProgress, grey: index >= totalProgress }"
-      ></div>
-    </div>
+      <HeaderComp />
       <div class="textbox">
         <h1>Gratulation!</h1>
         <p>
@@ -50,11 +39,8 @@
   </div>
 </template>
 <script setup>
-
 const todos = useTodos();
 const todoTopics = ref([]);
-const progress = useProgress();
-const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 
 const menuItems = [
   { letter: "A", title: "Dein Körper" },
@@ -138,7 +124,6 @@ onMounted(() => {
 .menu-button i {
   margin: 2px 0px 0 30px;
 }
-
 
 .menu-button[disabled] {
   cursor: default;
