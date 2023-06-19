@@ -126,27 +126,27 @@ const slides = computed(() => {
     "menu",
     "A1",
     "A2",
-    "menu",
+    "confirmation",
     "B1",
-    "menu",
+    "confirmation",
     "C1",
     "C2",
     "C3",
-    "menu",
+    "confirmation",
     "D1",
     "D2",
     "D3",
     "D4",
-    "menu",
+    "confirmation",
     "E1",
     "E2",
     "E3",
     "E4",
-    "menu",
+    "confirmation",
     "F1",
     "F2",
     "F3",
-    "menu",
+    "confirmation",
   ];
   if (data.value["A2"] && data.value["A2"].options === "A2.1") {
     const pos = slides.indexOf("A2");
@@ -209,6 +209,7 @@ function checkProgress() {
   for (let i = 0; i < keys.length; i++) {
     progress.value[i] = data.value[keys[i]] ? 1 : 0;
   }
+  console.log(progress.value)
 }
 
 onMounted(() => {});

@@ -1,86 +1,94 @@
 <template>
-  <div class="pdf-container">
-    <div class="header-container">
-      <p class="receipt">Receipt</p>
-      <p class="logo">TODOMAT</p>
-    </div>
-    <div class="code-container">
-      <div class="code-box">
-        <p class="p1">
-          Persönlicher Code für die Fortführung Deiner Koniguaration auf
-          todomat.org:
-        </p>
-        <div class="code-char-container">
-          <div class="char-underline" v-for="char in userToken" :key="char">
-            <div class="char-container">
-              <p class="p2">{{ char }}</p>
+  <NuxtLayout name="custom">
+    <template #header> Some header template content. </template>
+
+    <div class="pdf-container">
+      <div class="header-container">
+        <p class="receipt">Receipt</p>
+        <p class="logo">TODOMAT</p>
+      </div>
+      <div class="code-container">
+        <div class="code-box">
+          <p class="p1">
+            Persönlicher Code für die Fortführung Deiner Koniguaration auf
+            todomat.org:
+          </p>
+          <div class="code-char-container">
+            <div class="char-underline" v-for="char in userToken" :key="char">
+              <div class="char-container">
+                <p class="p2">{{ char }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="qr-code-box">
+          <div class="mark-container">
+            <div class="marks-top">
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+            </div>
+            <div class="marks-bottom">
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+            </div>
+          </div>
+          <div class="qr-code"></div>
+        </div>
+      </div>
+      <p class="p3">
+        Du kannst Deine Eingaben jederzeit anpassen und aktualisieren. Bitte
+        sicher aufbewahren und hinterlegen!
+      </p>
+      <div v-if="noTodos == false">
+        <div class="p2-container">
+          <p class="p2">
+            Gut gemacht! Du hast dir Zeit genommen, dir wichtige Gedanken über
+            deinen Tod und den damit einher gehenden Abschied zu machen.
+          </p>
+        </div>
+        <div class="p2-container">
+          <p class="p2">
+            Suche dir ein To-Do aus, mit dem du (am besten noch heute) beginnen
+            möchtest.
+          </p>
+        </div>
+        <div class="todos-container">
+          <div class="todo" v-for="(todo, index) in printTodos" :key="index">
+            <div class="checkbox"></div>
+            <div class="todo-text">
+              <p class="p2">{{ todo }}</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="qr-code-box">
-        <div class="mark-container">
-          <div class="marks-top">
-            <div class="mark">
-              <div class="mark-vertical"></div>
-              <div class="mark-horizontal"></div>
-            </div>
-            <div class="mark">
-              <div class="mark-vertical"></div>
-              <div class="mark-horizontal"></div>
-            </div>
-          </div>
-          <div class="marks-bottom">
-            <div class="mark">
-              <div class="mark-vertical"></div>
-              <div class="mark-horizontal"></div>
-            </div>
-            <div class="mark">
-              <div class="mark-vertical"></div>
-              <div class="mark-horizontal"></div>
-            </div>
-          </div>
-        </div>
-        <div class="qr-code"></div>
-      </div>
-    </div>
-    <p class="p3">
-      Du kannst Deine Eingaben jederzeit anpassen und aktualisieren. Bitte
-      sicher aufbewahren und hinterlegen!
-    </p>
-    <div v-if="noTodos == false">
-      <div class="p2-container">
-        <p class="p2">
-          Gut gemacht! Du hast dir Zeit genommen, dir wichtige Gedanken über
-          deinen Tod und den damit einher gehenden Abschied zu machen.
-        </p>
-      </div>
-      <div class="p2-container">
-        <p class="p2">
-          Suche dir ein To-Do aus, mit dem du (am besten noch heute) beginnen
-          möchtest.
-        </p>
-      </div>
-      <div class="todos-container">
-        <div class="todo" v-for="(todo, index) in printTodos" :key="index">
-          <div class="checkbox"></div>
-          <div class="todo-text">
-            <p class="p2">{{ todo }}</p>
-          </div>
+      <div v-if="noTodos == true">
+        <div class="p2-container">
+          <p class="p2">
+            Du hast alle Fragen so beantwortet, dass es keine Todos gibt.
+          </p>
         </div>
       </div>
     </div>
-    <div v-if="noTodos == true">
-      <div class="p2-container">
-        <p class="p2">
-          Du hast alle Fragen so beantwortet, dass es keine Todos gibt.
-        </p>
-      </div>
-    </div>
-  </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
+definePageMeta({
+  layout: false,
+});
+
 import PocketBase from "pocketbase";
 
 /*const pb = new PocketBase('http://127.0.0.1:8090');
@@ -153,8 +161,9 @@ onMounted(() => {
 
 <style scoped>
 .pdf-container {
-  width: 1200px;
-  height: 1800px;
+  height: 100%;
+  border-style: solid;
+  border-color: white;
   background: white;
   padding: 60px 40px 40px 40px;
 }
@@ -303,5 +312,4 @@ onMounted(() => {
   display: flex;
   margin: 0 0 30px 0;
 }
-
 </style>

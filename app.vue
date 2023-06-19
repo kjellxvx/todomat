@@ -152,4 +152,111 @@ input[type="text"]:disabled {
 .hg-theme-default .hg-button {
   height: 140px;
 }
+
+
+form {
+  display: grid;
+  place-content: center;
+}
+
+.form-control {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 20px;
+  text-align: left;
+  margin: 0px;
+  display: flex;
+  grid-template-columns: 1em auto;
+  align-items: center;
+  gap: 0;
+  display: flex;
+}
+
+.checkform{
+  max-width: 800px;
+}
+
+.radio-label-left {
+  display: flex;
+
+}
+
+.radio-label-left > label {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+  display: flex;
+  width: 100%;
+}
+
+.radio-label-right{
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.form-control--disabled {
+  color: #959495;
+  cursor: not-allowed;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.08em solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  align-self: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-color);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.08em solid currentColor;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  align-self: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--primary-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
 </style>
