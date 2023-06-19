@@ -1,6 +1,8 @@
 <template>
   <NuxtLayout name="custom">
-    <div id="pdf-container" class="pdf-container">
+    <template #header> Some header template content. </template>
+
+    <div class="pdf-container">
       <div class="header-container">
         <p class="receipt">Receipt</p>
         <p class="logo">TODOMAT</p>
@@ -86,9 +88,14 @@
 </template>
 
 <script setup>
-import html2pdf from "html2pdf.js";
 import PocketBase from "pocketbase";
-const loading = ref(false);
+
+definePageMeta({
+  layout: false,
+});
+
+/*const pb = new PocketBase('http://127.0.0.1:8090');
+const authData = await pb.admins.authWithPassword('maxmustermann@mail.de', 'password123');*/
 
 const pb = new PocketBase("https://delightful-artist.pockethost.io");
 const authData = await pb.admins.authWithPassword(
@@ -141,27 +148,10 @@ async function Print() {
   //////////////////                       DATA BASE CODE HERE                    //////////////////
   //////////////////                                                              //////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  exportToPDF();
-  await delay(10000);
-  navigateTo("/");
-}
-
-const exportToPDF = () => {
-  html2pdf(document.getElementById("pdf-container"), {
-    margin: 0,
-    filename: "Todomat.pdf",
-    image: { type: "pdf", quality: 0.98 },
-    html2canvas: { dpi: 300, letterRendering: true },
-    jsPDF: { unit: "mm", format: [317.5, 476.25], orientation: "portrait" },
-  });
-};
-
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  navigateTo("/print");
 }
 
 onMounted(() => {
-    loading.value = true;
   Print();
   printTodos.value = Object.values(todos.value).flat();
   if (printTodos.value.length == 0) {
@@ -172,7 +162,7 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .pdf-container {
   height: 100%;
   border-style: solid;
@@ -324,37 +314,5 @@ onMounted(() => {
 .todo {
   display: flex;
   margin: 0 0 30px 0;
-}
-
-.loading-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  /* backdrop-filter: blur(5px); */
-  background: white;
-}
-
-.loading-spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid var(--primary-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 </style>

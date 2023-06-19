@@ -8,12 +8,8 @@ export default {
     ],
     link: [{ rel: "icon", type: "image/png", href: "favicon.png" }],
   },
-  loading: false,
+  loading: true,
   build: {},
   modules: [],
   css: [],
-  privateRuntimeConfig: {
-    apiUser: process.env.API_USER,
-    apiSecret: process.env.API_SECRET,
-  },
 };

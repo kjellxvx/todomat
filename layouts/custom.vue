@@ -1,12 +1,10 @@
 <template>
-  <div class="page-container">
     <slot />
-  </div>
 </template>
 
 <script setup></script>
 
-<style>
+<style scoped >
 html {
   width: 1200px;
   height: 1800px;
