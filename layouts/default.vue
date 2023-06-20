@@ -318,5 +318,11 @@ p {
   .p-bold {
     font-size: 20px;
   }
+
+  .page-container {
+    width: calc(100% - 2em); /* Adjust the value as needed */
+    height: calc(100% - 22.2476L17em); /* Adjust the value as needed */
+    margin: 1.2em 1em;
+  }
 }
 </style>
