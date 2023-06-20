@@ -69,18 +69,7 @@ html body {
   height: 100%;
   background-color: #131126;
   z-index: -9999;
-}
-
-.circle-orange {
-  position: absolute;
-  top: 65%;
-  left: 85%;
-  transform: translate(-50%, -50%);
-  width: 778.27px;
-  height: 778.27px;
-  border-radius: 50%;
-  background-color: #ff8a00;
-  filter: blur(254.14px);
+  overflow: hidden;
 }
 
 .first-circle {
@@ -88,11 +77,12 @@ html body {
   top: 81%;
   left: 76%;
   transform: translate(-50%, -50%);
-  width: 513px;
-  height: 513px;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
   background: radial-gradient(closest-side, #5f81a4, #4ae074 65%);
-  filter: blur(206.63px);
+  /* filter: blur(206.63px); */
+  filter: blur(20vw);
 }
 
 .second-circle {
@@ -100,8 +90,8 @@ html body {
   top: 77%;
   left: 64%;
   transform: translate(-50%, -50%) rotate(166.96deg);
-  width: 500px;
-  height: 500px;
+  width: 48%;
+  height: 48%;
   border-radius: 50%;
   background: radial-gradient(
     217.68% 217.68% at 27.97% 49.05%,
@@ -109,8 +99,10 @@ html body {
     rgba(90, 233, 253, 0) 100%
   );
   border: 45.0761px solid #00e29a;
+  /* border-radius: 383.626px; */
+  border-radius: 49%;
   filter: blur(107.415px);
-  border-radius: 383.626px;
+  filter: blur(10vw);
 }
 
 .third-circle {
@@ -118,8 +110,8 @@ html body {
   top: 54%;
   left: 48%;
   transform: translate(-50%, -50%);
-  width: 729.97px;
-  height: 705.63px;
+  width: 71.3%;
+  height: 68.9%;
   border-radius: 50%;
   background: radial-gradient(
     158.99% 50% at 50% 50%,
@@ -127,7 +119,7 @@ html body {
     rgba(99, 73, 255, 0.37) 100%
   );
   mix-blend-mode: screen;
-  filter: blur(117.957px);
+  filter: blur(9vw);
 }
 
 .forth-circle {
@@ -135,8 +127,8 @@ html body {
   top: 48%;
   left: 87%;
   transform: translate(-50%, -50%) rotate(-324deg) scaleX(-1);
-  width: 524.32px;
-  height: 524.32px;
+  width: 51.2%;
+  height: 51.2%;
   border-radius: 50%;
   background-color: white;
   background: conic-gradient(
@@ -145,7 +137,7 @@ html body {
     rgba(255, 216, 75, 0) 360deg
   );
   mix-blend-mode: normal;
-  filter: blur(134.184px);
+  filter: blur(12vw);
 }
 
 .fifth-circle {
@@ -153,12 +145,12 @@ html body {
   top: 58%;
   left: 86%;
   transform: translate(-50%, -50%);
-  width: 779.18px;
-  height: 779.18px;
+  width: 76.1%;
+  height:  76.1%;
   border-radius: 50%;
   background-color: #ff8a00;
   mix-blend-mode: lighten;
-  filter: blur(127.068px);
+  filter: blur(13vw);
 }
 
 .button {
