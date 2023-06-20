@@ -169,9 +169,7 @@ html body {
 .button-white {
   height: 1.8em;
   background-color: white;
-  border-style: solid;
-  color: black;
-  border-width: 0.08em;
+  border: solid black 0.08em;
   border-radius: 1em;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;
@@ -219,9 +217,10 @@ input[type="text"]:disabled {
   cursor: not-allowed;
 }
 
-.codeInput {
+input.codeInput {
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;
+  border-style: solid;
   border-width: 1px;
   border-radius: 10px;
   padding-left: 10px;
@@ -281,6 +280,7 @@ form {
 
 .checkform {
   max-width: 800px;
+  margin-bottom: 30px;
 }
 
 .radio-label-left {
@@ -438,7 +438,6 @@ input[type="radio"]:checked::before {
 @media only screen and (max-width: 1024px) {
   html body {
     overflow: auto;
-    -webkit-appearance: none;
   }
 
   .button {

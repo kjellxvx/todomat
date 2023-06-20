@@ -30,9 +30,9 @@
         </button>
       </div>
     </div>
-  </div>
-  <div class="button-container">
-    <button @click="Print" class="button">Auschecken und Ausdrucken</button>
+    <div class="button-container">
+      <button @click="Print" class="button">Auschecken und Ausdrucken</button>
+    </div>
   </div>
 </template>
 <script setup>
@@ -84,6 +84,7 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  margin-bottom: 30px;
 }
 
 .menuItem {

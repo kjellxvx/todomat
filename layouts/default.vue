@@ -267,7 +267,6 @@ p {
 
 .slide {
   width: 100%;
-  height: 100%;
 }
 
 .brand {
@@ -317,7 +316,7 @@ p {
   }
 
   .p-bold {
-    font-size: 20px;
+    font-size: 2px;
   }
 }
 </style>
