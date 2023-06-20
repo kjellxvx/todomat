@@ -40,7 +40,7 @@
 
 html body {
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
 
   /* width: 1024px;
   height: 768px;
@@ -57,7 +57,7 @@ html body {
 #__nuxt {
   max-width: 1024px;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   margin: 0;
 }
 
