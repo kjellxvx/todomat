@@ -62,7 +62,7 @@ html body {
 }
 
 .background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -146,7 +146,7 @@ html body {
   left: 86%;
   transform: translate(-50%, -50%);
   width: 76.1%;
-  height:  76.1%;
+  height: 76.1%;
   border-radius: 50%;
   background-color: #ff8a00;
   mix-blend-mode: lighten;
@@ -467,8 +467,20 @@ input[type="radio"]:checked::before {
     margin-left: 0;
   }
 
-  .checkform{
+  .checkform {
     padding-bottom: 3em;
+  }
+
+  .background {
+  }
+
+  @supports (height: 100dvh) {
+    #__nuxt {
+      min-height: calc(100dvh - 6rem);
+    }
+    html body {
+      min-height: calc(100dvh - 6rem);
+    }
   }
 }
 </style>
