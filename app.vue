@@ -169,6 +169,7 @@ html body {
 .button-white {
   height: 1.8em;
   background-color: white;
+  color: black;
   border: solid black 0.08em;
   border-radius: 1em;
   font-family: "IBMPlexSans-Regular", sans-serif;

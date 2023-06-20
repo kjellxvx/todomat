@@ -316,7 +316,7 @@ p {
   }
 
   .p-bold {
-    font-size: 2px;
+    font-size: 20px;
   }
 }
 </style>
