@@ -48,13 +48,8 @@ function Zurück() {
 
 <style scoped>
 
-.button-container {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-}
 .textbox p{
-  width: 930px;
+  width: 98%;
 }
 </style>
 -

@@ -3,11 +3,9 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
-  <div>
-    <NuxtLayout>
-      <NuxtPage/>
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script></script>
@@ -34,49 +32,158 @@
 }
 
 :root {
-  --primary-color: #5F81A4;
-  --secondary-color: #2B2B2B;
-  --disabled-color: #B5B5B5;
-  --form-control-color: var(--primary-color:);
+  --primary-color: #363ad1;
+  --secondary-color: #2b2b2b;
+  --disabled-color: #b5b5b5;
+  --form-control-color: var(--primary-color: );
 }
 
-html {
-  width: 1024px;
+html body {
+  width: 100vw;
+  height: 100vh;
+
+  /* width: 1024px;
   height: 768px;
-  /* width: 100vw;
-  height: 100vh; */
+  border: black 1px solid; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
 }
 
-body {
-  margin: 0px;
-  border: black;
-  border-radius: 1px;
-  border: solid;
+#__nuxt {
+  max-width: 1024px;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #131126;
+  z-index: -9999;
+}
+
+.circle-orange {
+  position: absolute;
+  top: 65%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  width: 778.27px;
+  height: 778.27px;
+  border-radius: 50%;
+  background-color: #ff8a00;
+  filter: blur(254.14px);
+}
+
+.first-circle {
+  position: absolute;
+  top: 81%;
+  left: 76%;
+  transform: translate(-50%, -50%);
+  width: 513px;
+  height: 513px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, #5f81a4, #4ae074 65%);
+  filter: blur(206.63px);
+}
+
+.second-circle {
+  position: absolute;
+  top: 77%;
+  left: 64%;
+  transform: translate(-50%, -50%) rotate(166.96deg);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    217.68% 217.68% at 27.97% 49.05%,
+    #5ae9fd 0%,
+    rgba(90, 233, 253, 0) 100%
+  );
+  border: 45.0761px solid #00e29a;
+  filter: blur(107.415px);
+  border-radius: 383.626px;
+}
+
+.third-circle {
+  position: absolute;
+  top: 54%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  width: 729.97px;
+  height: 705.63px;
+  border-radius: 50%;
+  background: radial-gradient(
+    158.99% 50% at 50% 50%,
+    #5f81a4 0%,
+    rgba(99, 73, 255, 0.37) 100%
+  );
+  mix-blend-mode: screen;
+  filter: blur(117.957px);
+}
+
+.forth-circle {
+  position: absolute;
+  top: 48%;
+  left: 87%;
+  transform: translate(-50%, -50%) rotate(-324deg) scaleX(-1);
+  width: 524.32px;
+  height: 524.32px;
+  border-radius: 50%;
+  background-color: white;
+  background: conic-gradient(
+    from -180deg at 50% 50%,
+    #ffe072 0deg,
+    rgba(255, 216, 75, 0) 360deg
+  );
+  mix-blend-mode: normal;
+  filter: blur(134.184px);
+}
+
+.fifth-circle {
+  position: absolute;
+  top: 58%;
+  left: 86%;
+  transform: translate(-50%, -50%);
+  width: 779.18px;
+  height: 779.18px;
+  border-radius: 50%;
+  background-color: #ff8a00;
+  mix-blend-mode: lighten;
+  filter: blur(127.068px);
 }
 
 .button {
-  height: 39.39px;
+  height: 1.8em;
   background-color: var(--primary-color);
-  border: 0;
   color: white;
-  border-radius: 21.1px;
+  border: 0;
+  border-radius: 1em;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;
-  padding: 5px 50px 5px 50px;
+  padding: 0.2em 2em 0.2em 2em;
   margin-right: 10px;
   cursor: pointer;
 }
 
 .button-white {
-  height: 39.39px;
+  height: 1.8em;
   background-color: white;
   border-style: solid;
   color: black;
-  border-width: 1px;
-  border-radius: 21.1px;
+  border-width: 0.08em;
+  border-radius: 1em;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;
-  padding: 5px 30px 5px 30px;
+  padding: 0.2em 1.3em 0.2em 1.3em;
   cursor: pointer;
 }
 
@@ -86,6 +193,16 @@ body {
   font-size: 35px;
   height: 39.39px;
   cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.button-container button {
+  margin-right: 20px;
 }
 
 input[type="text"] {
@@ -153,7 +270,6 @@ input[type="text"]:disabled {
   height: 140px;
 }
 
-
 form {
   display: grid;
   place-content: center;
@@ -171,13 +287,12 @@ form {
   display: flex;
 }
 
-.checkform{
+.checkform {
   max-width: 800px;
 }
 
 .radio-label-left {
   display: flex;
-
 }
 
 .radio-label-left > label {
@@ -191,7 +306,7 @@ form {
   width: 100%;
 }
 
-.radio-label-right{
+.radio-label-right {
   margin-left: 20px;
   display: flex;
   align-items: center;
@@ -259,4 +374,109 @@ input[type="radio"]:checked::before {
   transform: scale(1);
 }
 
+.link {
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  text-decoration: underline;
+}
+
+.popup-link {
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.popup-container {
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
+
+.popup {
+  width: 300px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 1000;
+  margin: 38px;
+  padding: 19px;
+}
+
+.popup-headline {
+  font-family: "IBMPlexSans", sans-serif;
+  font-size: 22px;
+  text-align: left;
+  margin: 0px;
+  padding: 10px 0 20px 0;
+  border: solid;
+  border-width: 0 0 1px 0;
+  border-color: black;
+}
+
+.popup-text {
+  font-family: "IBMPlexSans", sans-serif;
+  font-size: 15px;
+  text-align: left;
+  margin: 0px;
+  padding: 20px 0 15px 0;
+}
+
+.popup-close-button {
+  position: fixed;
+  right: 50px;
+  background-color: white;
+  border-style: none;
+  font-size: 35px;
+  height: 39.39px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+  html body {
+    overflow: auto;
+  }
+
+  .button {
+    font-size: 5vw;
+    margin-bottom: 0.5em;
+  }
+
+  .button-white {
+    font-size: 5vw;
+  }
+
+  .button-container {
+    display: block;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 1em;
+  }
+
+  .radio-label-right {
+    display: block;
+  }
+
+  input[type="text"] {
+    margin: 0.5em 0 0 0;
+  }
+  .popup-link {
+    margin-left: 0;
+  }
+
+  .checkform{
+    padding-bottom: 3em;
+  }
+}
 </style>

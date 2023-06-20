@@ -21,7 +21,7 @@ const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 <style scoped>
 .header-row {
   display: flex;
-  margin-bottom: 23px;
+  margin-bottom: 1em;
   align-items: center;
 }
 </style>

@@ -69,18 +69,13 @@ function About() {
 </script>
 
 <style scoped>
-.button-container {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-}
 
 .button-white svg{
 padding-left: 25px;
 }
 
 .textbox p{
-  width: 890px;
+  width: 96%;
 }
 </style>
 -

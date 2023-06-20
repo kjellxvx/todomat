@@ -75,7 +75,4 @@ onMounted(() => {
   font-size: 20px;
 }
 
-.slide {
-  height: 100%;
-}
 </style>

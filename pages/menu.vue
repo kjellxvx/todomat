@@ -1,10 +1,9 @@
 <template>
   <div class="slide">
-    <HeaderComp
-      />
+    <HeaderComp />
 
     <h1>Womit möchtest Du starten?</h1>
-    <div class="menuContainer">
+    <div class="menu-container">
       <div class="menuItem" :style="{ backgroundColor: buttonColor('A1') }">
         <p class="menu-h1">Dein Körper</p>
         <p class="menu-p">
@@ -80,7 +79,6 @@ const order = useOrder();
 const todos = useTodos();
 const data = useData();
 
-
 function A1() {
   index.value = order.value.indexOf("A1");
   navigateTo(`/${"A1"}`);
@@ -127,15 +125,16 @@ const buttonColor = computed(() => {
 </script>
 
 <style scoped>
-.menuContainer {
+.menu-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 33px;
+  margin: 0 0 28px 0;
 }
 
 .menuItem {
   border-style: solid;
-  padding: 30px 20px 20px 20px;
+  padding: 20px 15px 20px 15px;
   border-radius: 10px;
 }
 
@@ -146,7 +145,7 @@ const buttonColor = computed(() => {
 
 .menu-p {
   font-size: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .menu-button {
@@ -168,13 +167,13 @@ const buttonColor = computed(() => {
   margin: 2px 0px 0 30px;
 }
 
-.button-container {
-  display: flex;
-  flex-direction: row;
-  margin: 28px 0 28px 0;
-}
+@media only screen and (max-width: 1024px) {
+  .menu-container {
+    display: block;
+  }
 
-.slide {
-  height: 100%;
+  .menuItem {
+margin-bottom: 1em;
+}
 }
 </style>

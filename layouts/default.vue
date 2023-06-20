@@ -1,24 +1,23 @@
 <template>
   <div class="page-container">
     <slot />
-    <div class="gui">
-      <div class="button-container">
-        <button
-          @click="goToPage(nextPage)"
-          :disabled="!isButtonEnabled"
-          class="button"
-          v-bind:style="{ display: displayNavigation }"
-        >
-          Weiter
-        </button>
-        <button
-          @click="goToPage(previousPage)"
-          class="button-white"
-          v-bind:style="{ display: displayNavigation }"
-        >
-          Zurück
-        </button>
-      </div>
+
+    <div class="button-container">
+      <button
+        @click="goToPage(nextPage)"
+        :disabled="!isButtonEnabled"
+        class="button"
+        v-bind:style="{ display: displayNavigation }"
+      >
+        Weiter
+      </button>
+      <button
+        @click="goToPage(previousPage)"
+        class="button-white"
+        v-bind:style="{ display: displayNavigation }"
+      >
+        Zurück
+      </button>
     </div>
   </div>
 
@@ -209,7 +208,7 @@ function checkProgress() {
   for (let i = 0; i < keys.length; i++) {
     progress.value[i] = data.value[keys[i]] ? 1 : 0;
   }
-  console.log(progress.value)
+  console.log(progress.value);
 }
 
 onMounted(() => {});
@@ -221,13 +220,14 @@ onMounted(() => {});
 }
 
 .page-container {
-  height: 768px;
   display: flex;
   flex-direction: column;
-}
-
-.gui {
-  /* margin-top: auto; */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  width: calc(100% - 6em); /* Adjust the value as needed */
+  height: calc(100% - 4.6em); /* Adjust the value as needed */
+  margin: 2.3em 3em;
 }
 
 h1 {
@@ -240,7 +240,7 @@ h1 {
 
 h2 {
   font-family: "IBMPlexSans-Medium", sans-serif;
-  width: 770px;
+  max-width: 770px;
   font-size: 26px;
   text-align: left;
   margin: 0px;
@@ -266,12 +266,9 @@ p {
 }
 
 .slide {
-  margin: 28px 37px 28px 37px;
-  /* height: 100%; */
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
-
 
 .brand {
   font-family: "IBMPlexSans-Bold", sans-serif;
@@ -307,86 +304,20 @@ p {
   margin-right: 0;
 }
 
-.button-container {
-  display: flex;
-  flex-direction: row;
-  margin: 0 37px 28px 37px;
-}
-
-.button-container button {
-  margin-right: 20px;
-}
-
-.link {
-  cursor: pointer;
-  color: var(--secondary-color);
-  font-family: "IBMPlexSans-Bold", sans-serif;
-  text-decoration: underline;
-}
-
-.popup-link {
-  cursor: pointer;
-  color: var(--secondary-color);
-  font-family: "IBMPlexSans-Bold", sans-serif;
-  font-size: 20px;
-  text-decoration: underline;
-  margin-left: 10px;
-  white-space: nowrap;
-}
-
-.popup-container {
-  position: fixed;
-  display: flex;
-  justify-content: right;
-  align-items: flex-end;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  backdrop-filter: blur(5px);
-}
-
-.popup {
-  width: 300px;
-  border-style: solid;
-  border-radius: 10px;
-  background-color: white;
-  z-index: 1000;
-  margin: 38px;
-  padding: 19px;
-}
-
-.popup-headline {
-  font-family: "IBMPlexSans", sans-serif;
-  font-size: 22px;
-  text-align: left;
-  margin: 0px;
-  padding: 10px 0 20px 0;
-  border: solid;
-  border-width: 0 0 1px 0;
-  border-color: black;
-}
-
-.popup-text {
-  font-family: "IBMPlexSans", sans-serif;
-  font-size: 15px;
-  text-align: left;
-  margin: 0px;
-  padding: 20px 0 15px 0;
-}
-
-.popup-close-button {
-  position: fixed;
-  right: 50px;
-  background-color: white;
-  border-style: none;
-  font-size: 35px;
-  height: 39.39px;
-  cursor: pointer;
-}
-
 .data-container {
   display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 20px;
+  }
+
+  .p-bold {
+    font-size: 20px;
+  }
 }
 </style>

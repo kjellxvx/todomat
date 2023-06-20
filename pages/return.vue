@@ -159,11 +159,6 @@ function Close() {
 </script>
 
 <style scoped>
-.button-container {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-}
 
 .button-container input {
   width: 250px;
