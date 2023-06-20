@@ -52,7 +52,6 @@ html body {
   align-items: center;
   margin: 0;
   overflow: hidden;
-  min-height: -webkit-fill-available;
 }
 
 #__nuxt {
@@ -439,6 +438,7 @@ input[type="radio"]:checked::before {
 @media only screen and (max-width: 1024px) {
   html body {
     overflow: auto;
+    -webkit-appearance: none;
   }
 
   .button {
