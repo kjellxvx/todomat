@@ -52,6 +52,7 @@ html body {
   align-items: center;
   margin: 0;
   overflow: hidden;
+  min-height: -webkit-fill-available;
 }
 
 #__nuxt {
@@ -469,18 +470,6 @@ input[type="radio"]:checked::before {
 
   .checkform {
     padding-bottom: 3em;
-  }
-
-  .background {
-  }
-
-  @supports (height: 100dvh) {
-    #__nuxt {
-      min-height: calc(100dvh - 6rem);
-    }
-    html body {
-      min-height: calc(100dvh - 6rem);
-    }
   }
 }
 </style>
