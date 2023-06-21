@@ -461,6 +461,8 @@ input[type="radio"]:checked::before {
   display: flex;
   align-items: center;
   cursor: pointer;
+  white-space: nowrap;
+
 }
 
 .menu-button i {
