@@ -133,7 +133,7 @@ const buttonColor = computed(() => {
 }
 
 .menuItem {
-  border-style: solid;
+  border: solid 1px black;
   padding: 20px 15px 20px 15px;
   border-radius: 10px;
 }

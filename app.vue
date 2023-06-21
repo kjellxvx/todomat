@@ -170,7 +170,7 @@ html body {
   height: 1.8em;
   background-color: white;
   color: black;
-  border: solid black 0.08em;
+  border: solid black 1.2px;
   border-radius: 1em;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;

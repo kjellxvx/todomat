@@ -12,4 +12,5 @@ export default {
   build: {},
   modules: [],
   css: [],
+  plugins: [{ src: "~/plugins/useInactivity.js", mode: "client" }],
 };
