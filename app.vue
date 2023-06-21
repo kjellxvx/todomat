@@ -60,6 +60,8 @@ html body {
   width: 100%;
   height: 100svh;
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .first-circle {
@@ -469,6 +471,10 @@ input[type="radio"]:checked::before {
 
 .menu-button[disabled] {
   cursor: default;
+}
+
+.background {
+  background-color: white;
 }
 
 @media only screen and (max-width: 1024px) {

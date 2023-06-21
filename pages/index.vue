@@ -33,7 +33,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
 .background {
   position: fixed;
   top: 0;
@@ -47,8 +46,8 @@ onMounted(() => {
 
 .h1-index {
   font-family: "IBMPlexSans-Bold", sans-serif;
-  /* font-size: 100px; */
-  font-size: 10vw;
+  font-size: 100px;
+  /* font-size: 10vw; */
   text-align: center;
   /* margin: 30px 0 40px 0; */
   margin: 0 0 0.4em 0;
@@ -58,8 +57,8 @@ onMounted(() => {
 
 .h2-index {
   font-family: "IBMPlexSans-Regular", sans-serif;
-  /* font-size: 48.19px; */
-  font-size: 5vw;
+  font-size: 48.19px;
+  /* font-size: 5vw; */
   text-align: center;
   margin: 0;
   color: white;
@@ -67,7 +66,8 @@ onMounted(() => {
 }
 
 .button {
-  font-size: 2vw;
+  font-size: 21.1px;
+  /* font-size: 2vw; */
   background-color: white;
   color: black;
   padding: 0.2em 3.3em 0.2em 3.3em;
@@ -87,6 +87,14 @@ onMounted(() => {
     background-color: white;
     color: black;
     padding: 0.2em 3.3em 0.2em 3.3em;
+  }
+
+  .h1-index {
+    font-size: 10vw;
+  }
+
+  .h2-index {
+    font-size: 5vw;
   }
 }
 </style>

@@ -228,6 +228,7 @@ onMounted(() => {});
   width: calc(100% - 6em); /* Adjust the value as needed */
   height: calc(100% - 4.6em); /* Adjust the value as needed */
   margin: 2.3em 3em;
+  max-height: 768px;
 }
 
 h1 {
