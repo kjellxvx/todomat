@@ -52,6 +52,7 @@ html body {
   align-items: center;
   margin: 0;
   overflow: hidden;
+  background: white;
 }
 
 #__nuxt {
@@ -59,17 +60,6 @@ html body {
   width: 100%;
   height: 100svh;
   margin: 0;
-}
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #131126;
-  z-index: -9999;
-  overflow: hidden;
 }
 
 .first-circle {
@@ -157,7 +147,7 @@ html body {
   filter: blur(13vw);
   animation-name: move;
   animation-duration: 24s;
-  animation-timing-function: cubic-bezier(0,0,0.58,1);
+  animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
@@ -543,7 +533,7 @@ input[type="radio"]:checked::before {
 @keyframes move {
   0% {
     left: 75%;
-    top: 50%
+    top: 50%;
   }
   25% {
     left: 86%;
@@ -559,7 +549,7 @@ input[type="radio"]:checked::before {
   }
   100% {
     left: 75%;
-    top: 50%
+    top: 50%;
   }
 }
 </style>

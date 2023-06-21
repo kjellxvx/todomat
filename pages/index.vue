@@ -33,6 +33,18 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #131126;
+  z-index: -9999;
+  overflow: hidden;
+}
+
 .h1-index {
   font-family: "IBMPlexSans-Bold", sans-serif;
   /* font-size: 100px; */
