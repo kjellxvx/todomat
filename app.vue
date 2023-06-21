@@ -200,8 +200,9 @@ input[type="text"] {
   font-family: "IBMPlexSans-MediumItalic", sans-serif;
   color: black;
   font-size: 20px;
-  border-width: 0 0 1px 0;
+  border-style: solid;
   border-color: black;
+  border-width: 0 0 1px 0;
   margin-left: 20px;
 }
 
@@ -212,8 +213,6 @@ input[type="text"]::placeholder {
 
 input[type="text"]:disabled {
   color: var(--disabled-color);
-  border-width: 0 0 1px 0;
-  border-color: black;
   background: white;
   cursor: not-allowed;
 }

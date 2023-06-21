@@ -152,6 +152,7 @@ const buttonColor = computed(() => {
   height: 28px;
   background-color: white;
   border: solid black 1px;
+  color: black;
   border-radius: 21.1px;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 13px;
