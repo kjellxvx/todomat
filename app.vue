@@ -198,7 +198,7 @@ html body {
 
 input[type="text"] {
   -webkit-appearance: none;
-  -webkit-border-radius:0px;
+  -webkit-border-radius: 0px;
   font-family: "IBMPlexSans-MediumItalic", sans-serif;
   color: black;
   font-size: 20px;
@@ -505,6 +505,18 @@ input[type="radio"]:checked::before {
 
   .checkform {
     padding-bottom: 3em;
+  }
+
+  input.codeInput {
+    margin-bottom: 40px;
+  }
+
+  .close-button{
+    position:relative;
+  }
+
+  .close-button-container{
+    margin: 10px 0 10px 0;
   }
 }
 </style>

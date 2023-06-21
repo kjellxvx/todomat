@@ -196,10 +196,11 @@ function Close() {
 <style scoped>
 .info-container {
   display: flex;
+  justify-content: center;
 }
 
 .info-left {
-  margin: 0 50px 0 200px;
+  margin: 0 50px 0 0;
 }
 
 .info-right {
@@ -221,6 +222,20 @@ function Close() {
   font-size: 18.15px;
   text-align: left;
   margin: 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .info-left{
+    display: none;
+  }
+
+  .info{
+    border-top: none;
+  }
+
+  .textbox p {
+    padding-bottom: 0;
+}
 }
 
 </style>
