@@ -98,17 +98,15 @@ const getButtonLabel = (letter) => {
 
 const isCategoryComplete = (letter) => {
   if (categories.value) {
+    console.log();
     return !categories.value[letter].complete;
   }
-  return false;
+  return 'none'
 };
 
 const buttonColor = computed(() => {
   return (buttonId) => {
-    if (
-      categories.value &&
-      categories.value[buttonId].complete == true
-    ) {
+    if (categories.value && categories.value[buttonId].complete == true) {
       return "#5F81A4";
     } else {
       return "white";
