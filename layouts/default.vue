@@ -12,7 +12,7 @@
         Weiter
       </button>
       <button
-        @click="goToPage(previousPage)"
+        @click="goBack(previousPage)"
         class="button-white"
         v-bind:style="{ display: displayNavigation }"
       >
@@ -117,6 +117,7 @@ const local = useLocal();
 const popup = usePopup();
 const storedData = useStoredData();
 const userToken = useUserToken();
+const categories = useCategories();
 const progress = useProgress();
 
 // Logic for rendering the page order
@@ -198,17 +199,20 @@ const nextPage = computed(() => slides.value[index.value + 1]);
 function goToPage(page) {
   if (index.value >= 0) {
     index.value = slides.value.indexOf(page);
-    checkProgress();
     navigateTo(`/${page}`);
   }
 }
 
-function checkProgress() {
-  const keys = ["A2", "B1", "C3", "D4", "E4", "F3"];
-  for (let i = 0; i < keys.length; i++) {
-    progress.value[i] = data.value[keys[i]] ? 1 : 0;
+function goBack(page) {
+  if (index.value >= 0) {
+    if (page == "confirmation") {
+      index.value = 0;
+      navigateTo(`/menu`);
+    } else {
+      index.value = slides.value.indexOf(page);
+      navigateTo(`/${page}`);
+    }
   }
-  console.log(progress.value);
 }
 
 onMounted(() => {});

@@ -26,12 +26,16 @@ export const useHeadline = () => {
 
 export const useProgress = () => {
   return useState("progress", () => {
-    return [0,0,0,0,0,0];
+    return [0, 0, 0, 0, 0, 0];
   });
 };
 
 export const useIndex = () => {
   return useState("index", () => 0);
+};
+
+export const useCategories = () => {
+  return useState("categories", () => {});
 };
 
 export const useLocal = () => {
@@ -42,7 +46,7 @@ export const usePopup = () => {
   return useState("popup", () => {
     return {
       isOpen: false,
-      content: "default"
+      content: "default",
     };
   });
 };

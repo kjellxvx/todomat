@@ -441,7 +441,7 @@ input[type="radio"]:checked::before {
 .close-button-container {
   position: relative;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .close-button {
@@ -471,10 +471,6 @@ input[type="radio"]:checked::before {
 
 .menu-button[disabled] {
   cursor: default;
-}
-
-.background {
-  background-color: white;
 }
 
 @media only screen and (max-width: 1024px) {

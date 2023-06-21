@@ -1,7 +1,6 @@
 <template>
   <div class="slide">
-    <HeaderComp
-      />
+    <HeaderComp />
     <h1>{{ headline }}</h1>
     <h2>{{ question }}</h2>
     <div class="checkform">
@@ -23,7 +22,6 @@
             "
           />
           <!-- Create a label for the radio button with the content of the current option -->
-         
         </div>
         <!-- Check if the current option requires a text input -->
         <div class="radio-label-right">
@@ -76,7 +74,8 @@ const headline = useHeadline();
 const index = useIndex();
 const order = useOrder();
 const popup = usePopup();
-
+const categories = useCategories();
+const progress = useProgress();
 
 const slides = questionaire.slides;
 const question = slides[id].question;
@@ -115,6 +114,38 @@ function Info(key) {
   popup.value.content = slides[id].options[0][key].info;
 }
 
+function updateCategories() {
+  categories.value = Object.values(order.value)
+    .filter((element) => element !== "menu" && element !== "confirmation")
+    .reduce((acc, element) => {
+      const key = element.charAt(0).toUpperCase();
+      acc[key] = acc[key] || [];
+      acc[key].push(element);
+      return acc;
+    }, {});
+
+  const setCategoryComplete = (category) => {
+    const elements = categories.value[category];
+    return elements.every((element) => {
+      const options = data.value[element]?.options;
+      return options && options.length > 0;
+    });
+  };
+
+  for (const category in categories.value) {
+    if (setCategoryComplete(category)) {
+      categories.value[category].complete = true;
+    } else {
+      categories.value[category].complete = false;
+    }
+  }
+
+  for (const category in categories.value) {
+    const index = category.charCodeAt(0) - 65;
+    progress.value[index] = setCategoryComplete(category) ? 1 : 0;
+  }
+}
+
 function updateSelection() {
   const selectedOptionsArray = [...selectedOptions.value];
 
@@ -147,6 +178,7 @@ function updateSelection() {
 
   keyboard.value = false;
   complete.value = !isNotComplete();
+  updateCategories();
 }
 
 function updateTextSelection() {
@@ -284,5 +316,4 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

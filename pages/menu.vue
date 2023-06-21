@@ -1,71 +1,24 @@
 <template>
   <div class="slide">
     <HeaderComp />
-
     <h1>Womit möchtest Du starten?</h1>
     <div class="menu-container">
-      <div class="menuItem" :style="{ backgroundColor: buttonColor('A1') }">
-        <p class="menu-h1">Dein Körper</p>
+      <div
+        v-for="menuItem in menuItems"
+        :key="menuItem.letter"
+        class="menuItem"
+        :style="{ backgroundColor: buttonColor(menuItem.letter) }"
+      >
+        <p class="menu-h1">{{ menuItem.title }}</p>
         <p class="menu-p">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt.
+          {{ menuItem.description }}
         </p>
-        <button @click="A1" class="menu-button">
-          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
-        </button>
-      </div>
-      <div class="menuItem" :style="{ backgroundColor: buttonColor('B1') }">
-        <p class="menu-h1">Deine Verabschiedung</p>
-        <p class="menu-p">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt.
-        </p>
-        <button @click="B1" class="menu-button">
-          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
-        </button>
-      </div>
-      <div class="menuItem" :style="{ backgroundColor: buttonColor('C1') }">
-        <p class="menu-h1">Deine Daten</p>
-        <p class="menu-p">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt.
-        </p>
-        <button @click="C1" class="menu-button">
-          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
-        </button>
-      </div>
-      <div class="menuItem" :style="{ backgroundColor: buttonColor('D1') }">
-        <p class="menu-h1">Deine Dinge</p>
-        <p class="menu-p">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt.
-        </p>
-        <button @click="D1" class="menu-button">
-          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
-        </button>
-      </div>
-      <div class="menuItem" :style="{ backgroundColor: buttonColor('E1') }">
-        <p class="menu-h1">Deine Gedenken</p>
-        <p class="menu-p">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt.
-        </p>
-        <button @click="E1" class="menu-button">
-          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
-        </button>
-      </div>
-      <div class="menuItem" :style="{ backgroundColor: buttonColor('F1') }">
-        <p class="menu-h1">Deine Geheimnisse</p>
-        <p class="menu-p">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt.
-        </p>
-        <button @click="F1" class="menu-button">
-          Jetzt konfiguieren <i class="fa fa-long-arrow-right"></i>
+        <button @click="navigate(menuItem.letter)" class="menu-button">
+          {{ getButtonLabel(menuItem.letter) }}
+          <i class="fa fa-long-arrow-right"></i>
         </button>
       </div>
     </div>
-
     <div class="button-container">
       <button @click="Submit" class="button">Bearbeitung abschließen</button>
       <button @click="Restart" class="button-white">Neu Beginnen</button>
@@ -78,31 +31,54 @@ const index = useIndex();
 const order = useOrder();
 const todos = useTodos();
 const data = useData();
+const progress = useProgress();
+const categories = useCategories();
 
-function A1() {
-  index.value = order.value.indexOf("A1");
-  navigateTo(`/${"A1"}`);
+const menuItems = [
+  {
+    letter: "A",
+    title: "Dein Körper",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt.",
+  },
+  {
+    letter: "B",
+    title: "Deine Verabschiedung",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt.",
+  },
+  {
+    letter: "C",
+    title: "Dein Daten",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt.",
+  },
+  {
+    letter: "D",
+    title: "Deine Dinge",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt.",
+  },
+  {
+    letter: "E",
+    title: "Deine Gedenken",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt.",
+  },
+  {
+    letter: "F",
+    title: "Deine Geheimnisse",
+    description:
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diamnonumy eirmod tempor invidunt.",
+  },
+];
+
+function navigate(letter) {
+  letter = letter + "1";
+  index.value = order.value.indexOf(letter);
+  navigateTo(`/${letter}`);
 }
-function B1() {
-  index.value = order.value.indexOf("B1");
-  navigateTo(`/${"B1"}`);
-}
-function C1() {
-  index.value = order.value.indexOf("C1");
-  navigateTo(`/${"C1"}`);
-}
-function D1() {
-  index.value = order.value.indexOf("D1");
-  navigateTo(`/${"D1"}`);
-}
-function E1() {
-  index.value = order.value.indexOf("E1");
-  navigateTo(`/${"E1"}`);
-}
-function F1() {
-  index.value = order.value.indexOf("F1");
-  navigateTo(`/${"F1"}`);
-}
+
 function Submit() {
   navigateTo("/submit");
 }
@@ -113,9 +89,26 @@ function Restart() {
   navigateTo("/");
 }
 
+const getButtonLabel = (letter) => {
+  if (isCategoryComplete(letter)) {
+    return "Jetzt konfiguieren";
+  }
+  return "Bearbeiten";
+};
+
+const isCategoryComplete = (letter) => {
+  if (categories.value) {
+    return !categories.value[letter].complete;
+  }
+  return false;
+};
+
 const buttonColor = computed(() => {
   return (buttonId) => {
-    if (data.value[buttonId]) {
+    if (
+      categories.value &&
+      categories.value[buttonId].complete == true
+    ) {
       return "#5F81A4";
     } else {
       return "white";
@@ -154,7 +147,7 @@ const buttonColor = computed(() => {
   }
 
   .menuItem {
-margin-bottom: 1em;
-}
+    margin-bottom: 1em;
+  }
 }
 </style>
