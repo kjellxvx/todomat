@@ -200,9 +200,8 @@ input[type="text"] {
   font-family: "IBMPlexSans-MediumItalic", sans-serif;
   color: black;
   font-size: 20px;
-  border-style: solid;
-  border-color: black;
-  border-width: 0 0 1px 0;
+  border: none;
+  border-bottom: 1px solid black;
   margin-left: 20px;
 }
 
