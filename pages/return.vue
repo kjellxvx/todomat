@@ -1,7 +1,6 @@
 <template>
   <div class="slide">
-    <HeaderComp
-      />
+    <HeaderComp />
     <div class="textbox">
       <div class="close-container">
         <h1>
@@ -95,13 +94,6 @@ const data = useData();
 const local = useLocal();
 const route = useRoute();
 
-
-onMounted(() => {
-  if (route.query.code != undefined) {
-    Start(true);
-  }
-});
-
 function activateKeyboard() {
   if (local.value == true) {
     if (keyboard.value === true) {
@@ -125,7 +117,6 @@ function onChange(input) {
 
 async function Start(qrCode) {
   loading.value = true;
-
   const userData = { data: {}, todos: {} };
   const storedData = useStoredData();
   const userToken = useUserToken();
@@ -156,10 +147,22 @@ async function Start(qrCode) {
 function Close() {
   navigateTo("/start");
 }
+
+onMounted(() => {
+  if (route.query.code) {
+    console.log(route.query.code);
+    Start(true);
+  }
+});
+
+// onMounted(() => {
+//   if (route.query.code != undefined) {
+//     Start(true);
+//   }
+// });
 </script>
 
 <style scoped>
-
 .button-container input {
   width: 250px;
   margin-right: 20px;

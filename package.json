@@ -16,6 +16,7 @@
   "dependencies": {
     "html2pdf.js": "^0.10.1",
     "pocketbase": "^0.14.4",
+    "qrcode.vue": "^3.4.0",
     "vue-simple-keyboard": "^2.0.2"
   }
 }

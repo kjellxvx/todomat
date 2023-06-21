@@ -19,7 +19,6 @@
 <script setup>
 const route = useRoute();
 const local = useLocal();
-
 const start = () => {
   navigateTo("/start");
 };

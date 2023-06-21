@@ -42,7 +42,9 @@
               </div>
             </div>
           </div>
-          <div class="qr-code"></div>
+          <div class="qr-code">
+            <qrcode-vue :value="url" :size="size" level="H" />
+          </div>
         </div>
       </div>
       <p class="p3">
@@ -88,7 +90,12 @@
 <script setup>
 import html2pdf from "html2pdf.js";
 import PocketBase from "pocketbase";
+import QrcodeVue from "qrcode.vue";
+
 const loading = ref(false);
+// const url = ref("http://localhost:3000");
+const url = ref("https://unknown.gruppe5.org");
+const size = 160;
 
 const pb = new PocketBase("https://delightful-artist.pockethost.io");
 const authData = await pb.admins.authWithPassword(
@@ -125,6 +132,8 @@ async function Print() {
     // Generate User Token
     userToken.value = record.id;
     console.log("Created new record: " + userToken.value);
+    url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
+    console.log(url.value);
   } else {
     // If user Token already exists then ->
     // Update record
@@ -161,7 +170,7 @@ function delay(ms) {
 }
 
 onMounted(() => {
-    loading.value = true;
+  loading.value = true;
   Print();
   printTodos.value = Object.values(todos.value).flat();
   if (printTodos.value.length == 0) {
@@ -254,8 +263,8 @@ onMounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
-  color: black;
+  /* background-color: black;
+  color: black; */
 }
 
 .code-char-container {
