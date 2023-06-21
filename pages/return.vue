@@ -82,10 +82,17 @@ import SimpleKeyboard from "../components/SimpleKeyboard";
 import PocketBase from "pocketbase";
 
 const pb = new PocketBase("https://delightful-artist.pockethost.io");
-const authData = await pb.admins.authWithPassword(
-  "yinebo1036@andorem.com",
-  "password123"
-);
+
+try {
+  const authData = await pb.admins.authWithPassword(
+    "yinebo1036@andorem.com",
+    "password123"
+  );
+  // Rest of your code
+} catch (error) {
+  console.error("Error during authentication:", error);
+  // Handle the error appropriately (e.g., show an error message to the user)
+}
 
 const keyboard = useKeyboard();
 const inputText = ref("");
@@ -154,12 +161,6 @@ onMounted(() => {
     Start(true);
   }
 });
-
-// onMounted(() => {
-//   if (route.query.code != undefined) {
-//     Start(true);
-//   }
-// });
 </script>
 
 <style scoped>
