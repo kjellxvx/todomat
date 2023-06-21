@@ -225,6 +225,7 @@ input.codeInput {
   border-width: 1px;
   border-radius: 10px;
   padding-left: 10px;
+  margin-left: 0;
 }
 
 .codeInput::placeholder {

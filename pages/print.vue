@@ -93,8 +93,8 @@ import PocketBase from "pocketbase";
 import QrcodeVue from "qrcode.vue";
 
 const loading = ref(false);
-// const url = ref("http://localhost:3000");
-const url = ref("https://unknown.gruppe5.org");
+// const url = ref("http://localhost:3000/return");
+const url = ref("https://unknown.gruppe5.org/return");
 const size = 160;
 
 const pb = new PocketBase("https://delightful-artist.pockethost.io");
