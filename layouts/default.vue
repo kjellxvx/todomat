@@ -214,7 +214,6 @@ function goBack(page) {
     }
   }
 }
-
 onMounted(() => {});
 </script>
 

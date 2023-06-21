@@ -101,7 +101,7 @@ const isCategoryComplete = (letter) => {
     console.log();
     return !categories.value[letter].complete;
   }
-  return 'none'
+  return "none";
 };
 
 const buttonColor = computed(() => {
@@ -112,6 +112,42 @@ const buttonColor = computed(() => {
       return "white";
     }
   };
+});
+
+function updateCategories() {
+  console.log("test");
+  categories.value = Object.values(order.value)
+    .filter((element) => element !== "menu" && element !== "confirmation")
+    .reduce((acc, element) => {
+      const key = element.charAt(0).toUpperCase();
+      acc[key] = acc[key] || [];
+      acc[key].push(element);
+      return acc;
+    }, {});
+
+  const setCategoryComplete = (category) => {
+    const elements = categories.value[category];
+    return elements.every((element) => {
+      const options = data.value[element]?.options;
+      return options && options.length > 0;
+    });
+  };
+
+  for (const category in categories.value) {
+    if (setCategoryComplete(category)) {
+      categories.value[category].complete = true;
+    } else {
+      categories.value[category].complete = false;
+    }
+  }
+
+  for (const category in categories.value) {
+    const index = category.charCodeAt(0) - 65;
+    progress.value[index] = setCategoryComplete(category) ? 1 : 0;
+  }
+}
+onMounted(() => {
+  updateCategories();
 });
 </script>
 
