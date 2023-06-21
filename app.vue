@@ -449,6 +449,28 @@ input[type="radio"]:checked::before {
   height: 30px;
 }
 
+.menu-button {
+  height: 28px;
+  background-color: white;
+  border: solid black 1px;
+  color: black;
+  border-radius: 21.1px;
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 13px;
+  padding: 0 15px 0 38px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-button i {
+  margin: 2px 0px 0 30px;
+}
+
+.menu-button[disabled] {
+  cursor: default;
+}
+
 @media only screen and (max-width: 1024px) {
   html body {
     overflow: auto;

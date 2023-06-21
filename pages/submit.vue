@@ -104,30 +104,6 @@ onMounted(() => {
   padding-bottom: 30px;
 }
 
-.menu-button {
-  height: 28px;
-  background-color: white;
-  border-style: solid;
-  color: black;
-  border-width: 1px;
-  border-radius: 21.1px;
-  font-family: "IBMPlexSans-Regular", sans-serif;
-  font-size: 13px;
-  padding: 0 15px 0 38px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.menu-button i {
-  margin: 2px 0px 0 30px;
-}
-
-.menu-button[disabled] {
-  cursor: default;
-}
-
 @media only screen and (max-width: 1024px) {
   .menu-container {
     display: block;
