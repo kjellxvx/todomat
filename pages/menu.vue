@@ -151,9 +151,7 @@ const buttonColor = computed(() => {
 .menu-button {
   height: 28px;
   background-color: white;
-  border-style: solid;
-  color: black;
-  border-width: 1px;
+  border: solid black 1px;
   border-radius: 21.1px;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 13px;
