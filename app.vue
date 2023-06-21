@@ -120,6 +120,10 @@ html body {
   );
   mix-blend-mode: screen;
   filter: blur(9vw);
+  animation-name: rotate;
+  animation-duration: 20s;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-iteration-count: infinite;
 }
 
 .forth-circle {
@@ -151,6 +155,11 @@ html body {
   background-color: #ff8a00;
   mix-blend-mode: lighten;
   filter: blur(13vw);
+  animation-name: move;
+  animation-duration: 24s;
+  animation-timing-function: cubic-bezier(0,0,0.58,1);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
 }
 
 .button {
@@ -462,7 +471,6 @@ input[type="radio"]:checked::before {
   align-items: center;
   cursor: pointer;
   white-space: nowrap;
-
 }
 
 .menu-button i {
@@ -513,12 +521,45 @@ input[type="radio"]:checked::before {
     margin-bottom: 40px;
   }
 
-  .close-button{
-    position:relative;
+  .close-button {
+    position: relative;
   }
 
-  .close-button-container{
+  .close-button-container {
     margin: 10px 0 10px 0;
+  }
+}
+
+/* The animation code */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move {
+  0% {
+    left: 75%;
+    top: 50%
+  }
+  25% {
+    left: 86%;
+    top: 58%;
+  }
+  50% {
+    left: 96%;
+    top: 65%;
+  }
+  75% {
+    left: 86%;
+    top: 58%;
+  }
+  100% {
+    left: 75%;
+    top: 50%
   }
 }
 </style>
