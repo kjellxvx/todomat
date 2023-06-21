@@ -437,6 +437,18 @@ input[type="radio"]:checked::before {
   cursor: pointer;
 }
 
+.close-button-container {
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+
+.close-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+
 @media only screen and (max-width: 1024px) {
   html body {
     overflow: auto;
