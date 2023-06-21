@@ -197,6 +197,8 @@ html body {
 }
 
 input[type="text"] {
+  -webkit-appearance: none;
+  -webkit-border-radius:0px;
   font-family: "IBMPlexSans-MediumItalic", sans-serif;
   color: black;
   font-size: 20px;
