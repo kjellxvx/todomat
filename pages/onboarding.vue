@@ -5,8 +5,8 @@
     <div class="textbox">
       <div></div>
       <h1>
-        Wie funktioniert <br />
-        der Todomat?
+        Guten Tag. <br />
+        Du wirst sterben.
       </h1>
       <p>
         Im Todomat kannst du Entscheidungen in den Kategorien Körper,
@@ -49,7 +49,7 @@ function Zurück() {
 <style scoped>
 
 .textbox p{
-  width: 98%;
+  width: 97%;
 }
 </style>
 -

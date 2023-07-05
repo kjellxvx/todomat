@@ -3,15 +3,13 @@
     <HeaderComp
       />
     <div class="textbox">
-      <div></div>
+      <div> </div>
       <h1>
         Guten Tag. <br />
         Du wirst sterben.
       </h1>
       <p>
-        Das könnte schon morgen passieren. Heute kannst du dir darüber Gedanken
-        machen und wichtige Entscheidungen für dich und die Lebenden
-        hinterlegen.
+        Das könnte schon morgen passieren. Heute kannst du dir darüber Gedanken machen und wichtige Entscheidungen für dich und die Lebenden hinterlegen.
       </p>
       <p class="p-bold">
         Es gibt auch einige ToDos zu erledigen. <br />
@@ -75,7 +73,12 @@ padding-left: 25px;
 }
 
 .textbox p{
-  width: 96%;
+  width: 97%;
+}
+
+.button-container{
+margin-top: 30px;
+
 }
 </style>
 -

@@ -50,8 +50,9 @@
       </h1>
 
       <p>
-        Bitte logge dich hier mit deinem 8-stelligen Code ein, den du unten auf
-        deinem Ausdruck finden kannst.
+        Bitte logge dich hier mit deinem 8-stelligen Code ein, den du unten
+        <br />
+        auf deinem Ausdruck finden kannst.
       </p>
     </div>
     <div class="button-container">
@@ -62,6 +63,7 @@
         placeholder="Code"
         @input="onInputChange"
         @focus="onInputFocus"
+        @click.stop
       />
       <button @click="Start" class="button">Einloggen</button>
     </div>
@@ -70,7 +72,7 @@
       <div class="loading-spinner"></div>
     </div>
   </div>
-  <div class="keyboard-container" :style="{ display: activateKeyboard() }">
+  <div class="keyboard-container" ref="keyboardContainerRef" :style="{ display: activateKeyboard() }">
     <div class="keyboard">
       <SimpleKeyboard @onChange="onChange" />
     </div>
@@ -95,6 +97,8 @@ try {
 }
 
 const keyboard = useKeyboard();
+const keyboardContainerRef = ref(null);
+
 const inputText = ref("");
 const loading = ref(false);
 const data = useData();
@@ -116,6 +120,10 @@ function activateKeyboard() {
 function onInputChange(event) {
   const input = event.target.value;
   console.log("Input changed directly:", input);
+}
+
+function onInputFocus() {
+  keyboard.value = true;
 }
 
 function onChange(input) {
@@ -151,15 +159,33 @@ async function Start(qrCode) {
   loading.value = false;
 }
 
+// Function to handle the click outside event
+const handleClickOutside = (event) => {
+  if (
+    keyboardContainerRef.value &&
+    !keyboardContainerRef.value.contains(event.target)
+  ) {
+    keyboard.value = false; // Set keyboard to false when clicked outside
+    console.log("Clicked outside the keyboard");
+  }
+};
+
 function Close() {
   navigateTo("/start");
 }
 
+// Register the click event listener
 onMounted(() => {
   if (route.query.code) {
     console.log(route.query.code);
     Start(true);
   }
+  document.addEventListener("click", handleClickOutside);
+});
+
+// Clean up the event listener on component unmount
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
 });
 </script>
 

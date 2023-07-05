@@ -8,7 +8,8 @@
   </NuxtLayout>
 </template>
 
-<script></script>
+<script>
+</script>
 
 <style>
 @font-face {
@@ -252,8 +253,9 @@ input.codeInput {
 }
 
 .keyboard {
-  width: 100%;
+  width: 85%;
   height: auto;
+  font-size: 10px;
 }
 
 .hg-theme-default {
