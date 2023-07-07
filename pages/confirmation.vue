@@ -51,7 +51,7 @@ percent.value = ((100 / 6) * totalProgress).toFixed(0);
 
 function Navigate() {
   if (selection.value === "option1") {
-    navigateTo("/submit");
+    navigateTo("/offboarding");
   } else if (selection.value === "option2") {
     navigateTo("/menu");
   }

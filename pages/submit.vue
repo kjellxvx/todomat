@@ -4,13 +4,15 @@
     <div class="textbox">
       <h1>Gratulation!</h1>
       <p>
-        Du hast deinen Abschied sehr gut vorbereitet. Nun kannst Du die offenen
-        To-do‘s anschauen und erledigen, wenn Du Raum und Gelegenheit hast. Mit
-        welcher Kategorie möchtest Du beginnen?
+        Du hast deinen Abschied sehr gut vorbereitet und alle Fragen
+        beantwortet.
       </p>
-      <p>
-        Alle anderen offenen To-Do‘s und deine beantworteten Fragen kannst Du
-        jederzeit auf todomat.org einsehen und ggf. ergänzen oder überarbeiten.
+      <p class="p-small">
+        Nun kannst Du die offenen To-do‘s anschauen und erledigen, wenn du Zeit
+        dafür hast. Mit welcher Kategorie möchtest Du beginnen? Diese ToDos
+        werden dir auf dem Bon ausgedruckt. Alle anderen offenen To-Do‘s und
+        deine beantworteten Fragen kannst Du jederzeit auf todomat.org einsehen
+        und überarbeiten.
       </p>
     </div>
     <div class="menu-container">

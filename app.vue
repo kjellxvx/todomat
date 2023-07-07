@@ -8,8 +8,7 @@
   </NuxtLayout>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style>
 @font-face {
@@ -40,12 +39,12 @@
 }
 
 html body {
-  width: 100vw;
-  height: 100svh;
+  /* width: 100vw;
+  height: 100svh; */
 
-  /* width: 1024px;
+  width: 1024px;
   height: 768px;
-  border: black 1px solid; */
+  border: black 1px solid;
 
   display: flex;
   flex-direction: column;
@@ -185,6 +184,31 @@ html body {
   border-style: none;
   font-size: 35px;
   height: 39.39px;
+  cursor: pointer;
+}
+
+.popup-button {
+  height: auto;
+  background-color: var(--primary-color);
+  color: white;
+  border: 0;
+  border-radius: 2em;
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 15.89px;
+  padding: 0.3em 2em 0.3em 2em;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.popup-button-white {
+  height: auto;
+  background-color: white;
+  color: black;
+  border: solid black 1.2px;
+  border-radius: 2em;
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 15.89px;
+  padding: 0.3em 1.3em 0.3em 1.3em;
   cursor: pointer;
 }
 
@@ -416,7 +440,7 @@ input[type="radio"]:checked::before {
   font-size: 22px;
   text-align: left;
   margin: 0px;
-  padding: 10px 0 20px 0;
+  padding: 10px 0 10px 0;
   border: solid;
   border-width: 0 0 1px 0;
   border-color: black;
@@ -432,7 +456,7 @@ input[type="radio"]:checked::before {
 
 .popup-close-button {
   position: fixed;
-  right: 50px;
+  right: 60px;
   background-color: white;
   border-style: none;
   font-size: 35px;
@@ -450,6 +474,7 @@ input[type="radio"]:checked::before {
   position: absolute;
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 
 .menu-button {
@@ -476,6 +501,10 @@ input[type="radio"]:checked::before {
 }
 
 @media only screen and (max-width: 1024px) {
+  #__nuxt {
+    align-items: normal;
+  }
+
   html body {
     overflow: auto;
   }
@@ -525,16 +554,16 @@ input[type="radio"]:checked::before {
 }
 
 /* The animation code */
-@keyframes rotate {
+/* @keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-@keyframes move {
+/* @keyframes move {
   0% {
     left: 75%;
     top: 50%;
@@ -555,5 +584,5 @@ input[type="radio"]:checked::before {
     left: 75%;
     top: 50%;
   }
-}
+} */
 </style>

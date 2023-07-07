@@ -1,7 +1,50 @@
 <template>
   <div class="slide">
     <HeaderComp />
+    <div class="close-button-container">
+      <div class="close-button" @click="Close">
+        <svg
+          width="31"
+          height="31"
+          viewBox="0 0 31 31"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            width="30.0886"
+            height="30.0886"
+            rx="15.0443"
+            transform="matrix(1 0 0 -1 0.911438 30.8496)"
+            fill="#EAEAEA"
+          />
+          <mask
+            id="mask0_231_126"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="3"
+            y="3"
+            width="25"
+            height="25"
+          >
+            <rect
+              x="3.96295"
+              y="3.37695"
+              width="24"
+              height="24"
+              fill="#D9D9D9"
+            />
+          </mask>
+          <g mask="url(#mask0_231_126)">
+            <path
+              d="M9.63065 23.4653L15.963 17.133L22.2953 23.4653L23.513 22.2476L17.1807 15.9153L23.513 9.58298L22.2953 8.36523L15.963 14.6975L9.63065 8.36523L8.4129 9.58298L14.7452 15.9153L8.4129 22.2476L9.63065 23.4653Z"
+              fill="black"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
     <h1>Womit möchtest Du starten?</h1>
+    <div class="seperator"></div>
     <div class="menu-container">
       <!-- <div
         v-for="menuItem in menuItems"
@@ -22,6 +65,15 @@
           <div class="effect-3-1"></div>
           <div class="effect-3-2"></div>
           <div class="effect-3-3"></div>
+        </div>
+        <div v-if="menuItem.effect === '4'" class="effect-4-container">
+          <div class="effect-4-1"></div>
+          <div class="effect-4-2"></div>
+          <div class="effect-4-3"></div>
+        </div>
+        <div v-if="menuItem.effect === '6'" class="effect-6-container">
+          <div class="effect-6-1"></div>
+          <div class="effect-6-2"></div>
         </div>
         <div v-else class="effect" :class="`effect-${menuItem.effect}`"></div>
 
@@ -69,8 +121,22 @@
       </div>
     </div>
     <div class="button-container">
-      <button @click="Submit" class="button">Bearbeitung abschließen</button>
-      <button @click="Restart" class="button-white">Neu Beginnen</button>
+      <!-- <button @click="Submit" class="button">Bearbeitung abschließen</button>
+      <button @click="Restart" class="button-white">Neu Beginnen</button> -->
+
+      <button @click="Back" class="button-white">Zurück</button>
+    </div>
+  </div>
+  <div v-if="abort" class="popup-container">
+    <div class="popup">
+      <p class="popup-headline">Achtung</p>
+      <p class="popup-text">
+        Wenn du abbrichst, gehen deine bisherigen Änderungen verloren.
+      </p>
+      <div class="button-container">
+        <button @click="Back" class="popup-button">Zurück</button>
+        <button @click="Abort" class="popup-button-white">Ja, abbrechen</button>
+      </div>
     </div>
   </div>
 </template>
@@ -82,6 +148,8 @@ const todos = useTodos();
 const data = useData();
 const progress = useProgress();
 const categories = useCategories();
+const popup = usePopup();
+const abort = ref(false);
 
 const menuItems = [
   {
@@ -125,11 +193,20 @@ function navigate(letter) {
 function Submit() {
   navigateTo("/submit");
 }
-function Restart() {
+
+function Back() {
+  abort.value = false;
+}
+
+function Abort() {
   index.value = 0;
   data.value = {};
   todos.value = {};
   navigateTo("/");
+}
+
+function Close() {
+  abort.value = true;
 }
 
 const getButtonLabel = (letter) => {
@@ -200,12 +277,19 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.seperator {
+  width: 100%;
+  height: 1.4px;
+  background: black;
+  margin-bottom: 50px;
+}
 .menu-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 33px;
   margin: 0 0 28px 0;
   position: relative;
+  margin: 20px 0 30px 0;
 }
 
 .menuItem {
@@ -218,6 +302,10 @@ onMounted(() => {
   align-items: center;
   position: relative;
   overflow: hidden;
+}
+
+h1 {
+  padding-bottom: 8px;
 }
 
 .menu-h1 {
@@ -290,6 +378,11 @@ onMounted(() => {
   z-index: 1;
 }
 
+.menu-button-edit svg {
+  margin-top: 2px;
+  margin-left: 0.4px;
+}
+
 .effect-1 {
   position: absolute;
   width: 159.264px;
@@ -321,16 +414,14 @@ onMounted(() => {
 
 .effect-3-container {
   position: absolute;
-  width: 100%;
-  height: 100%;
 }
 
 .effect-3-1 {
   position: absolute;
-  width: 125px;
-  height: 110px;
-  margin-top: 50px;
-  margin-left: 170px;
+  width: 135px;
+  height: 120px;
+  margin-top: 40px;
+  margin-left: 10px;
   background: #ff8a00;
   transform: skew(8deg, -6deg);
   border-radius: 150.31px;
@@ -340,10 +431,10 @@ onMounted(() => {
 
 .effect-3-2 {
   position: absolute;
-  width: 130px;
-  height: 110px;
-  margin-top: -35px;
-  margin-left: 100px;
+  width: 140px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -60px;
   border-radius: 150.31px;
   background: #5ae9fd;
   border-style: solid;
@@ -351,7 +442,108 @@ onMounted(() => {
   border-color: #00e29a;
   transform: skew(-5deg, 0deg);
   filter: blur(25px);
-  mix-blend-mode:normal ;
+  mix-blend-mode: normal;
+}
+
+.effect-4-container {
+  position: absolute;
+}
+
+.effect-4-1 {
+  position: absolute;
+  width: 140px;
+  height: 150px;
+  margin-top: 50px;
+  margin-left: 20px;
+  background: radial-gradient(
+    circle,
+    rgba(95, 129, 164, 1) 0%,
+    rgba(74, 224, 116, 0.65) 100%
+  );
+  border-radius: 150.31px;
+  transform: skew(3deg, 0deg);
+  filter: blur(25px);
+  mix-blend-mode: color;
+}
+
+.effect-4-2 {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  margin-top: -70px;
+  margin-left: -180px;
+  background: conic-gradient(rgba(255, 224, 114, 0), rgba(255, 224, 114, 1));
+  border-radius: 150.31px;
+  transform: skew(5deg, -10deg);
+  rotate: -120deg;
+  filter: blur(35px);
+}
+.effect-4-3 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  margin-top: 35px;
+  margin-left: -100px;
+  border-radius: 150.31px;
+  transform: skew(-5deg, -4deg);
+  rotate: 60deg;
+  background: rgba(90, 223, 253, 0.4);
+  outline: solid 14px rgba(0, 226, 154, 0.4);
+  outline-offset: -7px;
+  filter: blur(28px);
+}
+.effect-5 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  margin-top: -100px;
+  margin-left: 55px;
+  background: radial-gradient(
+    circle,
+    rgba(95, 129, 164, 1) 0%,
+    rgba(99, 73, 255, 0.37) 100%
+  );
+  transform: skew(10deg, 0deg);
+  rotate: -30deg;
+  filter: blur(28px);
+  mix-blend-mode: screen;
+}
+
+.effect-6-container {
+  position: absolute;
+}
+.effect-6-1 {
+  position: absolute;
+  width: 210px;
+  height: 180px;
+  border-radius: 150px;
+  margin-top: 0px;
+  margin-left: -60px;
+  background: radial-gradient(
+    circle,
+    rgba(95, 129, 164, 1) 0%,
+    rgba(99, 73, 255, 0.37) 100%
+  );
+  transform: skew(5deg, -3deg);
+  rotate: -20deg;
+  mix-blend-mode: screen;
+  filter: blur(28px);
+}
+
+.effect-6-2 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  margin-top: -55px;
+  margin-left: 0px;
+  border-radius: 150.31px;
+  transform: skew(-5deg, -4deg);
+  rotate: 60deg;
+  background: rgba(90, 223, 253, 0.4);
+  outline: solid 14px rgba(0, 226, 154, 0.4);
+  outline-offset: -7px;
+  filter: blur(28px);
 }
 
 @media only screen and (max-width: 1024px) {

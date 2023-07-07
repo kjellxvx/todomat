@@ -61,7 +61,7 @@
 
   <div v-if="popup.isOpen" class="popup-container">
     <div class="popup">
-      <div class="popup-close-button" @click="popup.isOpen = false">
+      <!-- <div class="popup-close-button" @click="popup.isOpen = false">
         <svg
           width="31"
           height="31"
@@ -100,8 +100,11 @@
             />
           </g>
         </svg>
-      </div>
+      </div> -->
       <div v-html="popup.content"></div>
+      <div class="button-container">
+        <div @click="popup.isOpen = false" class="popup-button">Schließen</div>
+      </div>
     </div>
   </div>
 </template>
@@ -254,6 +257,13 @@ h2 {
 p {
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 26px;
+  text-align: left;
+  margin: 0px;
+}
+
+.p-small{
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 15px;
   text-align: left;
   margin: 0px;
 }
