@@ -105,6 +105,7 @@ const authData = await pb.admins.authWithPassword(
 
 const userToken = useUserToken();
 const todos = useTodos();
+const selectedTodo = useSelectedTodo();
 const printTodos = ref([]);
 const noTodos = ref(true);
 const data = useData();
@@ -171,6 +172,7 @@ function delay(ms) {
 
 onMounted(() => {
   loading.value = true;
+  console.log(todos.value);
   Print();
   printTodos.value = Object.values(todos.value).flat();
   if (printTodos.value.length == 0) {
@@ -178,6 +180,7 @@ onMounted(() => {
   } else {
     noTodos.value = false;
   }
+  console.log(printTodos.value);
 });
 </script>
 

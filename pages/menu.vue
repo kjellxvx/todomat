@@ -58,9 +58,9 @@
         class="menuItem"
       >
         <p class="menu-h1">{{ menuItem.title }}</p>
-        <p class="menu-p">
+        <!-- <p class="menu-p">
           {{ menuItem.description }}
-        </p>
+        </p> -->
         <div v-if="menuItem.effect === '3'" class="effect-3-container">
           <div class="effect-3-1"></div>
           <div class="effect-3-2"></div>
@@ -148,7 +148,6 @@ const todos = useTodos();
 const data = useData();
 const progress = useProgress();
 const categories = useCategories();
-const popup = usePopup();
 const abort = ref(false);
 
 const menuItems = [

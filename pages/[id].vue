@@ -170,6 +170,8 @@ function updateSelection() {
       localTodos.push(selected.todo);
     }
   }
+  console.log(localTodos);
+  console.log(id);
 
   // Update data and todos
   selection.value[id].options = selectedOptions;

@@ -12,6 +12,12 @@ export const useTodos = () => {
   });
 };
 
+export const useSelectedTodo = () => {
+  return useState("selectedTodo", () => {
+    return {};
+  });
+};
+
 export const useData = () => {
   return useState("data", () => {
     return {};
