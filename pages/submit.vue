@@ -52,7 +52,11 @@
       Deine Auswahl hat keine zu erledigenden Todos ergeben.
     </p>
     <div class="button-container">
-      <button @click="Print" class="button" :disabled="!selectedMenuItem">
+      <button
+        @click="Print"
+        class="button"
+        :disabled="!selectedMenuItem && enabledMenuItems.length > 0"
+      >
         Auschecken und Ausdrucken
       </button>
     </div>
@@ -118,7 +122,6 @@ async function Print() {
 }
 
 onMounted(() => {
-  console.log(enabledMenuItems);
   const todoKeys = Object.keys(todos.value).filter(
     (key) => todos.value[key].length > 0 || typeof todos.value[key] === "string"
   );
@@ -163,6 +166,10 @@ h1 {
   color: white;
   word-spacing: 100vw;
   z-index: 1;
+}
+
+.button {
+  margin-top: 50px;
 }
 
 .effect-1 {

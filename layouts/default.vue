@@ -247,7 +247,7 @@ h1 {
 
 h2 {
   font-family: "IBMPlexSans-Medium", sans-serif;
-  max-width: 770px;
+  max-width: 95%;
   font-size: 26px;
   text-align: left;
   margin: 0px;

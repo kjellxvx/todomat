@@ -39,12 +39,12 @@
 }
 
 html body {
-  /* width: 100vw;
-  height: 100svh; */
+  width: 100vw;
+  height: 100svh;
 
-  width: 1024px;
+  /* width: 1024px;
   height: 768px;
-  border: black 1px solid;
+  border: black 1px solid; */
 
   display: flex;
   flex-direction: column;
@@ -225,12 +225,12 @@ html body {
 input[type="text"] {
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
-  font-family: "IBMPlexSans-MediumItalic", sans-serif;
+  font-family: "IBMPlexSans-Italic", sans-serif;
   color: black;
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   border-bottom: 1px solid black;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 input[type="text"]::placeholder {
@@ -405,10 +405,10 @@ input[type="radio"]:checked::before {
 .popup-link {
   cursor: pointer;
   color: var(--secondary-color);
-  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-family: "IBMPlexSans-Medium", sans-serif;
   font-size: 20px;
   text-decoration: underline;
-  margin-left: 10px;
+  margin-left: 5px;
   white-space: nowrap;
 }
 

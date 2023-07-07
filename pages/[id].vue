@@ -4,14 +4,12 @@
     <h1>{{ headline }}</h1>
     <h2>{{ question }}</h2>
     <div class="checkform">
-      <!-- Loop through each option in the id options array -->
       <label
         class="form-control"
         v-for="(option, key) in slides[id].options[0]"
         :key="key"
       >
         <div class="radio-label-left">
-          <!-- Create a radio button with the ID set to the current option key -->
           <input
             type="checkbox"
             :id="key"
@@ -21,26 +19,28 @@
               option.TextInput ? updateTextSelection() : updateSelection()
             "
           />
-          <!-- Create a label for the radio button with the content of the current option -->
         </div>
-        <!-- Check if the current option requires a text input -->
         <div class="radio-label-right">
-          <label :for="key">{{ option.content }}</label>
-          <template v-if="option.TextInput">
-            <InputComp
-              v-if="option.TextInput"
-              :inputs="inputs"
-              :inputName="key"
-              :placeholder="option.TextInput"
-              @onInputFocus="onInputFocus"
-              @onInputChange="onInputChange"
-              :disabled="!selectedOptions.includes(key)"
-              ref="inputComp"
-            />
-          </template>
-          <template v-if="option.info">
-            <div @click="Info(key)" class="popup-link">Mehr Info</div>
-          </template>
+          <label :for="key">
+            <span
+              class="label-content"
+              v-html="formatOptionContent(option)"
+            ></span>
+            <template v-if="option.TextInput">
+              <InputComp
+                :inputs="inputs"
+                :inputName="key"
+                :placeholder="option.TextInput"
+                @onInputFocus="onInputFocus"
+                @onInputChange="onInputChange"
+                :disabled="!selectedOptions.includes(key)"
+                ref="inputComp"
+              />
+            </template>
+            <template v-if="option.info">
+              <span @click="Info(key)" class="popup-link">Mehr Info</span>
+            </template>
+          </label>
         </div>
       </label>
     </div>
@@ -84,6 +84,10 @@ const inputs = reactive({});
 const selectedOptions = ref([]);
 const inputName = ref("");
 const multiSelection = slides[id].multi;
+
+function formatOptionContent(option) {
+  return option.content.replace(/\n/g, "<br>");
+}
 
 const selection = computed(() => {
   return { [id]: { options: [] } };
@@ -170,8 +174,6 @@ function updateSelection() {
       localTodos.push(selected.todo);
     }
   }
-  console.log(localTodos);
-  console.log(id);
 
   // Update data and todos
   selection.value[id].options = selectedOptions;

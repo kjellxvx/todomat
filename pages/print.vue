@@ -172,15 +172,22 @@ function delay(ms) {
 
 onMounted(() => {
   loading.value = true;
-  console.log(todos.value);
   Print();
-  printTodos.value = Object.values(todos.value).flat();
-  if (printTodos.value.length == 0) {
+  printTodos.value = Object.entries(todos.value)
+    .filter(
+      ([key, value]) =>
+        key.startsWith(selectedTodo.value.letter) && Array.isArray(value)
+    )
+    .flatMap(([key, value]) => value);
+
+  if (printTodos.value.length === 0) {
     noTodos.value = true;
   } else {
     noTodos.value = false;
   }
-  console.log(printTodos.value);
+  console.log("All ToDos: " + todos);
+  console.log("Selected ToDo category: " + selectedTodo.value.letter);
+  console.log("ToDos for the print: " + printTodos);
 });
 </script>
 

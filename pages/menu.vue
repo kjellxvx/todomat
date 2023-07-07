@@ -239,7 +239,6 @@ const getButtonClass = (letter) => {
 // });
 
 function updateCategories() {
-  console.log("test");
   categories.value = Object.values(order.value)
     .filter((element) => element !== "menu" && element !== "confirmation")
     .reduce((acc, element) => {
