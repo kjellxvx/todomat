@@ -2,7 +2,21 @@
   <div class="slide">
     <HeaderComp />
     <h1>{{ headline }}</h1>
-    <h2>{{ question }}</h2>
+    <h2>
+      <template v-if="slides[id].info">
+        <template v-for="(part, index) in transformedQuestionParts">
+          <template v-if="part.isLink">
+            <a
+              @click="headlineInfo"
+              class="h-popup-link underline-link"
+              v-html="part.content"
+            ></a>
+          </template>
+          <template v-else>{{ part.content }}</template>
+        </template>
+      </template>
+      <template v-else>{{ question }}</template>
+    </h2>
     <div class="checkform">
       <label
         class="form-control"
@@ -87,6 +101,29 @@ const multiSelection = slides[id].multi;
 
 function formatOptionContent(option) {
   return option.content.replace(/\n/g, "<br>");
+}
+const transformedQuestionParts = computed(() => {
+  const parts = question.split(/<a>(.*?)<\/a>/);
+
+  return parts.map((part, index) => {
+    if (index % 2 === 0) {
+      return {
+        isLink: false,
+        content: part,
+      };
+    } else {
+      return {
+        isLink: true,
+        content: part,
+      };
+    }
+  });
+});
+
+function headlineInfo() {
+  console.log(slides[id].info);
+  popup.value.isOpen = true;
+  popup.value.content = slides[id].info;
 }
 
 const selection = computed(() => {
@@ -233,17 +270,13 @@ function isNotComplete() {
 }
 
 // this method is called a textfield is active
-function activateKeyboard() {
-  if (local.value == true) {
-    if (keyboard.value === true) {
-      return "flex";
-    } else {
-      return "none";
-    }
+const activateKeyboard = computed(() => {
+  if (local.value && keyboard.value) {
+    return "flex";
   } else {
     return "none";
   }
-}
+});
 
 function onInputFocus(input) {
   console.log("Focused input:", input.target.id);
@@ -320,4 +353,8 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.underline-link {
+  text-decoration: underline;
+}
+</style>

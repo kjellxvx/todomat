@@ -517,7 +517,8 @@
       ]
     },
     "F1": {
-      "question": "Hast du ein Geheimnis, das du einmal ausgesprochen haben möchtest, bevor du stirbst?",
+      "question": "Hast du ein  <a>Geheimnis</a>, das du einmal ausgesprochen haben möchtest, bevor du stirbst?",
+      "info": "<p class=\"popup-headline\">Geheimnis</p><p class=\"popup-text\">Sterbebegleiter:innen wissen, dass Geheimnisse und unausgesprochene Dinge deinen Sterbeprozess unangenehm beeinflussen können. Es ist daher sinnvoll, diese Last vorher loszuwerden.</p>",
       "multi": false,
       "options": [
         {
