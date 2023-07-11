@@ -123,7 +123,7 @@ const transformedQuestionParts = computed(() => {
 function headlineInfo() {
   console.log(slides[id].info);
   popup.value.isOpen = true;
-  popup.value.content = slides[id].info;
+  popup.value.content = slides[id].info
 }
 
 const selection = computed(() => {
@@ -270,13 +270,17 @@ function isNotComplete() {
 }
 
 // this method is called a textfield is active
-const activateKeyboard = computed(() => {
-  if (local.value && keyboard.value) {
-    return "flex";
+function activateKeyboard() {
+  if (local.value == true) {
+    if (keyboard.value === true) {
+      return "flex";
+    } else {
+      return "none";
+    }
   } else {
     return "none";
   }
-});
+}
 
 function onInputFocus(input) {
   console.log("Focused input:", input.target.id);
