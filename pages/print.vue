@@ -191,7 +191,7 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .pdf-container {
   height: 100%;
   border-style: solid;

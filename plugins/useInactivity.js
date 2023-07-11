@@ -16,10 +16,8 @@ export default function ({ app }) {
     const inactivityDuration = currentTime - lastActivity.value;
 
     if (inactivityDuration >= 120000) {
-      // Replace 'index' with the appropriate route name or path to your index site
-      // app.router.push('/index')
       console.log("no activity detected")
-      if ((local.value = true)) {
+      if ((local.value == true)) {
         navigateTo("/?local=true");
       }
     }

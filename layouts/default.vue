@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <slot />
-
+    <div v-if="local" class="local-indicator"></div>
     <div class="button-container">
       <button
         @click="goToPage(nextPage)"
@@ -151,31 +151,32 @@ const slides = computed(() => {
     "F3",
     "confirmation",
   ];
-  if (data.value["A2"] && data.value["A2"].options === "A2.1") {
+  if (data.value["A2"] && data.value["A2"].options == "A2.1") {
     const pos = slides.indexOf("A2");
     slides.splice(pos + 1, 0, "A2_1_1", "A2_1_2");
+    console.log("added Slides A2_1_1 and A2_1_2");
   }
-  if (data.value["A2"] && data.value["A2"].options === "A2.2") {
+  if (data.value["A2"] && data.value["A2"].options == "A2.2") {
     const pos = slides.indexOf("A2");
     slides.splice(pos + 1, 0, "A2_2");
   }
-  if (data.value["A2"] && data.value["A2"].options === "A2.3") {
+  if (data.value["A2"] && data.value["A2"].options == "A2.3") {
     const pos = slides.indexOf("A2");
     slides.splice(pos + 1, 0, "A2_3");
   }
-  if (data.value["A2"] && data.value["A2"].options === "A2.4") {
+  if (data.value["A2"] && data.value["A2"].options == "A2.4") {
     const pos = slides.indexOf("A2");
     slides.splice(pos + 1, 0, "A2_4");
   }
-  if (data.value["B1"] && data.value["B1"].options === "B1.1") {
+  if (data.value["B1"] && data.value["B1"].options == "B1.1") {
     const pos = slides.indexOf("B1");
     slides.splice(pos + 1, 0, "B1_1");
   }
-  if (data.value["B1"] && data.value["B1"].options === "B1.2") {
+  if (data.value["B1"] && data.value["B1"].options == "B1.2") {
     const pos = slides.indexOf("B1");
     slides.splice(pos + 1, 0, "B1_2");
   }
-  if (data.value["B2_1"] && data.value["B2_1"].options === "B2.1.3") {
+  if (data.value["B2_1"] && data.value["B2_1"].options == "B2.1.3") {
     const pos = slides.indexOf("B2_1");
     slides.splice(pos + 1, 0, "B2_1_3_1", "B2_1_3_2");
   }
@@ -200,6 +201,7 @@ const previousPage = computed(() => slides.value[index.value - 1]);
 const nextPage = computed(() => slides.value[index.value + 1]);
 
 function goToPage(page) {
+  console.log(slides);
   if (index.value >= 0) {
     index.value = slides.value.indexOf(page);
     navigateTo(`/${page}`);
@@ -221,6 +223,18 @@ onMounted(() => {});
 </script>
 
 <style>
+
+.local-indicator{
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: blue;
+  border-radius: 100%;
+  top: 10px;
+  left: 10px;
+}
+
+
 .data-container {
   height: 0px;
 }
@@ -229,8 +243,8 @@ onMounted(() => {});
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   width: calc(100% - 6em); /* Adjust the value as needed */
   height: calc(100% - 4.6em); /* Adjust the value as needed */
   margin: 2.3em 3em;
@@ -247,7 +261,7 @@ h1 {
 
 h2 {
   font-family: "IBMPlexSans-Medium", sans-serif;
-  max-width: 95%;
+  max-width: 80%;
   font-size: 26px;
   text-align: left;
   margin: 0px;
@@ -261,7 +275,7 @@ p {
   margin: 0px;
 }
 
-.p-small{
+.p-small {
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 15px;
   text-align: left;

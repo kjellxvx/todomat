@@ -15,7 +15,7 @@
           <template v-else>{{ part.content }}</template>
         </template>
       </template>
-      <template v-else>{{ question }}</template>
+      <template v-else> <span v-html="formattedQuestion"></span></template>
     </h2>
     <div class="checkform">
       <label
@@ -102,6 +102,11 @@ const multiSelection = slides[id].multi;
 function formatOptionContent(option) {
   return option.content.replace(/\n/g, "<br>");
 }
+
+const formattedQuestion = computed(() => {
+  return question.replace(/\n/g, "<br>");
+});
+
 const transformedQuestionParts = computed(() => {
   const parts = question.split(/<a>(.*?)<\/a>/);
 
@@ -123,7 +128,7 @@ const transformedQuestionParts = computed(() => {
 function headlineInfo() {
   console.log(slides[id].info);
   popup.value.isOpen = true;
-  popup.value.content = slides[id].info
+  popup.value.content = slides[id].info;
 }
 
 const selection = computed(() => {

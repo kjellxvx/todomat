@@ -308,7 +308,7 @@ form {
 }
 
 .checkform {
-  max-width: 800px;
+  max-width: 810px;
   margin-bottom: 30px;
 }
 

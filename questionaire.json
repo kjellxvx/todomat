@@ -64,7 +64,7 @@
       ]
     },
     "A2_1_1": {
-      "question": "Wie möchtest du vergraben werden?",
+      "question": "Du möchtest, dass dein Körper vergraben wird. \n Wie möchtest du vergraben werden?",
       "multi": false,
       "options": [
         {
@@ -88,7 +88,7 @@
       ]
     },
     "A2_1_2": {
-      "question": "In welcher Richtung möchtest du vergraben werden?",
+      "question": "Du möchtest, dass dein Körper vergraben wird. \n In welche Richtung möchtest du vergraben werden?",
       "multi": false,
       "options": [
         {
@@ -103,7 +103,7 @@
       ]
     },
     "A2_2": {
-      "question": "Was soll nach der beschleunigten Kompostierung mit der Erde aus deinen Überresten passieren?",
+      "question": "Du möchtest, dass dein Körper kompostiert wird. \n Was soll nach der beschleunigten Kompostierung mit der Erde aus deinen Überresten passieren?",
       "multi": false,
       "options": [
         {
@@ -122,7 +122,7 @@
       ]
     },
     "A2_3": {
-      "question": "Was soll nach dem Verbrennen mit deiner Asche geschehen?",
+      "question": "Du möchtest, dass dein Körper verbrannt wird. \n Was soll nach dem Verbrennen mit deiner Asche geschehen?",
       "multi": false,
       "options": [
         {
@@ -150,7 +150,7 @@
       ]
     },
     "A2_4": {
-      "question": "Was soll nach der Gefriertrocknung mit deinen Überresten passieren?",
+      "question": "Du möchtest, dass dein Körper gefriergetrocknet wird. \n Was soll nach der Gefriertrocknung mit deinen Überresten passieren?",
       "multi": false,
       "options": [
         {
