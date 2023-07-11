@@ -3,8 +3,9 @@
     <div class="slide">
       <HeaderComp />
       <div class="textbox">
-        <h1>Kategorie - ToDo’s</h1>
-        <p>Hier findest du deine aufgelisteten ToDo’s</p>
+        <h1>ToDo’s</h1>
+        <p v-if="todos.value">Hier findest du deine aufgelisteten ToDo’s</p>
+        <p v-else>Deine Auswahl hat keine zu erledigenden Todos ergeben.</p>
       </div>
       <div class="todos-container">
         <div class="todo" v-for="(todo, index) in todos" :key="index">
@@ -16,7 +17,7 @@
       </div>
 
       <div class="button-container">
-        <button @click="Todos" class="button">ToDos jetzt anschauen</button>
+        <button @click="Print" class="button">Auschecken und Ausdrucken</button>
       </div>
     </div>
   </NuxtLayout>
@@ -46,8 +47,8 @@ function category(index) {
   }
 }
 
-function Todos() {
-  navigateTo("/todosweb");
+function Print() {
+  navigateTo("/print");
 }
 
 onMounted(() => {

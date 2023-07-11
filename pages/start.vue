@@ -29,7 +29,8 @@
       </p>
     </div>
     <div class="button-container">
-      <button @click="Weiter" class="button">Weiter</button>
+      <!-- <button @click="Weiter" class="button">Weiter</button> -->
+      <button v-if="local" @click="Weiter" class="button">Weiter</button>
       <button @click="Return" class="button-white">
         Code Eingeben
         <svg
@@ -50,6 +51,10 @@
 </template>
 
 <script setup>
+
+const local = useLocal();
+
+console.log(local.value)
 
 function Weiter() {
   navigateTo("/onboarding");

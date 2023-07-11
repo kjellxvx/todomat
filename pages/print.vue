@@ -92,6 +92,7 @@ import html2pdf from "html2pdf.js";
 import PocketBase from "pocketbase";
 import QrcodeVue from "qrcode.vue";
 
+const local = useLocal();
 const loading = ref(false);
 // const url = ref("http://localhost:3000/return");
 const url = ref("https://unknown.gruppe5.org/return");
@@ -153,7 +154,12 @@ async function Print() {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   exportToPDF();
   await delay(10000);
-  navigateTo("/");
+
+  if (local.value == true) {
+    navigateTo("/?local=true");
+  } else {
+    navigateTo("/");
+  }
 }
 
 const exportToPDF = () => {
