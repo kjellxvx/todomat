@@ -1,11 +1,11 @@
+require('dotenv').config();
 import PocketBase from "pocketbase";
-
 const pb = new PocketBase("http://185.162.250.233:10017");
 
 try {
   const authData = await pb.admins.authWithPassword(
-    "yinebo1036@andorem.com",
-    "password123"
+    process.env.PB_MAIL,
+    process.env.PB_PW
   );
   // Rest of your code
 } catch (error) {
