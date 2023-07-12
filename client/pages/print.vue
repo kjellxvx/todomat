@@ -98,11 +98,11 @@ const loading = ref(false);
 const url = ref("https://unknown.gruppe5.org/return");
 const size = 160;
 
-const pb = new PocketBase("https://delightful-artist.pockethost.io");
-const authData = await pb.admins.authWithPassword(
-  "yinebo1036@andorem.com",
-  "password123"
-);
+// const pb = new PocketBase("https://delightful-artist.pockethost.io");
+// const authData = await pb.admins.authWithPassword(
+//   "yinebo1036@andorem.com",
+//   "password123"
+// );
 
 const userToken = useUserToken();
 const todos = useTodos();
@@ -111,47 +111,73 @@ const printTodos = ref([]);
 const noTodos = ref(true);
 const data = useData();
 
-async function Print() {
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  //////////////////                                                              //////////////////
-  //////////////////                       DATA BASE CODE HERE                    //////////////////
-  //////////////////                                                              //////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////
+async function saveData(data, todos, token) {
+  const url = 'http://localhost:3333/save';
+  const body = JSON.stringify({ data: { ...data }, todos: { ...todos }, token });
 
-  // console.log(data.value);
-  // console.log(todos.value);
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body,
+    });
 
-  // Push "data.value" and "todos.value" to the database
-  const user_data = {
-    data: data.value,
-    todos: todos.value,
-  };
-
-  if (userToken.value == false) {
-    // Create new record
-    const record = await pb.collection("user_data").create(user_data);
-
-    // Generate User Token
-    userToken.value = record.id;
-    console.log("Created new record: " + userToken.value);
-    url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
-    console.log(url.value);
-  } else {
-    // If user Token already exists then ->
-    // Update record
-    const record = await pb
-      .collection("user_data")
-      .update(userToken.value, user_data);
-    console.log("Updated record: " + userToken.value);
+    if (response.ok) {
+      console.log('Data saved successfully');
+    } else {
+      console.log('Error saving data:', response.status);
+    }
+  } catch (error) {
+    console.log('Error saving data:', error.message);
   }
+}
 
-  pb.authStore.clear();
+
+async function Print() {
+  // //////////////////////////////////////////////////////////////////////////////////////////////////
+  // //////////////////                                                              //////////////////
+  // //////////////////                       DATA BASE CODE HERE                    //////////////////
+  // //////////////////                                                              //////////////////
+  // //////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // // console.log(data.value);
+  // // console.log(todos.value);
+
+  // // Push "data.value" and "todos.value" to the database
+  // const user_data = {
+  //   data: data.value,
+  //   todos: todos.value,
+  // };
+
+  // if (userToken.value == false) {
+  //   // Create new record
+  //   const record = await pb.collection("user_data").create(user_data);
+
+  //   // Generate User Token
+  //   userToken.value = record.id;
+  //   console.log("Created new record: " + userToken.value);
+  //   url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
+  //   console.log(url.value);
+  // } else {
+  //   // If user Token already exists then ->
+  //   // Update record
+  //   const record = await pb
+  //     .collection("user_data")
+  //     .update(userToken.value, user_data);
+  //   console.log("Updated record: " + userToken.value);
+  // }
+
+  // pb.authStore.clear();
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
   //////////////////                                                              //////////////////
   //////////////////                       DATA BASE CODE HERE                    //////////////////
   //////////////////                                                              //////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+  saveData(data.value, todos.value, userToken.value)
+
   exportToPDF();
   await delay(10000);
 
