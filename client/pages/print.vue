@@ -135,54 +135,12 @@ async function saveData(data, todos, token) {
 }
 
 async function Print() {
-  // //////////////////////////////////////////////////////////////////////////////////////////////////
-  // //////////////////                                                              //////////////////
-  // //////////////////                       DATA BASE CODE HERE                    //////////////////
-  // //////////////////                                                              //////////////////
-  // //////////////////////////////////////////////////////////////////////////////////////////////////
-
-  // // console.log(data.value);
-  // // console.log(todos.value);
-
-  // // Push "data.value" and "todos.value" to the database
-  // const user_data = {
-  //   data: data.value,
-  //   todos: todos.value,
-  // };
-
-  // if (userToken.value == false) {
-  //   // Create new record
-  //   const record = await pb.collection("user_data").create(user_data);
-
-  //   // Generate User Token
-  //   userToken.value = record.id;
-  //   console.log("Created new record: " + userToken.value);
-  //   url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
-  //   console.log(url.value);
-  // } else {
-  //   // If user Token already exists then ->
-  //   // Update record
-  //   const record = await pb
-  //     .collection("user_data")
-  //     .update(userToken.value, user_data);
-  //   console.log("Updated record: " + userToken.value);
-  // }
-
-  // pb.authStore.clear();
-
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-  //////////////////                                                              //////////////////
-  //////////////////                       DATA BASE CODE HERE                    //////////////////
-  //////////////////                                                              //////////////////
-  //////////////////////////////////////////////////////////////////////////////////////////////////
-
   console.log("USER TOKEN");
   console.log(userToken.value);
   await saveData(data.value, todos.value, userToken.value);
 
   exportToPDF();
-  // await delay(10000);
-  await delay(50000);
+  await delay(10000);
 
   if (local.value == true) {
     navigateTo("/?local=true");
@@ -206,9 +164,8 @@ function delay(ms) {
 }
 
 onMounted(() => {
-  // loading.value = true;
+  loading.value = true;
   Print();
-
   printTodos.value = Object.entries(todos.value)
     .filter(
       ([key, value]) =>
