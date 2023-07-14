@@ -1,66 +1,90 @@
-require('dotenv').config();
-import PocketBase from "pocketbase";
-const pb = new PocketBase("http://185.162.250.233:10017");
-
-try {
-  const authData = await pb.admins.authWithPassword(
-    process.env.PB_MAIL,
-    process.env.PB_PW
-  );
-  // Rest of your code
-} catch (error) {
-  console.error("Error during authentication:", error);
-  // Handle the error appropriately (e.g., show an error message to the user)
-}
-
-
+require("dotenv").config();
+const PocketBase = require("pocketbase/cjs");
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors"); // Import the cors module
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
-
-// Use CORS middleware
 app.use(cors());
 
-// In-memory database to store user data
-let database = {};
+const pb = new PocketBase("http://185.162.250.233:10017");
+
+let user_data = {};
 
 // POST endpoint for saving data
-app.post("/save", (req, res) => {
+app.post("/save", async (req, res) => {
   const { data, todos, token } = req.body;
 
-  if (!data || !todos || !token) {
-    return res.status(400).json({ error: "Invalid request" });
-  }
-
-  // Save the data to the database
-  database[token] = {
+  user_data[token] = {
     data: { ...data },
     todos: { ...todos },
   };
 
-  console.log(database[token]);
+  // handle invalid requests
+  if (!data || !todos) {
+    return res.status(400).json({ error: "Invalid request" });
+  }
 
-  res.status(200).json({ message: "Data saved successfully" });
+  try {
+    // Authenticate with password
+    const authData = await pb.admins.authWithPassword(
+      process.env.PB_MAIL,
+      process.env.PB_PW
+    );
+
+    // if user has no token create new record, save data and return the record.id to the client
+    if (token == false) {
+      const record = await pb.collection("user_data").create(user_data);
+      console.log("Saved data using new record: " + record.id);
+      res.status(200).json({
+        message: "Saved new data",
+        token: record.id,
+        userData: user_data[token],
+      });
+      // if user has a token update the data using the token
+    } else {
+      const record = await pb.collection("user_data").update(token, user_data);
+      console.log("Updated record: " + token);
+      res.status(200).json({
+        message: "Updated data",
+        token: token,
+        userData: user_data[token],
+      });
+    }
+    pb.authStore.clear();
+  } catch (error) {
+    console.error("Error creating record:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 // GET endpoint for retrieving data
-app.get("/retrieve", (req, res) => {
+app.get("/retrieve", async (req, res) => {
   const { token } = req.query;
 
   if (!token) {
     return res.status(400).json({ error: "Invalid request" });
   }
 
-  // Check if the token exists in the database
-  if (token in database) {
-    const { data, todos } = database[token];
-    return res.status(200).json({ data, todos });
-  }
+  try {
+    // Authenticate with password
+    const authData = await pb.admins.authWithPassword(
+      process.env.PB_MAIL,
+      process.env.PB_PW
+    );
 
-  res.status(404).json({ error: "Data not found" });
+    // Check if the token exists in the user_data
+    if (token in user_data) {
+      const { data, todos } = user_data[token];
+      return res.status(200).json({ data, todos });
+    }
+
+    res.status(404).json({ error: "Data not found" });
+  } catch (error) {
+    console.error("Error during authentication:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 // Start the server

@@ -120,8 +120,6 @@ const local = useLocal();
 const popup = usePopup();
 const storedData = useStoredData();
 const userToken = useUserToken();
-const categories = useCategories();
-const progress = useProgress();
 
 // Logic for rendering the page order
 const slides = computed(() => {

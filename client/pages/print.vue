@@ -94,15 +94,9 @@ import QrcodeVue from "qrcode.vue";
 
 const local = useLocal();
 const loading = ref(false);
-// const url = ref("http://localhost:3000/return");
-const url = ref("https://unknown.gruppe5.org/return");
+const url = ref("http://localhost:3000/return");
+// const url = ref("https://todomat.org/return");
 const size = 160;
-
-// const pb = new PocketBase("https://delightful-artist.pockethost.io");
-// const authData = await pb.admins.authWithPassword(
-//   "yinebo1036@andorem.com",
-//   "password123"
-// );
 
 const userToken = useUserToken();
 const todos = useTodos();
@@ -112,26 +106,33 @@ const noTodos = ref(true);
 const data = useData();
 
 async function saveData(data, todos, token) {
-  const url = 'http://localhost:3333/save';
-  const body = JSON.stringify({ data: { ...data }, todos: { ...todos }, token });
+  const serverUrl = "http://localhost:3333/save";
+  const body = JSON.stringify({
+    data: { ...data },
+    todos: { ...todos },
+    token,
+  });
 
   try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    const response = await fetch(serverUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body,
     });
-
     if (response.ok) {
-      console.log('Data saved successfully');
+      const responseData = await response.json();
+      console.log(responseData.message);
+      const token = responseData.token;
+      userToken.value = token;
+      url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
+      console.log(url.value);
     } else {
-      console.log('Error saving data:', response.status);
+      console.log("Error saving data:", response.status);
     }
   } catch (error) {
-    console.log('Error saving data:', error.message);
+    console.log("Error saving data:", error.message);
   }
 }
-
 
 async function Print() {
   // //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -175,11 +176,13 @@ async function Print() {
   //////////////////                                                              //////////////////
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-  saveData(data.value, todos.value, userToken.value)
+  console.log("USER TOKEN");
+  console.log(userToken.value);
+  await saveData(data.value, todos.value, userToken.value);
 
   exportToPDF();
-  await delay(10000);
+  // await delay(10000);
+  await delay(50000);
 
   if (local.value == true) {
     navigateTo("/?local=true");
@@ -203,8 +206,9 @@ function delay(ms) {
 }
 
 onMounted(() => {
-  loading.value = true;
+  // loading.value = true;
   Print();
+
   printTodos.value = Object.entries(todos.value)
     .filter(
       ([key, value]) =>
@@ -217,9 +221,11 @@ onMounted(() => {
   } else {
     noTodos.value = false;
   }
-  console.log("All ToDos: " + todos);
-  console.log("Selected ToDo category: " + selectedTodo.value.letter);
-  console.log("ToDos for the print: " + printTodos);
+  // console.log("All ToDos: ");
+  // console.log(todos.value);
+  // console.log("Selected ToDo category: " + selectedTodo.value.letter);
+  // console.log("Print ToDos: ");
+  // console.log(printTodos);
 });
 </script>
 

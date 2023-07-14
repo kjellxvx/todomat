@@ -149,6 +149,7 @@ const data = useData();
 const progress = useProgress();
 const categories = useCategories();
 const abort = ref(false);
+const userToken = useUserToken();
 
 const menuItems = [
   {
@@ -201,6 +202,7 @@ function Abort() {
   index.value = 0;
   data.value = {};
   todos.value = {};
+  userToken.value = false;
   navigateTo("/");
 }
 

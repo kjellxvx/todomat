@@ -1,7 +1,6 @@
 <template>
   <div class="slide">
-    <HeaderComp
-      />
+    <HeaderComp />
     <div class="textbox">
       <div></div>
       <h1>
@@ -31,14 +30,18 @@
 </template>
 
 <script setup>
+import { useUserToken } from "../composables/useUtils";
+
 const index = useIndex();
 const todos = useTodos();
 const data = useData();
+const userToken = useUserToken();
 
 function Restart() {
   index.value = 0;
   data.value = {};
   todos.value = {};
+  userToken.value = false;
   navigateTo("/menu");
 }
 function Zurück() {
@@ -47,8 +50,7 @@ function Zurück() {
 </script>
 
 <style scoped>
-
-.textbox p{
+.textbox p {
   width: 97%;
 }
 </style>

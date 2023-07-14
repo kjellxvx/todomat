@@ -122,6 +122,15 @@ async function Print() {
 }
 
 onMounted(() => {
+
+  // clean todos data and remove empy entries
+  Object.keys(todos.value).forEach((key) => {
+    console.log(key, todos.value[key]);
+    if (todos.value[key].length == 0) {
+      delete todos.value[key];
+    }
+  });
+
   const todoKeys = Object.keys(todos.value).filter(
     (key) => todos.value[key].length > 0 || typeof todos.value[key] === "string"
   );
