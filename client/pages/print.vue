@@ -89,7 +89,6 @@
 
 <script setup>
 import html2pdf from "html2pdf.js";
-import PocketBase from "pocketbase";
 import QrcodeVue from "qrcode.vue";
 
 const local = useLocal();
@@ -121,7 +120,6 @@ async function saveData(data, todos, token) {
     });
     if (response.ok) {
       const responseData = await response.json();
-      console.log(responseData.message);
       const token = responseData.token;
       userToken.value = token;
       url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
