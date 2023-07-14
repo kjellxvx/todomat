@@ -19,7 +19,7 @@
         ></div>
       </div>
       <div class="progress-bar-active" :style="{ width: adjPercent + '%' }">
-        <div class="progress-bar-item-container"></div>
+
         <div
           class="progress-bar-item"
           v-for="el in progressActive"
@@ -82,7 +82,8 @@ const progressActive = computed(() => {
 });
 
 const adjPercent = computed(() => {
-  return Number(percent.value) + 3;
+  const adjustedValue = Number(percent.value) + 3;
+  return adjustedValue > 100 ? 100 : adjustedValue;
 });
 
 const selection = ref(null);

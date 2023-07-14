@@ -121,10 +121,7 @@
       </div>
     </div>
     <div class="button-container">
-      <!-- <button @click="Submit" class="button">Bearbeitung abschließen</button>
-      <button @click="Restart" class="button-white">Neu Beginnen</button> -->
-
-      <button @click="Back" class="button-white">Zurück</button>
+      <button @click="Auschecken" class="button-white">Auschecken</button>
     </div>
   </div>
   <div v-if="abort" class="popup-container">
@@ -150,6 +147,7 @@ const progress = useProgress();
 const categories = useCategories();
 const abort = ref(false);
 const userToken = useUserToken();
+const local = useLocal();
 
 const menuItems = [
   {
@@ -190,10 +188,6 @@ function navigate(letter) {
   navigateTo(`/${letter}`);
 }
 
-function Submit() {
-  navigateTo("/submit");
-}
-
 function Back() {
   abort.value = false;
 }
@@ -208,6 +202,14 @@ function Abort() {
 
 function Close() {
   abort.value = true;
+}
+
+function Auschecken() {
+  if (local.value == true) {
+    navigateTo("/offboarding");
+  } else {
+    navigateTo("/offboardingweb");
+  }
 }
 
 const getButtonLabel = (letter) => {
