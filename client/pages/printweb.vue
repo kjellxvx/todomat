@@ -1,7 +1,6 @@
 <template>
-  <NuxtLayout name="customtodosweb">
-    <div class="slide">
-      <HeaderComp />
+  <NuxtLayout name="custom">
+    <div id="pdf-container" class="pdf-container">
       <div class="textbox">
         <h1>ToDo’s</h1>
         <p v-if="todos">Hier findest du deine aufgelisteten ToDo’s</p>
@@ -15,16 +14,26 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="button-container">
-        <button @click="Print" class="button">Auschecken und Ausdrucken</button>
-      </div>
+    <div v-if="loading" class="loading-container">
+      <div class="loading-spinner"></div>
     </div>
   </NuxtLayout>
 </template>
 
 <script setup>
+import html2pdf from "html2pdf.js";
+
+const local = useLocal();
+const loading = ref(false);
+const url = ref("http://localhost:3000/return");
+const size = 160;
+const userToken = useUserToken();
+// const url = ref("https://todomat.org/return");
 const todos = useTodos();
+const noTodos = ref(true);
+const data = useData();
 
 function category(index) {
   if (index.includes("A")) {
@@ -47,12 +56,7 @@ function category(index) {
   }
 }
 
-function Print() {
-  navigateTo("/printweb");
-}
-
 onMounted(() => {
-  // clean todos data and remove empy entries
   Object.keys(todos.value).forEach((key) => {
     console.log(key, todos.value[key]);
     if (todos.value[key].length == 0) {
@@ -89,4 +93,3 @@ onMounted(() => {
   margin-bottom: 50px;
 }
 </style>
--

@@ -90,9 +90,11 @@
 <script setup>
 import html2pdf from "html2pdf.js";
 import QrcodeVue from "qrcode.vue";
+import { saveData } from "@/scripts/savedata.js";
 
 const local = useLocal();
 const loading = ref(false);
+
 const url = ref("http://localhost:3000/return");
 // const url = ref("https://todomat.org/return");
 const size = 160;
@@ -104,38 +106,13 @@ const printTodos = ref([]);
 const noTodos = ref(true);
 const data = useData();
 
-async function saveData(data, todos, token) {
-  const serverUrl = "http://localhost:3333/save";
-  const body = JSON.stringify({
-    data: { ...data },
-    todos: { ...todos },
-    token,
-  });
-
-  try {
-    const response = await fetch(serverUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body,
-    });
-    if (response.ok) {
-      const responseData = await response.json();
-      const token = responseData.token;
-      userToken.value = token;
-      url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
-      console.log(url.value);
-    } else {
-      console.log("Error saving data:", response.status);
-    }
-  } catch (error) {
-    console.log("Error saving data:", error.message);
-  }
-}
-
 async function Print() {
   console.log("USER TOKEN");
   console.log(userToken.value);
   await saveData(data.value, todos.value, userToken.value);
+
+  url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
+  console.log(url.value);
 
   exportToPDF();
   await delay(10000);
