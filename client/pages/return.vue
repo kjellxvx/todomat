@@ -1,4 +1,17 @@
 <template>
+  <img
+    class="rip"
+    src="~assets/rip/rip.png"
+    alt=""
+    style="
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+    "
+  />
   <div class="slide">
     <HeaderComp />
     <div class="close-button-container">
@@ -72,7 +85,11 @@
       <div class="loading-spinner"></div>
     </div>
   </div>
-  <div class="keyboard-container" ref="keyboardContainerRef" :style="{ display: activateKeyboard() }">
+  <div
+    class="keyboard-container"
+    ref="keyboardContainerRef"
+    :style="{ display: activateKeyboard() }"
+  >
     <div class="keyboard">
       <SimpleKeyboard @onChange="onChange" />
     </div>
@@ -81,20 +98,11 @@
 
 <script setup>
 import SimpleKeyboard from "../components/SimpleKeyboard";
-import PocketBase from "pocketbase";
+import pdfPath from "~/assets/rip/RIP_Todomat.pdf";
 
-const pb = new PocketBase("https://delightful-artist.pockethost.io");
-
-try {
-  const authData = await pb.admins.authWithPassword(
-    "yinebo1036@andorem.com",
-    "password123"
-  );
-  // Rest of your code
-} catch (error) {
-  console.error("Error during authentication:", error);
-  // Handle the error appropriately (e.g., show an error message to the user)
-}
+const userData = { data: {}, todos: {} };
+const storedData = useStoredData();
+const userToken = useUserToken();
 
 const keyboard = useKeyboard();
 const keyboardContainerRef = ref(null);
@@ -104,6 +112,7 @@ const loading = ref(false);
 const data = useData();
 const local = useLocal();
 const route = useRoute();
+const popup = usePopup();
 
 function activateKeyboard() {
   if (local.value == true) {
@@ -130,33 +139,61 @@ function onChange(input) {
   inputText.value = input;
 }
 
+async function fetchData(token) {
+  try {
+    const response = await fetch(
+      `http://localhost:3333/retrieve?token=${token}`
+    );
+
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }
+
+    const fetchedData = await response.json();
+
+    if (fetchedData != null) {
+      userData.data = fetchedData.userData.data;
+      userData.todos = fetchedData.userData.todos;
+      storedData.value = userData;
+      data.value = storedData.value.data;
+      loading.value = false;
+      navigateTo("/menu");
+    }
+  } catch (error) {
+    console.error(error);
+    if ((error = "Invalid userToken")) {
+      console.log("Invalid userToken");
+      loading.value = false;
+      popup.value.isOpen = true;
+      popup.value.content =
+        '<p class="popup-headline">Falscher Code</p><p class="popup-text">Bitte versuch es erneut und gib einen richtigen Code ein.</p>';
+    }
+  }
+}
+
 async function Start(qrCode) {
   loading.value = true;
-  const userData = { data: {}, todos: {} };
-  const storedData = useStoredData();
-  const userToken = useUserToken();
-
   if (qrCode == true) {
     userToken.value = route.query.code;
   } else {
     userToken.value = inputText.value;
   }
 
-  const record = await pb.collection("user_data").getOne(userToken.value, {
-    expand: "relField1,relField2.subRelField",
-  });
-
-  if (record != null) {
-    userData.data = record.data;
-    userData.todos = record.todos;
-    storedData.value = userData;
-    data.value = storedData.value.data;
-    navigateTo("/menu");
+  if (userToken.value != "RIP") {
+    await fetchData(userToken.value);
   } else {
-    // Error: Wrong Code
+    // SECRET RIP MODE
+    console.log("RIP MODE ACTIVATED");
+    toggleRipMode(true);
+    loading.value = false;
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.download = "RIP_Todomat.pdf";
+    link.click();
+    await delay(100000);
+    toggleRipMode(false);
+    navigateTo("/start");
   }
-
-  loading.value = false;
 }
 
 // Function to handle the click outside event
@@ -172,6 +209,17 @@ const handleClickOutside = (event) => {
 
 function Close() {
   navigateTo("/start");
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function toggleRipMode(rip) {
+  const image = document.querySelector(".rip");
+  if (image) {
+    image.style.display = rip ? "block" : "none";
+  }
 }
 
 // Register the click event listener

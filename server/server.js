@@ -35,8 +35,9 @@ app.post("/save", async (req, res) => {
 
     // if user has no token create new record, save data and return the record.id to the client
     if (token == false) {
-      const record = await pb.collection("user_data").create(user_data);
+      const record = await pb.collection("user_data").create(user_data[token]);
       console.log("Saved data using new record: " + record.id);
+      // console.log(user_data);
       res.status(200).json({
         message: "Saved new data",
         token: record.id,
@@ -44,8 +45,11 @@ app.post("/save", async (req, res) => {
       });
       // if user has a token update the data using the token
     } else {
-      const record = await pb.collection("user_data").update(token, user_data);
+      const record = await pb
+        .collection("user_data")
+        .update(token, user_data[token]);
       console.log("Updated record: " + token);
+      // console.log(user_data);
       res.status(200).json({
         message: "Updated data",
         token: token,
@@ -64,7 +68,7 @@ app.get("/retrieve", async (req, res) => {
   const { token } = req.query;
 
   if (!token) {
-    return res.status(400).json({ error: "Invalid request" });
+    return res.status(400).json({ error: "Invalid userToken" });
   }
 
   try {
@@ -74,16 +78,14 @@ app.get("/retrieve", async (req, res) => {
       process.env.PB_PW
     );
 
-    // Check if the token exists in the user_data
-    if (token in user_data) {
-      const { data, todos } = user_data[token];
-      return res.status(200).json({ data, todos });
-    }
+    const userData = await pb.collection("user_data").getOne(token, {
+      expand: "relField1,relField2.subRelField",
+    });
 
-    res.status(404).json({ error: "Data not found" });
+    console.log("userData requested by user: " + token);
+    return res.status(200).json({ userData });
   } catch (error) {
-    console.error("Error during authentication:", error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(400).json({ error: "Invalid userToken" });
   }
 });
 
