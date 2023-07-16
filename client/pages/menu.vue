@@ -569,5 +569,18 @@ h1 {
   .seperator {
   margin-bottom: 10px;
 }
+
+.button-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space:normal;
+}
+.button{
+  margin-right: 0px
+}
+.button-white{
+  margin-right: 0px
+}
 }
 </style>

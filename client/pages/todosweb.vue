@@ -18,6 +18,7 @@
 
       <div class="button-container">
         <button @click="Print" class="button">Beenden & Drucken</button>
+        <button @click="Back" class="button">Zurück</button>
       </div>
     </div>
   </NuxtLayout>
@@ -49,6 +50,10 @@ function category(index) {
 
 function Print() {
   navigateTo("/printweb");
+}
+
+function Back() {
+  navigateTo("/menu");
 }
 
 onMounted(() => {
