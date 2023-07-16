@@ -54,7 +54,7 @@ function Print() {
 onMounted(() => {
   // clean todos data and remove empy entries
   Object.keys(todos.value).forEach((key) => {
-    console.log(key, todos.value[key]);
+    // console.log(key, todos.value[key]);
     if (todos.value[key].length == 0) {
       delete todos.value[key];
     }

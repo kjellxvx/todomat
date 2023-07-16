@@ -57,7 +57,7 @@
         class="button"
         :disabled="!selectedMenuItem && enabledMenuItems.length > 0"
       >
-        Auschecken
+        Auschecken und Ausdrucken
       </button>
     </div>
   </div>
@@ -72,7 +72,7 @@ const selectedMenuItem = ref(null);
 function selectMenuItem(menuItem) {
   selectedMenuItem.value = menuItem;
   selectedTodo.value = selectedMenuItem.value;
-  console.log("Selected Todo Category:", selectedTodo.value);
+  // console.log("Selected Todo Category:", selectedTodo.value);
 }
 
 const menuItems = [
@@ -117,15 +117,14 @@ const enabledMenuItems = computed(() => {
 });
 
 async function Print() {
-  console.log(selectedMenuItem.value);
+  // console.log(selectedMenuItem.value);
   navigateTo("/print");
 }
 
 onMounted(() => {
-
   // clean todos data and remove empy entries
   Object.keys(todos.value).forEach((key) => {
-    console.log(key, todos.value[key]);
+    // console.log(key, todos.value[key]);
     if (todos.value[key].length == 0) {
       delete todos.value[key];
     }

@@ -86,7 +86,7 @@ const adjPercent = computed(() => {
 });
 
 const selection = ref(null);
-console.log(progress.value);
+// console.log(progress.value);
 
 const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 percent.value = ((100 / 6) * totalProgress).toFixed(0);

@@ -126,7 +126,7 @@ const transformedQuestionParts = computed(() => {
 });
 
 function headlineInfo() {
-  console.log(slides[id].info);
+  // console.log(slides[id].info);
   popup.value.isOpen = true;
   popup.value.content = slides[id].info;
 }
@@ -198,7 +198,7 @@ function updateSelection() {
   // Clear textfields and remove unused inputs
   Object.keys(inputs).forEach((key) => {
     if (!selectedOptionsArray.includes(key)) {
-      console.log("clear textfield of " + key);
+      // console.log("clear textfield of " + key);
       delete inputs[key];
     }
   });
@@ -233,7 +233,7 @@ function updateTextSelection() {
   // Clear textfields and remove unused inputs
   Object.keys(inputs).forEach((key) => {
     if (!selectedOptionsArray.includes(key)) {
-      console.log("clear textfield of " + key);
+      // console.log("clear textfield of " + key);
       delete inputs[key];
     }
   });
@@ -288,14 +288,14 @@ function activateKeyboard() {
 }
 
 function onInputFocus(input) {
-  console.log("Focused input:", input.target.id);
+  // console.log("Focused input:", input.target.id);
   keyboard.value = true;
   inputName.value = input.target.id;
 }
 
 // this method is called when the text input is changed using the real keyboard
 function onInputChange(input) {
-  console.log("Input changed directly:", input.target.id, input.target.value);
+  // console.log("Input changed directly:", input.target.id, input.target.value);
 
   if (input.target.value !== "") {
     complete.value = true;
@@ -308,7 +308,7 @@ function onInputChange(input) {
 }
 
 function onKeyPress(button) {
-  console.log("button", button);
+  // console.log("button", button);
   selection.value[id].input = inputs;
   data.value = { ...data.value, ...selection.value };
 }
@@ -343,14 +343,14 @@ onMounted(() => {
     complete.value = true;
     selectedOptions.value = storedOption.value;
     if (data.value[id].input) {
-      console.log("input there");
-      console.log(storedOption.value);
+      // console.log("input there");
+      // console.log(storedOption.value);
 
       for (const key in storedOption.value) {
         if (storedOption.value.hasOwnProperty(key)) {
           const inputKey = storedOption.value[key];
           if (storedInputs.value(inputKey)) {
-            console.log(storedInputs.value(inputKey));
+            // console.log(storedInputs.value(inputKey));
             inputs[inputKey] = storedInputs.value(inputKey);
           }
         }

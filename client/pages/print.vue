@@ -105,12 +105,12 @@ const noTodos = ref(true);
 const data = useData();
 
 async function Print() {
-  console.log("USER TOKEN");
-  console.log(userToken.value);
+  // console.log("USER TOKEN");
+  // console.log(userToken.value);
   await saveData(data.value, todos.value, userToken.value);
 
   url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
-  console.log(url.value);
+  // console.log(url.value);
 
   exportToPDF();
   await delay(10000);

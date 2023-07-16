@@ -129,7 +129,7 @@ function activateKeyboard() {
 
 function onInputChange(event) {
   const input = event.target.value;
-  console.log("Input changed directly:", input);
+  // console.log("Input changed directly:", input);
 }
 
 function onInputFocus() {
@@ -165,7 +165,7 @@ async function fetchData(token) {
   } catch (error) {
     console.error(error);
     if ((error = "Invalid userToken")) {
-      console.log("Invalid userToken");
+      // console.log("Invalid userToken");
       loading.value = false;
       popup.value.isOpen = true;
       popup.value.content =
@@ -186,7 +186,7 @@ async function Start(qrCode) {
     await fetchData(userToken.value);
   } else {
     // SECRET RIP MODE
-    console.log("RIP MODE ACTIVATED");
+    // console.log("RIP MODE ACTIVATED");
     toggleRipMode(true);
     loading.value = false;
     const link = document.createElement("a");
@@ -206,7 +206,7 @@ const handleClickOutside = (event) => {
     !keyboardContainerRef.value.contains(event.target)
   ) {
     keyboard.value = false; // Set keyboard to false when clicked outside
-    console.log("Clicked outside the keyboard");
+    // console.log("Clicked outside the keyboard");
   }
 };
 
@@ -228,7 +228,7 @@ function toggleRipMode(rip) {
 // Register the click event listener
 onMounted(() => {
   if (route.query.code) {
-    console.log(route.query.code);
+    // console.log(route.query.code);
     Start(true);
   }
   document.addEventListener("click", handleClickOutside);

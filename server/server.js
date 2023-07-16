@@ -36,7 +36,7 @@ app.post("/save", async (req, res) => {
     // if user has no token create new record, save data and return the record.id to the client
     if (token == false) {
       const record = await pb.collection("user_data").create(user_data[token]);
-      console.log("Saved data using new record: " + record.id);
+      // console.log("Saved data using new record: " + record.id);
       // console.log(user_data);
       res.status(200).json({
         message: "Saved new data",
@@ -48,7 +48,7 @@ app.post("/save", async (req, res) => {
       const record = await pb
         .collection("user_data")
         .update(token, user_data[token]);
-      console.log("Updated record: " + token);
+      // console.log("Updated record: " + token);
       // console.log(us<er_data);
       res.status(200).json({
         message: "Updated data",
@@ -82,7 +82,7 @@ app.get("/retrieve", async (req, res) => {
       expand: "relField1,relField2.subRelField",
     });
 
-    console.log("userData requested by user: " + token);
+    // console.log("userData requested by user: " + token);
     return res.status(200).json({ userData });
   } catch (error) {
     res.status(400).json({ error: "Invalid userToken" });
@@ -91,5 +91,5 @@ app.get("/retrieve", async (req, res) => {
 
 // Start the server
 app.listen(3333, () => {
-  console.log("Server is running on port 3333");
+  // console.log("Server is running on port 3333");
 });
