@@ -500,6 +500,37 @@ input[type="radio"]:checked::before {
   cursor: default;
 }
 
+.loading-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(5px);
+}
+
+.loading-spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   #__nuxt {
     align-items: normal;
@@ -519,10 +550,10 @@ input[type="radio"]:checked::before {
   }
 
   .button-container {
-    display: block;
-    flex-direction: row;
+    white-space:nowrap;
+    display: flex;
+    justify-content: center;
     width: 100%;
-    padding-bottom: 1em;
   }
 
   .radio-label-right {
@@ -533,15 +564,15 @@ input[type="radio"]:checked::before {
     margin: 0.5em 0 0 0;
   }
   .popup-link {
-    margin-left: 0;
+    margin-left: 10px;
   }
 
   .checkform {
-    padding-bottom: 3em;
+    padding-bottom: 1em;
   }
 
   input.codeInput {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .close-button {
@@ -549,7 +580,8 @@ input[type="radio"]:checked::before {
   }
 
   .close-button-container {
-    margin: 10px 0 10px 0;
+    position: absolute;
+    right: 15px;
   }
 }
 

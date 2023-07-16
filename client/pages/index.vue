@@ -100,13 +100,14 @@ onMounted(() => {
 .h1-index {
   font-family: "IBMPlexSans-Bold", sans-serif;
   font-size: 100px;
-  line-height: 110px;
-  /* font-size: 10vw; */
+  line-height: 1.1em;
   text-align: center;
-  /* margin: 30px 0 40px 0; */
   margin: 0 0 0.4em 0;
   color: white;
   white-space: nowrap;
+  /* line-height: 110px; */
+  /* font-size: 10vw; */
+  /* margin: 30px 0 40px 0; */
 }
 
 .h2-index {

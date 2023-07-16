@@ -88,5 +88,13 @@ onMounted(() => {
 .button-container {
   margin-bottom: 50px;
 }
+
+@media only screen and (max-width: 1024px) {
+  .button-container {
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
+}
+
 </style>
 -

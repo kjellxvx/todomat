@@ -8,7 +8,7 @@
       <div class="code-container">
         <div class="code-box">
           <p class="p1">
-            Persönlicher Code für die Fortführung Deiner Koniguaration auf
+            Persönlicher Code für die Fortführung Deiner Konfiguration auf
             todomat.org:
           </p>
           <div class="code-char-container">
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="qr-code">
-            <qrcode-vue :value="url" :size="size" level="H" />
+            <qrcode-vue :value="url" :size="qrSize" level="H" />
           </div>
         </div>
       </div>
@@ -94,11 +94,9 @@ import { saveData } from "@/scripts/savedata.js";
 
 const local = useLocal();
 const loading = ref(false);
-
-// const url = ref("http://localhost:3000/return");
-const url = ref("https://todomat.org/return");
-const size = 160;
-
+const url = ref("http://localhost:3000/return");
+// const url = ref("https://todomat.org/return");
+const qrSize = 160;
 const userToken = useUserToken();
 const todos = useTodos();
 const selectedTodo = useSelectedTodo();
@@ -116,12 +114,7 @@ async function Print() {
 
   exportToPDF();
   await delay(10000);
-
-  if (local.value == true) {
-    navigateTo("/?local=true");
-  } else {
-    navigateTo("/");
-  }
+  navigateTo("/?local=true");
 }
 
 const exportToPDF = () => {
@@ -134,13 +127,7 @@ const exportToPDF = () => {
   });
 };
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-onMounted(() => {
-  loading.value = true;
-  Print();
+function transformTodos() {
   printTodos.value = Object.entries(todos.value)
     .filter(
       ([key, value]) =>
@@ -153,11 +140,16 @@ onMounted(() => {
   } else {
     noTodos.value = false;
   }
-  // console.log("All ToDos: ");
-  // console.log(todos.value);
-  // console.log("Selected ToDo category: " + selectedTodo.value.letter);
-  // console.log("Print ToDos: ");
-  // console.log(printTodos);
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+onMounted(() => {
+  loading.value = true;
+  transformTodos();
+  Print();
 });
 </script>
 
@@ -313,37 +305,5 @@ onMounted(() => {
 .todo {
   display: flex;
   margin: 0 0 30px 0;
-}
-
-.loading-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  /* backdrop-filter: blur(5px); */
-  background: white;
-}
-
-.loading-spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid var(--primary-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 </style>

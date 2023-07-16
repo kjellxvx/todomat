@@ -1,16 +1,18 @@
 <template>
-  <NuxtLayout name="custom">
+  <NuxtLayout name="customtodosweb">
     <div id="pdf-container" class="pdf-container">
-      <div class="textbox">
-        <h1>ToDo’s</h1>
-        <p v-if="todos">Hier findest du deine aufgelisteten ToDo’s</p>
-        <p v-else>Deine Auswahl hat keine zu erledigenden Todos ergeben.</p>
-      </div>
-      <div class="todos-container">
-        <div class="todo" v-for="(todo, index) in todos" :key="index">
-          <div v-if="todo.length != 0">
-            <p class="todo-category">{{ category(index) }}</p>
-            <p class="todo-text">{{ todo[0] }}</p>
+      <div class="content-container">
+        <div class="textbox">
+          <h1>ToDo’s</h1>
+          <p v-if="todos">Hier findest du deine aufgelisteten ToDo’s</p>
+          <p v-else>Deine Auswahl hat keine zu erledigenden Todos ergeben.</p>
+        </div>
+        <div class="todos-container">
+          <div class="todo" v-for="(todo, index) in todos" :key="index">
+            <div v-if="todo.length != 0">
+              <p class="todo-category">{{ category(index) }}</p>
+              <p class="todo-text">{{ todo[0] }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -24,16 +26,51 @@
 
 <script setup>
 import html2pdf from "html2pdf.js";
+import { saveData } from "@/scripts/savedata.js";
 
-const local = useLocal();
 const loading = ref(false);
-const size = 160;
+
 const userToken = useUserToken();
-// const url = ref("http://localhost:3000/return");
-const url = ref("https://todomat.org/return");
+const url = ref("http://localhost:3000/return");
+// const url = ref("https://todomat.org/return");
 const todos = useTodos();
 const noTodos = ref(true);
 const data = useData();
+
+async function Print() {
+  console.log("USER TOKEN");
+  console.log(userToken.value);
+  await saveData(data.value, todos.value, userToken.value);
+  url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
+  console.log(url.value);
+  exportToPDF();
+  await delay(10000);
+  navigateTo("/");
+}
+
+const exportToPDF = () => {
+  html2pdf(document.getElementById("pdf-container"), {
+    margin: 0,
+    filename: "Todomat.pdf",
+    image: { type: "pdf", quality: 0.98 },
+    html2canvas: { dpi: 300, letterRendering: true },
+    userUnit: 300,
+    jsPDF: { unit: "mm", format: [210, 298], orientation: "portrait" },
+  });
+};
+
+function transformTodos() {
+  Object.keys(todos.value).forEach((key) => {
+    console.log(key, todos.value[key]);
+    if (todos.value[key].length == 0) {
+      delete todos.value[key];
+    }
+  });
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 function category(index) {
   if (index.includes("A")) {
@@ -57,16 +94,24 @@ function category(index) {
 }
 
 onMounted(() => {
-  Object.keys(todos.value).forEach((key) => {
-    console.log(key, todos.value[key]);
-    if (todos.value[key].length == 0) {
-      delete todos.value[key];
-    }
-  });
+  transformTodos();
+  loading.value = true;
+  Print();
 });
 </script>
 
 <style scoped>
+.pdf-container {
+  height: 100%;
+  width: 210mm;
+  background-color: white;
+  /* padding: 60px 40px 40px 40px; */
+}
+
+.content-container {
+  padding: 60px 40px 40px 40px;
+}
+
 .todo-category {
   font-family: "IBMPlexSans-Medium", sans-serif;
   font-size: 26px;

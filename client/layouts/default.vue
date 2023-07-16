@@ -337,6 +337,17 @@ p {
   h1 {
     font-size: 35px;
   }
+
+  h2 {
+  font-family: "IBMPlexSans-Medium", sans-serif;
+  max-width: 100%;
+  font-size: 26px;
+  text-align: left;
+  margin: 0px;
+  padding-bottom: 30px;
+}
+
+
   p {
     font-size: 20px;
   }

@@ -1,15 +1,16 @@
 <template>
   <div class="slide">
-    <HeaderComp
-      />
+    <HeaderComp />
     <div class="textbox">
-      <div> </div>
+      <div></div>
       <h1>
         Guten Tag. <br />
         Du wirst sterben.
       </h1>
       <p>
-        Das könnte schon morgen passieren. Heute kannst du dir darüber Gedanken machen und wichtige Entscheidungen für dich und die Lebenden hinterlegen.
+        Das könnte schon morgen passieren. Heute kannst du dir darüber Gedanken
+        machen und wichtige Entscheidungen für dich und die Lebenden
+        hinterlegen.
       </p>
       <p class="p-bold">
         Es gibt auch einige ToDos zu erledigen. <br />
@@ -51,10 +52,9 @@
 </template>
 
 <script setup>
-
 const local = useLocal();
 
-console.log(local.value)
+console.log(local.value);
 
 function Weiter() {
   navigateTo("/onboarding");
@@ -72,18 +72,22 @@ function About() {
 </script>
 
 <style scoped>
-
-.button-white svg{
-padding-left: 25px;
+.button-white svg {
+  padding-left: 25px;
 }
 
-.textbox p{
+.textbox p {
   width: 97%;
 }
 
-.button-container{
-margin-top: 30px;
+.button-container {
+  margin-top: 30px;
+}
 
+@media only screen and (max-width: 1024px) {
+  .button-container {
+    margin-top: 0px;
+  }
 }
 </style>
 -

@@ -47,7 +47,7 @@
     <div class="textbox">
       <div></div>
       <h1>Was ist der Todomat?</h1>
-      <p>
+      <p lang="de">
         Der Todomat ist der erste Hinterlassenschafts-Konfigurator der Welt.
         <br />
         Er wurde entwickelt, um deinen Abschied selbstbestimmter und <br />
@@ -155,20 +155,20 @@
       </div>
       <div class="info-right">
         <div class="info">
-          <p>
+          <p lang="de">
             Die Vorkehrungen, die du durch den Todomaten triffst, <br />
             können die um dich Trauernden entlasten und trösten.
           </p>
         </div>
         <div class="info">
-          <p>
+          <p lang="de">
             Die Auseinandersetzung mit deinem Tod kann dir dabei helfen, dein
             <br />
             Leben bewusster zu gestalten, und Mut zu Veränderungen machen.
           </p>
         </div>
         <div class="info">
-          <p>
+          <p lang="de">
             Falls du schon typische Vorkehrungen getroffen hast (Testament,
             <br />
             Organspendeausweis, Patient:innenverfügung etc.), hilft dir der
@@ -177,7 +177,7 @@
           </p>
         </div>
         <div class="info">
-          <p>
+          <p lang="de">
             Der Todomat gibt dir Denkanstöße, wie du deinen Tod <br />
             umweltfreundlicher gestalten kannst.
           </p>
@@ -225,16 +225,35 @@ function Close() {
 }
 
 @media only screen and (max-width: 1024px) {
-  .info-left{
+  .info-left {
     display: none;
   }
 
-  .info{
+  .info {
     border-top: none;
   }
 
   .textbox p {
     padding-bottom: 0;
+  }
+
+  h1 {
+    width: 300px;
+  }
+  p {
+  width: 300px;
+  hyphens: auto;
+}
+.info-container {
+  hyphens: auto;
+  width: 300px;
+}
+
+br {
+    display: none;
+}
+.info{
+  padding: 10px 0 10px 0;
 }
 }
 

@@ -110,6 +110,7 @@ const keyboardContainerRef = ref(null);
 const inputText = ref("");
 const loading = ref(false);
 const data = useData();
+const todos = useTodos();
 const local = useLocal();
 const route = useRoute();
 const popup = usePopup();
@@ -142,8 +143,8 @@ function onChange(input) {
 async function fetchData(token) {
   try {
     const response = await fetch(
-      // `http://localhost:3333/retrieve?token=${token}`
-      `https://todomat.org:3333/retrieve?token=${token}`
+      `http://localhost:3333/retrieve?token=${token}`
+      // `https://todomat.org:3333/retrieve?token=${token}`
     );
 
     if (!response.ok) {
@@ -157,6 +158,7 @@ async function fetchData(token) {
       userData.todos = fetchedData.userData.todos;
       storedData.value = userData;
       data.value = storedData.value.data;
+      todos.value = storedData.value.todos;
       loading.value = false;
       navigateTo("/menu");
     }
@@ -250,34 +252,10 @@ onUnmounted(() => {
   align-items: flex-start;
 }
 
-.loading-container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  backdrop-filter: blur(5px);
-}
-
-.loading-spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid var(--primary-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+@media only screen and (max-width: 1024px) {
+  .button-container {
+    display: block;
+    white-space: normal;
   }
 }
 </style>

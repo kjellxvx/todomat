@@ -556,5 +556,13 @@ h1 {
   .menuItem {
     margin-bottom: 1em;
   }
+
+  h1 {
+    width: 300px;
+  }
+
+  .seperator {
+  margin-bottom: 10px;
+}
 }
 </style>
