@@ -122,7 +122,9 @@
     </div>
     <div class="button-container">
       <button @click="Auschecken" class="button">Auschecken</button>
-      <button  v-if="!local" @click="viewTodos" class="button-white">To-Dos ansehen</button>
+      <button v-if="!local" @click="viewTodos" class="button-white">
+        To-Dos ansehen
+      </button>
     </div>
   </div>
   <div v-if="abort" class="popup-container">
@@ -567,20 +569,33 @@ h1 {
   }
 
   .seperator {
-  margin-bottom: 10px;
-}
+    margin-bottom: 10px;
+  }
 
-.button-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  white-space:normal;
-}
-.button{
-  margin-right: 0px
-}
-.button-white{
-  margin-right: 0px
-}
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+  }
+  .button {
+    margin-right: 0px;
+  }
+  .button-white {
+    margin-right: 0px;
+  }
+
+  .popup-button {
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
+  .popup-button-white {
+    margin-right: 0px;
+  }
+
+  .popup .button-container {
+    margin-bottom: 0px;
+  }
 }
 </style>
