@@ -18,7 +18,7 @@
 
       <div class="button-container">
         <button @click="Print" class="button">Beenden & Drucken</button>
-        <button @click="Back" class="button">Zurück</button>
+        <button @click="Back" class="button-white">Zurück</button>
       </div>
     </div>
   </NuxtLayout>
@@ -95,9 +95,17 @@ onMounted(() => {
 }
 
 @media only screen and (max-width: 1024px) {
-  .button-container {
-  margin-bottom: 0px;
-  margin-right: 0px;
+.button-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space:normal;
+}
+.button{
+  margin-right: 0px
+}
+.button-white{
+  margin-right: 0px
 }
 }
 
