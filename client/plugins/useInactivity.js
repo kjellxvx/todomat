@@ -1,7 +1,7 @@
 import { ref, watchEffect } from "vue";
 import { useLocal } from "~/composables/useUtils";
 
-export default function ({ app }) {
+export default function ({}) {
   const local = useLocal();
   const lastActivity = ref(Date.now());
 
@@ -15,9 +15,9 @@ export default function ({ app }) {
     const currentTime = Date.now();
     const inactivityDuration = currentTime - lastActivity.value;
 
-    if (inactivityDuration >= 120000) {
-      // console.log("no activity detected")
-      if ((local.value == true)) {
+    if (local.value == true) {
+      if (inactivityDuration >= 120000) {
+        console.log("no activity detected");
         navigateTo("/?local=true");
       }
     }

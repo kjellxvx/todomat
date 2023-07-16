@@ -545,6 +545,9 @@ input[type="radio"]:checked::before {
   html body {
     overflow: auto;
   }
+  .slide{
+    position: relative;
+  }
 
   .button {
     /* font-size: 5vw; */
