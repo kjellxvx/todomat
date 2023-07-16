@@ -57,7 +57,7 @@
         class="button"
         :disabled="!selectedMenuItem && enabledMenuItems.length > 0"
       >
-        Auschecken und Ausdrucken
+        Auschecken
       </button>
     </div>
   </div>

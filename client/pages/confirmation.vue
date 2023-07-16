@@ -19,7 +19,6 @@
         ></div>
       </div>
       <div class="progress-bar-active" :style="{ width: adjPercent + '%' }">
-
         <div
           class="progress-bar-item"
           v-for="el in [...progressActive, 1]"
@@ -120,6 +119,7 @@ function Navigate() {
   display: flex;
   justify-content: space-between;
   position: absolute;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -129,6 +129,7 @@ function Navigate() {
 .progress-bar-active {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   border-radius: 36px;
   background-color: #131126;
@@ -152,5 +153,15 @@ function Navigate() {
 
 .progress-text {
   font-family: "IBMPlexSans-Regular", sans-serif;
+}
+
+@media only screen and (max-width: 1024px) {
+  .progress-bar-item {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #e8e8e8;
+    margin: 10px;
+  }
 }
 </style>

@@ -85,8 +85,13 @@ function About() {
 }
 
 @media only screen and (max-width: 1024px) {
-  .button-container {
-    margin-top: 0px;
+
+  .button-container button {
+    margin-right: 0px;
+}
+
+  .button-white{
+    margin-right: 0px
   }
 }
 </style>

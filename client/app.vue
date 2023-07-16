@@ -562,7 +562,7 @@ input[type="radio"]:checked::before {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 
   .radio-label-right {
