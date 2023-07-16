@@ -243,8 +243,8 @@ onMounted(() => {});
   align-items: center;
   /* width: 100%;
   height: 100%; */
-  width: calc(100% - 6em); /* Adjust the value as needed */
-  height: calc(100% - 4.6em); /* Adjust the value as needed */
+  width: calc(100% - 6em);
+  height: calc(100% - 4.6em); 
   margin: 2.3em 3em;
   max-height: 768px;
 }
