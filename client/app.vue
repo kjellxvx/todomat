@@ -160,7 +160,8 @@ html body {
   background-color: var(--primary-color);
   color: white;
   border: 0;
-  border-radius: 1em;
+  /* border-radius: 1em; */
+  border-radius: 21.1px;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;
   /* padding: 0.2em 2em 0.2em 2em; */
@@ -175,7 +176,8 @@ html body {
   background-color: white;
   color: black;
   border: solid black 1.2px;
-  border-radius: 1em;
+  /* border-radius: 1em; */
+  border-radius: 21.1px;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 21.1px;
   /* padding: 0.2em 1.3em 0.2em 1.3em; */
@@ -545,12 +547,14 @@ input[type="radio"]:checked::before {
   }
 
   .button {
-    font-size: 5vw;
+    /* font-size: 5vw; */
+    font-size: 21.1px;
     margin-bottom: 0.5em;
   }
 
   .button-white {
-    font-size: 5vw;
+    font-size: 21.1px;
+    /* font-size: 5vw; */
   }
 
   .button-container {
