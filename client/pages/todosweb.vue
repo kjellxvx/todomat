@@ -17,7 +17,7 @@
       </div>
 
       <div class="button-container">
-        <button @click="Print" class="button">Auschecken und Ausdrucken</button>
+        <button @click="Print" class="button">Beenden & Drucken</button>
       </div>
     </div>
   </NuxtLayout>

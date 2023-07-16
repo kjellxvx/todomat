@@ -121,7 +121,8 @@
       </div>
     </div>
     <div class="button-container">
-      <button @click="Auschecken" class="button-white">Auschecken</button>
+      <button @click="Auschecken" class="button">Auschecken</button>
+      <button  v-if="!local" @click="viewTodos" class="button-white">To-Dos ansehen</button>
     </div>
   </div>
   <div v-if="abort" class="popup-container">
@@ -186,6 +187,10 @@ function navigate(letter) {
   letter = letter + "1";
   index.value = order.value.indexOf(letter);
   navigateTo(`/${letter}`);
+}
+
+function viewTodos() {
+  navigateTo(`/todosweb`);
 }
 
 function Back() {
