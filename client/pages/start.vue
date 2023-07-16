@@ -7,12 +7,12 @@
         Guten Tag. <br />
         Du wirst sterben.
       </h1>
-      <p>
+      <p lang="de">
         Das könnte schon morgen passieren. Heute kannst du dir darüber Gedanken
         machen und wichtige Entscheidungen für dich und die Lebenden
         hinterlegen.
       </p>
-      <p class="p-bold">
+      <p lang="de" class="p-bold">
         Es gibt auch einige ToDos zu erledigen. <br />
         Der Todomat hilft Dir dabei!
       </p>
@@ -21,11 +21,10 @@
         wurde entwickelt, um deinen Abschied selbstbestimmter und <br> nachhaltiger
         zu gestalten. <a @click="Info('<h1>Headline</h1><p>Text</p>')" class="popup-link">Mehr Info’s zum Todomat.</a>
       </p> -->
-      <p>
-        Der Todomat ist der erste Hinterlassenschafts-Konfigurator der Welt.
-        <br />
-        Er wurde entwickelt, um deinen Abschied selbstbestimmter und <br />
-        nachhaltiger zu gestalten.
+      <p lang="de">
+        Der Todomat ist der erste Hinterlassenschafts-Konfigurator der Welt. Er
+        wurde entwickelt, um deinen Abschied selbstbestimmter und nachhaltiger
+        zu gestalten.
         <a @click="About" class="link">Mehr Info’s zum Todomat.</a>
       </p>
     </div>
@@ -77,7 +76,7 @@ function About() {
 }
 
 .textbox p {
-  width: 97%;
+
 }
 
 .button-container {
@@ -85,13 +84,21 @@ function About() {
 }
 
 @media only screen and (max-width: 1024px) {
+  .button-container {
+    justify-content: flex-start;
+  }
 
-  .button-container button {
+  .button-white {
     margin-right: 0px;
-}
+  }
 
-  .button-white{
-    margin-right: 0px
+  p {
+    hyphens: auto;
+    width: 90%;
+  }
+
+  .p-bold {
+    width: 76%;
   }
 }
 </style>

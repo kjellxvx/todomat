@@ -241,12 +241,13 @@ function Close() {
     width: 300px;
   }
   p {
-  width: 300px;
+    width: 95%;
   hyphens: auto;
 }
 .info-container {
   hyphens: auto;
-  width: 300px;
+  width: 95%;
+  margin-bottom: 50px;
 }
 
 br {
