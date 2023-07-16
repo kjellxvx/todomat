@@ -94,8 +94,8 @@ import { saveData } from "@/scripts/savedata.js";
 
 const local = useLocal();
 const loading = ref(false);
-const url = ref("http://localhost:3000/return");
-// const url = ref("https://todomat.org/return");
+// const url = ref("http://localhost:3000/return");
+const url = ref("https://todomat.org/return");
 const qrSize = 160;
 const userToken = useUserToken();
 const todos = useTodos();
