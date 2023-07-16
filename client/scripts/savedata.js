@@ -1,7 +1,7 @@
 export async function saveData(data, todos, token) {
   const userToken = useUserToken();
   // const serverUrl = "http://localhost:3333/save";
-  const serverUrl = "http://api.todomat.org/save";
+  const serverUrl = "https://api.todomat.org/save";
 
   const body = JSON.stringify({
     data: { ...data },
