@@ -125,7 +125,8 @@ onMounted(() => {
   /* font-size: 2vw; */
   background-color: white;
   color: black;
-  padding: 0.2em 3.3em 0.2em 3.3em;
+  /* padding: 0.2em 3.3em 0.2em 3.3em; */
+  padding: 5px 3.3em 5px 3.3em;
 }
 
 .slide {
@@ -151,10 +152,10 @@ onMounted(() => {
 
 @media only screen and (max-width: 1024px) {
   .button {
-    font-size: 4vw;
+    font-size: 21.1px;
     background-color: white;
     color: black;
-    padding: 0.2em 3.3em 0.2em 3.3em;
+    padding: 5px 3.3em 5px 3.3em;
   }
 
   .h1-index {

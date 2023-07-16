@@ -152,7 +152,7 @@ const slides = computed(() => {
   if (data.value["A2"] && data.value["A2"].options == "A2.1") {
     const pos = slides.indexOf("A2");
     slides.splice(pos + 1, 0, "A2_1_1", "A2_1_2");
-    console.log("added Slides A2_1_1 and A2_1_2");
+    // console.log("added Slides A2_1_1 and A2_1_2");
   }
   if (data.value["A2"] && data.value["A2"].options == "A2.2") {
     const pos = slides.indexOf("A2");
@@ -199,7 +199,7 @@ const previousPage = computed(() => slides.value[index.value - 1]);
 const nextPage = computed(() => slides.value[index.value + 1]);
 
 function goToPage(page) {
-  console.log(slides);
+  // console.log(slides);
   if (index.value >= 0) {
     index.value = slides.value.indexOf(page);
     navigateTo(`/${page}`);

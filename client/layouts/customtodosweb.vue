@@ -6,12 +6,12 @@
 
 <style>
 html {
-  height: 100vh;
+  height: 100svh;
   width: 100%;
 }
 
 .page-container {
-  height: 100vh;
+  height: 100svh;
   max-height: 100%;
   width: 100%;
   overflow: scroll;

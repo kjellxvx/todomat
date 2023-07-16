@@ -22,7 +22,7 @@
 
         <div
           class="progress-bar-item"
-          v-for="el in progressActive"
+          v-for="el in [...progressActive, 1]"
           :key="el"
         ></div>
       </div>
@@ -82,7 +82,7 @@ const progressActive = computed(() => {
 });
 
 const adjPercent = computed(() => {
-  const adjustedValue = Number(percent.value) + 3;
+  const adjustedValue = Number(percent.value) + 3.35;
   return adjustedValue > 100 ? 100 : adjustedValue;
 });
 

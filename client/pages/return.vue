@@ -144,7 +144,7 @@ async function fetchData(token) {
   try {
     const response = await fetch(
       // `http://localhost:3333/retrieve?token=${token}`
-      `https://api.todomat.org/retrieve?token=${token}`
+      `http://api.todomat.org/retrieve?token=${token}`
     );
 
     if (!response.ok) {
@@ -256,6 +256,10 @@ onUnmounted(() => {
   .button-container {
     display: block;
     white-space: normal;
+  }
+
+  h1{
+    max-width: 300px;
   }
 }
 </style>
