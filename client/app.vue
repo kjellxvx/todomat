@@ -481,6 +481,7 @@ input[type="radio"]:checked::before {
   width: 30px;
   height: 30px;
   cursor: pointer;
+  margin: 3px;
 }
 
 .menu-button {
@@ -593,7 +594,7 @@ input[type="radio"]:checked::before {
 
   .close-button-container {
     position: absolute;
-    right: 15px;
+    right: 0px;
   }
 }
 

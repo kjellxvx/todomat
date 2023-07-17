@@ -13,5 +13,6 @@ html {
 .page-container {
   height: 1800px;
   width: calc(100% - 6em);
+  overflow: hidden;
 }
 </style>
