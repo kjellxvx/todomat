@@ -88,6 +88,11 @@
 function Submit() {
   navigateTo("/submit");
 }
+
+function NoPrint() {
+  navigateTo("/?local=true");
+}
+
 </script>
 
 <style scoped>
