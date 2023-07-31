@@ -83,7 +83,7 @@ function About() {
   margin-top: 30px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .button-container {
     justify-content: flex-start;
   }

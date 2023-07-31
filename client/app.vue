@@ -56,7 +56,7 @@ html body {
 }
 
 #__nuxt {
-  max-width: 1024px;
+  max-width: 1020px;
   width: 100%;
   height: 100svh;
   margin: 0;
@@ -538,7 +538,7 @@ input[type="radio"]:checked::before {
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   #__nuxt {
     align-items: normal;
   }

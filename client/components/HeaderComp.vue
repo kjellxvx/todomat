@@ -75,7 +75,7 @@ const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
   margin-bottom: 3em;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .header {
     margin-bottom: 1em;
   }

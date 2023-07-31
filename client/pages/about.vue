@@ -224,7 +224,7 @@ function Close() {
   margin: 0px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .info-left {
     display: none;
   }

@@ -555,7 +555,7 @@ h1 {
   filter: blur(28px);
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .menu-container {
     display: block;
   }

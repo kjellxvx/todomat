@@ -150,7 +150,7 @@ onMounted(() => {
   height: 100%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .button {
     font-size: 21.1px;
     background-color: white;

@@ -155,7 +155,7 @@ function Navigate() {
   font-family: "IBMPlexSans-Regular", sans-serif;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .progress-bar-item {
     width: 10px;
     height: 10px;

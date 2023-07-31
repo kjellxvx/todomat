@@ -17,7 +17,7 @@ html {
   overflow: scroll;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .page-container {
     overflow: normal;
   }

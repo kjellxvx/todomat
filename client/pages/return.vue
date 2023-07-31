@@ -252,7 +252,7 @@ onUnmounted(() => {
   align-items: flex-start;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   .button-container {
     display: block;
     white-space: normal;

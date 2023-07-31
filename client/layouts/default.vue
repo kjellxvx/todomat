@@ -331,7 +331,7 @@ p {
   display: none;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
   h1 {
     font-size: 35px;
   }

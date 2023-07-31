@@ -94,7 +94,7 @@ onMounted(() => {
   margin-bottom: 50px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1020px) {
 .button-container{
   display: flex;
   flex-direction: column;
