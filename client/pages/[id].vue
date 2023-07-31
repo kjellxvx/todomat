@@ -6,7 +6,11 @@
       <template v-if="slides[id].info">
         <template v-for="(part, index) in transformedQuestionParts">
           <template v-if="part.isLink">
-            <a @click="headlineInfo" class="h-popup-link underline-link" v-html="part.content"></a>
+            <a
+              @click="headlineInfo"
+              class="h-popup-link underline-link"
+              v-html="part.content"
+            ></a>
           </template>
           <template v-else>{{ part.content }}</template>
         </template>
@@ -14,18 +18,42 @@
       <template v-else> <span v-html="formattedQuestion"></span></template>
     </h2>
     <div class="checkform">
-      <label class="form-control" v-for="(option, key) in slides[id].options[0]" :key="key">
+      <label
+        class="form-control"
+        v-for="(option, key) in slides[id].options[0]"
+        :key="key"
+      >
         <div class="radio-label-left">
-          <input type="checkbox" :id="key" :value="key" v-model="selectedOptions" @change="
-            option.TextInput ? updateTextSelection() : updateSelection()
-            " />
+          <input
+            type="checkbox"
+            :id="key"
+            :value="key"
+            v-model="selectedOptions"
+            @change="
+              option.TextInput ? updateTextSelection() : updateSelection()
+            "
+          />
         </div>
         <div class="radio-label-right">
           <label :for="key">
-            <span class="label-content" v-html="formatOptionContent(option)"></span>
+            <span
+              class="label-content"
+              v-html="formatOptionContent(option)"
+            ></span>
             <template v-if="option.TextInput">
-              <InputComp :inputs="inputs" :inputName="key" :placeholder="option.TextInput" @onInputFocus="onInputFocus"
-                @onInputChange="onInputChange" :disabled="!selectedOptions.includes(key)" ref="inputComp" />
+              <!-- <InputComp :inputs="inputs" :inputName="key" :placeholder="option.TextInput" @onInputFocus="onInputFocus"
+                @onInputChange="onInputChange" :disabled="!selectedOptions.includes(key)" ref="inputComp" /> -->
+
+              <InputComp
+                :initialValue="inputValue"
+                :placeholder="option.TextInput"
+                :inputs="inputs"
+                :inputName="key"
+                @value-changed="onInputValueChange"
+                :disabled="!selectedOptions.includes(key)"
+                ref="inputComp"
+                class="input-comp"
+              />
             </template>
             <template v-if="option.info">
               <span @click="Info(key)" class="popup-link">Mehr Info</span>
@@ -35,9 +63,18 @@
       </label>
     </div>
   </div>
-  <div class="keyboard-container" ref="keyboardContainerRef" :style="{ display: activateKeyboard() }">
+  <div
+    class="keyboard-container"
+    ref="keyboardContainerRef"
+    :style="{ display: activateKeyboard() }"
+  >
     <div class="keyboard">
-      <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="inputs[inputName]" :inputName="inputName" />
+      <SimpleKeyboard
+        @onChange="onChange"
+        @onKeyPress="onKeyPress"
+        :input="inputs[inputName]"
+        :inputName="inputName"
+      />
     </div>
   </div>
 </template>
@@ -49,6 +86,8 @@ import InputComp from "../components/InputComp";
 
 const route = useRoute();
 const id = route.params.id;
+
+const inputValue = ref("");
 
 const keyboard = useKeyboard();
 const keyboardContainerRef = ref(null);
@@ -129,8 +168,6 @@ const storedInputs = computed(() => {
 
 function Info(key) {
   popup.value.isOpen = true;
-  // console.log(slides[id].options[0][key].info)
-  // console.log(key)
   popup.value.content = slides[id].options[0][key].info;
 }
 
@@ -196,12 +233,15 @@ function updateSelection() {
   data.value = { ...data.value, ...selection.value };
   todos.value[id] = localTodos;
 
-  keyboard.value = false;
+  // keyboard.value = false;
   complete.value = !isNotComplete();
+  console.log("Selected Options:", selectedOptions.value);
+
   updateCategories();
 }
 
 function updateTextSelection() {
+  keyboard.value = true;
   const selectedOptionsArray = [...selectedOptions.value];
 
   // Clear textfields and remove unused inputs
@@ -231,9 +271,12 @@ function updateTextSelection() {
   data.value = { ...data.value, ...selection.value };
   todos.value[id] = localTodos;
 
-  // Update keyboard and completion status
-  keyboard.value = true;
+  const keys = Object.keys(selectedOptions.value);
+  console.log(selectedOptions.value[keys[keys.length - 1]]);
+  inputName.value = selectedOptions.value[keys[keys.length - 1]];
+
   complete.value = !isNotComplete();
+  console.log("Selected Options:", selectedOptions.value);
 }
 
 function isNotComplete() {
@@ -251,7 +294,7 @@ function isNotComplete() {
 // this method is called a textfield is active
 function activateKeyboard() {
   if (local.value == true) {
-    if (keyboard.value === true) {
+    if (keyboard.value === true && selectedOptions.value.length > 0) {
       return "flex";
     } else {
       return "none";
@@ -261,34 +304,43 @@ function activateKeyboard() {
   }
 }
 
-function onInputFocus(input) {
-  // console.log("Focused input:", input.target.id);
-  keyboard.value = true;
-  inputName.value = input.target.id;
-}
-
-// this method is called when the text input is changed using the real keyboard
-function onInputChange(input) {
-  // console.log("Input changed directly:", input.target.id, input.target.value);
-
-  if (input.target.value !== "") {
+const onInputValueChange = (input, inputId) => {
+  inputValue.value = input;
+  if (inputValue.value !== "") {
     complete.value = true;
   } else {
     complete.value = false;
   }
-  inputs[input.target.id] = input.target.value;
+  inputs[inputId] = inputValue.value;
   selection.value[id].input = inputs;
   data.value = { ...data.value, ...selection.value };
-}
+  console.log(selection.value);
+};
+
+// this method is called when the text input is changed using the real keyboard
+// function onInputChange(input) {
+//   // console.log("Input changed directly:", input.target.id, input.target.value);
+
+//   if (input.target.value !== "") {
+//     complete.value = true;
+//   } else {
+//     complete.value = false;
+//   }
+//   inputs[input.target.id] = input.target.value;
+//   selection.value[id].input = inputs;
+//   data.value = { ...data.value, ...selection.value };
+// }
 
 function onKeyPress(button) {
-  // console.log("button", button);
   selection.value[id].input = inputs;
   data.value = { ...data.value, ...selection.value };
 }
 
 function onChange(input) {
+  console.log(input);
   inputs[inputName.value] = input;
+  console.log(inputs);
+
   if (inputs[inputName.value] !== "") {
     complete.value = true;
   } else {
@@ -296,15 +348,31 @@ function onChange(input) {
   }
 }
 
-
 // Function to handle the click outside event
 const handleClickOutside = (event) => {
+  const clickedElement = event.target;
+  const inputCompElements = document.querySelectorAll(".input-comp");
+
   if (
     keyboardContainerRef.value &&
-    !keyboardContainerRef.value.contains(event.target)
+    !keyboardContainerRef.value.contains(clickedElement)
   ) {
-    keyboard.value = false; // Set keyboard to false when clicked outside
-    // console.log("Clicked outside the keyboard");
+    let isInputComp = false;
+
+    for (const inputCompElement of inputCompElements) {
+      if (
+        inputCompElement === clickedElement ||
+        inputCompElement.contains(clickedElement)
+      ) {
+        isInputComp = true;
+        break;
+      }
+    }
+
+    if (!isInputComp) {
+      keyboard.value = false;
+      // console.log("Clicked outside the keyboard");
+    }
   }
 };
 
@@ -313,16 +381,16 @@ onMounted(() => {
   headline.value = order.value[index.value].includes("A")
     ? "Dein Körper."
     : order.value[index.value].includes("B")
-      ? "Deine Verabschiedung."
-      : order.value[index.value].includes("C")
-        ? "Deine Daten."
-        : order.value[index.value].includes("D")
-          ? "Deine Dinge."
-          : order.value[index.value].includes("E")
-            ? "Deine Gedenken."
-            : order.value[index.value].includes("F")
-              ? "Deine Geheimnisse."
-              : "";
+    ? "Deine Verabschiedung."
+    : order.value[index.value].includes("C")
+    ? "Deine Daten."
+    : order.value[index.value].includes("D")
+    ? "Deine Dinge."
+    : order.value[index.value].includes("E")
+    ? "Deine Gedenken."
+    : order.value[index.value].includes("F")
+    ? "Deine Geheimnisse."
+    : "";
 
   keyboard.value = false;
 
@@ -351,7 +419,6 @@ onMounted(() => {
 onUnmounted(() => {
   document.removeEventListener("click", handleClickOutside);
 });
-
 </script>
 
 <style scoped>
