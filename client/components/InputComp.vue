@@ -6,6 +6,7 @@
       :placeholder="inputName"
       @focus="onInputFocus" 
       @input="onInputChange"
+      @click.stop
     >
   </template>
   

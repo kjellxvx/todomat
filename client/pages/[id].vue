@@ -6,11 +6,7 @@
       <template v-if="slides[id].info">
         <template v-for="(part, index) in transformedQuestionParts">
           <template v-if="part.isLink">
-            <a
-              @click="headlineInfo"
-              class="h-popup-link underline-link"
-              v-html="part.content"
-            ></a>
+            <a @click="headlineInfo" class="h-popup-link underline-link" v-html="part.content"></a>
           </template>
           <template v-else>{{ part.content }}</template>
         </template>
@@ -18,38 +14,18 @@
       <template v-else> <span v-html="formattedQuestion"></span></template>
     </h2>
     <div class="checkform">
-      <label
-        class="form-control"
-        v-for="(option, key) in slides[id].options[0]"
-        :key="key"
-      >
+      <label class="form-control" v-for="(option, key) in slides[id].options[0]" :key="key">
         <div class="radio-label-left">
-          <input
-            type="checkbox"
-            :id="key"
-            :value="key"
-            v-model="selectedOptions"
-            @change="
-              option.TextInput ? updateTextSelection() : updateSelection()
-            "
-          />
+          <input type="checkbox" :id="key" :value="key" v-model="selectedOptions" @change="
+            option.TextInput ? updateTextSelection() : updateSelection()
+            " />
         </div>
         <div class="radio-label-right">
           <label :for="key">
-            <span
-              class="label-content"
-              v-html="formatOptionContent(option)"
-            ></span>
+            <span class="label-content" v-html="formatOptionContent(option)"></span>
             <template v-if="option.TextInput">
-              <InputComp
-                :inputs="inputs"
-                :inputName="key"
-                :placeholder="option.TextInput"
-                @onInputFocus="onInputFocus"
-                @onInputChange="onInputChange"
-                :disabled="!selectedOptions.includes(key)"
-                ref="inputComp"
-              />
+              <InputComp :inputs="inputs" :inputName="key" :placeholder="option.TextInput" @onInputFocus="onInputFocus"
+                @onInputChange="onInputChange" :disabled="!selectedOptions.includes(key)" ref="inputComp" />
             </template>
             <template v-if="option.info">
               <span @click="Info(key)" class="popup-link">Mehr Info</span>
@@ -59,14 +35,9 @@
       </label>
     </div>
   </div>
-  <div class="keyboard-container" :style="{ display: activateKeyboard() }">
+  <div class="keyboard-container" ref="keyboardContainerRef" :style="{ display: activateKeyboard() }">
     <div class="keyboard">
-      <SimpleKeyboard
-        @onChange="onChange"
-        @onKeyPress="onKeyPress"
-        :input="inputs[inputName]"
-        :inputName="inputName"
-      />
+      <SimpleKeyboard @onChange="onChange" @onKeyPress="onKeyPress" :input="inputs[inputName]" :inputName="inputName" />
     </div>
   </div>
 </template>
@@ -79,10 +50,13 @@ import InputComp from "../components/InputComp";
 const route = useRoute();
 const id = route.params.id;
 
+const keyboard = useKeyboard();
+const keyboardContainerRef = ref(null);
+
 const complete = useComplete();
 const todos = useTodos();
 const data = useData();
-const keyboard = useKeyboard();
+
 const local = useLocal();
 const headline = useHeadline();
 const index = useIndex();
@@ -322,20 +296,33 @@ function onChange(input) {
   }
 }
 
+
+// Function to handle the click outside event
+const handleClickOutside = (event) => {
+  if (
+    keyboardContainerRef.value &&
+    !keyboardContainerRef.value.contains(event.target)
+  ) {
+    keyboard.value = false; // Set keyboard to false when clicked outside
+    // console.log("Clicked outside the keyboard");
+  }
+};
+
 onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
   headline.value = order.value[index.value].includes("A")
     ? "Dein Körper."
     : order.value[index.value].includes("B")
-    ? "Deine Verabschiedung."
-    : order.value[index.value].includes("C")
-    ? "Deine Daten."
-    : order.value[index.value].includes("D")
-    ? "Deine Dinge."
-    : order.value[index.value].includes("E")
-    ? "Deine Gedenken."
-    : order.value[index.value].includes("F")
-    ? "Deine Geheimnisse."
-    : "";
+      ? "Deine Verabschiedung."
+      : order.value[index.value].includes("C")
+        ? "Deine Daten."
+        : order.value[index.value].includes("D")
+          ? "Deine Dinge."
+          : order.value[index.value].includes("E")
+            ? "Deine Gedenken."
+            : order.value[index.value].includes("F")
+              ? "Deine Geheimnisse."
+              : "";
 
   keyboard.value = false;
 
@@ -360,6 +347,11 @@ onMounted(() => {
     complete.value = false;
   }
 });
+
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
+
 </script>
 
 <style scoped>
