@@ -78,21 +78,38 @@
       </div>
     </div>
     <div class="button-container">
-      <button @click="Submit" class="button">Jetzt ausdrucken</button>
-      <button @click="NoPrint" class="button-white">Ich möchte keinen Ausdruck</button>
+      <button v-if="!userToken" @click="Submit" class="button">
+        Jetzt ausdrucken
+      </button>
+      <button v-else @click="Save" class="button">Daten speichern</button>
     </div>
+  </div>
+  <div v-if="loading" class="loading-container">
+    <div class="loading-spinner"></div>
   </div>
 </template>
 
 <script setup>
+import { saveData } from "@/scripts/savedata.js";
+const userToken = useUserToken();
+const todos = useTodos();
+const data = useData();
+const loading = ref(false);
+
 function Submit() {
   navigateTo("/submit");
 }
 
-function NoPrint() {
+async function Save() {
+  loading.value = true;
+  await saveData(data.value, todos.value, userToken.value);
+  await delay(5000);
   navigateTo("/?local=true");
 }
 
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 </script>
 
 <style scoped>
