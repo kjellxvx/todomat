@@ -208,7 +208,7 @@ function Close() {
 }
 
 .info {
-  padding: 20px 0 20px 0;
+  padding: 18px 0 18px 0;
   border-top: solid;
 }
 
@@ -217,8 +217,8 @@ function Close() {
 }
 
 .icon {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   margin: 29px 0 0 0;
 }
 .info p {
