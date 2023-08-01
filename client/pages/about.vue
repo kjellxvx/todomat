@@ -212,6 +212,10 @@ function Close() {
   border-top: solid;
 }
 
+.textbox p {
+  padding-bottom: 5px;
+}
+
 .icon {
   width: 65px;
   height: 65px;
@@ -242,21 +246,20 @@ function Close() {
   }
   p {
     width: 95%;
-  hyphens: auto;
-}
-.info-container {
-  hyphens: auto;
-  width: 95%;
-  margin-bottom: 50px;
-}
+    hyphens: auto;
+  }
+  .info-container {
+    hyphens: auto;
+    width: 95%;
+    margin-bottom: 50px;
+  }
 
-br {
+  br {
     display: none;
+  }
+  .info {
+    padding: 10px 0 10px 0;
+  }
 }
-.info{
-  padding: 10px 0 10px 0;
-}
-}
-
 </style>
 -

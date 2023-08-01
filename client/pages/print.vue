@@ -92,7 +92,6 @@ import html2pdf from "html2pdf.js";
 import QrcodeVue from "qrcode.vue";
 import { saveData } from "@/scripts/savedata.js";
 
-const local = useLocal();
 const loading = ref(false);
 // const url = ref("http://localhost:3000/return");
 const url = ref("https://todomat.org/return");
@@ -305,5 +304,9 @@ onMounted(() => {
 .todo {
   display: flex;
   margin: 0 0 30px 0;
+}
+
+.loading-container {
+  background-color: white;
 }
 </style>
