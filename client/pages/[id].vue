@@ -41,9 +41,6 @@
               v-html="formatOptionContent(option)"
             ></span>
             <template v-if="option.TextInput">
-              <!-- <InputComp :inputs="inputs" :inputName="key" :placeholder="option.TextInput" @onInputFocus="onInputFocus"
-                @onInputChange="onInputChange" :disabled="!selectedOptions.includes(key)" ref="inputComp" /> -->
-
               <InputComp
                 :initialValue="inputValue"
                 :placeholder="option.TextInput"
@@ -112,14 +109,17 @@ const selectedOptions = ref([]);
 const inputName = ref("");
 const multiSelection = slides[id].multi;
 
+// format breaks in labels
 function formatOptionContent(option) {
   return option.content.replace(/\n/g, "<br>");
 }
 
+// format breaks in question headlines
 const formattedQuestion = computed(() => {
   return question.replace(/\n/g, "<br>");
 });
 
+// format popup links inside of question headlines
 const transformedQuestionParts = computed(() => {
   const parts = question.split(/<a>(.*?)<\/a>/);
 
@@ -138,17 +138,19 @@ const transformedQuestionParts = computed(() => {
   });
 });
 
+// function to trigger the popup inside of a headline
 function headlineInfo() {
-  // console.log(slides[id].info);
   popup.value.isOpen = true;
   popup.value.content = slides[id].info;
 }
 
+// computed property that stores the selection
 const selection = computed(() => {
   return { [id]: { options: [] } };
 });
 
-const storedOption = computed(() => {
+// computed property that handles already saved selection
+const storedSelection = computed(() => {
   if (data.value[id]) {
     return data.value[id].options;
   } else {
@@ -156,6 +158,7 @@ const storedOption = computed(() => {
   }
 });
 
+// computed property that handles already saved inputs
 const storedInputs = computed(() => {
   return (key) => {
     if (data.value[id]) {
@@ -166,11 +169,13 @@ const storedInputs = computed(() => {
   };
 });
 
+// function to open a popup
 function Info(key) {
   popup.value.isOpen = true;
   popup.value.content = slides[id].options[0][key].info;
 }
 
+// function to update the categories the user has already answered
 function updateCategories() {
   categories.value = Object.values(order.value)
     .filter((element) => element !== "menu" && element !== "confirmation")
@@ -203,6 +208,7 @@ function updateCategories() {
   }
 }
 
+// function to update a selection when a checkbox without text-input is checked
 function updateSelection() {
   const selectedOptionsArray = [...selectedOptions.value];
 
@@ -240,6 +246,7 @@ function updateSelection() {
   updateCategories();
 }
 
+// function to update a selection when a checkbox with text-input is checked
 function updateTextSelection() {
   keyboard.value = true;
   const selectedOptionsArray = [...selectedOptions.value];
@@ -247,7 +254,6 @@ function updateTextSelection() {
   // Clear textfields and remove unused inputs
   Object.keys(inputs).forEach((key) => {
     if (!selectedOptionsArray.includes(key)) {
-      // console.log("clear textfield of " + key);
       delete inputs[key];
     }
   });
@@ -279,11 +285,11 @@ function updateTextSelection() {
   console.log("Selected Options:", selectedOptions.value);
 }
 
+// function to handle if the selection is complete
 function isNotComplete() {
   if (selectedOptions.value.length === 0) {
     return true;
   }
-
   return Object.entries(slides[id].options[0])
     .filter(([key, option]) => option.TextInput)
     .some(([key, option]) => {
@@ -304,6 +310,7 @@ function activateKeyboard() {
   }
 }
 
+// function to handle the inputs of the inputComp whenever the input changes
 const onInputValueChange = (input, inputId) => {
   inputValue.value = input;
   if (inputValue.value !== "") {
@@ -314,33 +321,17 @@ const onInputValueChange = (input, inputId) => {
   inputs[inputId] = inputValue.value;
   selection.value[id].input = inputs;
   data.value = { ...data.value, ...selection.value };
-  console.log(selection.value);
 };
 
-// this method is called when the text input is changed using the real keyboard
-// function onInputChange(input) {
-//   // console.log("Input changed directly:", input.target.id, input.target.value);
-
-//   if (input.target.value !== "") {
-//     complete.value = true;
-//   } else {
-//     complete.value = false;
-//   }
-//   inputs[input.target.id] = input.target.value;
-//   selection.value[id].input = inputs;
-//   data.value = { ...data.value, ...selection.value };
-// }
-
+// function to assign pressed button values to input of the selection
 function onKeyPress(button) {
   selection.value[id].input = inputs;
   data.value = { ...data.value, ...selection.value };
 }
 
+// function to assign the entered input to the inputs array
 function onChange(input) {
-  console.log(input);
   inputs[inputName.value] = input;
-  console.log(inputs);
-
   if (inputs[inputName.value] !== "") {
     complete.value = true;
   } else {
@@ -368,16 +359,16 @@ const handleClickOutside = (event) => {
         break;
       }
     }
-
     if (!isInputComp) {
       keyboard.value = false;
-      // console.log("Clicked outside the keyboard");
     }
   }
 };
 
 onMounted(() => {
+  // added Event Listener to handle clicks outside of the keyboard area
   document.addEventListener("click", handleClickOutside);
+
   headline.value = order.value[index.value].includes("A")
     ? "Dein Körper."
     : order.value[index.value].includes("B")
@@ -394,18 +385,15 @@ onMounted(() => {
 
   keyboard.value = false;
 
+  // handle complete states and already stored content
   if (data.value[id]) {
     complete.value = true;
-    selectedOptions.value = storedOption.value;
+    selectedOptions.value = storedSelection.value;
     if (data.value[id].input) {
-      // console.log("input there");
-      // console.log(storedOption.value);
-
-      for (const key in storedOption.value) {
-        if (storedOption.value.hasOwnProperty(key)) {
-          const inputKey = storedOption.value[key];
+      for (const key in storedSelection.value) {
+        if (storedSelection.value.hasOwnProperty(key)) {
+          const inputKey = storedSelection.value[key];
           if (storedInputs.value(inputKey)) {
-            // console.log(storedInputs.value(inputKey));
             inputs[inputKey] = storedInputs.value(inputKey);
           }
         }
