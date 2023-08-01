@@ -474,6 +474,7 @@ input[type="radio"]:checked::before {
   position: relative;
   display: flex;
   justify-content: flex-end;
+  top: -35px;
 }
 
 .close-button {
