@@ -36,6 +36,18 @@
   src: url("@/assets/fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
 }
 
+p {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+h1 {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
 :root {
   --primary-color: #363ad1;
   --secondary-color: #2b2b2b;
@@ -552,7 +564,7 @@ input[type="radio"]:checked::before {
   html body {
     overflow: auto;
   }
-  .slide{
+  .slide {
     position: relative;
   }
 
@@ -568,7 +580,7 @@ input[type="radio"]:checked::before {
   }
 
   .button-container {
-    white-space:nowrap;
+    white-space: nowrap;
     display: flex;
     justify-content: center;
     width: 100%;
