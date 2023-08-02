@@ -1,18 +1,20 @@
 <template>
-    <slot />
+  <slot />
 </template>
 
 <script setup></script>
 
-<style scoped >
+<style scoped>
 html {
-  width: 1200px;
-  height: 1800px;
+  width: 283px;
+  height: 425px;
 }
 
 .page-container {
-  height: 1800px;
-  width: calc(100% - 6em);
+  width: 283px;
+  height: 425px;
   overflow: hidden;
 }
+
+
 </style>

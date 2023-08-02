@@ -18,7 +18,7 @@
       <template v-else> <span v-html="formattedQuestion"></span></template>
     </h2>
     <div class="checkform">
-      <label
+      <div
         class="form-control"
         v-for="(option, key) in slides[id].options[0]"
         :key="key"
@@ -35,7 +35,7 @@
           />
         </div>
         <div class="radio-label-right">
-          <label :for="key">
+          <div :for="key">
             <span
               class="label-content"
               v-html="formatOptionContent(option)"
@@ -55,9 +55,9 @@
             <template v-if="option.info">
               <span @click="Info(key)" class="popup-link">Mehr Info</span>
             </template>
-          </label>
+          </div>
         </div>
-      </label>
+      </div>
     </div>
   </div>
   <div

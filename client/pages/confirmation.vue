@@ -28,7 +28,7 @@
     </div>
 
     <div class="checkform">
-      <label class="form-control" for="option1">
+      <div class="form-control" for="option1">
         <div class="radio-label-left">
           <input
             type="radio"
@@ -46,8 +46,8 @@
         <div v-else class="radio-label-right">
           <p>Ich möchte meine Konfiguration jetzt beenden</p>
         </div>
-      </label>
-      <label class="form-control" for="option2">
+      </div>
+      <div class="form-control" for="option2">
         <div class="radio-label-left">
           <input
             type="radio"
@@ -62,7 +62,7 @@
         <div v-else class="radio-label-right">
           <p>Ich möchte meine Auswahl noch überbearbeiten</p>
         </div>
-      </label>
+      </div>
     </div>
   </div>
   <div class="button-container">

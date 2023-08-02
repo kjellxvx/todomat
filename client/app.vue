@@ -31,6 +31,11 @@
   src: url("@/assets/fonts/IBMPlexSans-MediumItalic.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "IBMPlexSans-SemiBold";
+  src: url("@/assets/fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
+}
+
 :root {
   --primary-color: #363ad1;
   --secondary-color: #2b2b2b;
