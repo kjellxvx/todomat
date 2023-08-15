@@ -191,17 +191,17 @@ async function Print() {
 
   exportToPDF();
   await delay(10000);
-  navigateTo("/?local=true");
+  // navigateTo("/?local=true");
 }
 
 const exportToPDF = () => {
   html2pdf(document.getElementById("pdf-container"), {
     margin: 0,
     filename: "Todomat.pdf",
-    image: { type: "pdf", quality: 0.98 },
-    html2canvas: { dpi: 300, letterRendering: true },
+    image: { type: "pdf", quality: 1 },
+    html2canvas: { dpi: 600, letterRendering: true },
     // jsPDF: { unit: "px", format: [310, 457], orientation: "portrait" },
-    jsPDF: { unit: "px", format: [620, 914], orientation: "portrait" },
+    jsPDF: { unit: "px", format: [620, 931], orientation: "portrait" },
   });
 };
 
@@ -225,7 +225,7 @@ function delay(ms) {
 }
 
 onMounted(() => {
-  loading.value = true;
+  // loading.value = true;
   category.value = selectedTodo.value.title;
   transformTodos();
   Print();
@@ -240,7 +240,7 @@ onMounted(() => {
   padding: 15px 16px 15px 9px; 
   border-width: 1px;*/
   width: 566px;
-  height: 850px;
+  height: 867px;
   padding: 30px 32px 30px 18px;
   border-width: 2px;
   border-style: solid;
@@ -386,7 +386,7 @@ onMounted(() => {
 }
 
 .p2 {
-  font-family: "IBMPlexSans";
+  font-family: "IBMPlexSans-Regular";
   /* font-size: 6px; */
   font-size: 12px;
 }
