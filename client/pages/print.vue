@@ -159,7 +159,8 @@ import { saveData } from "@/scripts/savedata.js";
 const loading = ref(false);
 // const url = ref("http://localhost:3000/return");
 const url = ref("https://todomat.org/return");
-const qrSize = 38.65;
+// const qrSize = 38.65;
+const qrSize = 77.3;
 const userToken = useUserToken();
 const todos = useTodos();
 const selectedTodo = useSelectedTodo();
@@ -199,7 +200,8 @@ const exportToPDF = () => {
     filename: "Todomat.pdf",
     image: { type: "pdf", quality: 0.98 },
     html2canvas: { dpi: 300, letterRendering: true },
-    jsPDF: { unit: "px", format: [310, 457], orientation: "portrait" },
+    // jsPDF: { unit: "px", format: [310, 457], orientation: "portrait" },
+    jsPDF: { unit: "px", format: [620, 914], orientation: "portrait" },
   });
 };
 
@@ -233,36 +235,48 @@ onMounted(() => {
 <style scoped>
 .pdf-container {
   position: relative;
-  height: 425px;
+  /* height: 425px;
   width: 283px;
-  padding: 15px 16px 15px 9px;
+  padding: 15px 16px 15px 9px; 
+  border-width: 1px;*/
+  width: 566px;
+  height: 850px;
+  padding: 30px 32px 30px 18px;
+  border-width: 2px;
   border-style: solid;
-  border-width: 1px;
   border-color: black;
 }
 .header-container {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 4px 4px;
+  /* margin: 0 0 4px 4px; */
+  margin: 0 0 8px 8px;
 }
 .code-container {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 10px 0;
+  /* margin: 0 0 10px 0; */
+  margin: 0 0 20px 0;
 }
 
 .code-box {
-  width: 166.87px;
+  /* width: 166.87px;
   height: 65px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: black;
   border-radius: 10px;
+  border-width: 1px; */
+  width: 333.74px;
+  height: 130px;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
 }
 
 .qr-code-box {
-  width: 65px;
-  height: 65px;
+  /* width: 65px;
+  height: 65px; */
+  width: 130px;
+  height: 130px;
   position: relative;
 }
 
@@ -276,13 +290,16 @@ onMounted(() => {
 .todo-mark-container {
   display: flex;
   flex-direction: column;
-  margin: 0px 0px 0px 7px;
+  /* margin: 0px 0px 0px 7px; */
+  margin: 0px 0px 0px 14px;
 }
 
 .mark {
   position: relative;
-  width: 13px;
-  height: 13px;
+  /* width: 13px;
+  height: 13px; */
+  width: 26px;
+  height: 26px;
 }
 
 .marks-top {
@@ -298,25 +315,33 @@ onMounted(() => {
 
 .mark-horizontal {
   position: absolute;
-  width: 13px;
-  height: 6.5px;
   border-style: solid;
-  border-width: 0 0 0.4px 0;
   border-color: black;
+  /* width: 13px;
+  height: 6.5px;
+  border-width: 0 0 0.4px 0; */
+  width: 26px;
+  height: 13px;
+  border-width: 0 0 0.8px 0;
 }
 
 .mark-vertical {
   position: absolute;
-  width: 6.5px;
-  height: 13px;
   border-style: solid;
-  border-width: 0 0.4px 0 0px;
   border-color: black;
+  /* width: 6.5px;
+  height: 13px;
+  border-width: 0 0.4px 0 0px; */
+  width: 13px;
+  height: 26px;
+  border-width: 0 0.8px 0 0;
 }
 
 .qr-code {
-  width: 38.65px;
-  height: 38.65px;
+  /* width: 38.65px;
+  height: 38.65px; */
+  width: 77.3px;
+  height: 77.3px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -328,77 +353,100 @@ onMounted(() => {
 .code-char-container {
   display: flex;
   justify-content: space-between;
-  padding: 10px 5px 0px 5px;
+  /* padding: 10px 5px 0px 5px; */
+  padding: 20px 10px 0px 10px;
 }
 
 .char-underline {
-  width: 11.54px;
   border-style: solid;
-  border-width: 0 0 0.4px 0px;
   border-color: black;
-  margin: 1px;
+  /* width: 11.54px;
+  border-width: 0 0 0.4px 0px;
+  margin: 1px; */
+  width: 23.08px;
+  border-width: 0 0 0.8px 0;
+  margin: 2px;
 }
 
 .char-container {
-  padding: 2px;
+  /* padding: 2px; */
+  padding: 4px;
   display: flex;
   justify-content: center;
 }
 
 .p1 {
-  margin: 9px 0 0 6px;
-  width: 127.51px;
   font-family: "IBMPlexSans-SemiBold";
-  font-size: 7px;
+  /* margin: 9px 0 0 6px;
+  width: 127.51px;
+  font-size: 7px; */
+  margin: 18px 0 0 12px;
+  width: 255.02px;
+  font-size: 14px;
 }
 
 .p2 {
   font-family: "IBMPlexSans";
-  font-size: 6px;
+  /* font-size: 6px; */
+  font-size: 12px;
 }
 
 .p3 {
-  width: 232.77px;
+  /* width: 232.77px;
   margin: 0 0 5px 7px;
-  font-size: 7px;
+  font-size: 7px; */
+  width: 465.54px;
+  margin: 0 0 10px 14px;
+  font-size: 14px;
 }
 
 .p4 {
   font-family: "IBMPlexSans-SemiBold";
-  font-size: 7px;
   border-style: solid;
-  border-width: 0 0 0.4px 0px;
   border-color: black;
+  /* font-size: 7px;
+  border-width: 0 0 0.4px 0px; */
+  font-size: 14px;
+  border-width: 0 0 0.8px 0;
 }
 
 .receipt {
   font-family: "IBMPlexSans-SemiBold";
-  font-size: 10px;
+  /* font-size: 10px; */
+  font-size: 20px;
 }
 
 .logo {
-  font-size: 45px;
+  /* font-size: 45px; */
+  font-size: 90px;
   font-family: "IBMPlexSans-Bold";
 }
 
 .todos-container {
-  margin: 6px 0 0 25px;
+  /* margin: 6px 0 0 25px; */
+  margin: 12px 0 0 50px;
   width: 100%;
 }
 .checkbox {
-  width: 4.85px;
-  height: 4.85px;
   border-style: solid;
+  /* width: 4.85px;
+  height: 4.85px;
   border-width: 0.4px;
-  margin: 1.7px 6px 0 0;
+  margin: 1.7px 6px 0 0; */
+  width: 9.7px;
+  height: 9.7px;
+  border-width: 0.8px;
+  margin: 3.4px 12px 0 0;
 }
 .todo-text {
-  width: 201.57px;
+  /* width: 201.57px; */
+  width: 403.14px;
 }
 
 .todo {
   display: flex;
-  margin: 0 0 7px 0;
+  /* margin: 0 0 7px 0; */
+  margin: 0 0 14px 0;
 }
 
 .loading-container {
@@ -406,22 +454,29 @@ onMounted(() => {
 }
 
 .bottom-container {
-  margin: 15px 0 0 0;
+  /* margin: 15px 0 0 0; */
+  margin: 30px 0 0 0;
 }
 
 .footer {
   font-family: "IBMPlexSans-SemiBold";
-  font-size: 5px;
   position: absolute;
+  /* font-size: 5px;
   bottom: 11px;
-  right: 16px;
+  right: 16px; */
+  font-size: 10px;
+  bottom: 22px;
+  right: 32px;
 }
 .side-date {
   font-family: "IBMPlexSans-SemiBold";
   position: absolute;
-  font-size: 5px;
   transform: rotate(90deg);
+  /* font-size: 5px;
   top: 160px;
-  right: -21px;
+  right: -21px; */
+  font-size: 10px;
+  top: 285px;
+  right: -42px;
 }
 </style>

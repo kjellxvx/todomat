@@ -613,6 +613,7 @@ input[type="radio"]:checked::before {
   .close-button-container {
     position: absolute;
     right: 0px;
+    top: 50px;
   }
 }
 
