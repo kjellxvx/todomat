@@ -242,9 +242,9 @@ onMounted(() => {
   width: 1132px;
   height: 1728px;
   padding: 60px 64px 60px 36px;
-  border-width: 4px;
+  /* border-width: 4px;
   border-style: solid;
-  border-color: black;
+  border-color: black; */
 }
 .header-container {
   display: flex;
@@ -423,7 +423,7 @@ onMounted(() => {
 
 .p-todo {
   font-family: "IBMPlexSans-Regular";
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .receipt {
