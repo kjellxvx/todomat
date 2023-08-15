@@ -5,8 +5,8 @@
         <p class="receipt">Receipt</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="103"
-          height="28"
+          width="412"
+          height="112"
           viewBox="0 0 103 28"
           fill="none"
         >
@@ -160,7 +160,7 @@ const loading = ref(false);
 // const url = ref("http://localhost:3000/return");
 const url = ref("https://todomat.org/return");
 // const qrSize = 38.65;
-const qrSize = 100;
+const qrSize = 200;
 const userToken = useUserToken();
 const todos = useTodos();
 const selectedTodo = useSelectedTodo();
@@ -201,7 +201,7 @@ const exportToPDF = () => {
     image: { type: "pdf", quality: 1 },
     html2canvas: { dpi: 600, letterRendering: true },
     // jsPDF: { unit: "px", format: [310, 457], orientation: "portrait" },
-    jsPDF: { unit: "px", format: [620, 931], orientation: "portrait" },
+    jsPDF: { unit: "px", format: [1240, 1856], orientation: "portrait" },
   });
 };
 
@@ -239,10 +239,10 @@ onMounted(() => {
   width: 283px;
   padding: 15px 16px 15px 9px; 
   border-width: 1px;*/
-  width: 566px;
-  height: 867px;
-  padding: 30px 32px 30px 18px;
-  border-width: 2px;
+  width: 1132px;
+  height: 1728px;
+  padding: 60px 64px 60px 36px;
+  border-width: 4px;
   border-style: solid;
   border-color: black;
 }
@@ -250,13 +250,13 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   /* margin: 0 0 4px 4px; */
-  margin: 0 0 8px 8px;
+  margin: 0 0 16px 16px;
 }
 .code-container {
   display: flex;
   justify-content: space-between;
   /* margin: 0 0 10px 0; */
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
 }
 
 .code-box {
@@ -266,10 +266,10 @@ onMounted(() => {
   border-width: 1px; */
   /* width: 333.74px;
   height: 130px; */
-  width: 380px;
-  height: 160px;
-  border-radius: 20px;
-  border-width: 2px;
+  width: 760px;
+  height: 320px;
+  border-radius: 40px;
+  border-width: 4px;
   border-style: solid;
   border-color: black;
 }
@@ -279,8 +279,8 @@ onMounted(() => {
   height: 65px; */
   /* width: 130px;
   height: 130px; */
-  width: 160px;
-  height: 160px;
+  width: 320px;
+  height: 320px;
   position: relative;
 }
 
@@ -295,15 +295,15 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   /* margin: 0px 0px 0px 7px; */
-  margin: 0px 0px 0px 14px;
+  margin: 0px 0px 0px 28px;
 }
 
 .mark {
   position: relative;
   /* width: 13px;
   height: 13px; */
-  width: 26px;
-  height: 26px;
+  width: 52px;
+  height: 52px;
 }
 
 .marks-top {
@@ -324,9 +324,9 @@ onMounted(() => {
   /* width: 13px;
   height: 6.5px;
   border-width: 0 0 0.4px 0; */
-  width: 26px;
-  height: 13px;
-  border-width: 0 0 0.8px 0;
+  width: 52px;
+  height: 26px;
+  border-width: 0 0 1.6px 0;
 }
 
 .mark-vertical {
@@ -336,9 +336,9 @@ onMounted(() => {
   /* width: 6.5px;
   height: 13px;
   border-width: 0 0.4px 0 0px; */
-  width: 13px;
-  height: 26px;
-  border-width: 0 0.8px 0 0;
+  width: 26px;
+  height: 52px;
+  border-width: 0 1.6px 0 0;
 }
 
 .qr-code {
@@ -346,8 +346,8 @@ onMounted(() => {
   height: 38.65px; */
   /* width: 77.3px;
   height: 77.3px; */
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -360,7 +360,7 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   /* padding: 10px 5px 0px 5px; */
-  padding: 20px 10px 0px 10px;
+  padding: 40px 20px 0px 20px;
 }
 
 .char-underline {
@@ -369,14 +369,14 @@ onMounted(() => {
   /* width: 11.54px;
   border-width: 0 0 0.4px 0px;
   margin: 1px; */
-  width: 23.08px;
-  border-width: 0 0 0.8px 0;
-  margin: 2px;
+  width: 46.16px;
+  border-width: 0 0 1.6px 0;
+  margin: 4px;
 }
 
 .char-container {
   /* padding: 2px; */
-  padding: 4px;
+  padding: 8px;
   display: flex;
   justify-content: center;
 }
@@ -386,28 +386,28 @@ onMounted(() => {
   /* margin: 9px 0 0 6px;
   width: 127.51px;
   font-size: 7px; */
-  margin: 18px 0 0 12px;
+  margin: 36px 0 0 24px;
   /* width: 255.02px;
   font-size: 14px; */
-  width: 330px;
-  font-size: 16px;
+  width: 660px;
+  font-size: 32px;
 }
 
 .p2 {
   font-family: "IBMPlexSans-Regular";
   /* font-size: 6px; */
   /* font-size: 12px; */
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .p3 {
   /* width: 232.77px;
   margin: 0 0 5px 7px;
   font-size: 7px; */
-  width: 465.54px;
-  margin: 0 0 10px 14px;
+  width: 931.08px;
+  margin: 0 0 20px 28px;
   /* font-size: 14px; */
-  font-size: 16px;
+  font-size: 32px;
 }
 
 .p4 {
@@ -417,30 +417,30 @@ onMounted(() => {
   /* font-size: 7px;
   border-width: 0 0 0.4px 0px; */
   /* font-size: 14px; */
-  font-size: 16px;
-  border-width: 0 0 0.8px 0;
+  font-size: 32px;
+  border-width: 0 0 1.6px 0;
 }
 
-.p-todo{
+.p-todo {
   font-family: "IBMPlexSans-Regular";
-  font-size: 14px;
+  font-size: 28px;
 }
 
 .receipt {
   font-family: "IBMPlexSans-SemiBold";
   /* font-size: 10px; */
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .logo {
   /* font-size: 45px; */
-  font-size: 90px;
+  font-size: 180px;
   font-family: "IBMPlexSans-Bold";
 }
 
 .todos-container {
   /* margin: 6px 0 0 25px; */
-  margin: 12px 0 0 50px;
+  margin: 24px 0 0 100px;
   width: 100%;
 }
 .checkbox {
@@ -449,20 +449,20 @@ onMounted(() => {
   height: 4.85px;
   border-width: 0.4px;
   margin: 1.7px 6px 0 0; */
-  width: 9.7px;
-  height: 9.7px;
-  border-width: 0.8px;
-  margin: 3.4px 12px 0 0;
+  width: 19.4px;
+  height: 19.4px;
+  border-width: 1.6px;
+  margin: 6.8px 24px 0 0;
 }
 .todo-text {
   /* width: 201.57px; */
-  width: 403.14px;
+  width: 806.28px;
 }
 
 .todo {
   display: flex;
   /* margin: 0 0 7px 0; */
-  margin: 0 0 14px 0;
+  margin: 0 0 28px 0;
 }
 
 .loading-container {
@@ -471,7 +471,7 @@ onMounted(() => {
 
 .bottom-container {
   /* margin: 15px 0 0 0; */
-  margin: 30px 0 0 0;
+  margin: 60px 0 0 0;
 }
 
 .footer {
@@ -480,9 +480,9 @@ onMounted(() => {
   /* font-size: 5px;
   bottom: 11px;
   right: 16px; */
-  font-size: 13px;
-  bottom: 22px;
-  right: 32px;
+  font-size: 26px;
+  bottom: 44px;
+  right: 64px;
 }
 .side-date {
   font-family: "IBMPlexSans-SemiBold";
@@ -491,8 +491,8 @@ onMounted(() => {
   /* font-size: 5px;
   top: 160px;
   right: -21px; */
-  font-size: 13px;
-  top: 340px;
-  right: -67px;
+  font-size: 26px;
+  top: 715px;
+  right: -134px;
 }
 </style>

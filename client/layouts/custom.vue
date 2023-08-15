@@ -8,17 +8,19 @@
 html {
   /* width: 283px;
   height: 425px; */
-  width: 566px;
-  height: 864px;
+  /* width: 566px;
+  height: 864px; */
+  width: 1132px;
+  height: 1728px;
 }
 
 .page-container {
   /* width: 283px;
   height: 425px; */
   /* width: 566px;
-  height: 850px; */
-  width: 566px;
-  height: 867px;
+  height: 864px; */
+  width: 1132px;
+  height: 1728px;
   overflow: hidden;
 }
 
