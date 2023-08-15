@@ -118,7 +118,7 @@
             <div class="todo" v-for="(todo, index) in printTodos" :key="index">
               <div class="checkbox"></div>
               <div class="todo-text">
-                <p class="p2">{{ todo }}</p>
+                <p class="p-todo">{{ todo }}</p>
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@ const loading = ref(false);
 // const url = ref("http://localhost:3000/return");
 const url = ref("https://todomat.org/return");
 // const qrSize = 38.65;
-const qrSize = 77.3;
+const qrSize = 100;
 const userToken = useUserToken();
 const todos = useTodos();
 const selectedTodo = useSelectedTodo();
@@ -191,7 +191,7 @@ async function Print() {
 
   exportToPDF();
   await delay(10000);
-  // navigateTo("/?local=true");
+  navigateTo("/?local=true");
 }
 
 const exportToPDF = () => {
@@ -225,7 +225,7 @@ function delay(ms) {
 }
 
 onMounted(() => {
-  // loading.value = true;
+  loading.value = true;
   category.value = selectedTodo.value.title;
   transformTodos();
   Print();
@@ -264,8 +264,10 @@ onMounted(() => {
   height: 65px;
   border-radius: 10px;
   border-width: 1px; */
-  width: 333.74px;
-  height: 130px;
+  /* width: 333.74px;
+  height: 130px; */
+  width: 380px;
+  height: 160px;
   border-radius: 20px;
   border-width: 2px;
   border-style: solid;
@@ -275,8 +277,10 @@ onMounted(() => {
 .qr-code-box {
   /* width: 65px;
   height: 65px; */
-  width: 130px;
-  height: 130px;
+  /* width: 130px;
+  height: 130px; */
+  width: 160px;
+  height: 160px;
   position: relative;
 }
 
@@ -340,8 +344,10 @@ onMounted(() => {
 .qr-code {
   /* width: 38.65px;
   height: 38.65px; */
-  width: 77.3px;
-  height: 77.3px;
+  /* width: 77.3px;
+  height: 77.3px; */
+  width: 100px;
+  height: 100px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -381,14 +387,17 @@ onMounted(() => {
   width: 127.51px;
   font-size: 7px; */
   margin: 18px 0 0 12px;
-  width: 255.02px;
-  font-size: 14px;
+  /* width: 255.02px;
+  font-size: 14px; */
+  width: 330px;
+  font-size: 16px;
 }
 
 .p2 {
   font-family: "IBMPlexSans-Regular";
   /* font-size: 6px; */
-  font-size: 12px;
+  /* font-size: 12px; */
+  font-size: 20px;
 }
 
 .p3 {
@@ -397,7 +406,8 @@ onMounted(() => {
   font-size: 7px; */
   width: 465.54px;
   margin: 0 0 10px 14px;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 16px;
 }
 
 .p4 {
@@ -406,8 +416,14 @@ onMounted(() => {
   border-color: black;
   /* font-size: 7px;
   border-width: 0 0 0.4px 0px; */
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 16px;
   border-width: 0 0 0.8px 0;
+}
+
+.p-todo{
+  font-family: "IBMPlexSans-Regular";
+  font-size: 14px;
 }
 
 .receipt {
@@ -464,7 +480,7 @@ onMounted(() => {
   /* font-size: 5px;
   bottom: 11px;
   right: 16px; */
-  font-size: 10px;
+  font-size: 13px;
   bottom: 22px;
   right: 32px;
 }
@@ -475,8 +491,8 @@ onMounted(() => {
   /* font-size: 5px;
   top: 160px;
   right: -21px; */
-  font-size: 10px;
-  top: 285px;
-  right: -42px;
+  font-size: 13px;
+  top: 340px;
+  right: -67px;
 }
 </style>
