@@ -14,9 +14,6 @@
         deine beantworteten Fragen kannst Du jederzeit auf todomat.org einsehen
         und überarbeiten.
       </p>
-      <p>
-        Wähle eine Kategorie um deine To-do‘s zu drucken.
-      </p>
     </div>
     <div class="menu-container">
       <template v-if="enabledMenuItems.length > 0">
