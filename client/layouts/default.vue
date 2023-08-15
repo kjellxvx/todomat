@@ -355,8 +355,8 @@ p {
   }
 
   .page-container {
-    width: calc(100% - 2em); /* Adjust the value as needed */
-    height: calc(100% - 22.2476L17em); /* Adjust the value as needed */
+    width: calc(100% - 2em); 
+    height: calc(100% - 22.2476em); 
     margin: 1.2em 1em;
   }
 }
