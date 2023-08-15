@@ -26,7 +26,7 @@
         class="menuItem"
         :style="{ backgroundColor: buttonColor(menuItem.letter) }"
       > -->
-      <div v-for="menuItem in menuItems" :key="menuItem.letter" class="menuItem">
+      <div v-for="menuItem in menuItems" :key="menuItem.letter" @click="navigate(menuItem.letter)" class="menuItem">
         <p class="menu-h1">{{ menuItem.title }}</p>
         <!-- <p class="menu-p">
           {{ menuItem.description }}
