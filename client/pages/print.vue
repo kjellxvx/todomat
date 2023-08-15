@@ -492,7 +492,7 @@ onMounted(() => {
   top: 160px;
   right: -21px; */
   font-size: 26px;
-  top: 715px;
+  top: 725px;
   right: -134px;
 }
 </style>
