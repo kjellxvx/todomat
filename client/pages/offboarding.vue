@@ -79,7 +79,7 @@
     </div>
     <div class="button-container">
       <button v-if="!userToken" @click="Submit" class="button">
-        Jetzt ausdrucken
+        Weiter
       </button>
       <button v-else @click="Save" class="button">Daten speichern</button>
     </div>
