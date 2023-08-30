@@ -1,49 +1,6 @@
 <template>
   <div class="slide">
     <HeaderComp />
-    <div class="close-button-container">
-      <div class="close-button" @click="Close">
-        <svg
-          width="31"
-          height="31"
-          viewBox="0 0 31 31"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            width="30.0886"
-            height="30.0886"
-            rx="15.0443"
-            transform="matrix(1 0 0 -1 0.911438 30.8496)"
-            fill="#EAEAEA"
-          />
-          <mask
-            id="mask0_231_126"
-            style="mask-type: alpha"
-            maskUnits="userSpaceOnUse"
-            x="3"
-            y="3"
-            width="25"
-            height="25"
-          >
-            <rect
-              x="3.96295"
-              y="3.37695"
-              width="24"
-              height="24"
-              fill="#D9D9D9"
-            />
-          </mask>
-          <g mask="url(#mask0_231_126)">
-            <path
-              d="M9.63065 23.4653L15.963 17.133L22.2953 23.4653L23.513 22.2476L17.1807 15.9153L23.513 9.58298L22.2953 8.36523L15.963 14.6975L9.63065 8.36523L8.4129 9.58298L14.7452 15.9153L8.4129 22.2476L9.63065 23.4653Z"
-              fill="black"
-            />
-          </g>
-        </svg>
-      </div>
-    </div>
-
     <div class="textbox">
       <div></div>
       <h1>Wozu der Todomat?</h1>
@@ -176,14 +133,19 @@
             umweltfreundlicher gestalten kannst.
           </p>
         </div>
+        <div class="button-container">
+          <button @click="navigate('start')" class="button-white">
+            Zurück
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-function Close() {
-  navigateTo("/start");
+function navigate(path) {
+  navigateTo(`/${path}`);
 }
 </script>
 
@@ -222,13 +184,27 @@ function Close() {
   margin: 0px;
 }
 
+.button-container {
+  justify-content: end;
+}
+
+.button-white {
+  margin-right: 0;
+}
+
 @media only screen and (max-width: 1020px) {
   .info-left {
     display: none;
   }
 
+  .info-right {
+    margin-top: 0;
+  }
+
   .info {
     border-top: none;
+    display: flex;
+    justify-content: center;
   }
 
   .textbox p {
@@ -236,15 +212,15 @@ function Close() {
   }
 
   h1 {
-    width: 300px;
+    width: 330px;
+    padding-bottom: 10px;
   }
   p {
-    width: 95%;
-    hyphens: auto;
+    width: 100%;
   }
   .info-container {
-    hyphens: auto;
-    width: 95%;
+    hyphenate-limit-chars: auto 5;
+    width: 100%;
     margin-bottom: 50px;
   }
 
@@ -253,6 +229,14 @@ function Close() {
   }
   .info {
     padding: 10px 0 10px 0;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+
+  .button-white {
+    margin-top: 20px;
   }
 }
 </style>
