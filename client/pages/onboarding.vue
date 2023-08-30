@@ -3,18 +3,16 @@
     <HeaderComp />
     <div class="textbox">
       <div></div>
-      <h1>
-        Guten Tag. <br />
-        Du wirst sterben.
-      </h1>
+      <h1>So nutzt du den Todomaten</h1>
       <p>
         Im Todomat kannst du Entscheidungen in den Kategorien Körper,
         Verabschiedung, Gedenken, Dinge, Daten und Geheimnisse hinterlegen.
         Dabei vermischen sich aktuelle Wahlmöglichkeiten und Optionen, die erst
         zukünftig zur Verfügung stehen.
       </p>
+      <p>Unterstrichene Begriffe werden durch Klicken erläutert.</p>
       <p>
-        Am Ende druckt dir der Todomat auf Basis deiner Antworten To-do‘s aus,
+        Am Ende druckt dir der Todomat auf Basis deiner Antworten To-dos aus,
         um vorbereiteter zu sterben. Du kannst deine Konfiguration jederzeit
         beenden und später im Internet unter todomat.org fortsetzen oder ändern.
       </p>

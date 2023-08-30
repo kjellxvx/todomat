@@ -60,7 +60,7 @@
           <p>Ich möchte jetzt noch weitere Kategorien bearbeiten</p>
         </div>
         <div v-else class="radio-label-right">
-          <p>Ich möchte meine Auswahl noch überbearbeiten</p>
+          <p>Ich möchte meine Auswahl noch überarbeiten</p>
         </div>
       </div>
     </div>

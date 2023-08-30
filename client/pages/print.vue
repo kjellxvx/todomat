@@ -2,7 +2,7 @@
   <NuxtLayout name="custom">
     <div id="pdf-container" class="pdf-container">
       <div class="header-container">
-        <p class="receipt">Receipt</p>
+        <p class="receipt">To-do-bon</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="412"
@@ -43,7 +43,7 @@
       <div class="code-container">
         <div class="code-box">
           <p class="p1">
-            Persönlicher Code für die Fortführung Deiner Konfiguration auf
+            Persönlicher Code für die Fortführung deiner Konfiguration auf
             todomat.org:
           </p>
           <div class="code-char-container">
@@ -83,7 +83,7 @@
         </div>
       </div>
       <p class="p3">
-        Du kannst Deine Eingaben jederzeit anpassen und aktualisieren. <br />
+        Du kannst deine Eingaben jederzeit anpassen und aktualisieren. <br />
         Bitte sicher aufbewahren und hinterlegen!
       </p>
       <div v-if="noTodos == false">
@@ -94,7 +94,7 @@
 
         <p class="p3">
           <span
-            >Suche dir ein To-Do aus, mit dem du (am besten noch heute) <br />
+            >Suche dir ein To-do aus, mit dem du (am besten noch heute) <br />
             beginnen möchtest. Für den Start hast du dich entschieden <br />
             für die Kategorie:
           </span>

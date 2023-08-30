@@ -1,7 +1,8 @@
 {
   "slides": {
     "A1": {
-      "question": "Wie soll mit deinem Körper vor seiner Transformation umgegangen werden?",
+      "question": "Wie soll mit deinem Körper vor seiner <a>Transformation</a> umgegangen werden?",
+      "info": "<p class=\"popup-headline\">Transformation</p><p class=\"popup-text\">In diesem Zusammenhang ist der gewählte Zersetzungsprozess deines Körpers nach dem Tod gemeint: Verwesen, Verbrennen etc. </p>",
       "multi": false,
       "options": [
         {
@@ -15,21 +16,25 @@
             "todo": "Mache ein Foto von dir in dem Outfit, in dem du aufgebahrt werden möchtest. Hinterlege außerdem einen Hinweis, ob im offenen oder geschlossenen Sarg."
           },
           "A1.3": {
-            "content": "Der Transformationsprozess soll unmittelbar gestartet werden",
-            "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
+            "content": "Der Transformationsprozess soll unmittelbar gestartet werden"
           },
           "A1.4": {
-            "content": "Ich spende meine Organe mit Gehirn (verfügbar ab 2044)",
+            "content": "Ich spende meine Organe ohne Gehirn",
             "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
           },
           "A1.5": {
+            "content": "Ich spende meine Organe mit Gehirn (verfügbar ab 2044)",
+            "todo": "Hast du einen Organspendeausweis bei dir? Falls nicht, besorge dir einen und fülle ihn aus (bis 2035, danach gilt die Widerspruchsregel)"
+          },
+          "A1.6": {
             "content": "Ich lasse andere entscheiden / mir egal"
           }
         }
       ]
     },
     "A2": {
-      "question": "Wie soll dein Körper transformiert werden?",
+      "question": "Wie soll dein Körper <a>transformiert</a> werden?",
+      "info": "<p class=\"popup-headline\">Transformation</p><p class=\"popup-text\">In diesem Zusammenhang ist der gewählte Zersetzungsprozess deines Körpers nach dem Tod gemeint: Verwesen, Verbrennen etc. </p>",
       "multi": false,
       "options": [
         {
@@ -46,11 +51,11 @@
           "A2.3": {
             "content": "Verbrennen (verfügbar bis 2040)",
             "info": "<p class=\"popup-headline\">Verbrennen</p><p class=\"popup-text\">Die Verbrennung deines Körpers erfolgt in Öfen, die auf rund 1.000 Grad erhitzt werden – oft mithilfe fossiler Energien. Dabei werden große Mengen Kohlendioxid freigesetzt. Die Einäscherung trägt damit zur Klimakrise bei. Dazu kommen weitere Emissionen (u.a. Stickstoffoxide, Kohlenmonoxid, Schwefeldioxid, Feinstaub, Quecksilber, andere Schwermetalle und organische Schadstoffe), die Mensch und Umwelt schädigen können. Der Anteil der Schadstoffe hängt davon ab, wie du verbrannt wirst (Art des Ofens, Sarg, Bekleidung etc.).</p>",
-            "todo": "Bei den Anbietern der Transformationsart Verbrennen können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges und der Urne. Erstelle eine Liste mit deinen Wünschen. Suche dir einen Sarg und Kleidung für deine Verbrennung aus, die möglichst wenige Schadstoffe enthalten. So kannst du vermeiden, dass deine Verbrennung die Umwelt belastet."
+            "todo": "Bei den Anbietern der Transformationsart Verbrennen können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges und der Urne. Erstelle eine Liste mit deinen Wünschen. Suche dir einen Sarg und Kleidung für deine Verbrennung aus, die möglichst wenig Schadstoffe enthalten. So kannst du vermeiden, dass deine Verbrennung die Umwelt belastet."
           },
           "A2.4": {
-            "content": "Gefriertrocknen (verfügbar ab 2028)",
-            "info": "<p class=\"popup-headline\">Gefriertrocknen</p><p class=\"popup-text\">Zum Gefriertrocknen wird dein Körper zuerst auf -18°C heruntergekühlt und danach in flüssigem Stickstoff bis -196°C tiefgefroren. Das Gewebe deines Körpers wird durch die zellulären Veränderungen derart spröde, dass es danach bei kleinster Berührung zerfällt. Von deinem einstmals stark wasserhaltigen Organismus bleiben nach dem Gefriertrocknen nur ca. 30 % Restbestand zurück. Nachdem Kronen, Zahnfüllungen, Implantate und Prothesen entfernt wurden, kann das organische Pulver weiter bearbeitet werden. Diese Transformationsmethode ist im Vergleich zum Verbrennen und Vergraben ökologisch verträglicher.</p>",
+            "content": "Gefriertrocknen (verfügbar ab 2034)",
+            "info": "<p class=\"popup-headline\">Gefriertrocknen</p><p class=\"popup-text\">Zum Gefriertrocknen wird dein Körper zuerst auf -18°C heruntergekühlt und danach in flüssigem Stickstoff bis -196°C tiefgefroren. Das Gewebe deines Körpers wird durch die zellulären Veränderungen derart spröde, dass es danach bei kleinster Berührung zerfällt. Von deinem einstmals stark wasserhaltigen Organismus bleiben nach dem Gefriertrocknen nur ca. 30 % Restbestand (Granulat) zurück. Nachdem Kronen, Zahnfüllungen, Implantate und Prothesen entfernt wurden, kann das organische Pulver weiter bearbeitet werden. Diese Transformationsmethode ist im Vergleich zum Verbrennen und Vergraben ökologisch verträglicher.</p>",
             "todo": "Führe ein gesundes Leben, damit dein organisches Granulat nach dem Gefriertrocknen möglichst schadstoffarm ist. So kann es am besten in die natürlichen Kreisläufe eingehen."
           },
           "A2.5": {
@@ -88,7 +93,7 @@
       ]
     },
     "A2_1_2": {
-      "question": "Du möchtest, dass dein Körper vergraben wird. \n In welche Richtung möchtest du vergraben werden?",
+      "question": "Du möchtest, dass dein Körper vergraben wird. \n In welcher Richtung möchtest du vergraben werden?",
       "multi": false,
       "options": [
         {
@@ -150,7 +155,7 @@
       ]
     },
     "A2_4": {
-      "question": "Du möchtest, dass dein Körper gefriergetrocknet wird. \n Was soll nach der Gefriertrocknung mit deinen Überresten passieren?",
+      "question": "Du möchtest, dass dein Körper gefriergetrocknet wird. \n Was soll nach der Gefriertrocknung mit deinem organischen Granulat passieren?",
       "multi": false,
       "options": [
         {
@@ -193,7 +198,7 @@
             "content": "Ich lasse andere entscheiden / mir egal"
           },
           "B1.6": {
-            "content": "Ich muss mich nicht verabschieden, weil ich mich dazu entschieden habe, dass mein Avatar unsterblich ist (verfügbar ab 2035).",
+            "content": "Ich muss mich nicht verabschieden, weil ich mich dazu entschieden habe, dass mein Avatar unsterblich ist (verfügbar ab 2035)",
             "info": "<p class=\"popup-headline\">Avatar</p><p class=\"popup-text\">Dein Avatar ist dein digitaler Zwilling in einem virtuellen Raum.</p>"
           }
         }
@@ -205,11 +210,11 @@
       "options": [
         {
           "B1.1": {
-            "content": "Was bei der Feierlichkeit/dem Ritual über mich gesagt werden soll",
+            "content": "Was bei der Feierlichkeit / dem Ritual über mich gesagt werden soll",
             "todo": "Hinterlege, was bei deiner Verabschiedung über dich gesagt werden soll: z.B. worauf bist du am meisten stolz; deine wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar; wofür hast du gelebt. "
           },
           "B1.2": {
-            "content": "Der Ort für die Feierlichkeit/das Ritual",
+            "content": "Der Ort für die Feierlichkeit / das Ritual",
             "todo": "Hinterlege den Ort, wo deine Verabschiedung stattfinden soll. "
           },
           "B1.3": {
@@ -256,7 +261,8 @@
       ]
     },
     "C1": {
-      "question": "Welche deiner digitalen Daten sollen nach deinem Tod gelöscht werden? (Mehrere Antworten möglich)",
+      "question": "Welche deiner <a>digitalen Daten</a> sollen nach deinem Tod gelöscht werden? (Mehrere Antworten möglich)",
+      "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z.B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
       "multi": true,
       "options": [
         {
@@ -286,7 +292,8 @@
       ]
     },
     "C2": {
-      "question": "Wer soll sich nach deinem Tod um deine digitalen Daten kümmern? (Mehrere Antworten möglich)",
+      "question": "Wer soll sich nach deinem Tod um deine <a>digitalen Daten</a> kümmern? (Mehrere Antworten möglich)",
+      "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z.B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
       "multi": true,
       "options": [
         {
@@ -336,7 +343,8 @@
       ]
     },
     "D1": {
-      "question": "Hast du bereits ein Testament gemacht?",
+      "question": "Hast du bereits ein <a>Testament</a> gemacht?",
+      "info": "<p class=\"popup-headline\">Testament</p><p class=\"popup-text\"> Mit Testament ist eine schriftliche Erklärung gemeint, in der du rechtsbindend festlegst, wie dein Vermögen nach deinem Tod verteilt werden soll. Es geht also vor allem um Geld, wertvolle Gegenstände, Anlagen und Immobilien – nicht um den gesamten Hausstand.",
       "multi": false,
       "options": [
         {
@@ -387,12 +395,12 @@
           "D2.5": {
             "content": "Ich lasse andere entscheiden / mir egal"
           }
-
         }
       ]
     },
     "D3": {
-      "question": "Welches sind deine drei Lieblingsgegenstände?",
+      "question": "Welches sind deine drei <a>Lieblingsgegenstände</a>? Vielleicht möchtest du gesondert überlegen, was damit passieren soll.",
+      "info": "<p class=\"popup-headline\">Lieblingsgegenstände</p><p class=\"popup-text\"> Vielleicht hilft es dir, darüber nachzudenken, was du bei einem Hausbrand retten würdest.",
       "multi": false,
       "options": [
         {
@@ -443,7 +451,7 @@
       "options": [
         {
           "E1.1": {
-            "content": "An folgendem Ort (z.B. deine Kneipe, dein Verein etc.):",
+            "content": "An folgendem Ort (z.B. eine Kneipe, dein Verein etc.):",
             "TextInput": "Bitte hier eingeben"
           },
           "E1.2": {
@@ -472,7 +480,7 @@
             "TextInput": "Bitte hier eingeben"
           },
           "E2.2": {
-            "content": "Mit Freund:innen und Bekannten bei folgender Gelegenheit \n zusammen kommen:",
+            "content": "Mit anderen bei folgender Gelegenheit zusammen kommen:",
             "TextInput": "Bitte hier eingeben"
           },
           "E2.3": {

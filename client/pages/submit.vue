@@ -1,20 +1,29 @@
 <template>
   <div class="slide">
     <HeaderComp />
-    <div class="textbox">
-      <h1>Gratulation!</h1>
+
+    <div v-if="enabledMenuItems.length != 0" class="textbox">
+      <h1>Wähle deine ersten To-dos!</h1>
       <p>
-        Du hast deinen Abschied sehr gut vorbereitet und alle Fragen
-        beantwortet.
-      </p>
-      <p class="p-small">
-        Nun kannst Du die offenen To-do‘s anschauen und erledigen, wenn du Zeit
-        dafür hast. Mit welcher Kategorie möchtest Du beginnen? Diese ToDos
-        werden dir auf dem Bon ausgedruckt. Alle anderen offenen To-Do‘s und
-        deine beantworteten Fragen kannst Du jederzeit auf todomat.org einsehen
-        und überarbeiten.
+        In den folgenden Kategorien empfiehlt dir der Todomat To-dos. Welche ist
+        dir am wichtigsten? Deine Auswahl wird dir auf dem Bon ausgedruckt. Alle
+        anderen offenen To-dos und deine gesamte Konfiguration kannst du
+        mithilfe des QR-Codes jederzeit auf todomat.org einsehen und
+        überarbeiten.
       </p>
     </div>
+
+    <div v-else class="textbox">
+      <h1>Deine To-dos</h1>
+      <p>
+        Du hast die Fragen so beantwortet, dass sich kein bestimmtes To-do
+        ergibt. Um deine Konfiguration später wieder aufzurufen, kann dir der
+        Todomat jetzt den QR-Code ausdrucken. Er wird dir außerdem noch ein
+        allgemeines To-do empfehlen, um darüber nachzudenken, was dir momentan
+        im Leben besonders wichtig ist.
+      </p>
+    </div>
+
     <div class="menu-container">
       <template v-if="enabledMenuItems.length > 0">
         <button
@@ -48,16 +57,13 @@
         </button>
       </template>
     </div>
-    <p v-if="enabledMenuItems.length == 0">
-      Deine Auswahl hat keine zu erledigenden Todos ergeben.
-    </p>
     <div class="button-container">
       <button
         @click="Print"
         class="button"
         :disabled="!selectedMenuItem && enabledMenuItems.length > 0"
       >
-        Auschecken und Ausdrucken
+        Ausdrucken und Auschecken
       </button>
     </div>
   </div>
@@ -98,7 +104,7 @@ const menuItems = [
   },
   {
     letter: "E",
-    title: "Deine Gedenken",
+    title: "Dein Gedenken",
     effect: "5",
   },
   {

@@ -46,13 +46,7 @@
 
     <div class="textbox">
       <div></div>
-      <h1>Was ist der Todomat?</h1>
-      <p lang="de">
-        Der Todomat ist der erste Hinterlassenschafts-Konfigurator der Welt.
-        <br />
-        Er wurde entwickelt, um deinen Abschied selbstbestimmter und <br />
-        nachhaltiger zu gestalten.
-      </p>
+      <h1>Wozu der Todomat?</h1>
     </div>
     <div class="info-container">
       <div class="info-left">

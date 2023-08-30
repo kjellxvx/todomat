@@ -378,7 +378,7 @@ onMounted(() => {
     : order.value[index.value].includes("D")
     ? "Deine Dinge."
     : order.value[index.value].includes("E")
-    ? "Deine Gedenken."
+    ? "Dein Gedenken."
     : order.value[index.value].includes("F")
     ? "Deine Geheimnisse."
     : "";

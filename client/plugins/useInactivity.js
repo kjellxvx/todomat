@@ -16,7 +16,7 @@ export default function ({}) {
     const inactivityDuration = currentTime - lastActivity.value;
 
     if (local.value == true) {
-      if (inactivityDuration >= 120000) {
+      if (inactivityDuration >= 240000) {
         console.log("no activity detected");
         navigateTo("/?local=true");
       }

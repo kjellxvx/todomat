@@ -36,8 +36,8 @@ app.post("/save", async (req, res) => {
     // if user has no token create new record, save data and return the record.id to the client
     if (token == false) {
       const record = await pb.collection("user_data").create(user_data[token]);
-      // console.log("Saved data using new record: " + record.id);
-      // console.log(user_data);
+      console.log("Saved data using new record: " + record.id);
+      console.log(user_data);
       res.status(200).json({
         message: "Saved new data",
         token: record.id,
@@ -48,8 +48,8 @@ app.post("/save", async (req, res) => {
       const record = await pb
         .collection("user_data")
         .update(token, user_data[token]);
-      // console.log("Updated record: " + token);
-      // console.log(us<er_data);
+      console.log("Updated record: " + token);
+      console.log(user_data);
       res.status(200).json({
         message: "Updated data",
         token: token,

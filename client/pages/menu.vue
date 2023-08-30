@@ -123,7 +123,7 @@ const menuItems = [
   },
   {
     letter: "E",
-    title: "Deine Gedenken",
+    title: "Dein Gedenken",
     effect: "5",
   },
   {

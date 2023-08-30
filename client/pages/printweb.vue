@@ -86,7 +86,7 @@ function category(index) {
     return "Deine Dinge";
   }
   if (index.includes("E")) {
-    return "Deine Gedenken";
+    return "Dein Gedenken";
   }
   if (index.includes("F")) {
     return "Deine Geheimnisse";

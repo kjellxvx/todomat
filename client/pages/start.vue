@@ -13,7 +13,7 @@
         hinterlegen.
       </p>
       <p lang="de" class="p-bold">
-        Es gibt auch einige ToDos zu erledigen. <br />
+        Es gibt auch einige To-dos zu erledigen. <br />
         Der Todomat hilft Dir dabei!
       </p>
       <!-- <p>
@@ -25,7 +25,7 @@
         Der Todomat ist der erste Hinterlassenschafts-Konfigurator der Welt. Er
         wurde entwickelt, um deinen Abschied selbstbestimmter und nachhaltiger
         zu gestalten.
-        <a @click="About" class="link">Mehr Info’s zum Todomat.</a>
+        <a @click="About" class="link">Mehr zu den Benefits des Todomaten.</a>
       </p>
     </div>
     <div class="button-container">

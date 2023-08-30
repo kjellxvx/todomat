@@ -5,7 +5,7 @@
       <div></div>
       <h1>Herzlichen Glückwunsch.</h1>
       <p>
-        Du hast heute damit begonnen hast, dich auf deinen Tod vorzubereiten!
+        Du hast dich heute mit deinem Tod auseinandergesetzt. 
       </p>
     </div>
     <div class="info-container">
@@ -13,14 +13,14 @@
         <div class="info">
           <p>
             Der Todomat wird dir auf Basis deiner vorherigen Antworten noch
-            To-Do‘s empfehlen, das du in einem ruhigen Moment am besten noch
+            To-dos empfehlen, die du in einem ruhigen Moment am besten noch
             heute oder in den nächsten Tagen erledigst.
           </p>
         </div>
         <div class="info">
           <p>
             Auf dem Ausdruck bekommst du einen QR-Code, mit dem du später deine
-            bisherige Konfiguration am Todomaten oder auch im Internet wieder
+            bisherige Konfiguration am Todomat oder auch im Internet wieder
             aufrufen und weitere Kategorien bearbeiten kannst.
           </p>
         </div>
