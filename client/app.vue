@@ -48,6 +48,19 @@ h1 {
   user-select: none; /* Standard syntax */
 }
 
+span{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+a{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  cursor:help;
+}
+
 :root {
   --primary-color: #363ad1;
   --secondary-color: #2b2b2b;
@@ -419,14 +432,13 @@ input[type="radio"]:checked::before {
 }
 
 .link {
-  cursor: pointer;
   color: var(--secondary-color);
   font-family: "IBMPlexSans-Bold", sans-serif;
   text-decoration: underline;
+  cursor: help;
 }
 
 .popup-link {
-  cursor: pointer;
   color: var(--secondary-color);
   font-family: "IBMPlexSans-Medium", sans-serif;
   font-size: 20px;

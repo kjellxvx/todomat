@@ -39,22 +39,22 @@
       "options": [
         {
           "A2.1": {
-            "content": "Vergraben",
+            "content": "<a>Vergraben</a>",
             "info": "<p class=\"popup-headline\">Vergraben</p><p class=\"popup-text\">Wie lange deine Verwesung nach dem Vergraben dauert, hängt von der Beschaffenheit der Erde, deinem Sarg, deiner Kleidung und deinem Lebensstil ab. Deine Ernährung und dein Medikamentenkonsum können starke Auswirkungen auf den Zersetzungsprozess haben. Bei der bisherigen Erdbestattung gelangen gesundheitsgefährdende Stoffe (z.B. Quecksilber, Arsen Formaldehyd) ins Grundwasser. Wenn dein Leichnam vermehrt radioaktive Stoffe enthält (z.B. durch eine Strahlentherapie), belastet der Zerfall die Umwelt zusätzlich.</p>",
             "todo": "Bei den Anbietern der Transformationsart Vergraben können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges. Erstelle eine Liste mit deinen Wünschen. Informiere dich bei deinem bevorzugten Vergrabungsort (z.B. Friedhof) nach der Bodenbeschaffenheit und wie viele Jahre die Verwesung dort durchschnittlich dauert."
           },
           "A2.2": {
-            "content": "Beschleunigt kompostieren",
+            "content": "<a>Beschleunigt kompostieren</a>",
             "info": "<p class=\"popup-headline\">Beschleunigt kompostieren</p><p class=\"popup-text\">Wenn du stirbst, arbeiten die Bakterien in deinem Darm weiter und verdauen den Körper selbst. Andere Bakterien und Mikroorganismen werden hinzugefügt und helfen bei der Verwesung. Anders als bei der Erdbestattung wird bei der „Reerdigung“ dein Leichnam in einen luftdurchlässigen Kokon gebettet und für etwa 40 Tage zusammen mit Stroh und Holzspähnen verschlossen. Mikroorganismen und Pilze verwandeln ihn dann CO2-neutral zu Erde. <br> Dieses Verfahren hat einen weiteren möglichen Vorteil: Die Mikroorganismen erzeugen in den Holzspänen Temperaturen von bis zu 70°C, was als Energiequelle für andere Zwecke dienen kann.</p>",
             "todo": "Informiere dich für eine beschleunigte Kompostierung über sogenannte „Reerdigungsverfahren“ in deiner Nähe. Vielleicht kannst du auch schon buchen. "
           },
           "A2.3": {
-            "content": "Verbrennen (verfügbar bis 2040)",
+            "content": "<a>Verbrennen</a> (verfügbar bis 2040)",
             "info": "<p class=\"popup-headline\">Verbrennen</p><p class=\"popup-text\">Die Verbrennung deines Körpers erfolgt in Öfen, die auf rund 1.000 Grad erhitzt werden – oft mithilfe fossiler Energien. Dabei werden große Mengen Kohlendioxid freigesetzt. Die Einäscherung trägt damit zur Klimakrise bei. Dazu kommen weitere Emissionen (u.a. Stickstoffoxide, Kohlenmonoxid, Schwefeldioxid, Feinstaub, Quecksilber, andere Schwermetalle und organische Schadstoffe), die Mensch und Umwelt schädigen können. Der Anteil der Schadstoffe hängt davon ab, wie du verbrannt wirst (Art des Ofens, Sarg, Bekleidung etc.).</p>",
             "todo": "Bei den Anbietern der Transformationsart Verbrennen können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges und der Urne. Erstelle eine Liste mit deinen Wünschen. Suche dir einen Sarg und Kleidung für deine Verbrennung aus, die möglichst wenig Schadstoffe enthalten. So kannst du vermeiden, dass deine Verbrennung die Umwelt belastet."
           },
           "A2.4": {
-            "content": "Gefriertrocknen (verfügbar ab 2034)",
+            "content": "<a>Gefriertrocknen</a> (verfügbar ab 2034)",
             "info": "<p class=\"popup-headline\">Gefriertrocknen</p><p class=\"popup-text\">Zum Gefriertrocknen wird dein Körper zuerst auf -18°C heruntergekühlt und danach in flüssigem Stickstoff bis -196°C tiefgefroren. Das Gewebe deines Körpers wird durch die zellulären Veränderungen derart spröde, dass es danach bei kleinster Berührung zerfällt. Von deinem einstmals stark wasserhaltigen Organismus bleiben nach dem Gefriertrocknen nur ca. 30 % Restbestand (Granulat) zurück. Nachdem Kronen, Zahnfüllungen, Implantate und Prothesen entfernt wurden, kann das organische Pulver weiter bearbeitet werden. Diese Transformationsmethode ist im Vergleich zum Verbrennen und Vergraben ökologisch verträglicher.</p>",
             "todo": "Führe ein gesundes Leben, damit dein organisches Granulat nach dem Gefriertrocknen möglichst schadstoffarm ist. So kann es am besten in die natürlichen Kreisläufe eingehen."
           },
@@ -198,7 +198,7 @@
             "content": "Ich lasse andere entscheiden / mir egal"
           },
           "B1.6": {
-            "content": "Ich muss mich nicht verabschieden, weil ich mich dazu entschieden habe, dass mein Avatar unsterblich ist (verfügbar ab 2035)",
+            "content": "Ich muss mich nicht verabschieden, weil ich mich dazu entschieden habe, dass mein <a>Avatar</a> unsterblich ist (verfügbar ab 2035)",
             "info": "<p class=\"popup-headline\">Avatar</p><p class=\"popup-text\">Dein Avatar ist dein digitaler Zwilling in einem virtuellen Raum.</p>"
           }
         }
@@ -314,7 +314,7 @@
             "todo": "Stelle alle benötigten Informationen zusammen, die ein:e Nachlassverwalter:in benötigt, um sich um deine digitalen Daten zu kümmern. Vielleicht kannst du diese Person auch schon beauftragen. "
           },
           "C2.5": {
-            "content": "Ich möchte meine Daten einem Unternehmen verkaufen und bleibe damit digital als Person und Datensatz erhalten (verfügbar ab 2033)",
+            "content": "Ich möchte meine Daten einem <a>Unternehmen</a> verkaufen und bleibe damit digital als Person und Datensatz erhalten (verfügbar ab 2033)",
             "info": "<p class=\"popup-headline\">Daten in den Händen von Unternehmen</p><p class=\"popup-text\">Unternehmen können mit deinen personenbezogenen Daten viel Geld verdienen, z.B. durch Werbung, Datenverkauf oder Datenanalysen. Wenn du die Daten, die Unternehmen über dich besitzen, nicht rechtzeitig löschst, werden sie über deinen Tod hinaus genutzt. </p>"
           },
           "C2.6": {
@@ -461,7 +461,7 @@
             "content": "An einem für mich gepflanzten Baum"
           },
           "E1.4": {
-            "content": "An allen auf der digitalen Karte „remember me map“ hinterlegten Orten (verfügbar ab 2032)",
+            "content": "An allen auf der digitalen Karte <a>„remember me map“</a> hinterlegten Orten (verfügbar ab 2032)",
             "info": "<p class=\"popup-headline\">remember me map</p><p class=\"popup-text\">Im Jahr 2032 wird ein digitales Produkt auf den Markt gebracht, um mobil lebenden Menschen einen ortsunabhängigen Platz des Gedenkens zu ermöglichen. Hier können die Orte, die im Leben einer Person eine besondere Rolle gespielt haben, angelegt und in Anwendungen (Apps) verlinkt werden. </p>"
           },
           "E1.5": {
@@ -487,7 +487,7 @@
             "content": "Das überlasse ich denen, die sich an mich erinnern wollen"
           },
           "E2.4": {
-            "content": "Mit meiner Botschaft auf der kommunalen Erinnerungstafel für Verstorbene (verfügbar ab 2040)",
+            "content": "Mit meiner Botschaft auf der <a>kommunalen Erinnerungstafel</a> für Verstorbene (verfügbar ab 2040)",
             "info": "<p class=\"popup-headline\">Kommunale Erinnerungstafel</p><p class=\"popup-text\">Die zunehmende Verbreitung des Todomaten führt dazu, dass ab 2040 mehr und mehr Städte und Gemeinden digitale Erinnerungstafeln einführen. Diese zeigen Namen und Botschaften von Verstorbenen am Todestag und bestimmten Jahrestagen an. So wird jede:r Verstorbene sichtbar. Gedanken und letzte Wünsche können weiterleben.</p>",
             "todo": "Formuliere für die kommunale Erinnerungstafel, mit welchem Namen und welcher Botschaft du erinnert werden möchtest. Du kannst die Gesellschaft damit an etwas erinnern, das dir wichtig ist. Alternativ kannst du auch ein Bild oder ein kurzes Video hinterlegen."
           }

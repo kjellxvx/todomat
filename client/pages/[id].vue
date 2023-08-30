@@ -36,10 +36,22 @@
         </div>
         <div class="radio-label-right">
           <div :for="key">
-            <span
-              class="label-content"
-              v-html="formatOptionContent(option)"
-            ></span>
+        <template v-if="slides[id].info">
+          <template v-for="(part) in transformedOptionParts(option)">
+            <template v-if="part.isLink">
+              <a
+                @click="optionInfo(option)"
+                class="h-popup-link underline-link"
+                v-html="part.content"
+              ></a>
+            </template>
+            <template v-else>
+              <span
+                v-html="part.content"
+              ></span>
+            </template>
+          </template>
+        </template>
             <template v-if="option.TextInput">
               <InputComp
                 :initialValue="inputValue"
@@ -51,9 +63,6 @@
                 ref="inputComp"
                 class="input-comp"
               />
-            </template>
-            <template v-if="option.info">
-              <span @click="Info(key)" class="popup-link">Mehr Info</span>
             </template>
           </div>
         </div>
@@ -111,8 +120,32 @@ const multiSelection = slides[id].multi;
 
 // format breaks in labels
 function formatOptionContent(option) {
-  return option.content.replace(/\n/g, "<br>");
+  console.log(option.replace(/\n/g, "<br>"))
+  return option.replace(/\n/g, "<br>");
 }
+
+// format popup links inside of question headlines
+function transformedOptionParts(option) {
+  console.log(option.content)
+  const parts = option.content.split(/<a>(.*?)<\/a>/);
+  console.log(parts)
+
+  return parts.map((part, index) => {
+    if (index % 2 === 0) {
+      return {
+        isLink: false,
+        content: formatOptionContent(part),
+      };
+    } else {
+      return {
+        isLink: true,
+        content: part,
+      };
+    }
+  });
+}
+
+
 
 // format breaks in question headlines
 const formattedQuestion = computed(() => {
@@ -142,6 +175,12 @@ const transformedQuestionParts = computed(() => {
 function headlineInfo() {
   popup.value.isOpen = true;
   popup.value.content = slides[id].info;
+}
+
+// function to trigger the popup inside of an option
+function optionInfo(option) {
+  popup.value.isOpen = true;
+  popup.value.content = option.info;
 }
 
 // computed property that stores the selection

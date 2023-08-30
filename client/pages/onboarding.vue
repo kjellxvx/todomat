@@ -33,8 +33,8 @@
       </p>
     </div>
     <div class="button-container">
-      <button @click="navigate('start')" class="button">Abfrage starten</button>
-      <button @click="navigate('menu')" class="button-white">Zurück</button>
+      <button @click="navigate('menu')" class="button">Abfrage starten</button>
+      <button @click="navigate('start')" class="button-white">Zurück</button>
     </div>
   </div>
 </template>
