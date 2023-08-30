@@ -10,7 +10,19 @@
         Dabei vermischen sich aktuelle Wahlmöglichkeiten und Optionen, die erst
         zukünftig zur Verfügung stehen.
       </p>
-      <p>Unterstrichene Begriffe werden durch Klicken erläutert.</p>
+      <p>
+        <span
+          class="link"
+          @click="
+            Info(
+              `<div class='popup-headline'>Erklärung</div><p class='popup-text'>Das sieht dann so aus. Bleib neugierig, es lohnt sich!</p>`
+            )
+          "
+        >
+          Unterstrichene Begriffe</span
+        >
+        <span> werden durch Klicken erläutert.</span>
+      </p>
       <p>
         Am Ende druckt dir der Todomat auf Basis deiner Antworten To-dos aus, um
         vorbereiteter zu sterben. Du kannst deine Konfiguration jederzeit
@@ -21,9 +33,7 @@
       </p>
     </div>
     <div class="button-container">
-      <button @click="navigate('start')" class="button">
-        Abfrage starten
-      </button>
+      <button @click="navigate('start')" class="button">Abfrage starten</button>
       <button @click="navigate('menu')" class="button-white">Zurück</button>
     </div>
   </div>
@@ -36,6 +46,7 @@ const index = useIndex();
 const todos = useTodos();
 const data = useData();
 const userToken = useUserToken();
+const popup = usePopup();
 
 function navigate(path) {
   if (path === "restart") {
@@ -45,6 +56,11 @@ function navigate(path) {
     userToken.value = false;
   }
   navigateTo(`/${path}`);
+}
+
+function Info(htmlContent) {
+  popup.value.isOpen = true;
+  popup.value.content = htmlContent;
 }
 </script>
 
