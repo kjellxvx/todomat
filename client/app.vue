@@ -56,12 +56,12 @@ h1 {
 }
 
 html body {
-  width: 100vw;
-  height: 100svh;
+  /* width: 100vw;
+  height: 100svh; */
 
-  /* width: 1024px;
+  width: 1024px;
   height: 768px;
-  border: black 1px solid; */
+  border: black 1px solid;
 
   display: flex;
   flex-direction: column;

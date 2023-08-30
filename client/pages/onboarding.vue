@@ -12,8 +12,8 @@
       </p>
       <p>Unterstrichene Begriffe werden durch Klicken erläutert.</p>
       <p>
-        Am Ende druckt dir der Todomat auf Basis deiner Antworten To-dos aus,
-        um vorbereiteter zu sterben. Du kannst deine Konfiguration jederzeit
+        Am Ende druckt dir der Todomat auf Basis deiner Antworten To-dos aus, um
+        vorbereiteter zu sterben. Du kannst deine Konfiguration jederzeit
         beenden und später im Internet unter todomat.org fortsetzen oder ändern.
       </p>
       <p>
@@ -21,8 +21,10 @@
       </p>
     </div>
     <div class="button-container">
-      <button @click="Restart" class="button">Abfrage starten</button>
-      <button @click="Zurück" class="button-white">Zurück</button>
+      <button @click="navigate('start')" class="button">
+        Abfrage starten
+      </button>
+      <button @click="navigate('menu')" class="button-white">Zurück</button>
     </div>
   </div>
 </template>
@@ -35,15 +37,14 @@ const todos = useTodos();
 const data = useData();
 const userToken = useUserToken();
 
-function Restart() {
-  index.value = 0;
-  data.value = {};
-  todos.value = {};
-  userToken.value = false;
-  navigateTo("/menu");
-}
-function Zurück() {
-  navigateTo("/start");
+function navigate(path) {
+  if (path === "restart") {
+    index.value = 0;
+    data.value = {};
+    todos.value = {};
+    userToken.value = false;
+  }
+  navigateTo(`/${path}`);
 }
 </script>
 

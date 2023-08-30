@@ -58,12 +58,8 @@
       </svg>
     </div>
     <div class="text">
-      <p class="h2-index">Vorbereitet sterben.</p>
-      <p class="h1-index">
-        HERZLICH
-        <br />
-        WILLKOMMEN.
-      </p>
+      <p class="h1-index">Du wirst sterben.</p>
+      <p class="h2-index">Plane jetzt deinen Abschied.</p>
       <button @click="start" class="button">Start</button>
     </div>
   </div>
