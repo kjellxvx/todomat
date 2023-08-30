@@ -205,7 +205,7 @@
       ]
     },
     "B1_1": {
-      "question": "Welche Aspekte zu deiner Verabschiedung würdest du gerne hinterlegen? (Mehrere Antworten möglich)",
+      "question": "Welche Aspekte zu deiner Verabschiedung würdest du gerne hinterlegen? \r (Mehrere Antworten möglich)",
       "multi": true,
       "options": [
         {
@@ -233,7 +233,7 @@
       ]
     },
     "B1_2": {
-      "question": "Gibt es Aspekte zu deiner Verabschiedung, die du noch nicht festgelegt hast, aber gerne noch hinterlegen würdest? (Mehrere Antworten möglich)",
+      "question": "Gibt es Aspekte zu deiner Verabschiedung, die du noch nicht festgelegt hast, aber gerne noch hinterlegen würdest? \r (Mehrere Antworten möglich)",
       "multi": true,
       "options": [
         {
@@ -261,7 +261,7 @@
       ]
     },
     "C1": {
-      "question": "Welche deiner <a>digitalen Daten</a> sollen nach deinem Tod gelöscht werden? (Mehrere Antworten möglich)",
+      "question": "Welche deiner <a>digitalen Daten</a> sollen nach deinem Tod gelöscht werden? \r (Mehrere Antworten möglich)",
       "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z.B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
       "multi": true,
       "options": [
@@ -292,7 +292,7 @@
       ]
     },
     "C2": {
-      "question": "Wer soll sich nach deinem Tod um deine <a>digitalen Daten</a> kümmern? (Mehrere Antworten möglich)",
+      "question": "Wer soll sich nach deinem Tod um deine <a>digitalen Daten</a> kümmern? \r (Mehrere Antworten möglich)",
       "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z.B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
       "multi": true,
       "options": [
@@ -314,7 +314,7 @@
             "todo": "Stelle alle benötigten Informationen zusammen, die ein:e Nachlassverwalter:in benötigt, um sich um deine digitalen Daten zu kümmern. Vielleicht kannst du diese Person auch schon beauftragen. "
           },
           "C2.5": {
-            "content": "Ich möchte meine Daten einem <a>Unternehmen</a> verkaufen und bleibe damit digital als Person und Datensatz erhalten (verfügbar ab 2033)",
+            "content": "Ich möchte meine Daten einem <a>Unternehmen verkaufen</a> und bleibe damit digital als Person und Datensatz erhalten (verfügbar ab 2033)",
             "info": "<p class=\"popup-headline\">Daten in den Händen von Unternehmen</p><p class=\"popup-text\">Unternehmen können mit deinen personenbezogenen Daten viel Geld verdienen, z.B. durch Werbung, Datenverkauf oder Datenanalysen. Wenn du die Daten, die Unternehmen über dich besitzen, nicht rechtzeitig löschst, werden sie über deinen Tod hinaus genutzt. </p>"
           },
           "C2.6": {
@@ -360,10 +360,12 @@
             "todo": "Schreibe den oder die Namen der Personen auf, die über das Verteilen deiner Besitztümer entscheiden sollen."
           },
           "D1.4": {
-            "content": "Nein, es gibt nichts, das ich vererben kann"
+            "content": "Nein, es gibt nichts, das ich <a>vererben</a> kann",
+            "info": "<p class=\"popup-headline\">Vererben</p><p class=\"popup-text\"> Gibt es kein Testament, erben zuerst deine Kinder und ggf. dein:e Ehepartner:in. Wenn du keine Kinder hast, erben deine Eltern zu gleichen Anteilen, falls sie noch leben. Ansonsten deine Geschwister zu gleichen Anteilen. Der gesellschaftliche Nutzen des Erbrechts ist umstritten, da es zu einer Verstärkung der sozialen und wirtschaftlichen Ungleichheiten und Machtunterschiede beitragen kann."
           },
           "D1.5": {
-            "content": "Nein, ich lehne vererben ab und möchte vorher alles verschenken",
+            "content": "Nein, ich lehne <a>vererben</a> ab und möchte vorher alles verschenken",
+            "info": "<p class=\"popup-headline\">Vererben</p><p class=\"popup-text\"> Gibt es kein Testament, erben zuerst deine Kinder und ggf. dein:e Ehepartner:in. Wenn du keine Kinder hast, erben deine Eltern zu gleichen Anteilen, falls sie noch leben. Ansonsten deine Geschwister zu gleichen Anteilen. Der gesellschaftliche Nutzen des Erbrechts ist umstritten, da es zu einer Verstärkung der sozialen und wirtschaftlichen Ungleichheiten und Machtunterschiede beitragen kann.",
             "todo": "Verschenke, spende oder verkaufe am besten alle Besitztümer, auf die du verzichten kannst, jetzt schon. Frage dich immer wieder, was du für ein gutes Leben wirklich brauchst."
           },
           "D1.6": {
@@ -446,7 +448,7 @@
       ]
     },
     "E1": {
-      "question": "Wo soll man sich an dich erinnern können? (Mehrere Antworten möglich)",
+      "question": "Wo soll man sich an dich erinnern können? \n \r (Mehrere Antworten möglich)",
       "multi": true,
       "options": [
         {
@@ -471,7 +473,7 @@
       ]
     },
     "E2": {
-      "question": "Wie soll man sich an dich erinnern? (Mehrere Antworten möglich)",
+      "question": "Wie soll man sich an dich erinnern? \n \r (Mehrere Antworten möglich)",
       "multi": true,
       "options": [
         {

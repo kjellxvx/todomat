@@ -12,10 +12,12 @@
               v-html="part.content"
             ></a>
           </template>
-          <template v-else>{{ part.content }}</template>
+          <template v-else>
+                <span v-html="part.content"></span>
+              </template>
         </template>
       </template>
-      <template v-else> <span v-html="formattedQuestion"></span></template>
+      <template v-else> <span v-html="formattedQuestion(question)"></span></template>
     </h2>
     <div class="checkform">
       <div
@@ -36,22 +38,18 @@
         </div>
         <div class="radio-label-right">
           <div :for="key">
-        <template v-if="slides[id].info">
-          <template v-for="(part) in transformedOptionParts(option)">
-            <template v-if="part.isLink">
-              <a
-                @click="optionInfo(option)"
-                class="h-popup-link underline-link"
-                v-html="part.content"
-              ></a>
+            <template v-for="part in transformedOptionParts(option)">
+              <template v-if="part.isLink">
+                <a
+                  @click="optionInfo(option)"
+                  class="h-popup-link underline-link"
+                  v-html="part.content"
+                ></a>
+              </template>
+              <template v-else>
+                <span v-html="part.content"></span>
+              </template>
             </template>
-            <template v-else>
-              <span
-                v-html="part.content"
-              ></span>
-            </template>
-          </template>
-        </template>
             <template v-if="option.TextInput">
               <InputComp
                 :initialValue="inputValue"
@@ -120,15 +118,15 @@ const multiSelection = slides[id].multi;
 
 // format breaks in labels
 function formatOptionContent(option) {
-  console.log(option.replace(/\n/g, "<br>"))
+  console.log(option.replace(/\n/g, "<br>"));
   return option.replace(/\n/g, "<br>");
 }
 
 // format popup links inside of question headlines
 function transformedOptionParts(option) {
-  console.log(option.content)
+  console.log(option.content);
   const parts = option.content.split(/<a>(.*?)<\/a>/);
-  console.log(parts)
+  console.log(parts);
 
   return parts.map((part, index) => {
     if (index % 2 === 0) {
@@ -146,11 +144,16 @@ function transformedOptionParts(option) {
 }
 
 
+// format breaks in labels
+function formattedQuestion(part) {
+  const formattedText = part.replace(/\n/g, "<br>");
+  const finishedText = formattedText.replace(
+    /\r([^<]*)/g,
+    '<span class="multi-choice">$1</span>'
+  );
+  return finishedText;
+}
 
-// format breaks in question headlines
-const formattedQuestion = computed(() => {
-  return question.replace(/\n/g, "<br>");
-});
 
 // format popup links inside of question headlines
 const transformedQuestionParts = computed(() => {
@@ -160,7 +163,7 @@ const transformedQuestionParts = computed(() => {
     if (index % 2 === 0) {
       return {
         isLink: false,
-        content: part,
+        content: formattedQuestion(part),
       };
     } else {
       return {
@@ -452,4 +455,6 @@ onUnmounted(() => {
 .underline-link {
   text-decoration: underline;
 }
+
+
 </style>

@@ -559,6 +559,10 @@ input[type="radio"]:checked::before {
   animation: spin 2s linear infinite;
 }
 
+.multi-choice {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
