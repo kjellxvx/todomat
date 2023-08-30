@@ -3,21 +3,49 @@
     <HeaderComp />
     <div class="close-button-container">
       <div class="close-button" @click="Close">
-        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="30.0886" height="30.0886" rx="15.0443" transform="matrix(1 0 0 -1 0.911438 30.8496)"
-            fill="#EAEAEA" />
-          <mask id="mask0_231_126" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="25" height="25">
-            <rect x="3.96295" y="3.37695" width="24" height="24" fill="#D9D9D9" />
+        <svg
+          width="31"
+          height="31"
+          viewBox="0 0 31 31"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            width="30.0886"
+            height="30.0886"
+            rx="15.0443"
+            transform="matrix(1 0 0 -1 0.911438 30.8496)"
+            fill="#EAEAEA"
+          />
+          <mask
+            id="mask0_231_126"
+            style="mask-type: alpha"
+            maskUnits="userSpaceOnUse"
+            x="3"
+            y="3"
+            width="25"
+            height="25"
+          >
+            <rect
+              x="3.96295"
+              y="3.37695"
+              width="24"
+              height="24"
+              fill="#D9D9D9"
+            />
           </mask>
           <g mask="url(#mask0_231_126)">
             <path
               d="M9.63065 23.4653L15.963 17.133L22.2953 23.4653L23.513 22.2476L17.1807 15.9153L23.513 9.58298L22.2953 8.36523L15.963 14.6975L9.63065 8.36523L8.4129 9.58298L14.7452 15.9153L8.4129 22.2476L9.63065 23.4653Z"
-              fill="black" />
+              fill="black"
+            />
           </g>
         </svg>
       </div>
     </div>
-    <h1>Womit möchtest Du starten?</h1>
+    <h1 v-if="noSelection === 0">Womit möchtest Du starten?</h1>
+    <h1 v-else>Womit geht's weiter?</h1>
+
     <div class="seperator"></div>
     <div class="menu-container">
       <!-- <div
@@ -26,7 +54,12 @@
         class="menuItem"
         :style="{ backgroundColor: buttonColor(menuItem.letter) }"
       > -->
-      <div v-for="menuItem in menuItems" :key="menuItem.letter" @click="navigate(menuItem.letter)" class="menuItem">
+      <div
+        v-for="menuItem in menuItems"
+        :key="menuItem.letter"
+        @click="navigate(menuItem.letter)"
+        class="menuItem"
+      >
         <p class="menu-h1">{{ menuItem.title }}</p>
         <!-- <p class="menu-p">
           {{ menuItem.description }}
@@ -48,21 +81,43 @@
         <div v-else class="effect" :class="`effect-${menuItem.effect}`"></div>
 
         <div class="configure-button-container">
-          <button @click="navigate(menuItem.letter)" :class="getButtonClass(menuItem.letter)">
+          <button
+            @click="navigate(menuItem.letter)"
+            :class="getButtonClass(menuItem.letter)"
+          >
             <p>{{ getButtonLabel(menuItem.letter) }}</p>
 
-            <svg v-if="isCategoryComplete(menuItem.letter)" class="complete-icon" xmlns="http://www.w3.org/2000/svg"
-              width="20" height="10" viewBox="0 0 20 10" fill="none">
+            <svg
+              v-if="isCategoryComplete(menuItem.letter)"
+              class="complete-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="10"
+              viewBox="0 0 20 10"
+              fill="none"
+            >
               <path
                 d="M19.2835 5.65563C19.5301 5.40896 19.5301 5.00901 19.2835 4.76234L15.2636 0.742508C15.017 0.495831 14.617 0.495831 14.3703 0.742508C14.1237 0.989185 14.1237 1.38913 14.3703 1.6358L17.9435 5.20898L14.3703 8.78217C14.1237 9.02884 14.1237 9.42878 14.3703 9.67546C14.617 9.92214 15.017 9.92214 15.2636 9.67546L19.2835 5.65563ZM0.383545 5.84064H18.8368V4.57733H0.383545V5.84064Z"
-                fill="black" />
+                fill="black"
+              />
             </svg>
           </button>
-          <button class="menu-button-edit" @click="navigate(menuItem.letter)" v-if="!isCategoryComplete(menuItem.letter)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <button
+            class="menu-button-edit"
+            @click="navigate(menuItem.letter)"
+            v-if="!isCategoryComplete(menuItem.letter)"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+            >
               <path
                 d="M0.40625 14.0759V12.0114H14.1701V14.0759H0.40625ZM2.12674 10.2909V8.18665L8.27547 2.05117L10.3665 4.14217L4.23099 10.2909H2.12674ZM3.15901 9.25863H3.77839L8.91601 4.14217L8.27547 3.50162L3.15901 8.63926V9.25863ZM11.0613 3.42487L8.97027 1.3471L9.98401 0.33336C10.1102 0.200127 10.2685 0.135276 10.4591 0.138809C10.6497 0.142341 10.8081 0.207192 10.9342 0.33336L12.0618 1.46089C12.1879 1.58706 12.2532 1.74367 12.2577 1.93072C12.2621 2.11777 12.2012 2.27791 12.075 2.41113L11.0613 3.42487Z"
-                fill="black" />
+                fill="black"
+              />
             </svg>
           </button>
         </div>
@@ -99,6 +154,7 @@ const categories = useCategories();
 const abort = ref(false);
 const userToken = useUserToken();
 const local = useLocal();
+const noSelection = ref(progress.value.reduce((a, b) => a + b, 0));
 
 const menuItems = [
   {
@@ -155,7 +211,9 @@ function Abort() {
 
   if (local.value == true) {
     navigateTo("/?local=true");
-  } else { navigateTo("/"); }
+  } else {
+    navigateTo("/");
+  }
 }
 
 function Close() {
@@ -189,16 +247,6 @@ const getButtonClass = (letter) => {
     ? "menu-button-incomplete"
     : "menu-button-complete";
 };
-
-// const buttonColor = computed(() => {
-//   return (buttonId) => {
-//     if (categories.value && categories.value[buttonId].complete == true) {
-//       return "#5F81A4";
-//     } else {
-//       return "white";
-//     }
-//   };
-// });
 
 function updateCategories() {
   categories.value = Object.values(order.value)
@@ -416,9 +464,11 @@ h1 {
   height: 150px;
   margin-top: 50px;
   margin-left: 20px;
-  background: radial-gradient(circle,
-      rgba(95, 129, 164, 1) 0%,
-      rgba(74, 224, 116, 0.65) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(95, 129, 164, 1) 0%,
+    rgba(74, 224, 116, 0.65) 100%
+  );
   border-radius: 150.31px;
   transform: skew(3deg, 0deg);
   filter: blur(25px);
@@ -460,9 +510,11 @@ h1 {
   border-radius: 150px;
   margin-top: -100px;
   margin-left: 55px;
-  background: radial-gradient(circle,
-      rgba(95, 129, 164, 1) 0%,
-      rgba(99, 73, 255, 0.37) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(95, 129, 164, 1) 0%,
+    rgba(99, 73, 255, 0.37) 100%
+  );
   transform: skew(10deg, 0deg);
   rotate: -30deg;
   filter: blur(28px);
@@ -480,9 +532,11 @@ h1 {
   border-radius: 150px;
   margin-top: 0px;
   margin-left: -60px;
-  background: radial-gradient(circle,
-      rgba(95, 129, 164, 1) 0%,
-      rgba(99, 73, 255, 0.37) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(95, 129, 164, 1) 0%,
+    rgba(99, 73, 255, 0.37) 100%
+  );
   transform: skew(5deg, -3deg);
   rotate: -20deg;
   mix-blend-mode: screen;
