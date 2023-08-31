@@ -5,7 +5,6 @@
     <div class="button-container">
       <button
         @click="goToPage(nextPage)"
-        :disabled="!isButtonEnabled"
         class="button"
         v-bind:style="{ display: displayNavigation }"
       >
@@ -138,19 +137,19 @@ const displayNavigation = computed(() => {
   }
 });
 
-// check if selection is complete
-const isButtonEnabled = computed(() => {
-  return complete.value;
-});
-
 const previousPage = computed(() => slides.value[index.value - 1]);
 const nextPage = computed(() => slides.value[index.value + 1]);
 
 function goToPage(page) {
-  // console.log(slides);
-  if (index.value >= 0) {
-    index.value = slides.value.indexOf(page);
-    navigateTo(`/${page}`);
+  if (complete.value === true) {
+    if (index.value >= 0) {
+      index.value = slides.value.indexOf(page);
+      navigateTo(`/${page}`);
+    }
+  } else {
+    popup.value.isOpen = true;
+    popup.value.content = `<p class=\"popup-headline\">Hinweis</p><p class=\"popup-text\"> Vervollständige die Auswahl, um weiter zu kommen.`;
+    console.log("Vervollständige die Auswahl, um weiter zu kommen.");
   }
 }
 
