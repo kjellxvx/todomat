@@ -20,92 +20,16 @@
       </button>
     </div>
   </div>
-
-  <div class="data-container">
-    <div>
-      <p>complete?</p>
-      <p>{{ complete }}</p>
-    </div>
-    <div>
-      <p>todos</p>
-      <p>{{ todos }}</p>
-    </div>
-    <div>
-      <p>entered data</p>
-      <p>{{ data }}</p>
-    </div>
-    <div>
-      <p>page index</p>
-      <p>{{ index }}</p>
-    </div>
-    <div>
-      <p>order</p>
-      <p>{{ order }}</p>
-    </div>
-
-    <div>
-      <p>local</p>
-      <p>{{ local }}</p>
-    </div>
-
-    <div>
-      <p>user token</p>
-      <p>{{ userToken }}</p>
-    </div>
-
-    <div>
-      <p>stored data</p>
-      <p>{{ storedData }}</p>
-    </div>
-  </div>
-
   <div v-if="popup.isOpen" class="popup-container">
     <div class="popup">
-      <!-- <div class="popup-close-button" @click="popup.isOpen = false">
-        <svg
-          width="31"
-          height="31"
-          viewBox="0 0 31 31"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            width="30.0886"
-            height="30.0886"
-            rx="15.0443"
-            transform="matrix(1 0 0 -1 0.911438 30.8496)"
-            fill="#EAEAEA"
-          />
-          <mask
-            id="mask0_231_126"
-            style="mask-type: alpha"
-            maskUnits="userSpaceOnUse"
-            x="3"
-            y="3"
-            width="25"
-            height="25"
-          >
-            <rect
-              x="3.96295"
-              y="3.37695"
-              width="24"
-              height="24"
-              fill="#D9D9D9"
-            />
-          </mask>
-          <g mask="url(#mask0_231_126)">
-            <path
-              d="M9.63065 23.4653L15.963 17.133L22.2953 23.4653L23.513 22.2476L17.1807 15.9153L23.513 9.58298L22.2953 8.36523L15.963 14.6975L9.63065 8.36523L8.4129 9.58298L14.7452 15.9153L8.4129 22.2476L9.63065 23.4653Z"
-              fill="black"
-            />
-          </g>
-        </svg>
-      </div> -->
       <div v-html="popup.content"></div>
       <div class="button-container">
         <div @click="popup.isOpen = false" class="popup-button">Schließen</div>
       </div>
     </div>
+  </div>
+  <div v-if="loading" class="loading-container">
+    <div class="loading-spinner"></div>
   </div>
 </template>
 
@@ -118,8 +42,7 @@ const index = useIndex();
 const order = useOrder();
 const local = useLocal();
 const popup = usePopup();
-const storedData = useStoredData();
-const userToken = useUserToken();
+const loading = useLoading();
 
 // Logic for rendering the page order
 const slides = computed(() => {

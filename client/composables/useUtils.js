@@ -48,6 +48,10 @@ export const useLocal = () => {
   return useState("local", () => false);
 };
 
+export const useLoading = () => {
+  return useState("loading", () => false);
+};
+
 export const usePopup = () => {
   return useState("popup", () => {
     return {

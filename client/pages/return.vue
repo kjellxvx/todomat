@@ -80,10 +80,6 @@
       />
       <button @click="Start" class="button">Einloggen</button>
     </div>
-
-    <div v-if="loading" class="loading-container">
-      <div class="loading-spinner"></div>
-    </div>
   </div>
   <div
     class="keyboard-container"
@@ -108,7 +104,7 @@ const keyboard = useKeyboard();
 const keyboardContainerRef = ref(null);
 
 const inputText = ref("");
-const loading = ref(false);
+const loading = useLoading(false);
 const data = useData();
 const todos = useTodos();
 const local = useLocal();

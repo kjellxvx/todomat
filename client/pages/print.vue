@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="custom">
+  <NuxtLayout name="bon">
     <div id="pdf-container" class="pdf-container">
       <div class="header-container">
         <p class="receipt">To-do-bon</p>
@@ -145,9 +145,7 @@
       <p class="footer">ein Projekt von xtopien.org</p>
       <p class="side-date">Tag der Konfiguration {{ formattedDate }}</p>
     </div>
-    <div v-if="loading" class="loading-container">
-      <div class="loading-spinner"></div>
-    </div>
+    <div v-if="loading" class="block-white"></div>
   </NuxtLayout>
 </template>
 
@@ -156,7 +154,7 @@ import html2pdf from "html2pdf.js";
 import QrcodeVue from "qrcode.vue";
 import { saveData } from "@/scripts/savedata.js";
 
-const loading = ref(false);
+const loading = useLoading(false);
 // const url = ref("http://localhost:3000/return");
 const url = ref("https://todomat.org/return");
 // const qrSize = 38.65;
@@ -185,10 +183,8 @@ async function Print() {
   // console.log("USER TOKEN");
   // console.log(userToken.value);
   await saveData(data.value, todos.value, userToken.value);
-
   url.value += `?code=${userToken.value}`; // Append the userToken.value to the home URL
   // console.log(url.value);
-
   exportToPDF();
   await delay(10000);
   navigateTo("/?local=true");
@@ -465,7 +461,16 @@ onMounted(() => {
   margin: 0 0 28px 0;
 }
 
-.loading-container {
+.block-white {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
   background-color: white;
 }
 

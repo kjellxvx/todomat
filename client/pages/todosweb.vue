@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="customtodosweb">
+  <NuxtLayout name="web">
     <div class="slide">
       <HeaderComp />
       <div class="textbox">

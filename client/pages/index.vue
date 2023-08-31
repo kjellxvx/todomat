@@ -68,11 +68,23 @@
 <script setup>
 const route = useRoute();
 const local = useLocal();
+const loading = useLoading();
+const index = useIndex();
+const data = useData();
+const todos = useTodos();
+const userToken = useUserToken();
 const start = () => {
   navigateTo("/start");
 };
 
 onMounted(() => {
+
+  index.value = 0;
+  data.value = {};
+  todos.value = {};
+  userToken.value = false;
+
+  loading.value = false
   if (route.query.local == "true") {
     local.value = true;
   } else {

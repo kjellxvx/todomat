@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="customtodosweb">
+  <NuxtLayout name="web">
     <div id="pdf-container" class="pdf-container">
       <div class="content-container">
         <div class="textbox">
@@ -17,10 +17,6 @@
         </div>
       </div>
     </div>
-
-    <div v-if="loading" class="loading-container">
-      <div class="loading-spinner"></div>
-    </div>
   </NuxtLayout>
 </template>
 
@@ -28,7 +24,7 @@
 import html2pdf from "html2pdf.js";
 import { saveData } from "@/scripts/savedata.js";
 
-const loading = ref(false);
+const loading = useLoading(false);
 
 const userToken = useUserToken();
 // const url = ref("http://localhost:3000/return");

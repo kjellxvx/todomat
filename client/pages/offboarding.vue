@@ -84,9 +84,6 @@
       <button v-else @click="Save" class="button">Daten speichern</button>
     </div>
   </div>
-  <div v-if="loading" class="loading-container">
-    <div class="loading-spinner"></div>
-  </div>
 </template>
 
 <script setup>
@@ -94,7 +91,7 @@ import { saveData } from "@/scripts/savedata.js";
 const userToken = useUserToken();
 const todos = useTodos();
 const data = useData();
-const loading = ref(false);
+const loading = useLoading();
 
 function Submit() {
   navigateTo("/submit");
