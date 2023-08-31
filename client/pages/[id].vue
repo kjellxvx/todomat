@@ -144,7 +144,6 @@ function transformedOptionParts(option) {
   });
 }
 
-
 // format breaks in labels
 function formattedQuestion(part) {
   const formattedText = part.replace(/\n/g, "<br>");
@@ -154,7 +153,6 @@ function formattedQuestion(part) {
   );
   return finishedText;
 }
-
 
 // format popup links inside of question headlines
 const transformedQuestionParts = computed(() => {
@@ -211,12 +209,6 @@ const storedInputs = computed(() => {
     }
   };
 });
-
-// function to open a popup
-function Info(key) {
-  popup.value.isOpen = true;
-  popup.value.content = slides[id].options[0][key].info;
-}
 
 // function to update the categories the user has already answered
 function updateCategories() {
