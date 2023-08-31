@@ -1,9 +1,11 @@
 import { ref, watchEffect } from "vue";
-import { useLocal } from "~/composables/useUtils";
+import { useLocal, useTimeout} from "~/composables/useUtils";
 
 export default function ({}) {
   const local = useLocal();
+  const timeout = useTimeout();
   const lastActivity = ref(Date.now());
+  const route = useRoute(); 
 
   // Update the last activity timestamp whenever there is user interaction
   const updateActivity = () => {
@@ -14,11 +16,11 @@ export default function ({}) {
   const checkInactivity = () => {
     const currentTime = Date.now();
     const inactivityDuration = currentTime - lastActivity.value;
-
-    if (local.value == true) {
+    if (local.value == true && route.name !== 'index') {
       if (inactivityDuration >= 240000) {
-        console.log("no activity detected");
-        navigateTo("/?local=true");
+        timeout.value=true
+      }else{
+        timeout.value=false
       }
     }
   };

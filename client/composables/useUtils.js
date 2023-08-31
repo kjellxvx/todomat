@@ -52,6 +52,10 @@ export const useLoading = () => {
   return useState("loading", () => false);
 };
 
+export const useTimeout = () => {
+  return useState("timeout", () => false);
+};
+
 export const usePopup = () => {
   return useState("popup", () => {
     return {

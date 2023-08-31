@@ -69,12 +69,12 @@ a{
 }
 
 html body {
-  /* width: 100vw;
-  height: 100svh; */
+  width: 100vw;
+  height: 100svh;
 
-  width: 1024px;
+  /* width: 1024px;
   height: 768px;
-  border: black 1px solid;
+  border: black 1px solid; */
 
   display: flex;
   flex-direction: column;
@@ -557,6 +557,19 @@ input[type="radio"]:checked::before {
   width: 40px;
   height: 40px;
   animation: spin 2s linear infinite;
+}
+
+.timeout-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(5px);
 }
 
 .multi-choice {

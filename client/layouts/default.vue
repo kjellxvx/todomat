@@ -31,11 +31,19 @@
   <div v-if="loading" class="loading-container">
     <div class="loading-spinner"></div>
   </div>
+  <div v-if="timeout" class="timeout-container">
+    <div class="popup">
+      <p class="popup-headline">Bist du noch da?</p>
+      <p class="popup-text">
+        Deine Auswahl wird in {{ countdown }} Sekunden zurückgesetzt.
+      </p>
+      <button class="popup-button">Ich bin noch da!</button>
+    </div>
+  </div>
 </template>
 
 <script setup>
 const complete = useComplete();
-const todos = useTodos();
 const data = useData();
 const route = useRoute();
 const index = useIndex();
@@ -43,6 +51,23 @@ const order = useOrder();
 const local = useLocal();
 const popup = usePopup();
 const loading = useLoading();
+
+const countdown = ref(60);
+const timeout = useTimeout();
+
+const intervalId = setInterval(() => {
+  if (timeout.value === true) {
+    countdown.value--;
+    if (countdown.value === 0) {
+      clearInterval(intervalId);
+      navigateTo("/?local=true");
+      timeout.value = false;
+      countdown.value = 60;
+    }
+  } else {
+    countdown.value = 60;
+  }
+}, 1000);
 
 // Logic for rendering the page order
 const slides = computed(() => {
@@ -144,8 +169,7 @@ onMounted(() => {});
 </script>
 
 <style>
-
-.local-indicator{
+.local-indicator {
   position: absolute;
   width: 3px;
   height: 3px;
@@ -154,7 +178,6 @@ onMounted(() => {});
   top: 10px;
   left: 10px;
 }
-
 
 .data-container {
   height: 0px;
@@ -165,7 +188,7 @@ onMounted(() => {});
   flex-direction: column;
   align-items: center;
   width: calc(100% - 6em);
-  height: calc(100% - 4.6em); 
+  height: calc(100% - 4.6em);
   margin: 2.3em 3em;
   max-height: 768px;
 }
@@ -260,14 +283,13 @@ p {
   }
 
   h2 {
-  font-family: "IBMPlexSans-Medium", sans-serif;
-  max-width: 100%;
-  font-size: 26px;
-  text-align: left;
-  margin: 0px;
-  padding-bottom: 30px;
-}
-
+    font-family: "IBMPlexSans-Medium", sans-serif;
+    max-width: 100%;
+    font-size: 26px;
+    text-align: left;
+    margin: 0px;
+    padding-bottom: 30px;
+  }
 
   p {
     font-size: 20px;
@@ -278,8 +300,8 @@ p {
   }
 
   .page-container {
-    width: calc(100% - 2em); 
-    height: calc(100% - 22.2476em); 
+    width: calc(100% - 2em);
+    height: calc(100% - 22.2476em);
     margin: 1.2em 1em;
   }
 }
