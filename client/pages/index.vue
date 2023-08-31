@@ -72,19 +72,50 @@ const loading = useLoading();
 const index = useIndex();
 const data = useData();
 const todos = useTodos();
+const complete = useComplete();
+const progress = useProgress();
+const order = useOrder();
 const userToken = useUserToken();
 const start = () => {
   navigateTo("/start");
 };
 
 onMounted(() => {
-
-  index.value = 0;
-  data.value = {};
+  complete.value = false;
   todos.value = {};
+  data.value = {};
+  progress.value = [[0, 0, 0, 0, 0, 0]];
+  index.value = 0;
   userToken.value = false;
+  loading.value = false;
+  order.value = [
+    "menu",
+    "A1",
+    "A2",
+    "menu",
+    "B1",
+    "menu",
+    "C1",
+    "C2",
+    "C3",
+    "menu",
+    "D1",
+    "D2",
+    "D3",
+    "D4",
+    "menu",
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "menu",
+    "F1",
+    "F2",
+    "F3",
+    "menu",
+  ];
 
-  loading.value = false
+
   if (route.query.local == "true") {
     local.value = true;
   } else {

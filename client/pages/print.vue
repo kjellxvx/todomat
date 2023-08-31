@@ -139,8 +139,47 @@
       </div>
       <div v-if="noTodos == true">
         <p class="p3">
-          Du hast alle Fragen so beantwortet, dass es keine Todos gibt.
+          Du hast alle Fragen so beantwortet, dass es keine Todos gibt. Deshalb
+          schlägt der Todomat dir das folgende allgemeine To-do vor.
         </p>
+        <div class="bottom-container">
+          <div class="todo-mark-container">
+            <div class="marks-top">
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+            </div>
+          </div>
+          <div class="todos-container">
+            <div class="todo">
+              <div class="checkbox"></div>
+              <div class="todo-text">
+                <p class="p-todo">
+                  Überlege dir, ob es Dinge gibt, die du vor deinem Tod noch
+                  erreicht oder erlebt haben möchtest. Mache eine Liste und tue
+                  noch heute etwas, das dich einem dieser Wünsche näher bringt.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="todo-mark-container">
+            <div class="marks-bottom">
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+              <div class="mark">
+                <div class="mark-vertical"></div>
+                <div class="mark-horizontal"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <p class="footer">ein Projekt von xtopien.org</p>
       <p class="side-date">Tag der Konfiguration {{ formattedDate }}</p>
