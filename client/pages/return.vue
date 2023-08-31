@@ -13,55 +13,13 @@
     "
   />
   <div class="slide">
-    <HeaderComp />
-    <div class="close-button-container">
-      <div class="close-button" @click="Close">
-        <svg
-          width="31"
-          height="31"
-          viewBox="0 0 31 31"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            width="30.0886"
-            height="30.0886"
-            rx="15.0443"
-            transform="matrix(1 0 0 -1 0.911438 30.8496)"
-            fill="#EAEAEA"
-          />
-          <mask
-            id="mask0_231_126"
-            style="mask-type: alpha"
-            maskUnits="userSpaceOnUse"
-            x="3"
-            y="3"
-            width="25"
-            height="25"
-          >
-            <rect
-              x="3.96295"
-              y="3.37695"
-              width="24"
-              height="24"
-              fill="#D9D9D9"
-            />
-          </mask>
-          <g mask="url(#mask0_231_126)">
-            <path
-              d="M9.63065 23.4653L15.963 17.133L22.2953 23.4653L23.513 22.2476L17.1807 15.9153L23.513 9.58298L22.2953 8.36523L15.963 14.6975L9.63065 8.36523L8.4129 9.58298L14.7452 15.9153L8.4129 22.2476L9.63065 23.4653Z"
-              fill="black"
-            />
-          </g>
-        </svg>
-      </div>
-    </div>
+    <HeaderComp /> 
+    <CloseButton />
     <div class="textbox">
       <h1>
         Wilkommen zurück <br />
         beim Todomat!
       </h1>
-
       <p>
         Bitte logge dich hier mit deinem 8-stelligen Code ein, den du unten
         <br />
@@ -93,6 +51,8 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
 import SimpleKeyboard from "../components/SimpleKeyboard";
 import pdfPath from "~/assets/rip/RIP_Todomat.pdf";
 
@@ -121,11 +81,6 @@ function activateKeyboard() {
   } else {
     return "none";
   }
-}
-
-function onInputChange(event) {
-  const input = event.target.value;
-  // console.log("Input changed directly:", input);
 }
 
 function onInputFocus() {
@@ -205,10 +160,6 @@ const handleClickOutside = (event) => {
     // console.log("Clicked outside the keyboard");
   }
 };
-
-function Close() {
-  navigateTo("/start");
-}
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));

@@ -52,9 +52,10 @@
 </template>
 
 <script setup>
-const local = useLocal();
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
 
-console.log(local.value);
+const local = useLocal();
 
 function Weiter() {
   navigateTo("/onboarding");
@@ -62,10 +63,6 @@ function Weiter() {
 function Return() {
   navigateTo("/return");
 }
-// function Info(htmlContent) {
-//   popup.value.isOpen = true;
-//   popup.value.content = htmlContent;
-// }
 function About() {
   navigateTo("/about");
 }

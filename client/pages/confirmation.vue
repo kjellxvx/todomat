@@ -72,6 +72,9 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
+
 const local = useLocal();
 const percent = ref();
 const progress = useProgress();

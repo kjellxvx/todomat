@@ -70,6 +70,9 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
+
 const todos = useTodos();
 const selectedTodo = useSelectedTodo();
 const todoTopics = ref([]);

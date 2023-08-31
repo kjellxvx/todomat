@@ -41,6 +41,9 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
+
 const popup = usePopup();
 
 function navigate(path) {

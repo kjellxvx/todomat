@@ -88,7 +88,10 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
 import { saveData } from "@/scripts/savedata.js";
+
 const userToken = useUserToken();
 const todos = useTodos();
 const data = useData();

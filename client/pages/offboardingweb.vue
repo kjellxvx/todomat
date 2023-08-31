@@ -17,6 +17,9 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
+
 function Todos() {
   navigateTo("/todosweb");
 }

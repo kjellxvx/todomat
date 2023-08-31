@@ -26,6 +26,9 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
+
 const todos = useTodos();
 
 function category(index) {

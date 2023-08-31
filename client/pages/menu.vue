@@ -92,6 +92,9 @@
 </template>
 
 <script setup>
+import HeaderComp from "../components/HeaderComp";
+import CloseButton from "../components/CloseButton";
+
 const index = useIndex();
 const order = useOrder();
 const data = useData();
