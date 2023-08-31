@@ -61,7 +61,9 @@
 
 <script setup>
 const progress = useProgress();
+console.log(progress.value)
 const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
+console.log(totalProgress)
 </script>
 
 <style scoped>

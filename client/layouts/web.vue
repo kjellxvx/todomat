@@ -15,6 +15,7 @@ html {
   max-height: 100%;
   width: 100%;
   overflow: scroll;
+  padding-top: 60px;
 }
 
 @media only screen and (max-width: 1020px) {

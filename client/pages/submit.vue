@@ -1,7 +1,7 @@
 <template>
   <div class="slide">
     <HeaderComp />
-
+    <CloseButton />
     <div v-if="enabledMenuItems.length != 0" class="textbox">
       <h1>Wähle deine ersten To-dos!</h1>
       <p>

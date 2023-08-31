@@ -1,6 +1,7 @@
 <template>
   <div class="slide">
     <HeaderComp />
+    <CloseButton />
     <h1>{{ headline }}</h1>
     <h2>
       <template v-if="slides[id].info">

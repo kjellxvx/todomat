@@ -1,6 +1,7 @@
 <template>
   <div class="slide">
     <HeaderComp />
+    <CloseButton />
     <div class="textbox">
       <div></div>
       <h1>So nutzt du den Todomaten</h1>
@@ -40,21 +41,9 @@
 </template>
 
 <script setup>
-import { useUserToken } from "../composables/useUtils";
-
-const index = useIndex();
-const todos = useTodos();
-const data = useData();
-const userToken = useUserToken();
 const popup = usePopup();
 
 function navigate(path) {
-  if (path === "restart") {
-    index.value = 0;
-    data.value = {};
-    todos.value = {};
-    userToken.value = false;
-  }
   navigateTo(`/${path}`);
 }
 

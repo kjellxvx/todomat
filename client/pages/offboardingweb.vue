@@ -1,6 +1,7 @@
 <template>
   <div class="slide">
     <HeaderComp />
+    <CloseButton />
     <div class="textbox">
       <div></div>
       <h1>Gratulation!</h1>

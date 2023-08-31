@@ -1,6 +1,7 @@
 <template>
   <div class="slide">
     <HeaderComp />
+    <CloseButton />
     <h1>Prima!</h1>
 
     <h2 v-if="percent != 100" class="progress-text">
@@ -71,8 +72,6 @@
 </template>
 
 <script setup>
-import HeaderComp from "../components/HeaderComp";
-
 const local = useLocal();
 const percent = ref();
 const progress = useProgress();

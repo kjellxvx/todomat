@@ -2,6 +2,7 @@
   <NuxtLayout name="web">
     <div class="slide">
       <HeaderComp />
+      <CloseButton />
       <div class="textbox">
         <h1>ToDo’s</h1>
         <p v-if="todos">Hier findest du deine aufgelisteten ToDo’s</p>

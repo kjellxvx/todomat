@@ -50,7 +50,6 @@ const order = useOrder();
 const local = useLocal();
 const popup = usePopup();
 const loading = useLoading();
-
 const countdown = ref(60);
 const timeout = useTimeout();
 
