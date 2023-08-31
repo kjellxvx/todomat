@@ -60,7 +60,7 @@
     <div class="text">
       <p class="h1-index">Du wirst sterben.</p>
       <p class="h2-index">Plane jetzt deinen Abschied.</p>
-      <button @click="start" class="button">Start</button>
+      <button @click="navigate('start')" class="button">Start</button>
     </div>
   </div>
 </template>
@@ -76,8 +76,9 @@ const complete = useComplete();
 const progress = useProgress();
 const order = useOrder();
 const userToken = useUserToken();
-const start = () => {
-  navigateTo("/start");
+
+const navigate = (path) => {
+  navigateTo(`/${path}`);
 };
 
 onMounted(() => {
@@ -114,8 +115,6 @@ onMounted(() => {
     "F3",
     "menu",
   ];
-
-
   if (route.query.local == "true") {
     local.value = true;
   } else {

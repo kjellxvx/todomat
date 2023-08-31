@@ -92,7 +92,7 @@ const selection = ref(null);
 const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 percent.value = ((100 / 6) * totalProgress).toFixed(0);
 
-const getNavigatePath = function () {
+const getNavigatePath = () => {
   if (selection.value === "option1") {
     if (local.value === true) {
       return "offboarding";
@@ -104,9 +104,9 @@ const getNavigatePath = function () {
   }
 };
 
-function navigate() {
+const navigate = () => {
   navigateTo(`/${getNavigatePath()}`);
-}
+};
 </script>
 
 <style scoped>

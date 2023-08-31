@@ -5,9 +5,7 @@
     <div class="textbox">
       <div></div>
       <h1>Herzlichen Glückwunsch.</h1>
-      <p>
-        Du hast dich heute mit deinem Tod auseinandergesetzt. 
-      </p>
+      <p>Du hast dich heute mit deinem Tod auseinandergesetzt.</p>
     </div>
     <div class="info-container">
       <div class="info-left">
@@ -79,7 +77,7 @@
       </div>
     </div>
     <div class="button-container">
-      <button v-if="!userToken" @click="Submit" class="button">
+      <button v-if="!userToken" @click="navigate('submit')" class="button">
         Weiter
       </button>
       <button v-else @click="Save" class="button">Daten speichern</button>
@@ -97,15 +95,15 @@ const todos = useTodos();
 const data = useData();
 const loading = useLoading();
 
-function Submit() {
-  navigateTo("/submit");
-}
+const navigate = (path) => {
+  navigateTo(`/${path}`);
+};
 
 async function Save() {
   loading.value = true;
   await saveData(data.value, todos.value, userToken.value);
   await delay(5000);
-  navigateTo("/?local=true");
+  navigate("?local=true");
 }
 
 function delay(ms) {

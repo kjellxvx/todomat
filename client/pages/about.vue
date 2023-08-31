@@ -146,9 +146,9 @@
 <script setup>
 import HeaderComp from "../components/HeaderComp";
 
-function navigate(path) {
+const navigate = (path) => {
   navigateTo(`/${path}`);
-}
+};
 </script>
 
 <style scoped>

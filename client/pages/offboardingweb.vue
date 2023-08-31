@@ -11,7 +11,9 @@
       </p>
     </div>
     <div class="button-container">
-      <button @click="Todos" class="button">ToDos jetzt anschauen</button>
+      <button @click="navigate('todosweb')" class="button">
+        ToDos jetzt anschauen
+      </button>
     </div>
   </div>
 </template>
@@ -20,11 +22,10 @@
 import HeaderComp from "../components/HeaderComp";
 import CloseButton from "../components/CloseButton";
 
-function Todos() {
-  navigateTo("/todosweb");
-}
+const navigate = (path) => {
+  navigateTo(`/${path}`);
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
 -

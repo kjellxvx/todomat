@@ -26,13 +26,15 @@
         Der Todomat ist der erste Hinterlassenschafts-Konfigurator der Welt. Er
         wurde entwickelt, um deinen Abschied selbstbestimmter und nachhaltiger
         zu gestalten.
-        <a @click="About" class="link">Mehr zu den Benefits des Todomaten.</a>
+        <a @click="navigate('about')" class="link">Mehr zu den Benefits des Todomaten.</a>
       </p>
     </div>
     <div class="button-container">
       <!-- <button @click="Weiter" class="button">Weiter</button> -->
-      <button v-if="local" @click="Weiter" class="button">Weiter</button>
-      <button @click="Return" class="button-white">
+      <button v-if="local" @click="navigate('onboarding')" class="button">
+        Weiter
+      </button>
+      <button @click="navigate('return')" class="button-white">
         Code Eingeben
         <svg
           width="30"
@@ -57,15 +59,9 @@ import CloseButton from "../components/CloseButton";
 
 const local = useLocal();
 
-function Weiter() {
-  navigateTo("/onboarding");
-}
-function Return() {
-  navigateTo("/return");
-}
-function About() {
-  navigateTo("/about");
-}
+const navigate = (path) => {
+  navigateTo(`/${path}`);
+};
 </script>
 
 <style scoped>
@@ -74,7 +70,6 @@ function About() {
 }
 
 .textbox p {
-
 }
 
 .button-container {

@@ -83,8 +83,10 @@
       </div>
     </div>
     <div class="button-container">
-      <button @click="Auschecken" class="button">Auschecken</button>
-      <button v-if="!local" @click="viewTodos" class="button-white">
+      <button @click="navigate('offboarding')" class="button">
+        Auschecken
+      </button>
+      <button v-if="!local" @click="navigate('todosweb')" class="button-white">
         To-Dos ansehen
       </button>
     </div>
@@ -136,25 +138,30 @@ const menuItems = [
   },
 ];
 
-function navigate(letter) {
-  letter = letter + "1";
-  index.value = order.value.indexOf(letter);
-  navigateTo(`/${letter}`);
-}
-
-function viewTodos() {
-  navigateTo(`/todosweb`);
-}
-
-
-
-function Auschecken() {
-  if (local.value == true) {
-    navigateTo("/offboarding");
+const getNavigatePath = (path) => {
+  if (path === "todosweb" || path === "offboarding") {
+    if (path === "todosweb") {
+      return "todosweb";
+    }
+    if (path === "offboarding") {
+      if (local.value == true) {
+        return "offboarding";
+      } else {
+        return "offboardingweb";
+      }
+    }
   } else {
-    navigateTo("/offboardingweb");
+    console.log(path);
+    const letter = path + "1";
+    index.value = order.value.indexOf(letter);
+    return letter;
   }
-}
+};
+
+const navigate = (path) => {
+  console.log(getNavigatePath(path));
+  navigateTo(`/${getNavigatePath(path)}`);
+};
 
 const getButtonLabel = (letter) => {
   if (isCategoryComplete(letter)) {

@@ -46,9 +46,9 @@ import CloseButton from "../components/CloseButton";
 
 const popup = usePopup();
 
-function navigate(path) {
+const navigate = (path) => {
   navigateTo(`/${path}`);
-}
+};
 
 function Info(htmlContent) {
   popup.value.isOpen = true;
