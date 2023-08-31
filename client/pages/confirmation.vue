@@ -67,7 +67,7 @@
     </div>
   </div>
   <div class="button-container">
-    <button @click="Navigate" class="button">Bestätigen</button>
+    <button @click="navigate" class="button">Bestätigen</button>
   </div>
 </template>
 
@@ -88,21 +88,24 @@ const adjPercent = computed(() => {
 });
 
 const selection = ref(null);
-// console.log(progress.value);
 
 const totalProgress = progress.value.reduce((sum, value) => sum + value, 0);
 percent.value = ((100 / 6) * totalProgress).toFixed(0);
 
-function Navigate() {
+const getNavigatePath = function () {
   if (selection.value === "option1") {
-    if (local.value == true) {
-      navigateTo("/offboarding");
+    if (local.value === true) {
+      return "offboarding";
     } else {
-      navigateTo("/offboardingweb");
+      return "offboardingweb";
     }
   } else if (selection.value === "option2") {
-    navigateTo("/menu");
+    return "menu";
   }
+};
+
+function navigate() {
+  navigateTo(`/${getNavigatePath()}`);
 }
 </script>
 
