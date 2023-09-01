@@ -34,7 +34,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  overflow-x:hidden;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 .page-container {
@@ -43,8 +43,8 @@ body {
   max-width: 1020px;
   margin: 0 auto 0 auto;
   margin: auto;
+  height: fit-content;
 }
-
 
 .slide {
   width: 100%;

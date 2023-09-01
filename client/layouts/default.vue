@@ -340,6 +340,7 @@ p {
   .page-container{
     padding:  1.5em 1.5em;
     max-height: fit-content;
+    height: fit-content;
 
   }
  
