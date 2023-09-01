@@ -67,13 +67,13 @@ body {
 @media only screen and (max-width: 1020px) {
   html {
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     margin: 0;
   }
   body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     overflow-x: hidden;
     overflow-y: auto;
   }

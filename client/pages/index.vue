@@ -398,7 +398,7 @@ a {
 
   .sidebar {
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
   }
   .button {
     font-size: 21.1px;
