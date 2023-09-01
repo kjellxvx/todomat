@@ -357,7 +357,7 @@ a {
 
 @media only screen and (max-width: 1020px) {
   .wrapper {
-    height: 100%;
+    height: 100svh;
     max-height: calc(768px - 4.6em);
   }
 
