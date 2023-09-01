@@ -1,4 +1,5 @@
 <template>
+  <div v-if="menu === true" class="blur-effect"></div>
   <div class="background">
     <div class="first-circle"></div>
     <div class="second-circle"></div>
@@ -6,6 +7,62 @@
     <div class="forth-circle"></div>
     <div class="fifth-circle"></div>
   </div>
+
+  <div v-if="local === false" class="menu">
+    <div v-if="menu === true" class="sidebar">
+      <div class="sidebar-header">
+        <img src="../assets/svg/logo.svg" alt="Todomat Logo" />
+        <img
+          class="menu-close-button"
+          @click="menu = false"
+          src="../assets/svg/close-button.svg"
+          alt="Close Button"
+        />
+      </div>
+      <div class="sidebar-menu">
+        <div class="options">
+          <div class="sidebar-menu-left">
+            <div class="arrow-item"><img src="../assets/svg/arrow.svg" /></div>
+            <div class="arrow-item"><img src="../assets/svg/arrow.svg" /></div>
+            <div class="arrow-item"><img src="../assets/svg/arrow.svg" /></div>
+          </div>
+          <div class="sidebar-menu-right">
+            <div @click="navigate('downloads')" class="menu-item"><p>Downloadmaterialien</p></div>
+            <div @click="navigate('hintergrundinformationen')" class="menu-item"><p>Hintergrundinformationen</p></div>
+            <div @click="navigate('datenschutz')" class="menu-item"><p>Hinweise zum Datenschutz</p></div>
+          </div>
+        </div>
+        <div class="instagram">
+          <a href="https://www.instagram.com/urbanextopien/" target="_blank" 
+            ><img src="../assets/svg/instagram.svg" alt="Instagram Icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div v-if="menu === false" @click="menu = true" class="hamburger">
+      <svg
+        width="35"
+        height="24"
+        viewBox="0 0 35 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.625 2.41667C0.625 1.35812 1.46447 0.5 2.5 0.5H32.5C33.5355 0.5 34.375 1.35812 34.375 2.41667C34.375 3.47521 33.5355 4.33333 32.5 4.33333H2.5C1.46447 4.33333 0.625 3.47521 0.625 2.41667Z"
+          fill="white"
+        />
+        <path
+          d="M0.625 12C0.625 10.9415 1.46447 10.0833 2.5 10.0833H32.5C33.5355 10.0833 34.375 10.9415 34.375 12C34.375 13.0585 33.5355 13.9167 32.5 13.9167H2.5C1.46447 13.9167 0.625 13.0585 0.625 12Z"
+          fill="white"
+        />
+        <path
+          d="M0.625 21.5833C0.625 20.5248 1.46447 19.6667 2.5 19.6667H32.5C33.5355 19.6667 34.375 20.5248 34.375 21.5833C34.375 22.6419 33.5355 23.5 32.5 23.5H2.5C1.46447 23.5 0.625 22.6419 0.625 21.5833Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+  </div>
+
   <div class="slide">
     <div class="logo">
       <svg
@@ -76,6 +133,7 @@ const complete = useComplete();
 const progress = useProgress();
 const order = useOrder();
 const userToken = useUserToken();
+const menu = ref(false);
 
 const navigate = (path) => {
   navigateTo(`/${path}`);
@@ -186,6 +244,101 @@ onMounted(() => {
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.menu {
+  position: fixed;
+  left: 50px;
+  top: 60px;
+  z-index: 2;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100vh;
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blur-effect {
+  position: absolute;
+  top: 0;
+  left: 440px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px;
+}
+
+.sidebar-menu {
+  margin: auto 15px auto 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu-right {
+  flex: 1;
+  padding: 0 5px 0 20px;
+}
+.menu-close-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-item {
+  padding: 18px 0 18px 0;
+  border-top: solid;
+  cursor: pointer;
+}
+
+.arrow-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item:last-child {
+  border-bottom: solid;
+}
+
+.options {
+  display: flex;
+}
+
+.instagram {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.instagram img {
+  width: 30px;
+  height: 30px;
+}
+
+a {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1020px) {

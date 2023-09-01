@@ -5,16 +5,17 @@
 <script setup></script>
 
 <style>
+
 html {
   height: 100svh;
   width: 100%;
+  overflow: scroll;
 }
 
 .page-container {
   height: 100svh;
   max-height: 100%;
   width: 100%;
-  overflow: scroll;
   padding-top: 60px;
 }
 
