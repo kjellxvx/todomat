@@ -87,7 +87,7 @@
         Auschecken
       </button>
       <button v-if="!local" @click="navigate('todosweb')" class="button-white">
-        To-Dos ansehen
+        To-dos ansehen
       </button>
     </div>
   </div>
