@@ -57,6 +57,7 @@ function category(index) {
 
 async function Save() {
   // navigateTo("/printweb");
+  loading.value = true;
   await saveData(data.value, todos.value, userToken.value);
   await delay(10000);
   navigateTo("/");
