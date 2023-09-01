@@ -18,7 +18,7 @@
     </div>
 
     <div class="button-container">
-      <button @click="navigate('/')" class="button-white">Zurück</button>
+      <button @click="navigate('')" class="button-white">Zurück</button>
     </div>
   </NuxtLayout>
 </template>

@@ -68,31 +68,7 @@ a{
   --form-control-color: var(--primary-color: );
 }
 
-html body {
-  width: 100vw;
-  height: 100svh;
 
-  /* width: 1024px;
-  height: 768px;
-  border: black 1px solid; */
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  overflow: hidden;
-  background: white;
-}
-
-#__nuxt {
-  max-width: 1020px;
-  width: 100%;
-  height: 100svh;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
 
 .first-circle {
   position: absolute;
@@ -586,13 +562,7 @@ input[type="radio"]:checked::before {
 }
 
 @media only screen and (max-width: 1020px) {
-  #__nuxt {
-    align-items: normal;
-  }
 
-  html body {
-    overflow: auto;
-  }
   .slide {
     position: relative;
   }

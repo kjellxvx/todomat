@@ -167,6 +167,34 @@ onMounted(() => {});
 </script>
 
 <style>
+
+html body {
+  width: 100vw;
+  height: 100svh;
+
+  /* width: 1024px;
+  height: 768px;
+  border: black 1px solid; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+  background: white;
+}
+
+#__nuxt {
+  max-width: 1020px;
+  width: 100%;
+  height: 100svh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+
 .local-indicator {
   position: absolute;
   width: 3px;
@@ -276,6 +304,14 @@ p {
 }
 
 @media only screen and (max-width: 1020px) {
+
+  #__nuxt {
+    align-items: normal;
+  }
+
+  html body {
+    overflow: auto;
+  }
   h1 {
     font-size: 35px;
   }
