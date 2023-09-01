@@ -18,7 +18,7 @@
       </div>
 
       <div class="button-container">
-        <button @click="Print" class="button">Beenden & Drucken</button>
+        <button v-if="userToken" @click="Save" class="button">Speichern</button>
         <button @click="Back" class="button-white">Zurück</button>
       </div>
     </div>
@@ -28,8 +28,11 @@
 <script setup>
 import HeaderComp from "../components/HeaderComp";
 import CloseButton from "../components/CloseButton";
+import { saveData } from "@/scripts/savedata.js";
 
 const todos = useTodos();
+const userToken = useUserToken();
+const data = useData();
 
 function category(index) {
   if (index.includes("A")) {
@@ -52,12 +55,23 @@ function category(index) {
   }
 }
 
-function Print() {
+async function Save() {
   navigateTo("/printweb");
+  await saveData(data.value, todos.value, userToken.value);
+  await delay(10000);
+  navigateTo("/");
 }
+
+// function Print() {
+//   navigateTo("/printweb");
+// }
 
 function Back() {
   navigateTo("/menu");
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 onMounted(() => {

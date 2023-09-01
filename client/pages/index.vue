@@ -207,6 +207,7 @@ onMounted(() => {
   padding: 5px 20px 5px 20px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1;
+  cursor: pointer;
 }
 
 .button-grey svg {
