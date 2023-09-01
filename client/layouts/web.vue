@@ -77,7 +77,6 @@ body {
   }
 
   .h1-web {
-    width: 240px;
     font-size: 35px;
     hyphens: auto;
   }
