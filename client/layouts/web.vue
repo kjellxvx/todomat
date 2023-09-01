@@ -21,6 +21,10 @@
   max-height: fit-content;
 } */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   width: 100vw;
   height: 100vh;
@@ -35,11 +39,12 @@ body {
 }
 .page-container {
   padding: 2.3em 3em;
-  max-width: calc(1020px - 6em);
-  height:fit-content;
-  max-height: fit-content;
+  /* max-width: calc(1020px - 6em); */
+  max-width: 1020px;
+  margin: 0 auto 0 auto;
   margin: auto;
 }
+
 
 .slide {
   width: 100%;
@@ -65,30 +70,6 @@ body {
 }
 
 @media only screen and (max-width: 1020px) {
-  html {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-  }
-  body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  .page-container {
-    padding: 2em 1.5em;
-    width: calc(100vw - 3em);
-
-    max-height: none;
-    height: fit-content;
-    margin: auto;
-  }
-
-  .slide {
-    width: 100%;
-  }
   .h1-web {
     width: 240px;
     font-size: 35px;

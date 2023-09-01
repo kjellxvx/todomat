@@ -167,6 +167,9 @@ onMounted(() => {});
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+}
 html {
   width: 100vw;
   height: 100vh;
@@ -179,13 +182,19 @@ body {
   overflow: auto;
 }
 .page-container {
-  margin: 2.3em 3em;
+  padding:  2.3em 3em;
+  max-width: 1020px;
+  max-height: 768px;
+  margin: 0 auto 0 auto;
+
   /* width: 1020px;
   height: 768px; */
+  /* margin: 2.3em 3em;
+
   max-width: calc(1020px - 6em);
   max-height: calc(768px - 4.6em);
   overflow: hidden;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 0 auto; */
 }
 
 .slide {
@@ -327,32 +336,13 @@ p {
 }
 
 @media only screen and (max-width: 1020px) {
-  html {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-  }
-  body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  .page-container {
-    padding: 2em 1.5em;
-    width: calc(100vw - 3em);
-    height: calc(100vh - 4em);
-    max-height: calc(100vh - 4em);
-    margin: auto;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
 
-  .slide {
-    width: 100%;
-  }
+  .page-container{
+    padding:  1.5em 1.5em;
+    max-height: fit-content;
 
+  }
+ 
   h1 {
     font-size: 35px;
   }

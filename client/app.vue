@@ -207,8 +207,9 @@ a{
   border-radius: 2em;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 15.89px;
-  padding: 0.3em 2em 0.3em 2em;
-  margin-right: 10px;
+  /* padding: 0.3em 1.3em 0.3em 1.3em;*/
+  padding: 4px 15px 4px 15px;
+  margin-right: 10px; 
   cursor: pointer;
 }
 
@@ -220,7 +221,8 @@ a{
   border-radius: 2em;
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 15.89px;
-  padding: 0.3em 1.3em 0.3em 1.3em;
+  padding: 4px 15px 4px 15px;
+  /* padding: 0.3em 1.3em 0.3em 1.3em; */
   cursor: pointer;
 }
 
@@ -479,7 +481,7 @@ input[type="radio"]:checked::before {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  top: -35px;
+  top: -8px;
 }
 
 .close-button {

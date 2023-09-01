@@ -20,7 +20,7 @@
 }
 
 .header {
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 1020px) {

@@ -152,7 +152,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.buttons{
+.buttons {
   display: flex;
   flex-direction: column;
 }
@@ -225,14 +225,18 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin: auto;
+  height: calc(100vh - 4.6em);
+}
+
+.wrapper {
+  height: calc(100vh - 4.6em);
 }
 
 .headbar {
   position: absolute;
   top: 0;
   left: 0;
+  /* width: 100%; */
   width: calc(100vw - 5.2em);
   display: flex;
   justify-content: flex-start;
@@ -356,40 +360,8 @@ a {
 }
 
 @media only screen and (max-width: 1020px) {
-  .wrapper {
-    height: 100svh;
-    max-height: calc(768px - 4.6em);
-  }
-
-  .headbar {
-  margin: 40px 42px 32px 42px;
-  }
-
-  .text{
-    margin-top: 70px;
-  }
-
-  .local-text{
-    margin-top: 40px;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 0;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-  }
-
   .blur-effect {
     display: none;
-  }
-
-  body {
-    overflow: hidden;
   }
 
   .logo {
