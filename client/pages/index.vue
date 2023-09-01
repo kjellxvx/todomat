@@ -1,6 +1,5 @@
 <template>
   <div v-if="hamMenu === true" class="blur-effect"></div>
-
   <div class="background">
     <div class="first-circle"></div>
     <div class="second-circle"></div>
@@ -8,83 +7,88 @@
     <div class="forth-circle"></div>
     <div class="fifth-circle"></div>
   </div>
-
-  <div  v-if="local === false" class="headbar">
-    <div v-if="hamMenu === false" @click="hamMenu = true" class="hamburger">
-      <img src="../assets/svg/hamburger.svg" alt="" />
+  <div v-if="hamMenu === true" class="sidebar">
+    <div class="sidebar-header">
+      <img src="../assets/svg/logo.svg" alt="Todomat Logo" />
+      <img
+        class="menu-close-button"
+        @click="hamMenu = false"
+        src="../assets/svg/close-button.svg"
+        alt="Close Button"
+      />
     </div>
-    <div class="logo">
+    <div class="sidebar-menu">
+      <div class="options">
+        <div class="sidebar-menu-left">
+          <div class="arrow-item">
+            <img src="../assets/svg/arrow.svg" />
+          </div>
+          <div class="arrow-item">
+            <img src="../assets/svg/arrow.svg" />
+          </div>
+          <div class="arrow-item">
+            <img src="../assets/svg/arrow.svg" />
+          </div>
+        </div>
+        <div class="sidebar-menu-right">
+          <div @click="navigate('downloads')" class="menu-item">
+            <p>Downloadmaterialien</p>
+          </div>
+          <div @click="navigate('hintergrundinformationen')" class="menu-item">
+            <p>Hintergrundinformationen</p>
+          </div>
+          <div @click="navigate('datenschutz')" class="menu-item">
+            <p>Hinweise zum Datenschutz</p>
+          </div>
+        </div>
+      </div>
+      <div class="instagram">
+        <a href="https://www.instagram.com/urbanextopien/" target="_blank"
+          ><img src="../assets/svg/instagram.svg" alt="Instagram Icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div v-if="local === false" class="headbar">
+      <div v-if="hamMenu === false" @click="hamMenu = true" class="hamburger">
+        <img src="../assets/svg/hamburger.svg" alt="" />
+      </div>
+      <div class="logo">
+        <img src="../assets/svg/logo.svg" alt="" />
+      </div>
+    </div>
+    <div v-if="local === true" class="local-logo">
       <img src="../assets/svg/logo.svg" alt="" />
     </div>
-  </div>
-
-  <div class="menu">
-    <div v-if="hamMenu === true" class="sidebar">
-      <div class="sidebar-header">
-        <img src="../assets/svg/logo.svg" alt="Todomat Logo" />
-        <img
-          class="menu-close-button"
-          @click="hamMenu = false"
-          src="../assets/svg/close-button.svg"
-          alt="Close Button"
-        />
+    <div class="content">
+      <div v-if="local == true" class="local-text">
+        <p class="h1-index">Du wirst sterben.</p>
+        <p class="h2-index">Plane jetzt deinen Abschied.</p>
       </div>
-      <div class="sidebar-menu">
-        <div class="options">
-          <div class="sidebar-menu-left">
-            <div class="arrow-item">
-              <img src="../assets/svg/arrow.svg" />
-            </div>
-            <div class="arrow-item">
-              <img src="../assets/svg/arrow.svg" />
-            </div>
-            <div class="arrow-item">
-              <img src="../assets/svg/arrow.svg" />
-            </div>
-          </div>
-          <div class="sidebar-menu-right">
-            <div @click="navigate('downloads')" class="menu-item">
-              <p>Downloadmaterialien</p>
-            </div>
-            <div
-              @click="navigate('hintergrundinformationen')"
-              class="menu-item"
-            >
-              <p>Hintergrundinformationen</p>
-            </div>
-            <div @click="navigate('datenschutz')" class="menu-item">
-              <p>Hinweise zum Datenschutz</p>
-            </div>
-          </div>
-        </div>
-        <div class="instagram">
-          <a href="https://www.instagram.com/urbanextopien/" target="_blank"
-            ><img src="../assets/svg/instagram.svg" alt="Instagram Icon" />
-          </a>
-        </div>
+      <div v-if="local == false" class="text">
+        <p class="h1-index">Du wirst sterben.</p>
+        <p class="h2-index">Plane jetzt deinen Abschied.</p>
+      </div>
+      <div class="buttons">
+        <button @click="navigate('start')" class="button">Start</button>
+        <button @click="navigate('return')" class="button-grey">
+          Code Eingeben
+          <svg
+            width="30"
+            height="12"
+            viewBox="0 0 30 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M29.3214 6.40026C29.6093 6.11233 29.6093 5.64549 29.3214 5.35755L24.6291 0.665335C24.3412 0.377397 23.8744 0.377397 23.5864 0.665335C23.2985 0.953272 23.2985 1.42011 23.5864 1.70805L27.7573 5.87891L23.5864 10.0498C23.2985 10.3377 23.2985 10.8045 23.5864 11.0925C23.8744 11.3804 24.3412 11.3804 24.6291 11.0925L29.3214 6.40026ZM0.481384 6.61622H28.8V5.1416H0.481384V6.61622Z"
+              fill="black"
+            />
+          </svg>
+        </button>
       </div>
     </div>
-  </div>
-
-  <div class="content">
-    <p class="h1-index">Du wirst sterben.</p>
-    <p class="h2-index">Plane jetzt deinen Abschied.</p>
-    <button @click="navigate('start')" class="button">Start</button>
-    <button @click="navigate('return')" class="button-grey">
-        Code Eingeben
-        <svg
-          width="30"
-          height="12"
-          viewBox="0 0 30 12"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M29.3214 6.40026C29.6093 6.11233 29.6093 5.64549 29.3214 5.35755L24.6291 0.665335C24.3412 0.377397 23.8744 0.377397 23.5864 0.665335C23.2985 0.953272 23.2985 1.42011 23.5864 1.70805L27.7573 5.87891L23.5864 10.0498C23.2985 10.3377 23.2985 10.8045 23.5864 11.0925C23.8744 11.3804 24.3412 11.3804 24.6291 11.0925L29.3214 6.40026ZM0.481384 6.61622H28.8V5.1416H0.481384V6.61622Z"
-            fill="black"
-          />
-        </svg>
-      </button>
   </div>
 </template>
 
@@ -148,12 +152,17 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+
 .background {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #131126;
   z-index: -9999;
   overflow: hidden;
@@ -167,15 +176,11 @@ onMounted(() => {
   margin: 0 0 10px 0;
   color: white;
   white-space: nowrap;
-  /* line-height: 110px; */
-  /* font-size: 10vw; */
-  /* margin: 30px 0 40px 0; */
 }
 
 .h2-index {
   font-family: "IBMPlexSans-Regular", sans-serif;
   font-size: 48.19px;
-  /* font-size: 5vw; */
   text-align: center;
   margin: 0;
   color: white;
@@ -187,55 +192,51 @@ onMounted(() => {
   background-color: white;
   color: black;
   padding: 5px 50px 5px 50px;
-  box-shadow: 2px 2px 10px rgba(0 ,0 ,0 ,0.1);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   margin: 0 0 20px 0;
+  z-index: 1;
 }
 
-.button-grey{
+.button-grey {
   height: 39px;
   font-size: 21.1px;
   background-color: white;
   border: 0;
   border-radius: 21.1px;
-  color: rgb(0,0,0,0.4);
+  color: rgb(0, 0, 0, 0.4);
   padding: 5px 20px 5px 20px;
-  box-shadow: 2px 2px 10px rgba(0 ,0 ,0 ,0.1);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-.button-grey svg{
+.button-grey svg {
   filter: opacity(0.4);
 }
 
-.slide {
+/* .slide {
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.page-container {
-  height: 100vh;
-  overflow: hidden;
-}
+} */
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+  margin: auto;
 }
 
 .headbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% - 5.2em);
+  width: calc(100vw - 5.2em);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 60px 42px 60px 42px;
+  margin: 60px 42px 60px 42px;
 }
 .hamburger {
   display: flex;
@@ -247,11 +248,24 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   filter: invert();
-  align-self: center; /* Center this item vertically */
+  align-self: center;
   margin: auto;
   padding-right: 45px;
 }
 .logo img {
+  width: 195px;
+}
+
+.local-logo {
+  display: flex;
+  justify-content: center;
+  filter: invert();
+  align-self: center;
+  margin: auto;
+  padding-right: 0;
+}
+
+.local-logo img {
   width: 195px;
 }
 
@@ -264,6 +278,7 @@ onMounted(() => {
   width: 440px;
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
 
 .blur-effect {
@@ -272,7 +287,7 @@ onMounted(() => {
   left: 440px;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 100;
   backdrop-filter: blur(10px);
 }
 
@@ -340,6 +355,34 @@ a {
 }
 
 @media only screen and (max-width: 1020px) {
+  .wrapper {
+    height: 100%;
+    max-height: calc(768px - 4.6em);
+  }
+
+  .headbar {
+  margin: 40px 42px 32px 42px;
+  }
+
+  .text{
+    margin-top: 70px;
+  }
+
+  .local-text{
+    margin-top: 40px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
   .blur-effect {
     display: none;
   }

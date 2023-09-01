@@ -5,7 +5,7 @@
 <script setup></script>
 
 <style>
-html body {
+/* html body {
   overflow-y: auto;
   justify-content: flex-start;
 }
@@ -19,6 +19,30 @@ html body {
   width: calc(100% - 6em);
   margin: 2.3em 3em;
   max-height: fit-content;
+} */
+
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x:hidden;
+  overflow-y: auto;
+}
+.page-container {
+  padding: 2.3em 3em;
+  max-width: calc(1020px - 6em);
+  height:fit-content;
+  max-height: fit-content;
+  margin: auto;
+}
+
+.slide {
+  width: 100%;
 }
 
 .button-container {
@@ -41,14 +65,28 @@ html body {
 }
 
 @media only screen and (max-width: 1020px) {
-  #__nuxt {
-    max-width: fit-content;
-    width: 100%;
+  html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .page-container {
+    padding: 2em 1.5em;
+    width: calc(100vw - 3em);
+
+    max-height: none;
+    height: fit-content;
+    margin: auto;
   }
 
-  .page-container {
-    overflow: normal;
-    margin: 1.2em 1em;
+  .slide {
     width: 100%;
   }
   .h1-web {

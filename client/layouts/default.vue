@@ -167,33 +167,70 @@ onMounted(() => {});
 </script>
 
 <style>
-
-html body {
+html {
   width: 100vw;
-  height: 100svh;
+  height: 100vh;
+  margin: 0;
+}
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+}
+.page-container {
+  margin: 2.3em 3em;
+  /* width: 1020px;
+  height: 768px; */
+  max-width: calc(1020px - 6em);
+  max-height: calc(768px - 4.6em);
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+}
 
-  /* width: 1024px;
+.slide {
+  width: 100%;
+  /* width: 80%;
+  height: 60%;
+  margin: 0;
+  overflow: hidden; */
+}
+
+/* html body {
+  width: 100vw;
+  height: 100svh; */
+
+/* width: 1024px;
   height: 768px;
   border: black 1px solid; */
 
-  display: flex;
+/* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
   overflow: hidden;
   background: white;
-}
+} */
 
-#__nuxt {
+/* #__nuxt {
   max-width: 1020px;
   width: 100%;
   height: 100svh;
   margin: 0;
   display: flex;
   align-items: center;
-}
+} */
 
+/* .page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 6em);
+  height: calc(100% - 4.6em);
+  margin: 2.3em 3em;
+  max-height: 768px;
+} */
 
 .local-indicator {
   position: absolute;
@@ -207,16 +244,6 @@ html body {
 
 .data-container {
   height: 0px;
-}
-
-.page-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: calc(100% - 6em);
-  height: calc(100% - 4.6em);
-  margin: 2.3em 3em;
-  max-height: 768px;
 }
 
 h1 {
@@ -261,10 +288,6 @@ p {
   padding-bottom: 30px;
 }
 
-.slide {
-  width: 100%;
-}
-
 .brand {
   font-family: "IBMPlexSans-Bold", sans-serif;
   text-transform: uppercase;
@@ -304,14 +327,32 @@ p {
 }
 
 @media only screen and (max-width: 1020px) {
-
-  #__nuxt {
-    align-items: normal;
+  html {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .page-container {
+    padding: 2em 1.5em;
+    width: calc(100vw - 3em);
+    height: calc(100vh - 4em);
+    max-height: calc(100vh - 4em);
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
-  html body {
-    overflow: auto;
+  .slide {
+    width: 100%;
   }
+
   h1 {
     font-size: 35px;
   }
@@ -331,12 +372,6 @@ p {
 
   .p-bold {
     font-size: 20px;
-  }
-
-  .page-container {
-    width: calc(100% - 2em);
-    height: calc(100% - 22.2476em);
-    margin: 1.2em 1em;
   }
 }
 </style>

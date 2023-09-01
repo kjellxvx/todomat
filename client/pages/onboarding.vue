@@ -60,5 +60,12 @@ function Info(htmlContent) {
 .textbox p {
   width: 97%;
 }
+
+@media only screen and (max-width: 1020px) {
+  .button-container{
+  display: flex;
+  flex-direction: column;
+}
+}
 </style>
 -
