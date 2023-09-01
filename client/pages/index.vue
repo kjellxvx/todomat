@@ -9,7 +9,7 @@
     <div class="fifth-circle"></div>
   </div>
 
-  <div class="headbar">
+  <div  v-if="local === false" class="headbar">
     <div v-if="hamMenu === false" @click="hamMenu = true" class="hamburger">
       <img src="../assets/svg/hamburger.svg" alt="" />
     </div>
@@ -18,7 +18,7 @@
     </div>
   </div>
 
-  <div v-if="local === false" class="menu">
+  <div class="menu">
     <div v-if="hamMenu === true" class="sidebar">
       <div class="sidebar-header">
         <img src="../assets/svg/logo.svg" alt="Todomat Logo" />
@@ -66,14 +66,26 @@
     </div>
   </div>
 
-  <div class="slide">
-    <div class="text">
-      <p class="h1-index">Du wirst sterben.</p>
-      <p class="h2-index">Plane jetzt deinen Abschied.</p>
-      <button @click="navigate('start')" class="button">Start</button>
-    </div>
+  <div class="content">
+    <p class="h1-index">Du wirst sterben.</p>
+    <p class="h2-index">Plane jetzt deinen Abschied.</p>
+    <button @click="navigate('start')" class="button">Start</button>
+    <button @click="navigate('return')" class="button-grey">
+        Code Eingeben
+        <svg
+          width="30"
+          height="12"
+          viewBox="0 0 30 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M29.3214 6.40026C29.6093 6.11233 29.6093 5.64549 29.3214 5.35755L24.6291 0.665335C24.3412 0.377397 23.8744 0.377397 23.5864 0.665335C23.2985 0.953272 23.2985 1.42011 23.5864 1.70805L27.7573 5.87891L23.5864 10.0498C23.2985 10.3377 23.2985 10.8045 23.5864 11.0925C23.8744 11.3804 24.3412 11.3804 24.6291 11.0925L29.3214 6.40026ZM0.481384 6.61622H28.8V5.1416H0.481384V6.61622Z"
+            fill="black"
+          />
+        </svg>
+      </button>
   </div>
-  
 </template>
 
 <script setup>
@@ -172,11 +184,26 @@ onMounted(() => {
 
 .button {
   font-size: 21.1px;
-  /* font-size: 2vw; */
   background-color: white;
   color: black;
-  /* padding: 0.2em 3.3em 0.2em 3.3em; */
-  padding: 5px 3.3em 5px 3.3em;
+  padding: 5px 50px 5px 50px;
+  box-shadow: 2px 2px 10px rgba(0 ,0 ,0 ,0.1);
+  margin: 0 0 20px 0;
+}
+
+.button-grey{
+  height: 39px;
+  font-size: 21.1px;
+  background-color: white;
+  border: 0;
+  border-radius: 21.1px;
+  color: rgb(0,0,0,0.4);
+  padding: 5px 20px 5px 20px;
+  box-shadow: 2px 2px 10px rgba(0 ,0 ,0 ,0.1);
+}
+
+.button-grey svg{
+  filter: opacity(0.4);
 }
 
 .slide {
@@ -190,11 +217,12 @@ onMounted(() => {
   overflow: hidden;
 }
 
-.text {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
   width: 100%;
   height: 100%;
 }
@@ -322,7 +350,6 @@ a {
 
   .logo {
     padding-right: 0px;
-
   }
 
   .sidebar {
