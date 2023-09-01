@@ -346,7 +346,7 @@ p {
     max-height: calc(100vh - 4em);
     margin: auto;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .slide {
