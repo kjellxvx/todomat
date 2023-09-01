@@ -70,6 +70,12 @@ body {
 }
 
 @media only screen and (max-width: 1020px) {
+  .page-container {
+    padding: 1.5em 1.5em;
+    max-height: fit-content;
+    height: fit-content;
+  }
+
   .h1-web {
     width: 240px;
     font-size: 35px;

@@ -2,7 +2,7 @@
   <NuxtLayout name="bon">
     <div id="pdf-container" class="pdf-container">
       <div class="header-container">
-        <p class="receipt">To-do-bon</p>
+        <p class="receipt">Wird nur einmal gedruckt!</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="412"
