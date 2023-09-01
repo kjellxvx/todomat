@@ -33,6 +33,7 @@ import { saveData } from "@/scripts/savedata.js";
 const todos = useTodos();
 const userToken = useUserToken();
 const data = useData();
+const loading = useLoading();
 
 function category(index) {
   if (index.includes("A")) {
