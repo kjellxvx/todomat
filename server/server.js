@@ -24,9 +24,8 @@ app.post("/save", async (req, res) => {
   try {
     // Authenticate with password
     const authData = await pb.admins.authWithPassword(
-      /*process.env.PB_MAIL,
-      process.env.PB_PW*/
-      'maxmustermann@mail.de', 'password123'
+      process.env.PB_MAIL,
+      process.env.PB_PW
     );
 
     // if user has no token create new record, save data and return the record.id to the client
@@ -109,9 +108,8 @@ app.get("/retrieve", async (req, res) => {
   try {
     // Authenticate with password
     const authData = await pb.admins.authWithPassword(
-      /*process.env.PB_MAIL,
-      process.env.PB_PW*/
-      'maxmustermann@mail.de', 'password123'
+      process.env.PB_MAIL,
+      process.env.PB_PW
     );
 
     /*const userData = await pb.collection("user_data").getOne(token, {
