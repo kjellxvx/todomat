@@ -284,7 +284,8 @@ input.codeInput {
   z-index: 2;
   width: 100%;
   position: absolute;
-  bottom: 0vh;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   background-color: #ececec;
