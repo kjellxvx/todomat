@@ -9,8 +9,8 @@
           Der Name Todomat setzt sich aus den Begriffen Tod, To-do und Automat
           zusammen. Der Todomat ist der erste Hinterlassenschafts-Konfigurator
           der Welt. Diese Website ist der digitale Zwilling des richtigen
-          Automaten, welcher als Installation bei unseren Partnern im Museum für
-          Sepulkralkultur in Kassel steht und dort besucht werden kann
+          Automaten, welcher als Installation im Museum für Sepulkralkultur in
+          Kassel steht und dort frei zugänglich benutzt werden kann:
           <a href="https://www.sepulkralmuseum.de" target="_blank"
             >www.sepulkralmuseum.de.</a
           >
@@ -37,7 +37,7 @@
           Abschied und Gedenken sowie Umgang mit dem Körper, mit Dingen, Daten
           und Geheimnissen. Dabei vermischen sich gegenwärtig realisierbare
           Möglichkeiten und fiktive (erfundene) Optionen. Diese sind als
-          Einladung zu verstehen, aktuelle Gepflogenheiten im Bestattungswegen
+          Einladung zu verstehen, aktuelle Gepflogenheiten im Bestattungswesen
           und im Umgang mit Hinterlassenschaften zu hinterfragen.
         </p>
         <p>
@@ -58,6 +58,10 @@
           unterschiedliche Interventionen durch, die Menschen dazu einluden,
           neue eigene Zukunftsvisionen auszuformulieren und diese kritisch zu
           hinterfragen.
+        </p>
+        <p>
+          Erfahre mehr über das Projekt auf
+          <a href="https://www.xtopien.org" target="_blank">www.xtopien.org.</a>
         </p>
         <p>
           Bei der Umsetzung des Todomaten waren außer dem Xtopien-Team auch
@@ -86,10 +90,6 @@
           >
           <br />
           Valentin Natschke
-        </p>
-        <p>
-          Erfahre mehr über das Projekt auf
-          <a href="https://www.xtopien.org" target="_blank">www.xtopien.org</a>
         </p>
       </div>
     </div>

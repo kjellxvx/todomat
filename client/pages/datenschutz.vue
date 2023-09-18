@@ -5,14 +5,13 @@
       <div class="textbox">
         <h1>Hinweise zum Datenschutz</h1>
         <p>
-          Bei der Nutzung des Todomaten werden keine personenbezogenen Daten
+          Bei der Abfrage des Todomaten werden keine personenbezogenen Daten
           erhoben und verarbeitet. Daher bitten wir auch darum, keine
-          personenbezogenen Daten bei der Beantwortung der Fragen einzugeben.
-          Sofern personenbezogene Daten bei Antworten enthalten sind, werden
-          diese vernichtet. Im Übrigen findet eine Verarbeitung der Daten
-          ausschließlich zu Forschungszwecken statt. Bei weiteren Rückfragen
-          findet ihr die Ansprechpartner*innen des Projektes auf
-          www.xtopien.org.
+          personenbezogenen Daten bei der Beantwortung offener Fragen
+          einzugeben. Sofern personenbezogene Daten bei Antworten enthalten
+          sind, werden diese vernichtet. Im Übrigen findet eine Verarbeitung der
+          Daten ausschließlich zu Forschungszwecken statt. Bei weiteren
+          Rückfragen findet ihr die Ansprechpartner:innen auf www.xtopien.org.
         </p>
       </div>
     </div>

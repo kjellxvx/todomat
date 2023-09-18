@@ -40,8 +40,8 @@
         {
           "A2.1": {
             "content": "<a>Vergraben</a>",
-            "info": "<p class=\"popup-headline\">Vergraben</p><p class=\"popup-text\">Wie lange deine Verwesung nach dem Vergraben dauert, hängt von der Beschaffenheit der Erde, deinem Sarg, deiner Kleidung und deinem Lebensstil ab. Deine Ernährung und dein Medikamentenkonsum können starke Auswirkungen auf den Zersetzungsprozess haben. Bei der bisherigen Erdbestattung gelangen gesundheitsgefährdende Stoffe (z.B. Quecksilber, Arsen Formaldehyd) ins Grundwasser. Wenn dein Leichnam vermehrt radioaktive Stoffe enthält (z.B. durch eine Strahlentherapie), belastet der Zerfall die Umwelt zusätzlich.</p>",
-            "todo": "Bei den Anbietern der Transformationsart Vergraben können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges. Erstelle eine Liste mit deinen Wünschen. Informiere dich bei deinem bevorzugten Vergrabungsort (z.B. Friedhof) nach der Bodenbeschaffenheit und wie viele Jahre die Verwesung dort durchschnittlich dauert."
+            "info": "<p class=\"popup-headline\">Vergraben</p><p class=\"popup-text\">Wie lange deine Verwesung nach dem Vergraben dauert, hängt von der Beschaffenheit der Erde, deinem Sarg, deiner Kleidung und deinem Lebensstil ab. Deine Ernährung und dein Medikamentenkonsum können starke Auswirkungen auf den Zersetzungsprozess haben. Bei der bisherigen Erdbestattung gelangen gesundheitsgefährdende Stoffe (z. B. Quecksilber, Arsen Formaldehyd) ins Grundwasser. Wenn dein Leichnam vermehrt radioaktive Stoffe enthält (z. B. durch eine Strahlentherapie), belastet der Zerfall die Umwelt zusätzlich.</p>",
+            "todo": "Bei den Anbietern der Transformationsart Vergraben können einige Details bestimmt werden, beispielsweise die Auswahl und Gestaltung des Sarges. Erstelle eine Liste mit deinen Wünschen. Informiere dich bei deinem bevorzugten Vergrabungsort (z. B. Friedhof) nach der Bodenbeschaffenheit und wie viele Jahre die Verwesung dort durchschnittlich dauert."
           },
           "A2.2": {
             "content": "<a>Beschleunigt kompostieren</a>",
@@ -60,7 +60,7 @@
           },
           "A2.5": {
             "content": "Die Variante, die zum Zeitpunkt meines Todes die beste ökologische Bilanz hat",
-            "todo": "Da du momentan keine bestimmte Transformationsart bevorzugst, informiere dich regelmäßig über neu zugelassene Verfahren der Transformation, wie z.B. die alkalische Hydrolyse oder die Luftbestattung."
+            "todo": "Da du momentan keine bestimmte Transformationsart bevorzugst, informiere dich regelmäßig über neu zugelassene Verfahren der Transformation, wie z. B. die alkalische Hydrolyse oder die Luftbestattung."
           },
           "A2.6": {
             "content": "Ich lasse andere entscheiden / mir egal"
@@ -211,7 +211,7 @@
         {
           "B1.1": {
             "content": "Was bei der Feierlichkeit / dem Ritual über mich gesagt werden soll",
-            "todo": "Hinterlege, was bei deiner Verabschiedung über dich gesagt werden soll: z.B. worauf bist du am meisten stolz; deine wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar; wofür hast du gelebt. "
+            "todo": "Hinterlege, was bei deiner Verabschiedung über dich gesagt werden soll: z. B. worauf bist du am meisten stolz; deine wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar; wofür hast du gelebt. "
           },
           "B1.2": {
             "content": "Der Ort für die Feierlichkeit / das Ritual",
@@ -239,7 +239,7 @@
         {
           "B1.1": {
             "content": "Was bei der Feierlichkeit/dem Ritual über mich gesagt werden soll",
-            "todo": "Hinterlege, was bei deiner Verabschiedung über dich gesagt werden soll: z.B. worauf bist du am meisten stolz; deine wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar; wofür hast du gelebt. "
+            "todo": "Hinterlege, was bei deiner Verabschiedung über dich gesagt werden soll: z. B. worauf bist du am meisten stolz; deine wichtigsten Beziehungen oder Vorbilder; wofür bist du dankbar; wofür hast du gelebt. "
           },
           "B1.2": {
             "content": "Der Ort für die Feierlichkeit/das Ritual",
@@ -262,7 +262,7 @@
     },
     "C1": {
       "question": "Welche deiner <a>digitalen Daten</a> sollen nach deinem Tod gelöscht werden? \r (Mehrere Antworten möglich)",
-      "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z.B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
+      "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z. B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
       "multi": true,
       "options": [
         {
@@ -293,7 +293,7 @@
     },
     "C2": {
       "question": "Wer soll sich nach deinem Tod um deine <a>digitalen Daten</a> kümmern? \r (Mehrere Antworten möglich)",
-      "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z.B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
+      "info": "<p class=\"popup-headline\">Digitale Daten</p><p class=\"popup-text\"> In diesem Zusammenhang sind lokal oder im Internet (Datenclouds) gespeicherte Dateien sowie Profile z. B. in den sozialen Medien gemeint. Alle deine Daten, die im Internet abrufbar sind, benötigen für das Speichern Energie und verursachen CO2-Emissionen. Wenn du sie nicht vorher löschst, werden sie auch über dein Leben hinaus täglich Strom verbrauchen und so das Klima belasten.",
       "multi": true,
       "options": [
         {
@@ -315,7 +315,7 @@
           },
           "C2.5": {
             "content": "Ich möchte meine Daten einem <a>Unternehmen verkaufen</a> und bleibe damit digital als Person und Datensatz erhalten (verfügbar ab 2033)",
-            "info": "<p class=\"popup-headline\">Daten in den Händen von Unternehmen</p><p class=\"popup-text\">Unternehmen können mit deinen personenbezogenen Daten viel Geld verdienen, z.B. durch Werbung, Datenverkauf oder Datenanalysen. Wenn du die Daten, die Unternehmen über dich besitzen, nicht rechtzeitig löschst, werden sie über deinen Tod hinaus genutzt. </p>"
+            "info": "<p class=\"popup-headline\">Daten in den Händen von Unternehmen</p><p class=\"popup-text\">Unternehmen können mit deinen personenbezogenen Daten viel Geld verdienen, z. B. durch Werbung, Datenverkauf oder Datenanalysen. Wenn du die Daten, die Unternehmen über dich besitzen, nicht rechtzeitig löschst, werden sie über deinen Tod hinaus genutzt. </p>"
           },
           "C2.6": {
             "content": "Mir egal / nicht relevant"
@@ -453,11 +453,11 @@
       "options": [
         {
           "E1.1": {
-            "content": "An folgendem Ort (z.B. eine Kneipe, dein Verein etc.):",
+            "content": "An folgendem Ort (z. B. eine Kneipe, dein Verein etc.):",
             "TextInput": "Bitte hier eingeben"
           },
           "E1.2": {
-            "content": "An einer Grabstätte (gilt für Leichnam, Asche, Erde und Granulat)"
+            "content": "An einer Grabstätte"
           },
           "E1.3": {
             "content": "An einem für mich gepflanzten Baum"
@@ -490,14 +490,14 @@
           },
           "E2.4": {
             "content": "Mit meiner Botschaft auf der <a>kommunalen Erinnerungstafel</a> für Verstorbene (verfügbar ab 2040)",
-            "info": "<p class=\"popup-headline\">Kommunale Erinnerungstafel</p><p class=\"popup-text\">Die zunehmende Verbreitung des Todomaten führt dazu, dass ab 2040 mehr und mehr Städte und Gemeinden digitale Erinnerungstafeln einführen. Diese zeigen Namen und Botschaften von Verstorbenen am Todestag und bestimmten Jahrestagen an. So wird jede:r Verstorbene sichtbar. Gedanken und letzte Wünsche können weiterleben.</p>",
+            "info": "<p class=\"popup-headline\">Kommunale Erinnerungstafel</p><p class=\"popup-text\">Die zunehmende Verbreitung des Todomaten führt dazu, dass ab 2040 mehr und mehr Städte und Gemeinden digitale Erinnerungstafeln einführen. Diese zeigen Namen und Botschaften von Verstorbenen am Todestag und an bestimmten Jahrestagen an. So wird jede:r Verstorbene sichtbar. Gedanken und letzte Wünsche können weiterleben.</p>",
             "todo": "Formuliere für die kommunale Erinnerungstafel, mit welchem Namen und welcher Botschaft du erinnert werden möchtest. Du kannst die Gesellschaft damit an etwas erinnern, das dir wichtig ist. Alternativ kannst du auch ein Bild oder ein kurzes Video hinterlegen."
           }
         }
       ]
     },
     "E3": {
-      "question": "Gibt es etwas, das du einer bestimmten Person mitteilen möchtest, bevor du tot bist (z.B. jemandem danken oder um Verzeihung bitten)?",
+      "question": "Gibt es etwas, das du einer bestimmten Person mitteilen möchtest, bevor du tot bist (z. B. jemandem danken oder um Verzeihung bitten)?",
       "multi": false,
       "options": [
         {
@@ -512,7 +512,7 @@
       ]
     },
     "E4": {
-      "question": "Gibt es etwas, das du eine bestimmte Person wissen lassen möchtest, nachdem du gestorben bist (z.B. jemandem danken, um Verzeihung bitten)?",
+      "question": "Gibt es etwas, das du eine bestimmte Person wissen lassen möchtest, nachdem du gestorben bist (z. B. jemandem danken, um Verzeihung bitten)?",
       "multi": false,
       "options": [
         {
@@ -551,7 +551,7 @@
       ]
     },
     "F2": {
-      "question": "Gibt es Dinge von dir (z.B. Gegenstände in deinen Räumlichkeiten oder an anderen Orten), die nach deinem Tod ungesehen verschwinden sollen?",
+      "question": "Gibt es Dinge von dir (z. B. Gegenstände in deinen Räumlichkeiten oder an anderen Orten), die nach deinem Tod ungesehen verschwinden sollen?",
       "multi": false,
       "options": [
         {

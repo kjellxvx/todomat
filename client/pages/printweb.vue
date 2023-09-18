@@ -4,7 +4,7 @@
       <div class="content-container">
         <div class="textbox">
           <h1>ToDo’s</h1>
-          <p v-if="todos">Hier findest du deine aufgelisteten ToDo’s</p>
+          <p v-if="todos">Hier findest du deine aufgelisteten To-dos</p>
           <p v-else>Deine Auswahl hat keine zu erledigenden Todos ergeben.</p>
         </div>
         <div class="todos-container">

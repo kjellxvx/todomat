@@ -6,8 +6,8 @@
       <div></div>
       <h1>Gratulation!</h1>
       <p>
-        Du hast deinen Abschied sehr gut vorbereitet. Nun kannst Du die offenen
-        To-do‘s anschauen und erledigen, wenn Du Raum und Gelegenheit hast.
+        Gratulation! Du hast dich heute mit deinem Tod auseinandergesetzt. Nun kannst Du die offenen
+        To-dos anschauen und erledigen, wenn Du Raum und Gelegenheit hast.
       </p>
     </div>
     <div class="button-container">

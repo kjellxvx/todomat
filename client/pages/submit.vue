@@ -16,11 +16,11 @@
     <div v-else class="textbox">
       <h1>Deine To-dos</h1>
       <p>
-        Du hast die Fragen so beantwortet, dass sich kein bestimmtes To-do
-        ergibt. Um deine Konfiguration später wieder aufzurufen, kann dir der
-        Todomat jetzt den QR-Code ausdrucken. Er wird dir außerdem noch ein
-        allgemeines To-do empfehlen, um darüber nachzudenken, was dir momentan
-        im Leben besonders wichtig ist.
+        Du hast die Fragen so beantwortet, dass sich kein bestimmtes To-do für
+        die Vorbereitung deines Todes ergibt. Überlege dir doch stattdessen, ob
+        es Dinge gibt, die du vor deinem Tod noch erreicht oder erlebt haben
+        möchtest. Mache eine Liste und tue noch heute etwas, das dich einem
+        dieser Wünsche näher bringt.
       </p>
     </div>
 

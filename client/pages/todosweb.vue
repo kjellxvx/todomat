@@ -5,8 +5,14 @@
       <CloseButton />
       <div class="textbox">
         <h1>To-dos</h1>
-        <p v-if="todos">Hier findest du deine aufgelisteten ToDo’s</p>
-        <p v-else>Deine Auswahl hat keine zu erledigenden Todos ergeben.</p>
+        <p v-if="todos">Hier findest du deine aufgelisteten To-dos</p>
+        <p v-else>
+          Du hast die Fragen so beantwortet, dass sich kein bestimmtes To-do für
+          die Vorbereitung deines Todes ergibt. Überlege dir doch stattdessen,
+          ob es Dinge gibt, die du vor deinem Tod noch erreicht oder erlebt
+          haben möchtest. Mache eine Liste und tue noch heute etwas, das dich
+          einem dieser Wünsche näher bringt.
+        </p>
       </div>
       <div class="todos-container">
         <div class="todo" v-for="(todo, index) in todos" :key="index">
@@ -115,19 +121,18 @@ onMounted(() => {
 }
 
 @media only screen and (max-width: 1020px) {
-.button-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  white-space:normal;
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: normal;
+  }
+  .button {
+    margin-right: 0px;
+  }
+  .button-white {
+    margin-right: 0px;
+  }
 }
-.button{
-  margin-right: 0px
-}
-.button-white{
-  margin-right: 0px
-}
-}
-
 </style>
 -

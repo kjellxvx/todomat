@@ -14,7 +14,7 @@
       <div class="button-container">
         <button @click="Back" class="popup-button">Zurück</button>
         <button @click="navigate('restart')" class="popup-button-white">
-          Ja, neustarten
+          Ja, neu starten
         </button>
       </div>
     </div>

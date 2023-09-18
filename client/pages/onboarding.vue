@@ -25,9 +25,8 @@
         <span> werden durch Klicken erläutert.</span>
       </p>
       <p>
-        Am Ende druckt dir der Todomat auf Basis deiner Antworten To-dos aus, um
-        vorbereiteter zu sterben. Du kannst deine Konfiguration jederzeit
-        beenden und später im Internet unter todomat.org fortsetzen oder ändern.
+        Am Ende empfiehlt dir der Todomat auf Basis deiner Antworten in allen
+        bearbeiteten Kategorien To-dos, um vorbereiteter zu sterben.
       </p>
       <p>
         Viel Spaß bei deiner persönlichen Hinterlassenschafts-Konfiguration!
@@ -62,10 +61,10 @@ function Info(htmlContent) {
 }
 
 @media only screen and (max-width: 1020px) {
-  .button-container{
-  display: flex;
-  flex-direction: column;
-}
+  .button-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
 -
