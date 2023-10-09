@@ -3,6 +3,7 @@
 This software serves as the backbone of the physical installation located at the Museum for Sepulkralkultur in Kassel, Germany, which is freely accessible for visitors.
 
 🌐 Explore the Museum: [Visit the Museum for Sepulkralkultur](https://www.sepulkralmuseum.de)
+
 💀 A Project by Urbane Xtopien [https://xtopien.org/](https://xtopien.org/)
 
 **About Todomat:**
