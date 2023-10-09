@@ -5,7 +5,7 @@
       <CloseButton />
       <div class="textbox">
         <h1>To-dos</h1>
-        <p v-if="todos">Hier findest du deine aufgelisteten To-dos</p>
+        <p v-if="!noTodos">Hier findest du deine aufgelisteten To-dos</p>
         <p v-else>
           Du hast die Fragen so beantwortet, dass sich kein bestimmtes To-do für
           die Vorbereitung deines Todes ergibt. Überlege dir doch stattdessen,
@@ -26,6 +26,7 @@
       <div class="button-container">
         <button v-if="userToken" @click="Save" class="button">Speichern</button>
         <button @click="Back" class="button-white">Zurück</button>
+        <button v-if="!noTodos" @click="Print" class="button">Drucken</button>
       </div>
     </div>
   </NuxtLayout>
@@ -40,6 +41,7 @@ const todos = useTodos();
 const userToken = useUserToken();
 const data = useData();
 const loading = useLoading();
+const noTodos = ref();
 
 function category(index) {
   if (index.includes("A")) {
@@ -61,6 +63,10 @@ function category(index) {
     return "Deine Geheimnisse";
   }
 }
+
+const Print = () => {
+  window.print();
+};
 
 async function Save() {
   // navigateTo("/printweb");
@@ -85,11 +91,12 @@ function delay(ms) {
 onMounted(() => {
   // clean todos data and remove empy entries
   Object.keys(todos.value).forEach((key) => {
-    // console.log(key, todos.value[key]);
-    if (todos.value[key].length == 0) {
+    if (todos.value[key].length === 0) {
       delete todos.value[key];
     }
   });
+
+  noTodos.value = Object.keys(todos.value).length === 0;
 });
 </script>
 

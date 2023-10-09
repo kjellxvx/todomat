@@ -6,28 +6,25 @@
         <h1 lang="de" class="h1-web">Hintergrundinformationen</h1>
         <h2 class="h2-web">Was ist der Todomat?</h2>
         <p>
-          Der Name Todomat setzt sich aus den Begriffen Tod, To-do und Automat
-          zusammen. Der Todomat ist der erste Hinterlassenschafts-Konfigurator
-          der Welt. Diese Website ist der digitale Zwilling des richtigen
-          Automaten, welcher als Installation im Museum für Sepulkralkultur in
-          Kassel steht und dort frei zugänglich benutzt werden kann:
+          Der ‚Todomat‘ verbindet Tod, To-do und Automat und ist damit der erste
+          automatische Hinterlassenschafts-Konfigurator der Welt. Diese Website
+          ist der digitale Zwilling des richtigen Automaten, welcher als
+          Installation im Museum für Sepulkralkultur in Kassel steht und dort
+          frei zugänglich benutzt werden kann:
           <a href="https://www.sepulkralmuseum.de" target="_blank"
             >www.sepulkralmuseum.de.</a
           >
         </p>
         <p>
           Der Todomat wurde als ein Artefakt aus einer Zukunft entworfen, in der
-          wir unseren Tod selbstbestimmter und nachhaltiger gestalten. In dieser
-          Zukunft ist der Tod weniger bedrohlich. Vielmehr ermutigt er uns so zu
-          leben, dass wir am Ende in Frieden gehen können. Der Todomat gibt uns
-          dafür nützliche To-dos mit auf den Weg.
-        </p>
-        <p>
-          Die Reflexion über den Tod und seine Präsenz im Alltag sind in der
-          Zukunft selbstverständlicher geworden. Dafür gibt es an vielen Orten
-          und im Internet Automaten bzw. Konfiguratoren, mit denen alle Menschen
-          Wünsche und Entscheidungen rund um ihren Tod hinterlegen und jederzeit
-          aktualisieren können.
+          wir unseren Tod selbstbestimmter und nachhaltiger gestalten. Die
+          Reflexion über den Tod und seine Präsenz im Alltag sind
+          selbstverständlicher geworden. Dafür gibt es an vielen Orten und im
+          Internet Konfiguratoren, mit denen alle Menschen Wünsche und
+          Entscheidungen rund um ihren Tod hinterlegen und jederzeit
+          aktualisieren können. Dadurch ist der Tod weniger bedrohlich. Vielmehr
+          ermutigt er uns so zu leben, dass wir am Ende in Frieden gehen können.
+          Der Todomat gibt uns dafür nützliche To-dos mit auf den Weg.
         </p>
         <h2 class="h2-web">
           Was gibt es bei der Benutzung des Todomaten zu beachten?
