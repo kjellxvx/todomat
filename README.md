@@ -13,5 +13,5 @@ Todomat allows users to navigate the complexities of end-of-life planning seamle
 📌 **Installation at the Museum:**
 Visit the Museum for Sepulkralkultur in Kassel to experience Todomat in person and learn more about the project.
 
-📌 **Explore the digital clone:**
+📌 **Digital clone:**
 Explore the online version of the project at [todomat.org](https://todomat.org)
