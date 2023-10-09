@@ -440,7 +440,7 @@ input[type="radio"]:checked::before {
 }
 
 .popup {
-  width: 300px;
+  width: 320px;
   border-style: solid;
   border-radius: 10px;
   background-color: white;
