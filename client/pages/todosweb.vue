@@ -25,8 +25,9 @@
 
       <div class="button-container">
         <button v-if="userToken" @click="Save" class="button">Speichern</button>
-        <button @click="Back" class="button-white">Zurück</button>
         <button v-if="!noTodos" @click="Print" class="button">Drucken</button>
+        <button @click="Back" class="button-white">Zurück</button>
+
       </div>
     </div>
   </NuxtLayout>
