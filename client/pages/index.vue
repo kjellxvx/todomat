@@ -38,7 +38,7 @@
             <p>Hintergrundinformationen</p>
           </div>
           <div @click="navigate('datenschutz')" class="menu-item">
-            <p>Hinweise zum Datenschutz</p>
+            <p>Kontakt und Datenschutz</p>
           </div>
         </div>
       </div>
