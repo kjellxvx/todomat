@@ -73,7 +73,7 @@
       <div class="buttons">
         <button @click="navigate('start')" class="button">Start</button>
         <button @click="navigate('return')" class="button-grey">
-          Code Eingeben
+          Code eingeben
           <svg
             width="30"
             height="12"

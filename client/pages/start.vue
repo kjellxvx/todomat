@@ -15,7 +15,7 @@
       </p>
       <p lang="de" class="p-bold">
         Es gibt auch einige To-dos zu erledigen. <br />
-        Der Todomat hilft Dir dabei!
+        Der Todomat hilft dir dabei!
       </p>
       <!-- <p>
         Der Todomat ist der erste Hinterlassenschafts-Konfigurator der Welt. <br> Er

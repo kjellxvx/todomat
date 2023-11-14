@@ -165,7 +165,7 @@ const navigate = (path) => {
 
 const getButtonLabel = (letter) => {
   if (isCategoryComplete(letter)) {
-    return "Jetzt konfiguieren";
+    return "Jetzt konfigurieren";
   }
   return "Fertig konfiguriert";
 };
