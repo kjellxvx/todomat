@@ -26,14 +26,14 @@
 }
 
 html {
-  width: 100vw;
-  height: 100vh;
+  width: 100lvw;
+  height: 100lvh;
   margin: 0;
 }
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100lvw;
+  height: 100lvh;
   overflow-x: hidden;
   overflow-y: auto;
 }

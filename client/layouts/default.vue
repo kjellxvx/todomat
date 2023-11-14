@@ -171,14 +171,14 @@ onMounted(() => {});
   box-sizing: border-box;
 }
 html {
-  width: 100lvw;
-  height: 100lvh;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
 }
 body {
   margin: 0;
-  width: 100lvw;
-  height: 100lvh;
+  width: 100vw;
+  height: 100vh;
   overflow: auto;
 }
 .page-container {
