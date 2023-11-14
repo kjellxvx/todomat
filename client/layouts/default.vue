@@ -336,6 +336,11 @@ p {
 }
 
 @media only screen and (max-width: 1020px) {
+  body {
+    width: 100lvw;
+    height: 100lvh;
+  }
+
   .page-container {
     padding: 1.5em 1.5em;
     max-height: fit-content;
