@@ -182,7 +182,7 @@ body {
   overflow: auto;
 }
 .page-container {
-  padding:  2.3em 3em;
+  padding: 2.3em 3em;
   max-width: 1020px;
   max-height: 768px;
   margin: 0 auto 0 auto;
@@ -336,14 +336,17 @@ p {
 }
 
 @media only screen and (max-width: 1020px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
 
-  .page-container{
-    padding:  1.5em 1.5em;
+  .page-container {
+    padding: 1.5em 1.5em;
     max-height: fit-content;
     height: fit-content;
-
   }
- 
+
   h1 {
     font-size: 35px;
   }
