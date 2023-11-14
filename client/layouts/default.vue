@@ -337,8 +337,8 @@ p {
 
 @media only screen and (max-width: 1020px) {
   body {
-    width: 100%;
-    height: 100%;
+    width: 100lvh;
+    height: 100lvw;
   }
 
   .page-container {
