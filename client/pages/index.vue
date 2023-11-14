@@ -51,28 +51,33 @@
   </div>
   <div class="wrapper">
     <div v-if="local === false" class="headbar">
-      <div v-if="hamMenu === false" @click="hamMenu = true" class="hamburger">
-        <img src="../assets/svg/hamburger.svg" alt="" />
-      </div>
       <div class="logo">
         <img src="../assets/svg/logo.svg" alt="" />
       </div>
     </div>
+
+    <div v-if="local === false" class="headbar">
+      <div v-if="hamMenu === false" @click="hamMenu = true" class="hamburger">
+        <img src="../assets/svg/hamburger.svg" alt="" />
+      </div>
+    </div>
+
     <div v-if="local === true" class="local-logo">
       <img src="../assets/svg/logo.svg" alt="" />
     </div>
     <div class="content">
-      <div v-if="local == true" class="local-text">
-        <p class="h1-index">Du wirst sterben.</p>
-        <p class="h2-index">Plane jetzt deinen Abschied.</p>
-      </div>
-      <div v-if="local == false" class="text">
+      <div class="text">
         <p class="h1-index">Du wirst sterben.</p>
         <p class="h2-index">Plane jetzt deinen Abschied.</p>
       </div>
       <div class="buttons">
         <button @click="navigate('start')" class="button">Start</button>
-        <button @click="navigate('return')" class="button-grey">
+        <button
+          @click="navigate('return')"
+          @mouseenter="togglePopup(true)"
+          @mouseleave="togglePopup(false)"
+          class="button-grey"
+        >
           Code eingeben
           <svg
             width="30"
@@ -90,6 +95,14 @@
       </div>
     </div>
   </div>
+  <div v-if="mouseover" class="popup-container-noblur">
+    <div class="popup">
+      <p class="popup-headline">Code eingeben</p>
+      <p class="popup-text">
+        Für alle, die den Todomaten im Museum für Sepulkralkultur genutzt haben.
+      </p>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -104,10 +117,16 @@ const progress = useProgress();
 const order = useOrder();
 const userToken = useUserToken();
 const hamMenu = useHamMenu();
+const mouseover = ref(false);
 
 const navigate = (path) => {
   navigateTo(`/${path}`);
 };
+
+function togglePopup(isMouseOver) {
+  console.log(isMouseOver ? "showpopup" : "no popup");
+  mouseover.value = isMouseOver;
+}
 
 onMounted(() => {
   complete.value = false;
@@ -233,10 +252,10 @@ onMounted(() => {
 }
 
 .headbar {
+  min-height: 45px;
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 100%; */
   width: calc(100vw - 5.2em);
   display: flex;
   justify-content: flex-start;
@@ -360,6 +379,9 @@ a {
 }
 
 @media only screen and (max-width: 1020px) {
+  .content {
+    gap: 40px;
+  }
   .blur-effect {
     display: none;
   }
@@ -380,11 +402,18 @@ a {
   }
 
   .h1-index {
-    font-size: 10vw;
+    font-size: 8vw;
+    margin-top: 1em;
   }
 
   .h2-index {
     font-size: 5vw;
+    padding-bottom: 0px;
+  }
+
+  .headbar {
+    width: calc(100vw - 2.3em);
+    margin: 10px 20px 10px 20px;
   }
 }
 </style>

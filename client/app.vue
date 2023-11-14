@@ -439,6 +439,18 @@ input[type="radio"]:checked::before {
   backdrop-filter: blur(5px);
 }
 
+.popup-container-noblur {
+  position: fixed;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* z-index: 999; */
+}
+
 .popup {
   width: 320px;
   border-style: solid;
