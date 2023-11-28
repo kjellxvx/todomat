@@ -61,14 +61,19 @@ body {
   margin: 0px;
   padding-bottom: 0px;
   border-bottom: solid;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .h2-web {
   font-size: 48.2px;
   font-family: "IBMPlexSans-Regular", sans-serif;
   padding: 60px 0 40px 0;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
-
 
 @media only screen and (max-width: 1020px) {
   .page-container {

@@ -24,7 +24,7 @@ useHead({
     },
     { name: "author", content: "Urbane Xtopien – Freiräume der Zukunft" },
     { name: "robots", content: "index, follow" },
-    { property: "og:image", content: "../assets/seo/Todomat-1200x630.jpg" },
+    { property: "og:image", content: "todomat.org/Todomat-1200x630.jpg" },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
   ],
