@@ -8,7 +8,7 @@
   </NuxtLayout>
 </template>
 
-<script></script>
+<script setup></script>
 
 <style>
 @font-face {
@@ -34,31 +34,6 @@
 @font-face {
   font-family: "IBMPlexSans-SemiBold";
   src: url("@/assets/fonts/IBMPlexSans-SemiBold.ttf") format("truetype");
-}
-
-p {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-
-h1 {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-
-span{
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-}
-
-a{
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-  cursor:help;
 }
 
 :root {

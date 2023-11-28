@@ -4,7 +4,11 @@
       <HeaderCompWeb />
       <div class="textbox">
         <h1>Downloadmaterialien</h1>
-        <p>Diese Dateien werden in Kürze verfügbar sein.</p>
+        <p>
+          Hier finden sich Sticker zum Ausdrucken, um spätere
+          Hinterlassenschaften im eigenen Haushalt schon zu Lebzeiten zu
+          kennzeichnen. Am besten auf selbstklebendem Papier drucken.
+        </p>
       </div>
     </div>
 

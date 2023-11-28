@@ -69,6 +69,7 @@ body {
   padding: 60px 0 40px 0;
 }
 
+
 @media only screen and (max-width: 1020px) {
   .page-container {
     padding: 1.5em 1.5em;
