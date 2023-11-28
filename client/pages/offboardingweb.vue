@@ -6,8 +6,8 @@
       <div></div>
       <h1>Herzlichen Glückwunsch.</h1>
       <p>
-        Du hast dich heute mit deinem Tod auseinandergesetzt. Nun kannst Du die offenen
-        To-dos anschauen und erledigen, wenn Du Raum und Gelegenheit hast.
+        Du hast dich heute mit deinem Tod auseinandergesetzt. Nun kannst du die offenen
+        To-dos anschauen und erledigen, wenn du Raum und Gelegenheit hast.
       </p>
     </div>
     <div class="button-container">

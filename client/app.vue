@@ -8,7 +8,28 @@
   </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: "Todomat - Vorbereitet Sterben",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Der Todomat ist der weltweit erste Hinterlassenschafts-Konfigurator, entworfen für selbstbestimmte und nachhaltige Bestattungsplanung.",
+    },
+    {
+      name: "keywords",
+      content:
+        "Todomat, Bestattungsplanung, Hinterlassenschafts-Konfigurator, Tod, Reflexion über den Tod, Museum für Sepulkralkultur",
+    },
+    { name: "author", content: "Urbane Xtopien – Freiräume der Zukunft" },
+    { name: "robots", content: "index, follow" },
+    { property: "og:image", content: "../assets/seo/Todomat-1200x630.jpg" },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+  ],
+});
+</script>
 
 <style>
 @font-face {
@@ -42,8 +63,6 @@
   --disabled-color: #b5b5b5;
   --form-control-color: var(--primary-color: );
 }
-
-
 
 .first-circle {
   position: absolute;
@@ -184,7 +203,7 @@
   font-size: 15.89px;
   /* padding: 0.3em 1.3em 0.3em 1.3em;*/
   padding: 4px 15px 4px 15px;
-  margin-right: 10px; 
+  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -552,7 +571,6 @@ input[type="radio"]:checked::before {
 }
 
 @media only screen and (max-width: 1020px) {
-
   .slide {
     position: relative;
   }

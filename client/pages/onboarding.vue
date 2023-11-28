@@ -28,6 +28,12 @@
         Am Ende empfiehlt dir der Todomat auf Basis deiner Antworten in allen
         bearbeiteten Kategorien To-dos, um vorbereiteter zu sterben.
       </p>
+
+      <p v-if="local">
+        Du kannst deine Konfiguration jederzeit beenden und später im Internet
+        unter todomat.org fortsetzen oder ändern.
+      </p>
+
       <p>
         Viel Spaß bei deiner persönlichen Hinterlassenschafts-Konfiguration!
       </p>
@@ -43,6 +49,7 @@
 import HeaderComp from "../components/HeaderComp";
 import CloseButton from "../components/CloseButton";
 
+const local = useLocal();
 const popup = usePopup();
 
 const navigate = (path) => {
