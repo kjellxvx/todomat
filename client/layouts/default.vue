@@ -19,14 +19,18 @@
       </button>
     </div>
   </div>
-  <div v-if="popup.isOpen" class="popup-container">
-    <div class="popup">
-      <div v-html="popup.content"></div>
-      <div class="button-container">
-        <div @click="popup.isOpen = false" class="popup-button">Schließen</div>
+  <transition name="fade">
+    <div v-if="popup.isOpen" class="popup-container">
+      <div class="popup">
+        <div v-html="popup.content"></div>
+        <div class="button-container">
+          <div @click="popup.isOpen = false" class="popup-button">
+            Schließen
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
   <div v-if="loading" class="loading-container">
     <div class="loading-spinner"></div>
   </div>
@@ -254,7 +258,6 @@ body {
 .data-container {
   height: 0px;
 }
-
 
 .p-small {
   font-family: "IBMPlexSans-Regular", sans-serif;

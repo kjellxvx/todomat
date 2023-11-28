@@ -604,6 +604,17 @@ input[type="radio"]:checked::before {
   font-family: "IBMPlexSans-Regular", sans-serif;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

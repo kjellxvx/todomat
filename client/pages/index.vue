@@ -56,14 +56,17 @@
       </div>
     </div>
   </div>
-  <div v-if="mouseover" class="popup-container-noblur">
-    <div class="popup">
-      <p class="popup-headline">Code eingeben</p>
-      <p class="popup-text">
-        Für alle, die den Todomaten im Museum für Sepulkralkultur genutzt haben.
-      </p>
+  <transition name="fade">
+    <div v-if="mouseover" class="popup-container-noblur">
+      <div class="popup">
+        <p class="popup-headline">Code eingeben</p>
+        <p class="popup-text">
+          Für alle, die den Todomaten im Museum für Sepulkralkultur genutzt
+          haben.
+        </p>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script setup>
@@ -202,12 +205,6 @@ onMounted(() => {
   filter: opacity(0.4);
 }
 
-/* .slide {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-} */
-
 .content {
   display: flex;
   flex-direction: column;
@@ -287,7 +284,6 @@ onMounted(() => {
 a {
   cursor: pointer;
 }
-
 
 @media only screen and (max-width: 1020px) {
   .content {
