@@ -45,8 +45,6 @@
 
 const emits = defineEmits(["closeSidebarMenu"])
 
-
-
 const navigate = (path) => {
   navigateTo(`/${path}`);
 };

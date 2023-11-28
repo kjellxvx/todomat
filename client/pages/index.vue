@@ -288,6 +288,7 @@ a {
   cursor: pointer;
 }
 
+
 @media only screen and (max-width: 1020px) {
   .content {
     gap: 40px;

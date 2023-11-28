@@ -3,7 +3,7 @@
     <div class="slide">
       <HeaderCompWeb />
       <div class="textbox">
-        <h1>Downloadmaterialien</h1>
+        <h1 lang="de">Downloadmaterialien</h1>
         <p>
           Hier finden sich Sticker zum Ausdrucken, um spätere
           Hinterlassenschaften im eigenen Haushalt schon zu Lebzeiten zu
@@ -88,6 +88,11 @@ const Download = (lng) => {
 </script>
 
 <style scoped>
+
+
+h1 {
+  hyphens: auto;
+}
 .textbox {
   margin-bottom: 25px;
 }

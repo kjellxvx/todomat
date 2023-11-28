@@ -154,6 +154,49 @@ useHead({
   animation-fill-mode: forwards;
 }
 
+h1 {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-size: 65px;
+  text-align: left;
+  margin: 0px;
+  padding-bottom: 20px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+h2 {
+  font-family: "IBMPlexSans-Medium", sans-serif;
+  max-width: 80%;
+  font-size: 26px;
+  text-align: left;
+  margin: 0px;
+  padding-bottom: 40px;
+}
+
+p {
+  font-family: "IBMPlexSans-Regular", sans-serif;
+  font-size: 26px;
+  text-align: left;
+  margin: 0px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+span{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+a{
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  cursor:help;
+}
+
 .button {
   /* height: 1.8em; */
   height: 39px;
