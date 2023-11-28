@@ -8,46 +8,7 @@
     <div class="fifth-circle"></div>
   </div>
   <div v-if="hamMenu === true" class="sidebar">
-    <div class="sidebar-header">
-      <img src="../assets/svg/logo.svg" alt="Todomat Logo" />
-      <img
-        class="menu-close-button"
-        @click="hamMenu = false"
-        src="../assets/svg/close-button.svg"
-        alt="Close Button"
-      />
-    </div>
-    <div class="sidebar-menu">
-      <div class="options">
-        <div class="sidebar-menu-left">
-          <div class="arrow-item">
-            <img src="../assets/svg/arrow.svg" />
-          </div>
-          <div class="arrow-item">
-            <img src="../assets/svg/arrow.svg" />
-          </div>
-          <div class="arrow-item">
-            <img src="../assets/svg/arrow.svg" />
-          </div>
-        </div>
-        <div class="sidebar-menu-right">
-          <div @click="navigate('downloads')" class="menu-item">
-            <p>Downloadmaterialien</p>
-          </div>
-          <div @click="navigate('hintergrundinformationen')" class="menu-item">
-            <p>Hintergrundinformationen</p>
-          </div>
-          <div @click="navigate('datenschutz')" class="menu-item">
-            <p>Kontakt und Datenschutz</p>
-          </div>
-        </div>
-      </div>
-      <div class="instagram">
-        <a href="https://www.instagram.com/urbanextopien/" target="_blank"
-          ><img src="../assets/svg/instagram.svg" alt="Instagram Icon" />
-        </a>
-      </div>
-    </div>
+    <SidebarMenu @closeSidebarMenu="handleClose" />
   </div>
   <div class="wrapper">
     <div v-if="local === false" class="headbar">
@@ -106,6 +67,8 @@
 </template>
 
 <script setup>
+import SidebarMenu from "../components/SidebarMenu.vue";
+
 const route = useRoute();
 const local = useLocal();
 const loading = useLoading();
@@ -127,6 +90,10 @@ function togglePopup(isMouseOver) {
   console.log(isMouseOver ? "showpopup" : "no popup");
   mouseover.value = isMouseOver;
 }
+
+const handleClose = () => {
+  hamMenu.value = false;
+};
 
 onMounted(() => {
   complete.value = false;
@@ -315,65 +282,6 @@ onMounted(() => {
   height: 100%;
   z-index: 100;
   backdrop-filter: blur(10px);
-}
-
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  margin: 25px;
-}
-
-.sidebar-menu {
-  margin: auto 15px auto 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar-menu-left {
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar-menu-right {
-  flex: 1;
-  padding: 0 5px 0 20px;
-}
-.menu-close-button {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.menu-item {
-  padding: 18px 0 18px 0;
-  border-top: solid;
-  cursor: pointer;
-}
-
-.arrow-item {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.menu-item:last-child {
-  border-bottom: solid;
-}
-
-.options {
-  display: flex;
-}
-
-.instagram {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-}
-
-.instagram img {
-  width: 30px;
-  height: 30px;
 }
 
 a {
