@@ -11,7 +11,13 @@
       <div>
         <div v-for="element in sortedElements" :key="element.name">
           <div class="option-row" v-if="element.percentage">
-            <p class="p-percent">{{ element.percentage }}%</p>
+            <p class="p-percent" v-if="element.percentage < 10">
+              <span class="invisible">0</span
+              ><span>{{ element.percentage }}%</span>
+            </p>
+            <p class="p-percent" v-else>
+              <span>{{ element.percentage }}%</span>
+            </p>
             <div
               :style="{ backgroundColor: element.color }"
               class="option-circle"
@@ -108,33 +114,5 @@ h2 {
   border-color: rgb(0, 0, 0, 0.5);
 }
 
-.option-row {
-  display: flex;
-  gap: 1em;
-  align-items: center;
-  flex-shrink: 0;
-}
 
-.option-circle {
-  background-color: #363ad1;
-  width: 3em; /* Set the width to 1em */
-  height: 3em; /* Set the height to 1em */
-  border-radius: 50%; /* Make it a circle */
-}
-
-.p-percent {
-  font-family: "IBMPlexSans-Bold", sans-serif;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 0;
-  opacity: 0.2;
-}
-
-.p-label {
-  font-family: "IBMPlexSans-Bold", sans-serif;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 0;
-}
 </style>
-

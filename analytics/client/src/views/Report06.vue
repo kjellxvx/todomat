@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div class="diagram-axis-wrapper">
+      <div class="diagram-axis">
+        <p class="axis-text">Passwörter hinterlegt</p>
+        <p class="axis-text">Passwörter nicht hinterlegt</p>
+      </div>
+    </div>
     <div class="split left">
       <div>
         <h1 v-if="report['C3.1']">{{ report["C3.1"] || 0 }}%</h1>
@@ -120,14 +126,5 @@ h2 {
   background-color: #6cb1ab;
 }
 
-@keyframes growAnimation {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+
 </style>

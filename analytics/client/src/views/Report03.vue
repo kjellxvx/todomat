@@ -125,42 +125,4 @@ h2 {
   background-color: #6cb1ab;
 }
 
-.diagram-axis-wrapper {
-  position: absolute;
-  width: 100vh;
-  left: calc((100vw - 100vh) - 100vh);
-  top: 100vh;
-}
-
-.diagram-axis {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  transform-origin: top right;
-  transform: rotate(90deg);
-}
-
-.axis-text {
-  margin: 0;
-  padding: 0 2em 1em 2em;
-  transform: rotate(180deg);
-  font-family: "IBMPlexSans-Regular", sans-serif;
-  font-size: 25px;
-  color: #363ad1;
-}
-
-.diagram-axis .axis-text:last-child {
-  color: #6cb1ab;
-}
-
-@keyframes growAnimation {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
 </style>

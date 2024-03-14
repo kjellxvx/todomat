@@ -1,16 +1,11 @@
-<!-- <template>
-  <div>
-    <p></p>
-    <h1 v-if="report['F2.1']">
-      {{ report["F2.1"] || 0 }} % haben geheime Dinge, die nach dem Tod
-      verschwinden sollen
-    </h1>
-    <div></div>
-  </div>
-</template> -->
-
 <template>
   <div>
+    <div class="diagram-axis-wrapper">
+      <div class="diagram-axis">
+        <p class="axis-text">Geheime Dinge</p>
+        <p class="axis-text">Keine geheimen Dinge</p>
+      </div>
+    </div>
     <div class="split left">
       <div>
         <h1 v-if="report['F2.1']">{{ report["F2.1"] || 0 }}%</h1>
@@ -128,16 +123,5 @@ h2 {
 
 .blue-circle {
   background-color: #6cb1ab;
-}
-
-@keyframes growAnimation {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 </style>
