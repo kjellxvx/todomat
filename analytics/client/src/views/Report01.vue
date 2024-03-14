@@ -1,16 +1,36 @@
 <template>
   <div>
-    <h1>Das möchten Andere direkt nach dem Tod mit ihrem Körper machen</h1>
-    <div v-for="element in sortedElements" :key="element.name">
-      <p v-if="element.percentage">
-        {{ element.name }} {{ element.percentage }}%
-      </p>
+    <div class="split left">
+      <h2>
+        Das möchten Andere direkt nach dem Tod
+        <span class="marked-text">
+          mit ihrem <br />
+          Körper machen.
+        </span>
+      </h2>
+      <div>
+        <div v-for="element in sortedElements" :key="element.name">
+          <div class="option-row" v-if="element.percentage">
+            <p class="p-percent">{{ element.percentage }}%</p>
+            <div
+              :style="{ backgroundColor: element.color }"
+              class="option-circle"
+            ></div>
+            <p class="p-label">{{ element.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="split right">
+      <!-- <PieChart :sortedElements="sortedElements" /> -->
+      <PieChart :sortedElements="sortedElements" />
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
+import PieChart from "@/components/PieChart.vue";
 
 const report = ref({});
 
@@ -26,20 +46,95 @@ onMounted(async () => {
 
 const sortedElements = computed(() => {
   const elements = [
-    { name: "Aufbahren", percentage: report.value["A1.1"] + report.value["A1.2"] || 0 },
+    {
+      name: "Aufbahren",
+      percentage: report.value["A1.1"] + report.value["A1.2"] || 0,
+      color: "#363AD1",
+    },
     {
       name: "Direkt transformieren",
       percentage: report.value["A1.3"] || 0,
+      color: "#5254AD",
     },
     {
       name: "Organe spenden",
       percentage: report.value["A1.4"] + report.value["A1.5"] || 0,
+      color: "#5F81A4",
     },
-    { name: "Egal", percentage: report.value["A1.6"] || 0 },
+    { name: "Egal", percentage: report.value["A1.6"] || 0, color: "#6CA8BB" },
   ];
 
   return elements.sort((a, b) => b.percentage - a.percentage);
 });
 </script>
 
-<style></style>
+<style scoped>
+h2 {
+  width: 96%;
+}
+
+.marked-text {
+  color: #363ad1;
+}
+
+.split {
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.left {
+  left: 0;
+  width: calc(100vw - 100vh);
+  box-sizing: border-box;
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.right {
+  right: 0;
+  width: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8em;
+  border-style: outset;
+  border: solid;
+  border-width: 0;
+  border-left-width: 1px;
+  border-color: rgb(0, 0, 0, 0.5);
+}
+
+.option-row {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.option-circle {
+  background-color: #363ad1;
+  width: 3em; /* Set the width to 1em */
+  height: 3em; /* Set the height to 1em */
+  border-radius: 50%; /* Make it a circle */
+}
+
+.p-percent {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 0;
+  opacity: 0.2;
+}
+
+.p-label {
+  font-family: "IBMPlexSans-Bold", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 0;
+}
+</style>
+

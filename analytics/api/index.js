@@ -40,21 +40,28 @@ function calculateRoundedPercentages (optionCounts, optionKeys, participants) {
 
   const percentages = optionKeys.map(calculatePercentage)
 
-  // Calculate rounding error
-  const roundingError =
-    100 - percentages.reduce((sum, percent) => sum + percent, 0)
-
-  // Distribute rounding error based on the fractional parts
-  const fractionalParts = optionKeys.map(
-    key => (optionCounts[key] / participants) * 100 - calculatePercentage(key)
+  const sum = percentages.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
   )
 
-  // Adjust percentages based on rounding error
-  for (let i = 0; i < optionKeys.length; i++) {
-    percentages[i] += Math.round(
-      fractionalParts[i] *
-        (roundingError / fractionalParts.reduce((sum, part) => sum + part, 0))
+  if (sum == !100) {
+    // Calculate rounding error
+    const roundingError =
+      100 - percentages.reduce((sum, percent) => sum + percent, 0)
+
+    // Distribute rounding error based on the fractional parts
+    const fractionalParts = optionKeys.map(
+      key => (optionCounts[key] / participants) * 100 - calculatePercentage(key)
     )
+
+    // Adjust percentages based on rounding error
+    for (let i = 0; i < optionKeys.length; i++) {
+      percentages[i] += Math.round(
+        fractionalParts[i] *
+          (roundingError / fractionalParts.reduce((sum, part) => sum + part, 0))
+      )
+    }
   }
 
   const result = {}
@@ -62,6 +69,7 @@ function calculateRoundedPercentages (optionCounts, optionKeys, participants) {
   optionKeys.forEach((key, index) => {
     result[key] = percentages[index]
   })
+
   return result
 }
 

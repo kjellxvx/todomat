@@ -12,7 +12,7 @@
         <h2>
           <span class="marked-text"> ist Nachhaltigkeit </span>
           <br />bei der Wahl der Transformationsart
-          <span class="marked-text"> am wichtigsten</span>
+          <span class="marked-text"> am wichtigsten.</span>
         </h2>
       </div>
       <div>
@@ -63,7 +63,7 @@ const calculateAnimationDelay = (index) => {
 
 <style scoped>
 h2 {
-  width: 90%;
+  width: 96%;
 }
 
 .marked-text {
@@ -145,7 +145,7 @@ h2 {
   padding: 0 2em 1em 2em;
   transform: rotate(180deg);
   font-family: "IBMPlexSans-Regular", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   color: #363ad1;
 }
 
