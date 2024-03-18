@@ -337,7 +337,7 @@ const calcReport08 = allEntries => {
 }
 
 // GET endpoint for retrieving
-app.get('/api', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     if (!cachedEntries) {
       // If cache is not initialized, fetch and set it
