@@ -88,7 +88,7 @@ const switchMode = (newMode) => {
 const startIdleTimer = () => {
   idleTimer = setTimeout(() => {
     switchMode("idle");
-  }, 30000); // 30 seconds
+  }, 10000); // 10 seconds
 };
 
 // Function to reset idle timer
@@ -108,6 +108,7 @@ watch(mode, (newMode) => {
 
 // Function to autoplay slides in idle mode
 const autoPlaySlides = () => {
+  transitionDirection.value = "top";
   clearInterval(autoPlayInterval); // Clear previous interval
   autoPlayInterval = setInterval(() => {
     let currentIndex = pageIndex.value;
