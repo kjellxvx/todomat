@@ -9,7 +9,7 @@
     </div>
     <div class="main">
       <h1 v-if="report">{{ report || 0 }}</h1>
-      <h2>Teilnehmer*innen</h2>
+      <h2>Teilnehmer:innen</h2>
     </div>
   </div>
 </template>
