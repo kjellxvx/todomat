@@ -54,7 +54,7 @@ const report = ref({});
 
 onMounted(async () => {
   try {
-    const response = await fetch("http://localhost:3001/api");
+    const response = await fetch("https://www.api.analytics.todomat.org");
     const responseData = await response.json();
     report.value = responseData.reports.report07;
   } catch (error) {

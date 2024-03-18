@@ -21,7 +21,8 @@ const report = ref({});
 
 onMounted(async () => {
   try {
-    const response = await fetch("http://localhost:3001/api");
+    const response = await fetch("https://www.api.analytics.todomat.org");
+    console.log(response);
     const responseData = await response.json();
     report.value = responseData.reports.counter;
   } catch (error) {
